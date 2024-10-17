@@ -20,10 +20,10 @@ definePageMeta({
           Let us know what your availability looks like and we'll get back to you asap to schedule a chat.
         </p>
         <div class="mt-5">
-          <div class="flex items-center mt-2 space-x-2 text-gray-600">
+          <!-- <div class="flex items-center mt-2 space-x-2 text-gray-600">
             <Icon class="text-gray-400 w-4 h-4" name="uil:map-marker" />
             <span>Durant, OK</span>
-          </div>
+          </div> -->
           <div class="flex items-center mt-2 space-x-2 text-gray-600">
             <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" /><a
               href="mailto:michele@tenorcreative.com"

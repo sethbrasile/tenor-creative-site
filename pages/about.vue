@@ -12,6 +12,8 @@ const team = [
   {
     name: "Seth Brasile",
     title: "CEO, Founder and Solutions Engineer",
+    link: "https://www.linkedin.com/in/seth-brasile-43a315a0/",
+    location: "Durant, OK",
     avatar: {
       src: TeamImg1,
       width: 480,
@@ -21,6 +23,8 @@ const team = [
   {
     name: "Michele Pulec",
     title: "Sales and Customer Success",
+    link: "https://www.linkedin.com/in/michelepulec/",
+    location: "Gainesville, TX",
     avatar: {
       src: TeamImg2,
       width: 580,
@@ -29,7 +33,9 @@ const team = [
   },
   {
     name: "Derek Wood",
-    title: "Creative Director and Experience Engineer",
+    title: "Creative Director and UI/UX Engineer",
+    link: "https://www.linkedin.com/in/derekthomaswood/",
+    location: "South Pasadena, CA",
     avatar: {
       src: TeamImg3,
       width: 580,
@@ -39,6 +45,8 @@ const team = [
   {
     name: "Noah Weir",
     title: "Security and Operations Engineer",
+    link: "https://www.linkedin.com/in/noahweir/",
+    location: "Potterville, MI",
     avatar: {
       src: TeamImg4,
       width: 580,
@@ -51,8 +59,8 @@ const team = [
 <template>
   <LandingContainer>
     <LandingSectionhead>
-      <template v-slot:title>Who we are</template>
-      <template v-slot:desc>Our team has built many successful websites, SaaS products, mobile apps, government projects and more.</template>
+      <template v-slot:title>Who We Are</template>
+      <template v-slot:desc>Our team has built, hosted, maintained, and consulted for many successful sites, SaaS products, mobile apps, and more.</template>
     </LandingSectionhead>
 
     <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
@@ -65,43 +73,27 @@ const team = [
         the job. This is what makes our team so special.
       </p> -->
     </div>
-    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
+    <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-12">
       <div v-for="item of team" class="group">
         <div class="w-full aspect-square">
-          <img
-            :src="item.avatar.src"
-            :width="item.avatar.width"
-            :height="item.avatar.height"
-            format="avif"
-            alt="Team"
-            class="w-full h-full object-cover rounded transition group-hover:-translate-y-1 group-hover:shadow-xl"
-          />
+          <NuxtLink :to="item.link">
+            <img
+              :src="item.avatar.src"
+              :width="item.avatar.width"
+              :height="item.avatar.height"
+              format="avif"
+              alt="Team"
+              class="w-full h-full object-cover rounded transition group-hover:-translate-y-1 group-hover:shadow-xl"
+            />
+          </NuxtLink>
         </div>
 
-        <div class="mt-4 text-center">
+        <div class="mt-4">
           <h2 class="text-lg text-gray-800">{{ item.name }}</h2>
           <h3 class="text-sm text-slate-500">{{ item.title }}</h3>
+          <h4 class="text-sm text-slate-500">{{ item.location }}</h4>
         </div>
       </div>
-      <!-- {
-        team.map((item) => (
-          <div class="group">
-            <div class="w-full aspect-square">
-              <Image
-                {...item.avatar}
-                format="avif"
-                alt="Team"
-                class="w-full h-full object-cover rounded transition  group-hover:-translate-y-1 group-hover:shadow-xl"
-              />
-            </div>
-
-            <div class="mt-4 text-center">
-              <h2 class="text-lg text-gray-800"> {item.name}</h2>
-              <h3 class="text-sm text-slate-500"> {item.title}</h3>
-            </div>
-          </div>
-        ))
-      } -->
     </div>
   </LandingContainer>
 </template>
