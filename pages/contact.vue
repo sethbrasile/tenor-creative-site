@@ -17,7 +17,7 @@ definePageMeta({
           Schedule a free consultation
         </h2>
         <p class="text-lg leading-relaxed text-slate-500 mt-3">
-          The form on the right goes straight to our inbox and we'll get back to you as soon as possible.
+          Let us know what your availability looks like and we'll get back to you asap to schedule a chat.
         </p>
         <div class="mt-5">
           <div class="flex items-center mt-2 space-x-2 text-gray-600">
