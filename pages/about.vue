@@ -3,9 +3,10 @@ definePageMeta({
   layout: "landing",
 });
 
-const TeamImg1 = "https://source.unsplash.com/IF9TK5Uy-KI";
-const TeamImg2 = "https://source.unsplash.com/iEEBWgY_6lA";
-const TeamImg3 = "https://source.unsplash.com/ZHvM3XIOHoE";
+const TeamImg1 = "https://placehold.co/480x560"
+const TeamImg2 = "https://placehold.co/480x560"
+const TeamImg3 = "https://placehold.co/480x560"
+const TeamImg4 = "https://placehold.co/480x560"
 
 const team = [
   {
@@ -18,7 +19,7 @@ const team = [
     },
   },
   {
-    name: "Michelle Pulec",
+    name: "Michele Pulec",
     title: "Sales and Customer Success",
     avatar: {
       src: TeamImg2,
@@ -35,6 +36,15 @@ const team = [
       height: 580,
     },
   },
+  {
+    name: "Noah Weir",
+    title: "Security and Operations Engineer",
+    avatar: {
+      src: TeamImg4,
+      width: 580,
+      height: 580,
+    },
+  }
 ];
 </script>
 
@@ -42,7 +52,7 @@ const team = [
   <LandingContainer>
     <LandingSectionhead>
       <template v-slot:title>Who we are</template>
-      <template v-slot:desc>We are a small passionate team.</template>
+      <template v-slot:desc>Our team has built many successful websites, SaaS products, mobile apps, government projects and more.</template>
     </LandingSectionhead>
 
     <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
