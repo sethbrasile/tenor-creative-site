@@ -1,4 +1,5 @@
 <script setup>
+const accessKey = useRuntimeConfig().public.web3formsAccessKey;
 onMounted(() => {
   const form = document.getElementById("form");
   const result = document.getElementById("result");
@@ -60,7 +61,7 @@ onMounted(() => {
     class="needs-validation"
     novalidate
   >
-    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+    <input type="hidden" name="access_key" :value="accessKey" />
     <!-- Create your free access key from https://web3forms.com/ -->
     <input
       type="checkbox"

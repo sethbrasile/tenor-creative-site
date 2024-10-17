@@ -9,8 +9,8 @@ const TeamImg3 = "https://source.unsplash.com/ZHvM3XIOHoE";
 
 const team = [
   {
-    name: "Janette Lynch",
-    title: "Senior Director",
+    name: "Seth Brasile",
+    title: "CEO, Founder and Solutions Engineer",
     avatar: {
       src: TeamImg1,
       width: 480,
@@ -18,8 +18,8 @@ const team = [
     },
   },
   {
-    name: "Marcell Ziemann",
-    title: "Principal Strategist",
+    name: "Michelle Pulec",
+    title: "Sales and Customer Success",
     avatar: {
       src: TeamImg2,
       width: 580,
@@ -27,8 +27,8 @@ const team = [
     },
   },
   {
-    name: "Robert Palmer",
-    title: "Marketing Engineer",
+    name: "Derek Wood",
+    title: "Creative Director and Experience Engineer",
     avatar: {
       src: TeamImg3,
       width: 580,
@@ -41,19 +41,19 @@ const team = [
 <template>
   <LandingContainer>
     <LandingSectionhead>
-      <template v-slot:title>About</template>
+      <template v-slot:title>Who we are</template>
       <template v-slot:desc>We are a small passionate team.</template>
     </LandingSectionhead>
 
     <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
-      <h2 class="font-bold text-3xl text-gray-800">
-        Empowering the world with Nuxt.
-      </h2>
-      <p class="text-lg leading-relaxed text-slate-500">
+      <!-- <h2 class="font-bold text-3xl text-gray-800">
+        Empowering businesses one site at a time.
+      </h2> -->
+      <!-- <p class="text-lg leading-relaxed text-slate-500">
         We're a multi-cultural team from around the world! We come from diverse
         backgrounds, bringing different personalities, experiences and skills to
         the job. This is what makes our team so special.
-      </p>
+      </p> -->
     </div>
     <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
       <div v-for="item of team" class="group">

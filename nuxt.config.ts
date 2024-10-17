@@ -10,4 +10,10 @@ export default defineNuxtConfig({
   },
   modules: ["nuxt-icon"],
   compatibilityDate: "2024-10-17",
+
+  runtimeConfig: {
+    public: {
+      web3formsAccessKey: process.env.WEB3FORMS_ACCESS_KEY || ''
+    }
+  }
 });

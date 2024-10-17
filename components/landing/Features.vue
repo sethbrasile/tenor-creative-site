@@ -1,40 +1,22 @@
 <script setup>
 const features = [
   {
-    title: "Bring Your Own Framework",
+    title: "Bring your own content, or use ours",
     description:
-      "Build your site using Vue, web components, or just plain ol' HTML + JavaScript.",
-    icon: "bx:bxs-briefcase",
+      "Already understand your content strategy? That's great! If you don't though, we've got you covered.",
+    icon: "bx:bxs-book-content",
   },
   {
-    title: "100% Static HTML, No JS",
+    title: "Extreme performance",
     description:
-      "Nuxt renders your entire page to static HTML, removing all JavaScript from your final build by default.",
-    icon: "bx:bxs-window-alt",
+      "Our number 1 priority is your site's performance, which means better user experiences and higher engagement.",
+    icon: "bx:bxs-fast-forward-circle",
   },
   {
-    title: "On-Demand Components",
+    title: "SEO optimized",
     description:
-      "Need some JS? Nuxt can automatically hydrate interactive components when they become visible on the page.  ",
-    icon: "bx:bxs-data",
-  },
-  {
-    title: "Broad Integration",
-    description:
-      "Nuxt supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any other npm packages.",
-    icon: "bx:bxs-bot",
-  },
-  {
-    title: "SEO Enabled",
-    description:
-      "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication. It just works!",
+      "Great performance scores, great content and great user experiences mean great SEO.",
     icon: "bx:bxs-file-find",
-  },
-  {
-    title: "Community",
-    description:
-      "Nuxt is an open source project powered by hundreds of contributors making thousands of individual contributions.",
-    icon: "bx:bxs-user",
   },
 ];
 </script>
@@ -42,11 +24,10 @@ const features = [
 <template>
   <div class="mt-16 md:mt-0">
     <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-      Everything you need to start a website
+      Your web presence, handled.
     </h2>
     <p class="text-lg mt-4 text-slate-600">
-      Nuxt comes batteries included. It takes the best parts of state-of-the-art
-      tools and adds its own innovations.
+      From landing pages and SEO to blogs and blog content, all the way to custom app development, we've got you covered.
     </p>
   </div>
 
