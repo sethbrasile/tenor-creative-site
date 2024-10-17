@@ -75,24 +75,24 @@ const team = [
     </div>
     <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-12">
       <div v-for="item of team" class="group">
-        <div class="w-full aspect-square">
-          <NuxtLink :to="item.link">
-            <img
-              :src="item.avatar.src"
-              :width="item.avatar.width"
-              :height="item.avatar.height"
-              format="avif"
-              alt="Team"
-              class="w-full h-full object-cover rounded transition group-hover:-translate-y-1 group-hover:shadow-xl"
-            />
-          </NuxtLink>
-        </div>
+        <NuxtLink :to="item.link">
+          <div class="w-full aspect-square">
+              <img
+                :src="item.avatar.src"
+                :width="item.avatar.width"
+                :height="item.avatar.height"
+                format="avif"
+                alt="Team"
+                class="w-full h-full object-cover rounded transition group-hover:-translate-y-1 group-hover:shadow-xl"
+              />
+          </div>
 
-        <div class="mt-4">
-          <h2 class="text-lg text-gray-800">{{ item.name }}</h2>
-          <h3 class="text-sm text-slate-500">{{ item.title }}</h3>
-          <h4 class="text-sm text-slate-500">{{ item.location }}</h4>
-        </div>
+          <div class="mt-4">
+            <h2 class="text-lg text-gray-800">{{ item.name }}</h2>
+            <h3 class="text-sm text-slate-500">{{ item.title }}</h3>
+            <h4 class="text-sm text-slate-500">{{ item.location }}</h4>
+          </div>
+        </NuxtLink>
       </div>
     </div>
   </LandingContainer>
