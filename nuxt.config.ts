@@ -8,7 +8,10 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ["nuxt-icon"],
+  modules: [
+    "nuxt-icon",
+    "@nuxt/image",
+  ],
   compatibilityDate: "2024-10-17",
 
   runtimeConfig: {

@@ -13,7 +13,7 @@ const menuitems = [
     path: "/services",
   },
   {
-    title: "About",
+    title: "About Us",
     path: "/about",
   },
   {
