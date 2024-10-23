@@ -86,5 +86,6 @@ const team = [
         </NuxtLink>
       </div>
     </div>
+    <LandingHero />
   </LandingContainer>
 </template>

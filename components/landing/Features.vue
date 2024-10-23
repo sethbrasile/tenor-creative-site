@@ -32,9 +32,7 @@ defineProps({
       </div>
       <div>
         <h3 class="font-semibold text-lg">{{ item.title }}</h3>
-        <p class="text-slate-500 mt-2 leading-relaxed">
-          {{ item.description }}
-        </p>
+        <p v-html="item.description" class="text-slate-500 mt-2 leading-relaxed"></p>
       </div>
     </div>
   </div>
