@@ -1,33 +1,27 @@
 <script setup>
-const features = [
-  {
-    title: "Bring your own content, or use ours",
-    description:
-      "Already understand your content strategy? That's great! If you don't though, we've got you covered.",
-    icon: "bx:bxs-book-content",
+defineProps({
+  heading: {
+    type: String,
+    default: "Your web presence, handled.",
   },
-  {
-    title: "Extreme performance",
-    description:
-      "Our number 1 priority is your site's performance, which means better user experiences and higher engagement.",
-    icon: "bx:bxs-fast-forward-circle",
+  tagline: {
+    type: String,
+    default: "From landing pages and SEO to blogs and blog content, all the way to custom app development, we've got you covered.",
   },
-  {
-    title: "SEO optimized",
-    description:
-      "Great performance scores, great content and great user experiences mean great SEO.",
-    icon: "bx:bxs-file-find",
-  },
-];
+  features: {
+    type: Array,
+    default: () => [],
+  }
+})
 </script>
 
 <template>
-  <div class="mt-16 md:mt-0">
+  <div class="mt-16">
     <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-      Your web presence, handled.
+      {{ heading }}
     </h2>
     <p class="text-lg mt-4 text-slate-600">
-      From landing pages and SEO to blogs and blog content, all the way to custom app development, we've got you covered.
+      {{ tagline }}
     </p>
   </div>
 

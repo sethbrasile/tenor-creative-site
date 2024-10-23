@@ -1,8 +1,4 @@
 <script setup>
-definePageMeta({
-  layout: "landing",
-});
-
 const team = [
   {
     name: "Seth Brasile",
