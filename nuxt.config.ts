@@ -22,6 +22,11 @@ export default defineNuxtConfig({
         { rel: "shortcut icon", href: "/favicon.ico" },
         { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
         { rel: "manifest", href: "/site.webmanifest" },
+      ],
+      meta: [
+        { name: "keywords", content: "Tenor, Creative, SEO, Website, Landing, Page, App, Development, Custom, Content, Strategy, Security, Marketing" },
+        { name: "description", content: "We're here to help you create the best possible experiences for your customers. Stay focused on your business and let us do the web stuff." },
+        { name: "apple-mobile-web-app-title", content: "TenorCreative" },
       ]
     }
   },
