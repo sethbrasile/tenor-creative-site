@@ -24,7 +24,7 @@ export default defineNuxtConfig({
         { rel: "manifest", href: "/site.webmanifest" },
       ],
       meta: [
-        { name: "keywords", content: "Tenor, Creative, SEO, Website, Landing, Page, App, Development, Custom, Content, Strategy, Security, Marketing" },
+        { name: "keywords", content: "Tenor, Creative, SEO, Website, Landing, Page, App, Development, Custom, Content, Strategy, Security, Marketing, Wordpress, Static, HTML, CSS, Design" },
         { name: "description", content: "We're here to help you create the best possible experiences for your customers. Stay focused on your business and let us do the web stuff." },
         { name: "apple-mobile-web-app-title", content: "TenorCreative" },
       ]
