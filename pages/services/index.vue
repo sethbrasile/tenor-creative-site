@@ -41,11 +41,11 @@ const services = [
 
 <template>
   <LandingContainer>
-    <LandingFeatures
+    <Features
       :features="services"
       heading="Services"
       tagline="We're here to help you create the best possible experiences for your customers."
-    ></LandingFeatures>
+    ></Features>
     <LandingHero />
   </LandingContainer>
 </template>

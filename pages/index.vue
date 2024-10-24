@@ -24,7 +24,7 @@ const features = [
 <template>
   <LandingContainer>
     <LandingHero></LandingHero>
-    <LandingFeatures :features="features"></LandingFeatures>
+    <Features :features="features"></Features>
     <!-- <LandingLogos></LandingLogos> -->
     <LandingCta></LandingCta>
   </LandingContainer>

@@ -17,6 +17,14 @@
       ],
     })
   }
+
+useHead({
+  description: "We're here to help you create the best possible experiences for your customers.",
+  meta: [
+    { name: "apple-mobile-web-app-title", content: "TenorCreative" },
+    { name: "keywords", content: "Tenor, Creative, SEO, Website, Landing, Page, App, Development, Custom, Content, Strategy, Security, Marketing" },
+  ],
+})
 </script>
 
 <template>
