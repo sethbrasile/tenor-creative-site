@@ -22,7 +22,7 @@ const services = [
     title: "Custom App Dev",
     description:
       "We deliver custom app development tailored to your business needs. Whether you're looking to streamline operations or engage customers in new ways, our team builds apps that are intuitive, scalable, and built to perform. We handle everything from concept to launch, ensuring a seamless experience across all platforms. <br /><br />Let us develop the solution that drives innovation and growth for your business.",
-    icon: "bxl:dev-to",
+    icon: "bx:devices",
   },
   {
     title: "Digital Marketing",
