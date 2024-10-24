@@ -9,7 +9,7 @@ const services = [
   {
     title: "SEO",
     description:
-      "With deep expertise in optimizing content, improving site structure, and targeting the right keywords, we help your business rank higher on search engines. <br /><br /> Why does this matter? A better search ranking means more visibility, more traffic, and more opportunities to convert visitors into customers. Let us fine-tune your digital presence so you can stand out in a crowded online space.",
+      "With deep expertise in optimizing content, improving site structure, and targeting keywords, we help your business rank higher on search engines. <br /><br /> Why does this matter? A better search ranking means more visibility, more traffic, and more opportunities to convert visitors into customers. Let us fine-tune your digital presence so you can stand out in a crowded online space.",
     icon: "bx:bxs-file-find",
   },
   {
