@@ -4,10 +4,6 @@ const menuitems = [
   //   title: "Features",
   //   path: "#",
   // },
-  // {
-  //   title: "Pricing",
-  //   path: "/pricing",
-  // },
   {
     title: "Services",
     path: "/services",
@@ -16,6 +12,10 @@ const menuitems = [
     title: "About Us",
     path: "/about",
   },
+  // {
+  //   title: "Pricing",
+  //   path: "/pricing",
+  // },
   {
     title: "Contact",
     path: "/contact",
@@ -26,7 +26,7 @@ const open = ref(false);
 </script>
 
 <template>
-  <LandingContainer>
+  <Container>
     <header class="flex flex-col lg:flex-row justify-between items-center my-5">
       <div class="flex w-full lg:w-auto items-center justify-between">
         <a href="/" class="text-lg content-center grid grid-cols-2 w-14">
@@ -82,18 +82,18 @@ const open = ref(false);
           </li>
         </ul>
         <!-- <div class="lg:hidden flex items-center mt-3 gap-4">
-          <LandingLink href="#" styleName="muted" block size="md"
-            >Log in</LandingLink
+          <CtaLink href="#" styleName="muted" block size="md"
+            >Log in</CtaLink
           >
-          <LandingLink href="#" size="md" block>Sign up</LandingLink>
+          <CtaLink href="#" size="md" block>Sign up</CtaLink>
         </div> -->
       </nav>
       <!-- <div>
         <div class="hidden lg:flex items-center gap-4">
           <a href="#">Log in</a>
-          <LandingLink href="#" size="md">Sign up</LandingLink>
+          <CtaLink href="#" size="md">Sign up</CtaLink>
         </div>
       </div> -->
     </header>
-  </LandingContainer>
+  </Container>
 </template>

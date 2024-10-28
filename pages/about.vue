@@ -2,11 +2,11 @@
 const team = [
   {
     name: "Seth Brasile",
-    title: "CEO, Founder and Solutions Engineer",
+    title: "Founder, Solutions Engineer and Primary Developer",
     link: "https://www.linkedin.com/in/seth-brasile-43a315a0/",
     location: "Durant, OK",
     avatar: {
-      src: '/img/team/seth.jpeg',
+      src: '/img/team/seth.webp',
       width: 400,
       height: 400,
     },
@@ -17,7 +17,7 @@ const team = [
     link: "https://www.linkedin.com/in/michelepulec/",
     location: "Gainesville, TX",
     avatar: {
-      src: '/img/team/michele.jpeg',
+      src: '/img/team/michele.webp',
       width: 400,
       height: 400,
     },
@@ -28,7 +28,7 @@ const team = [
     link: "https://www.linkedin.com/in/derekthomaswood/",
     location: "South Pasadena, CA",
     avatar: {
-      src: 'https://placehold.co/400x400',
+      src: '/img/team/derek.webp',
       width: 400,
       height: 400,
     },
@@ -39,7 +39,7 @@ const team = [
     link: "https://www.linkedin.com/in/noahweir/",
     location: "Potterville, MI",
     avatar: {
-      src: '/img/team/noah.jpeg',
+      src: '/img/team/noah.webp',
       width: 400,
       height: 400,
     },
@@ -48,21 +48,23 @@ const team = [
 </script>
 
 <template>
-  <LandingContainer>
-    <LandingSectionhead>
-      <template v-slot:title>Who We Are</template>
-      <template v-slot:desc>Our team has built, hosted, maintained, and consulted for many successful sites, SaaS products, mobile apps, and more.</template>
-    </LandingSectionhead>
+  <Container>
+    <Sectionhead>
+      <template v-slot:title>About us</template>
+      <template v-slot:desc>
+        <p>Our team has built, hosted, maintained, and consulted for many successful sites, SaaS products, mobile apps, and more.</p>
+
+        <p>
+          We specialize in recognizing your unique needs and tailoring our solutions to meet them. We're here to find a solution that provides the best possible experience for your customers, and the highest
+          possible ROI.
+        </p>
+      </template>
+    </Sectionhead>
 
     <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
       <!-- <h2 class="font-bold text-3xl text-gray-800">
         Empowering businesses one site at a time.
       </h2> -->
-      <p class="text-lg leading-relaxed text-slate-500">
-        Our team specializes in recognizing your unique needs and tailoring our solutions to meet them. Sometimes the right call is the "cookie cutter"
-        approach, and sometimes it's not. We're here to find a solution that provides the best possible experience for your customers, and the highest
-        possible ROI.
-      </p>
     </div>
     <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-12">
       <div v-for="item of team" class="group">
@@ -86,6 +88,6 @@ const team = [
         </NuxtLink>
       </div>
     </div>
-    <LandingHero />
-  </LandingContainer>
+    <Hero />
+  </Container>
 </template>

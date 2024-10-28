@@ -11,22 +11,17 @@
       />
     </div>
     <div>
-      <h1 class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight">
-        Focus on what matters
+      <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold lg:tracking-tight">
+        Web design, digital marketing, hosting and more
       </h1>
       <p class="text-lg mt-4 text-slate-600 max-w-xl">
-        Our goal is to help you create the best possible
-        experiences for your customers, while empowering you to stay
-        focused on your business.
-      </p>
-      <p class="text-lg mt-4 text-slate-600 max-w-xl">
-        Let us do the web stuff.
+        From simple web sites and blogs, all the way to custom app development, we've got you covered.
       </p>
       <div class="mt-6 flex flex-col sm:flex-row gap-3">
-        <LandingLink
+        <CtaLink
           href="/contact"
           rel="noopener"
-          >Get Started</LandingLink
+          >Get Started</CtaLink
         >
       </div>
     </div>

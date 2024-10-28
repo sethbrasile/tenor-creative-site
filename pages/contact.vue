@@ -1,9 +1,9 @@
 <template>
-  <LandingContainer>
-    <LandingSectionhead>
+  <Container>
+    <Sectionhead>
       <template v-slot:title>Contact</template>
       <template v-slot:desc>Let's have a chat.</template>
-    </LandingSectionhead>
+    </Sectionhead>
 
     <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
       <div>
@@ -33,8 +33,8 @@
         </div>
       </div>
       <div>
-        <LandingContactform />
+        <Contactform />
       </div>
     </div>
-  </LandingContainer>
+  </Container>
 </template>

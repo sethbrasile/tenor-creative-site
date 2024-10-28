@@ -7,7 +7,7 @@
       Get in contact with us now to schedule a free consultation.
     </p>
     <div class="flex mt-5">
-      <LandingLink href="/contact" styleName="inverted">Get Started</LandingLink>
+      <CtaLink href="/contact" styleName="inverted">Get Started</CtaLink>
     </div>
   </div>
 </template>

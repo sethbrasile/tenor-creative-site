@@ -12,35 +12,32 @@ defineProps(["plan"]);
         <p class="mt-3 text-4xl font-bold text-black md:text-4xl">
           {{
             plan.price && typeof plan.price === "object"
-              ? plan.price.monthly
+              ? plan.price.monthly + "/mo "
               : plan.price
           }}
         </p>
-        <!-- {
-        plan.price.original && (
-          <p class="mt-1 text-xl font-medium text-gray-400 line-through md:text-2xl">
-            {plan.price.original}
-          </p>
-        )
-      } -->
+        <p v-if="plan.price.original" class="mt-1 text-xl font-medium text-gray-400 line-through md:text-2xl">
+          {{plan.price.original}}
+        </p>
+        <p v-if="plan.note" class="mt-4 max-w-[800px] text-gray-400 text-sm">{{plan.note}}</p>
       </div>
       <ul class="grid mt-8 text-left gap-y-4">
         <li
           v-for="item of plan.features"
           class="flex items-start gap-3 text-gray-800"
         >
-          <LandingTick className="w-6 h-6" />
+          <Tick className="w-6 h-6" />
           <span>{{ item }}</span>
         </li>
       </ul>
       <div class="flex mt-8">
-        <LandingLink
+        <CtaLink
           :href="plan.button.link || '#'"
           block
           :styleName="plan.popular ? 'primary' : 'outline'"
         >
           {{ plan.button.text || "Get Started" }}
-        </LandingLink>
+        </CtaLink>
       </div>
     </div>
   </div>

@@ -1,75 +1,28 @@
 <script setup>
-const pricing = [
-  {
-    name: "Personal",
-    price: "Free",
-    popular: false,
-    features: [
-      "Lifetime free",
-      "Up to 3 users",
-      "Unlimited Pages",
-      "Nuxt Sub domain",
-      "Basic Integrations",
-      "Community Support",
-    ],
-    button: {
-      text: "Get Started",
-      link: "/",
-    },
-  },
-  {
-    name: "Startup",
-    price: {
-      monthly: "$19",
-      annual: "$16",
-      discount: "10%",
-      original: "$24",
-    },
-    popular: true,
-    features: [
-      "All Free Features",
-      "Up to 20 users",
-      "20 Custom domains",
-      "Unlimited Collaborators",
-      "Advanced Integrations",
-      "Priority Support",
-    ],
-    button: {
-      text: "Get Started",
-      link: "#",
-    },
-  },
-  {
-    name: "Enterprise",
-    price: "Custom",
-    popular: false,
-    features: [
-      "All Pro Features",
-      "Unlimited Custom domains",
-      "99.99% Uptime SLA",
-      "SAML & SSO Integration",
-      "Dedicated Account Manager",
-      "24/7 Phone Support",
-    ],
-    button: {
-      text: "Contact us",
-      link: "/contact",
-    },
-  },
-];
+import { standardPricing, oneOffPricing } from '~/data/pricing';
 </script>
 
 <template>
-  <LandingContainer>
-    <LandingSectionhead>
+  <Container>
+    <!-- <Sectionhead>
       <template v-slot:title>Pricing</template>
-      <template v-slot:desc
-        >Simple & Predictable pricing. No Surprises.</template
-      >
-    </LandingSectionhead>
+      <template v-slot:desc>Simple & Predictable pricing. No Surprises. Select a plan that aligns with your needs.</template>
+    </Sectionhead> -->
 
+    <Sectionhead>
+      <template v-slot:title>Standard Plans</template>
+      <template v-slot:desc>Simple & Predictable pricing. No Surprises.</template>
+    </Sectionhead>
     <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
-      <LandingPricing v-for="item of pricing" :plan="item" />
+      <PricingCard v-for="item of standardPricing" :plan="item" :key="item.name" />
     </div>
-  </LandingContainer>
+
+    <Sectionhead>
+      <template v-slot:title>Other Services</template>
+      <template v-slot:desc>If our standard plans don't meet your needs, we also offer these services.</template>
+    </Sectionhead>
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
+      <PricingCard v-for="item of oneOffPricing" :plan="item" :key="item.name" />
+    </div>
+  </Container>
 </template>

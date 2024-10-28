@@ -31,9 +31,6 @@ export default defineNuxtConfig({
     }
   },
   runtimeConfig: {
-    public: {
-      web3formsAccessKey: process.env.WEB3FORMS_ACCESS_KEY || ''
-    },
     HUBSPOT_API_KEY: process.env.HUBSPOT_API_KEY || '',
   }
 });

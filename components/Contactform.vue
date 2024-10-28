@@ -90,6 +90,6 @@
       Something went wrong! Please try again or send us an email at <a href="mailto:sales@tenorcreative.com">sales@tenorcreative.com</a>
     </p>
     <div v-if="result" id="result" class="mt-3 mb-3 text-center">{{ result }}</div>
-    <LandingButton type="submit" size="lg" block>Send Message</LandingButton>
+    <Button type="submit" size="lg" block>Send Message</Button>
   </form>
 </template>

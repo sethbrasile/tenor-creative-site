@@ -1,31 +1,32 @@
 <script setup>
 const features = [
   {
-    title: "Bring your own content, or use ours",
+    title: "Google Business Profile Management",
     description:
-      "Already understand your content strategy? That's great! If you don't though, we've got you covered.",
-    icon: "bx:bxs-book-content",
+      "We'll take care of your Google Business Profile so that you can focus on your business.",
+    icon: "bxs:business",
   },
   {
-    title: "Extreme performance",
+    title: "SEO and Local SEO",
     description:
-      "Our number 1 priority is your site's performance, which means better user experiences and higher engagement.",
-    icon: "bx:bxs-fast-forward-circle",
+      "With an emphasis on local SEO where it makes sense, let our experts ensure that you reach your target audience.",
+    icon: "bx:map",
   },
   {
-    title: "SEO optimized",
+    title: "Content",
     description:
-      "Great performance scores, great content and great user experiences mean great SEO.",
-    icon: "bx:bxs-file-find",
+      "Content is how you stand out from your competition on the web. We provide content management services, or we can even write content for you.",
+    icon: "bx:book-content",
   },
 ];
 </script>
 
 <template>
-  <LandingContainer>
-    <LandingHero></LandingHero>
+  <Container>
+    <Hero></Hero>
+    <CallOut />
     <Features :features="features"></Features>
-    <!-- <LandingLogos></LandingLogos> -->
-    <LandingCta></LandingCta>
-  </LandingContainer>
+    <!-- <Logos></Logos> -->
+    <Cta></Cta>
+  </Container>
 </template>
