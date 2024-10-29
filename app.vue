@@ -9,10 +9,9 @@
           defer: true,
         },
         {
-          src: 'https://cloud.umami.is/script.js',
-          async: true,
+          src: 'https://analytics.tenorcreative.com/script.js',
           defer: true,
-          'data-website-id': 'f8672b32-8925-4ae9-aed9-749620ab3dc9',
+          'data-website-id': '7fc6c441-cd5d-447f-a4a0-52eb991a1072',
         }
       ],
     })
