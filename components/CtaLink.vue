@@ -3,6 +3,7 @@ interface Props {
   href: string;
   size?: "md" | "lg";
   block?: boolean;
+  ctaName?: "missing name";
   styleName?: "outline" | "primary" | "inverted" | "muted";
   className?: string;
   [x: string]: any;
@@ -28,6 +29,7 @@ const styles = {
 
 <template>
   <NuxtLink
+    :data-umami-event="ctaName"
     :href="href"
     :class="[
       'rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200',

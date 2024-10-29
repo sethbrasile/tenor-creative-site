@@ -32,6 +32,7 @@ defineProps(["plan"]);
       </ul>
       <div class="flex mt-8">
         <CtaLink
+          :ctaName="plan.name + ' Plan'"
           :href="plan.button.link || '#'"
           block
           :styleName="plan.popular ? 'primary' : 'outline'"

@@ -77,7 +77,7 @@
         class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
       />
     </div>
-    <div >
+    <div>
       <textarea
         v-model="form.message"
         name="message"
@@ -90,6 +90,6 @@
       Something went wrong! Please try again or send us an email at <a href="mailto:sales@tenorcreative.com">sales@tenorcreative.com</a>
     </p>
     <div v-if="result" id="result" class="mt-3 mb-3 text-center">{{ result }}</div>
-    <Button type="submit" size="lg" block>Send Message</Button>
+    <Button type="submit" size="lg" block data-umami-event="Contact Form Submit">Send Message</Button>
   </form>
 </template>
