@@ -1,21 +1,23 @@
 export const standardPricing = [
   {
     name: "Turnkey Site",
+    note: "12 month commitment",
     price: {
       monthly: "$197",
-      original: "$600",
+      // original: "$600",
     },
     popular: true,
     features: [
       "Everything in the New Site service (below)",
-      "+1 design revision per year",
+      "1 design revision per year",
       "Dynamic reviews embed",
       "Technical + Local SEO",
-      "Google Business Profile Management",
+      "Google 'My Business' Management",
+      "Analytics",
       "Support via email",
     ],
     button: {
-      text: "Get Started (Most Popular)",
+      text: "Get Started",
       link: "/contact?plan=turnkey",
     },
   },
@@ -23,15 +25,16 @@ export const standardPricing = [
     name: "Pro Services",
     price: {
       monthly: "$697",
-      original: "$1200",
+      // original: "$1200",
     },
     popular: false,
     features: [
       "Everything in the Turnkey Site plan",
-      "+1 design revision per month",
+      "3 design revisions per year",
       "Optional Blog",
-      "Google Analytics Management",
-      "Google Search Console Management",
+      "4 human-authored blog posts per year",
+      "Advanced Analytics Management",
+      "Search Console Management",
       "Support via text/call/email",
     ],
     button: {
@@ -46,7 +49,7 @@ export const standardPricing = [
     features: [
       "Everything in Pro Services",
       "Unlimited revisions",
-      "Complete SEO",
+      "Complete SEO including keyword research",
       "Monthly content strategy",
       "12 human-authored blog posts per year",
       "Google Ads Management",
@@ -101,7 +104,6 @@ export const oneOffPricing = [
     },
   },
   {
-    // Price goes up if bandwidth exceeds 200GB/mo on avg monthly
     name: "Content Creator",
     note: "Let us quote a strategy for you",
     price: "Custom",
@@ -111,7 +113,7 @@ export const oneOffPricing = [
       "Patreon and other monetization integrations",
       "Fourthwall and other commerce integrations",
       "Automatic site and plugin updates",
-      "Support via email",
+      "Choose your own support experience",
     ],
     button: {
       text: "Get Started",

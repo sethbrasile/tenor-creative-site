@@ -12,10 +12,10 @@ const menuitems = [
     title: "About Us",
     path: "/about",
   },
-  // {
-  //   title: "Pricing",
-  //   path: "/pricing",
-  // },
+  {
+    title: "Pricing",
+    path: "/pricing",
+  },
   {
     title: "Contact",
     path: "/contact",
