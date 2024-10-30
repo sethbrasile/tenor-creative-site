@@ -4,6 +4,7 @@
     lastname: "",
     email: "",
     message: "",
+    phone: "",
   });
 
   const result = ref("");
@@ -28,6 +29,7 @@
         form.lastname = "";
         form.email = "";
         form.message = "";
+        form.phone = "";
       } else {
         result.value = json.message;
         errorState.value = true
@@ -77,12 +79,21 @@
         class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
       />
     </div>
+    <div class="mb-5">
+      <input
+        v-model="form.phone"
+        type="text"
+        placeholder="Phone (optional)"
+        class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
+        name="lastname"
+      />
+    </div>
     <div>
       <textarea
         v-model="form.message"
         name="message"
         required
-        placeholder="When are you available for a call?"
+        placeholder="Your message...&#13;&#10;&#13;&#10;How did you hear about us?&#13;&#10;How can we help?"
         class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none h-36 focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
       ></textarea>
     </div>

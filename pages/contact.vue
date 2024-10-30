@@ -1,6 +1,6 @@
 <template>
   <Container>
-    <Sectionhead>
+    <Sectionhead align="center">
       <template v-slot:title>Contact</template>
       <template v-slot:desc>Let's have a chat.</template>
     </Sectionhead>

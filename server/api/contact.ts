@@ -5,7 +5,7 @@ export default defineEventHandler(async (event) => {
   if (!HUBSPOT_API_KEY) throw new Error('HUBSPOT_API_KEY is undefined!! Please provide HUBSPOT_API_KEY to environment!')
 
   const hubspot = new Client({ accessToken: HUBSPOT_API_KEY });
-  const { firstname, lastname, email, message } = await readBody(event);
+  const { firstname, lastname, email, phone, message } = await readBody(event);
 
   // TODO: Add validation and error handling via sentry
 
@@ -16,6 +16,7 @@ export default defineEventHandler(async (event) => {
         lastname,
         email,
         message,
+        phone,
       },
     })
   } catch (error) {
@@ -41,6 +42,7 @@ export default defineEventHandler(async (event) => {
         limit: 1,
         properties: ['id', 'message'],
       });
+      // TODO: Need some kind of notification for this case
       // contact already exists so add new content to contact's message instead of creating a new contact
       const contact = response.results[0]
       await hubspot.crm.contacts.basicApi.update(contact.id, {
