@@ -32,7 +32,7 @@ const open = ref(false);
         <a href="/" class="text-lg content-center grid grid-cols-2 w-14">
           <NuxtPicture
             format="png"
-            src="/img/logo.png"
+            src="/img/logo.svg"
             width="24"
             height="24"
             alt="Tenor"
