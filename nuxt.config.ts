@@ -1,4 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+const title = 'Tenor Creative'
+const description = `Web design, digital marketing, hosting and more`
+const env = process.env.VERCEL_ENV || 'development'
+
 export default defineNuxtConfig({
   compatibilityDate: "2024-10-17",
   devtools: { enabled: true },
@@ -15,7 +19,7 @@ export default defineNuxtConfig({
   ],
   app: {
     head: {
-      title: "Tenor Creative",
+      title,
       link: [
         { rel: "icon", type: "image/png", href: "/favicon-48x48.png", sizes: "48x48" },
         { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
@@ -25,12 +29,22 @@ export default defineNuxtConfig({
       ],
       meta: [
         { name: "keywords", content: "Tenor, Creative, SEO, Website, Landing, Page, App, Development, Custom, Content, Strategy, Security, Marketing, Wordpress, Static, HTML, CSS, Design" },
-        { name: "description", content: "We're here to help you create the best possible experiences for your customers. Stay focused on your business and let us do the web stuff." },
-        { name: "apple-mobile-web-app-title", content: "TenorCreative" },
+        { name: "description", content: description },
+        { name: "apple-mobile-web-app-title", content: title.split(" ")[0] },
       ]
     }
   },
   runtimeConfig: {
     HUBSPOT_API_KEY: process.env.HUBSPOT_API_KEY || '',
+    public: {
+      title,
+      description,
+      isProduction: env === 'production',
+      hero: {
+        alt: 'People sitting in a cafe with laptops happily coding',
+        title: 'Web design, digital marketing, hosting and more',
+        description: `From simple web sites and blogs, all the way to custom app development, we've got you covered.`,
+      },
+    }
   }
 });

@@ -49,6 +49,6 @@ const services = [
     </Sectionhead>
 
     <Features :features="services" />
-    <Hero />
+    <Cta location="Services" />
   </Container>
 </template>

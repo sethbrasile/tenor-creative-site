@@ -1,5 +1,5 @@
 <script setup>
-  const { isProduction } = useRuntimeConfig().public
+  const { isProduction, title, description, heroAlt } = useRuntimeConfig().public
   if (isProduction) {
     useHead({
       script: [
@@ -16,6 +16,18 @@
       ],
     })
   }
+
+  useSeoMeta({
+    ogTitle: title,
+    ogDescription: description,
+    ogImage: {
+      url: '/img/hero.webp',
+      alt: heroAlt,
+      width: 1024,
+      height: 1024,
+    },
+    twitterCard: 'summary'
+  })
 </script>
 
 <template>

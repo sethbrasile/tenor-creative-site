@@ -88,6 +88,6 @@ const team = [
         </NuxtLink>
       </div>
     </div>
-    <Hero />
+    <Cta location="About" />
   </Container>
 </template>

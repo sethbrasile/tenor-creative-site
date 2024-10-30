@@ -27,6 +27,6 @@ const features = [
     <CallOut />
     <Features :features="features"></Features>
     <!-- <Logos></Logos> -->
-    <Cta></Cta>
+    <Cta location="Home"></Cta>
   </Container>
 </template>

@@ -116,7 +116,7 @@ export const oneOffPricing = [
       "Choose your own support experience",
     ],
     button: {
-      text: "Get Started",
+      text: "Contact Us",
       link: "/contact?plan=creator",
     },
   },
