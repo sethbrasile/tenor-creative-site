@@ -5,7 +5,7 @@ const team = [
     title: "Founder, Solutions Engineer and Primary Developer",
     linkedIn: "https://www.linkedin.com/in/seth-brasile-43a315a0/",
     location: "Durant, OK",
-    extra: `Founder of and author at <a target="_blank" class="underline" href="https://bytemycache.com">byteMyCache</a>`,
+    extra: `Founder and author at <a target="_blank" class="underline" href="https://bytemycache.com">byteMyCache</a>`,
     avatar: {
       src: '/img/team/seth.webp',
       width: 400,
@@ -28,7 +28,7 @@ const team = [
     title: "Creative Director and UI/UX Engineer",
     linkedIn: "https://www.linkedin.com/in/derekthomaswood/",
     location: "South Pasadena, CA",
-    extra: `Founder of and mentor/director at <a target="_blank" class="underline" href="https://perpetual.education">perpetual.education</a>`,
+    extra: `Founder, director and mentor at <a target="_blank" class="underline" href="https://perpetual.education">perpetual.education</a>`,
     avatar: {
       src: '/img/team/derek.webp',
       width: 400,
