@@ -10,6 +10,7 @@
         width="428"
         height="428"
         :alt="alt"
+        sizes="428px"
         :imgAttrs="{ class: 'rounded-r-full' }"
       />
     </div>
