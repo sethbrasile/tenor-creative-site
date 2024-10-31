@@ -11,7 +11,7 @@
           Schedule a free consultation
         </h2>
         <p class="text-lg leading-relaxed text-slate-500 mt-3">
-          Let us know what your availability looks like and we'll get back to you asap to schedule a chat.
+          Let us know what your availability looks like and we'll get back to you asap to schedule something.
         </p>
         <div class="mt-5">
           <!-- <div class="flex items-center mt-2 space-x-2 text-gray-600">

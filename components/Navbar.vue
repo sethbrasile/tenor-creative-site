@@ -1,9 +1,5 @@
 <script setup>
 const menuitems = [
-  // {
-  //   title: "Features",
-  //   path: "#",
-  // },
   {
     title: "Services",
     path: "/services",
@@ -15,6 +11,10 @@ const menuitems = [
   {
     title: "Pricing",
     path: "/pricing",
+  },
+  {
+    title: "Locations",
+    path: "/locations",
   },
   {
     title: "Contact",
