@@ -19,6 +19,9 @@ export default defineNuxtConfig({
   ],
   app: {
     head: {
+      htmlAttrs: {
+        lang: 'en',
+      },
       title,
       link: [
         { rel: "icon", type: "image/png", href: "/favicon-48x48.png", sizes: "48x48" },
