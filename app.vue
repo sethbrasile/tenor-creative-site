@@ -1,4 +1,6 @@
 <script setup>
+import { SpeedInsights } from '@vercel/speed-insights/nuxt';
+
   const { isProduction, title, description, heroAlt } = useRuntimeConfig().public
   if (isProduction) {
     useHead({
@@ -31,6 +33,7 @@
 </script>
 
 <template>
+  <SpeedInsights />
   <NuxtRouteAnnouncer />
   <NuxtLayout>
     <NuxtPage />

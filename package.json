@@ -21,5 +21,8 @@
     "vue": "^3.5.12",
     "vue-router": "^4.4.5"
   },
-  "packageManager": "pnpm@8.4.0+sha1.73c608c602d520c436c7b250330315d83ffcc1ee"
+  "packageManager": "pnpm@8.4.0+sha1.73c608c602d520c436c7b250330315d83ffcc1ee",
+  "dependencies": {
+    "@vercel/speed-insights": "^1.0.14"
+  }
 }
