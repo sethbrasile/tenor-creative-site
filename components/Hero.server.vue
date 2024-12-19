@@ -1,8 +1,9 @@
-<script setup>
+<script setup lang="ts">
+  defineProps<{ og: boolean }>()
   const { hero: { title, description, alt } } = useRuntimeConfig().public
 </script>
 <template>
-  <main class="grid md:grid-cols-2 place-items-center pt-16 pb-8 md:pt-8">
+  <main class="grid md:grid-cols-2 place-items-center xs:pt-16 pb-8 md:pt-8" :class="{ 'md:pt-0': og, '-mt-8': og, 'ml-8': og }">
     <div class="p-24 md:order-1 hidden md:block">
       <NuxtPicture
         format="avif,webp"
@@ -21,7 +22,7 @@
       <p class="text-lg mt-4 text-slate-600 max-w-xl">
         {{ description }}
       </p>
-      <div class="mt-6 flex flex-col sm:flex-row gap-3">
+      <div v-if="!og" class="mt-6 flex flex-col sm:flex-row gap-3">
         <CtaLink
           cta-name="Hero"
           href="/contact"
