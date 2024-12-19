@@ -44,6 +44,13 @@ export default defineNuxtConfig({
     name: title,
     description,
   },
+  // ogImage: {
+  //   compatibility: {
+  //     prerender: {
+  //       chromium: false
+  //     }
+  //   },
+  // },
   runtimeConfig: {
     HUBSPOT_API_KEY: process.env.HUBSPOT_API_KEY || '',
     public: {

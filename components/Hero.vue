@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  defineProps<{ og: boolean }>()
+  defineProps<{ og?: boolean }>()
   const { hero: { title, description, alt } } = useRuntimeConfig().public
 </script>
 <template>

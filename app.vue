@@ -1,7 +1,7 @@
 <script setup>
 import { SpeedInsights } from '@vercel/speed-insights/nuxt';
 
-  const { isProduction } = useRuntimeConfig().public
+  const { isProduction, title, description, hero } = useRuntimeConfig().public
   if (isProduction) {
     useHead({
       script: [
@@ -19,12 +19,24 @@ import { SpeedInsights } from '@vercel/speed-insights/nuxt';
     })
   }
 
-  defineOgImage({
-    component: 'Hero',
-    renderer: 'chromium',
-    props: {
-      og: true,
-    }
+  // defineOgImage({
+  //   component: 'Hero',
+  //   renderer: 'chromium',
+  //   props: {
+  //     og: true,
+  //   }
+  // })
+
+  useSeoMeta({
+    ogTitle: title,
+    ogDescription: description,
+    ogImage: {
+      url: '/img/hero.webp',
+      alt: hero.alt,
+      width: 1024,
+      height: 1024,
+    },
+    twitterCard: 'summary'
   })
 </script>
 
