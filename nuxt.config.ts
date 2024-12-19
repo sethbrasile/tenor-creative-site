@@ -2,6 +2,7 @@
 const title = 'Tenor Creative'
 const description = `Web design, digital marketing, hosting and more`
 const env = process.env.VERCEL_ENV || 'development'
+const isProduction = env === 'production'
 
 export default defineNuxtConfig({
   compatibilityDate: "2024-10-17",
@@ -16,6 +17,7 @@ export default defineNuxtConfig({
   modules: [
     "nuxt-icon",
     "@nuxt/image",
+    "@nuxtjs/seo",
   ],
   app: {
     head: {
@@ -37,17 +39,22 @@ export default defineNuxtConfig({
       ]
     }
   },
+  site: {
+    url: isProduction ? "https://tenorcreative.com" : "http://localhost:3000",
+    name: title,
+    description,
+  },
   runtimeConfig: {
     HUBSPOT_API_KEY: process.env.HUBSPOT_API_KEY || '',
     public: {
       title,
       description,
-      isProduction: env === 'production',
+      isProduction,
       hero: {
+        title,
         alt: 'People sitting in a cafe with laptops happily coding',
-        title: 'Web design, digital marketing, hosting and more',
         description: `From simple web sites and blogs, all the way to custom app development, we've got you covered.`,
       },
     }
-  }
+  },
 });
