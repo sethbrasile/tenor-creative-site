@@ -14,15 +14,15 @@
     "@nuxt/image": "^1.8.1",
     "@tailwindcss/typography": "^0.5.15",
     "autoprefixer": "^10.4.20",
-    "nuxt": "^3.13.2",
+    "nuxt": "^3.14.1592",
     "nuxt-icon": "^0.6.10",
-    "postcss": "^8.4.47",
-    "tailwindcss": "^3.4.14",
-    "vue": "^3.5.12",
-    "vue-router": "^4.4.5"
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
   },
   "packageManager": "pnpm@8.4.0+sha1.73c608c602d520c436c7b250330315d83ffcc1ee",
   "dependencies": {
-    "@vercel/speed-insights": "^1.0.14"
+    "@vercel/speed-insights": "^1.1.0"
   }
 }
