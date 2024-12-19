@@ -2,7 +2,7 @@
   const { hero: { title, description, alt } } = useRuntimeConfig().public
 </script>
 <template>
-  <main class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-8">
+  <main class="grid md:grid-cols-2 place-items-center pt-16 pb-8 md:pt-8">
     <div class="p-24 md:order-1 hidden md:block">
       <NuxtPicture
         format="avif,webp"
