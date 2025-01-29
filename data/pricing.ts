@@ -1,7 +1,7 @@
 export const standardPricing = [
   {
     name: "Turnkey Site",
-    note: "12 month commitment",
+    note: "+ Hosting (below), 12 month commitment",
     price: {
       monthly: "$197",
       // original: "$600",
@@ -12,7 +12,7 @@ export const standardPricing = [
       "1 design revision per year",
       "Dynamic reviews embed",
       "Technical + Local SEO",
-      "Google 'My Business' Management",
+      "Google Business Profile Management",
       "Analytics",
       "Support via email",
     ],
@@ -23,6 +23,7 @@ export const standardPricing = [
   },
   {
     name: "Pro Services",
+    note: "+ Hosting (below), 12 month commitment",
     price: {
       monthly: "$697",
       // original: "$1200",
@@ -35,7 +36,7 @@ export const standardPricing = [
       "4 human-authored blog posts per year",
       "Advanced Analytics Management",
       "Search Console Management",
-      "Support via text/call/email",
+      "Support via ticketing system",
     ],
     button: {
       text: "Get Started",
@@ -51,7 +52,8 @@ export const standardPricing = [
       "Unlimited revisions",
       "Complete SEO including keyword research",
       "Monthly content strategy",
-      "12 human-authored blog posts per year",
+      "Up to 12 human-authored blog posts per year",
+      "Advanced Google Business Profile management",
       "Google Ads Management",
       "Choose your own support experience",
     ],
@@ -66,7 +68,7 @@ export const oneOffPricing = [
   {
     name: "New Site",
     price: "$4,795",
-    note: "One time + optional $29/mo hosting",
+    // note: "One time",
     popular: false,
     features: [
       "Up to 8 pages",
@@ -94,8 +96,8 @@ export const oneOffPricing = [
       "Best possible performance",
       "Wordpress OR static HTML",
       "Automatic updates",
-      "Automatic daily backups",
-      "Includes Staging Site",
+      "Automatic daily backups (WP)",
+      "Includes Staging Site (WP)",
       "Support via email",
     ],
     button: {
