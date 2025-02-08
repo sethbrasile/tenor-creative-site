@@ -14,7 +14,7 @@ const team = [
   },
   {
     name: "Michele Pulec",
-    title: "Sales and Customer Success",
+    title: "Bizdev, Sales and Customer Success",
     linkedIn: "https://www.linkedin.com/in/michelepulec/",
     location: "Gainesville, TX",
     avatar: {
@@ -37,7 +37,7 @@ const team = [
   },
   {
     name: "Noah Weir",
-    title: "Security and Operations Engineer",
+    title: "Security Director and Infrastructure Engineer",
     linkedIn: "https://www.linkedin.com/in/noahweir/",
     location: "Potterville, MI",
     avatar: {

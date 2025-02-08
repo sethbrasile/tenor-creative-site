@@ -1,3 +1,16 @@
+<script setup lang="ts">
+import { prices } from '~/data/pricing';
+const route = useRoute()
+const { plan } = route.query
+
+const subject = computed(() => {
+  if (plan) {
+    return 'Interested in ' + prices.find((price) => price.shortName === plan)?.name
+  }
+  return ''
+})
+</script>
+
 <template>
   <Container>
     <Sectionhead align="center">
@@ -20,7 +33,7 @@
           </div> -->
           <div class="flex items-center mt-2 space-x-2 text-gray-600">
             <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" /><a
-              href="mailto:sales@tenorcreative.com"
+              :href="`mailto:sales@tenorcreative.com?subject=${subject}`"
               >sales@tenorcreative.com</a
             >
           </div>

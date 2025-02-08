@@ -1,90 +1,120 @@
-export const standardPricing = [
+export interface Price {
+  shortName: string;
+  available: boolean;
+  name: string;
+  note?: string;
+  price: string | {
+    monthly: string;
+    original?: string;
+    compare?: string;
+  };
+  popular: boolean;
+  features: string[];
+  button: {
+    text: string;
+    link: string;
+  };
+}
+
+export const standardPricing: Price[] = [
   {
-    name: "Turnkey Site",
-    note: "+ Hosting (below), 12 month commitment",
+    shortName: "basic",
+    available: true,
+    name: "Turnkey site",
+    note: "+ one-time $300 setup fee",
     price: {
-      monthly: "$197",
-      // original: "$600",
+      monthly: "$229",
     },
     popular: true,
     features: [
-      "Everything in the New Site service (below)",
+      "Custom site (static)",
+      "Hosting (static)",
+      "Basic Google Business Profile",
       "1 design revision per year",
-      "Dynamic reviews embed",
+      "Contact form",
       "Technical + Local SEO",
-      "Google Business Profile Management",
-      "Analytics",
-      "Support via email",
+      "Basic Analytics (Umami)",
     ],
     button: {
       text: "Get Started",
-      link: "/contact?plan=turnkey",
+      link: "/contact",
     },
   },
   {
-    name: "Pro Services",
-    note: "+ Hosting (below), 12 month commitment",
+    shortName: "blog",
+    available: true,
+    name: "Turnkey blog",
+    note: "+ one-time $300 setup fee",
     price: {
-      monthly: "$697",
+      monthly: "$449",
       // original: "$1200",
     },
     popular: false,
     features: [
-      "Everything in the Turnkey Site plan",
-      "3 design revisions per year",
-      "Optional Blog",
-      "4 human-authored blog posts per year",
-      "Advanced Analytics Management",
-      "Search Console Management",
-      "Support via ticketing system",
+      "Turnkey site",
+      "SEO-optimized blog",
+      "Content helps you list higher",
+      "Static HTML (even though it's a blog!)",
+      "Optional Google Analytics",
+      // "Support via ticketing system",
     ],
     button: {
       text: "Get Started",
-      link: "/contact?plan=pro",
+      link: "/contact",
     },
   },
   {
-    name: "Enterprise",
-    price: "Custom",
+    shortName: "advanced",
+    available: false,
+    name: "Advanced SEO and content",
+    note: "NO commitment",
+    price: {
+      monthly: "$2997",
+    },
     popular: false,
     features: [
-      "Everything in Pro Services",
-      "Unlimited revisions",
-      "Complete SEO including keyword research",
-      "Monthly content strategy",
-      "Up to 12 human-authored blog posts per year",
-      "Advanced Google Business Profile management",
-      "Google Ads Management",
-      "Choose your own support experience",
+      "Turnkey blog",
+      "Advanced Google Business Profile",
+      "Monthly SEO audits",
+      "Monthly SEO reports",
+      "Search Console Management",
+      "Data-driven content strategy",
+      "1 Human-authored blog post monthly",
+      "Advanced Analytics (your choice)",
     ],
     button: {
-      text: "Contact us",
-      link: "/contact?plan=enterprise",
+      text: "Get Started",
+      link: "/contact",
     },
-  },
+  }
 ];
 
-export const oneOffPricing = [
+export const oneOffPricing: Price[] = [
   {
-    name: "New Site",
-    price: "$4,795",
-    // note: "One time",
+    shortName: "advance-gmb",
+    available: true,
+    name: "Advanced Google Business Profile",
+    price: {
+      monthly: "$129",
+      compare: "$400/mo",
+    },
     popular: false,
     features: [
-      "Up to 8 pages",
-      "Static site (optimal performance)",
-      "Logo design",
-      "Custom site design",
-      "Up to 3 revisions",
-      "Static reviews embed",
+      "Fully managed GMB",
+      "Managed by experts",
+      "Get more calls and visits",
+      "Curate real reviews from your customers",
+      "Citation management",
     ],
     button: {
       text: "Get Started",
-      link: "/contact?plan=new-site",
+      link: "/contact",
     },
   },
   {
     // Price goes up if bandwidth exceeds 200GB/mo on avg monthly
+    shortName: "hosting",
+    available: true,
     name: "Hosting",
     note: "+ one-time $300 setup fee",
     price: {
@@ -95,31 +125,78 @@ export const oneOffPricing = [
       "Fully managed hosting",
       "Best possible performance",
       "Wordpress OR static HTML",
-      "Automatic updates",
+      "Bot Protection",
+      "Automatic updates (WP)",
       "Automatic daily backups (WP)",
       "Includes Staging Site (WP)",
-      "Support via email",
+      // "Support via email",
     ],
     button: {
       text: "Get Started",
-      link: "/contact?plan=hosting",
+      link: "/contact",
     },
   },
   {
-    name: "Content Creator",
-    note: "Let us quote a strategy for you",
-    price: "Custom",
+    shortName: "custom",
+    available: true,
+    name: "Custom site",
+    price: "$4,795",
+    note: "Non-recurring",
     popular: false,
     features: [
-      "Everything in the Hosting plan",
-      "Patreon and other monetization integrations",
-      "Fourthwall and other commerce integrations",
-      "Automatic site and plugin updates",
-      "Choose your own support experience",
+      "Up to 8 pages",
+      "Custom static site",
+      "OR custom WP theme",
+      "Logo design or HD upgrade",
+      "Up to 3 revisions",
+      "Static reviews embed",
     ],
     button: {
-      text: "Contact Us",
-      link: "/contact?plan=creator",
+      text: "Get Started",
+      link: "/contact",
+    },
+  },
+  {
+    shortName: "leadgen",
+    available: false,
+    name: "Warm lead gen",
+    price: "$1497/mo",
+    note: "NO commitment",
+    popular: false,
+    features: [
+      "High converting leads every month",
+      "No commitment",
+      "State of the art automated AI system",
+      "Guaranteed to impress",
+      "Already warm when you get them",
+    ],
+    button: {
+      text: "Contact us",
+      link: "/contact",
+    },
+  },
+  {
+    shortName: "full",
+    available: false,
+    name: "Full digital marketing suite",
+    price: "$5497/mo",
+    note: "NO commitment",
+    popular: false,
+    features: [
+      "Includes Everything you see on this page",
+      "No commitment",
+      "Campaigns tailored to your business",
+      "Funnel optimization and tracking",
+      "CRM integration",
+    ],
+    button: {
+      text: "Contact us",
+      link: "/contact",
     },
   },
 ]
+
+export const prices: Price[] = [
+  ...standardPricing,
+  ...oneOffPricing,
+];

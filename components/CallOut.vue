@@ -6,7 +6,7 @@
     },
     tagline: {
       type: String,
-      default: "Let us do the web stuff.",
+      default: "We bring the customers to you.",
     },
   })
 </script>

@@ -60,7 +60,7 @@ export default defineNuxtConfig({
       hero: {
         title,
         alt: 'People sitting in a cafe with laptops happily coding',
-        description: `From simple web sites and blogs, all the way to custom app development, we've got you covered.`,
+        description: `Beautiful and performant web sites, advanced SEO and content strategies, and high-converting leads. Let us take your business to the next level.`,
       },
     }
   },

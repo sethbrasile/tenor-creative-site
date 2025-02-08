@@ -16,10 +16,10 @@ const menuitems = [
     title: "Locations",
     path: "/locations",
   },
-  {
-    title: "Sample Sites",
-    path: "/sample-sites",
-  },
+  // {
+  //   title: "Sample Sites",
+  //   path: "/sample-sites",
+  // },
   {
     title: "Contact",
     path: "/contact",

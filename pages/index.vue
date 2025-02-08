@@ -15,7 +15,7 @@ const features = [
   {
     title: "Content",
     description:
-      "Content is how you stand out from your competition on the web. We provide content management services, or we can even write content for you.",
+      "Content is how you stand out from your competition on the web. We provide data-driven content strategies, or we can even write content for you.",
     icon: "bx:book-content",
   },
 ];
