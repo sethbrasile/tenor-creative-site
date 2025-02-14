@@ -70,9 +70,10 @@ export const standardPricing: Price[] = [
     available: false,
     name: "Advanced SEO and content",
     note: "NO commitment",
-    price: {
-      monthly: "$2997",
-    },
+    price: "TBD",
+    // price: {
+    //   // monthly: "$2997",
+    // },
     popular: false,
     features: [
       "Turnkey blog",
@@ -159,10 +160,30 @@ export const oneOffPricing: Price[] = [
     },
   },
   {
+    shortName: "content",
+    available: true,
+    name: "Content writing",
+    price: "$.09/word",
+    note: "Non-recurring",
+    popular: false,
+    features: [
+      "SEO-optimized content",
+      "Human-authored",
+      "Up to 2 revisions",
+      "Up to 1,000 words",
+      "Turnaround: 1 week",
+    ],
+    button: {
+      text: "Get Started",
+      link: "/contact",
+    },
+  },
+  {
     shortName: "leadgen",
     available: false,
     name: "Warm lead gen",
-    price: "$1497/mo",
+    price: "TBD",
+    // price: "$1497/mo",
     note: "NO commitment",
     popular: false,
     features: [
@@ -181,7 +202,8 @@ export const oneOffPricing: Price[] = [
     shortName: "full",
     available: false,
     name: "Full digital marketing suite",
-    price: "$5497/mo",
+    // price: "$5497/mo",
+    price: "TBD",
     note: "NO commitment",
     popular: false,
     features: [
