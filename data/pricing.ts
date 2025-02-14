@@ -53,8 +53,10 @@ export const standardPricing: Price[] = [
     features: [
       "Turnkey site",
       "SEO-optimized blog",
-      "Content helps you list higher",
+      "Content dramatically helps SEO",
       "Static HTML (even though it's a blog!)",
+      "Built-in CMS",
+      "Optional comments system",
       "Optional Google Analytics",
       // "Support via ticketing system",
     ],

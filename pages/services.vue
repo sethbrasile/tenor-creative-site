@@ -13,5 +13,17 @@ import { services } from '~/data/services';
 
     <Features :features="services" />
     <Cta location="Services" />
+    <Sectionhead>
+      <template v-slot:title>Performance</template>
+      <template v-slot:desc>
+        Take a look at THIS site's performance <NuxtLink class="underline" to="https://gtmetrix.com/reports/tenorcreative.com/F5MMuECT/" target="_blank">on GTmetrix.</NuxtLink>
+      </template>
+    </Sectionhead>
+    <NuxtImg
+      src="/img/gtmetrix.png"
+      alt="Services"
+      width="800"
+      height="600"
+      class="mx-auto mt-12" />
   </Container>
 </template>
