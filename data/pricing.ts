@@ -83,8 +83,8 @@ export const standardPricing: Price[] = [
       "Monthly SEO reports",
       "Search Console Management",
       "Data-driven content strategy",
-      "1 Human-authored blog post monthly",
-      "Advanced Analytics (your choice)",
+      "Human authored blog post every month",
+      "Advanced Analytics",
     ],
     button: {
       text: "Get Started",
