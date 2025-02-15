@@ -28,8 +28,9 @@ export const standardPricing: Price[] = [
     popular: true,
     features: [
       "Custom site (static)",
-      "Hosting (static)",
+      "Hosting included",
       "Basic Google Business Profile",
+      "Unlimited small edits",
       "1 design revision per year",
       "Contact form",
       "Technical + Local SEO",
@@ -121,7 +122,7 @@ export const oneOffPricing: Price[] = [
     name: "Hosting",
     note: "+ one-time $300 setup fee",
     price: {
-      monthly: "$29",
+      monthly: "$49",
     },
     popular: false,
     features: [
@@ -147,6 +148,7 @@ export const oneOffPricing: Price[] = [
     note: "Non-recurring",
     popular: false,
     features: [
+      "Own your source code",
       "Up to 8 pages",
       "Custom static site",
       "OR custom WP theme",
