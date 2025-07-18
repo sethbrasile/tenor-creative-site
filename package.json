@@ -14,7 +14,7 @@
     "@nuxt/image": "^1.8.1",
     "@tailwindcss/typography": "^0.5.15",
     "autoprefixer": "^10.4.20",
-    "nuxt": "^3.14.1592",
+    "nuxt": "^3.17.7",
     "nuxt-icon": "^0.6.10",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.17",
@@ -23,7 +23,7 @@
   },
   "packageManager": "pnpm@8.4.0+sha1.73c608c602d520c436c7b250330315d83ffcc1ee",
   "dependencies": {
-    "@nuxtjs/seo": "^2.0.2",
+    "@nuxtjs/seo": "^3.1.0",
     "@vercel/speed-insights": "^1.1.0"
   }
 }
