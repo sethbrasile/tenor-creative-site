@@ -5,7 +5,7 @@ const env = process.env.VERCEL_ENV || 'development'
 const isProduction = env === 'production'
 
 export default defineNuxtConfig({
-  compatibilityDate: "2024-10-17",
+  compatibilityDate: "2025-07-18",
   devtools: { enabled: true },
   css: ["~/assets/css/main.css"],
   postcss: {
@@ -14,11 +14,7 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: [
-    "nuxt-icon",
-    "@nuxt/image",
-    "@nuxtjs/seo",
-  ],
+  modules: ["@nuxt/image", "@nuxtjs/seo", "@nuxt/icon"],
   app: {
     head: {
       htmlAttrs: {

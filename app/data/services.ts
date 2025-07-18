@@ -36,9 +36,6 @@ export const services = [
       "You only get one chance to make a first impression and we can know your website will attract local customers when working with us.<br /><br />Websites need to be both beautiful and functional and our websites are both.<br /><br />If your site does not properly convey your brand, services, products and calls to action it is no better than a printed brochure sitting in a draw.<br /><br />We can make sure this does not happen by leveraging our website build best practices gained through years of experience and 1000s of sites.",
     icon: "bx:bxs-palette",
   },
-  {
-    title: "Website Development",
-  }
   // {
   //   title: "Content Strategy",
   //   description:
