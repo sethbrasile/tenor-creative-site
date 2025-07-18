@@ -7,7 +7,7 @@
     <div class="p-24 md:order-1 hidden md:block">
       <NuxtPicture
         format="avif,webp"
-        src="/img/hero.webp"
+        src="/img/hero.png"
         width="428"
         height="428"
         :alt="alt"

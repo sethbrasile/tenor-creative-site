@@ -31,7 +31,7 @@ import { SpeedInsights } from '@vercel/speed-insights/nuxt';
     ogTitle: title,
     ogDescription: description,
     ogImage: {
-      url: '/img/hero.webp',
+      url: '/img/hero-text.png',
       alt: hero.alt,
       width: 1024,
       height: 1024,

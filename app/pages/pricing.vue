@@ -1,5 +1,9 @@
 <script setup>
 import { standardPricing, oneOffPricing } from '~/data/pricing';
+
+useSeoMeta({
+  title: "Pricing",
+})
 </script>
 
 <template>

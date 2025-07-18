@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 const title = 'Tenor Creative'
-const description = `Web design, digital marketing, hosting and more`
+const description = `We help service businesses leverage proven marketing systems to get rapid and consistent growth.`
 const env = process.env.VERCEL_ENV || 'development'
 const isProduction = env === 'production'
 
@@ -29,7 +29,7 @@ export default defineNuxtConfig({
         { rel: "manifest", href: "/site.webmanifest" },
       ],
       meta: [
-        { name: "keywords", content: "Tenor, Creative, SEO, Website, Landing, Page, App, Development, Custom, Content, Strategy, Security, Marketing, Wordpress, Static, HTML, CSS, Design" },
+        { name: "keywords", content: "Tenor Creative, SEO, Website, Landing Page, App, Development, Developer, Custom, Content, Strategy, Digital Marketing, Systems, Wordpress, Static, HTML, CSS, Design" },
         { name: "description", content: description },
         { name: "apple-mobile-web-app-title", content: title.split(" ")[0] },
       ]
@@ -55,8 +55,8 @@ export default defineNuxtConfig({
       isProduction,
       hero: {
         title,
-        alt: 'People sitting in a cafe with laptops happily coding',
-        description: `Beautiful and performant web sites, advanced SEO and content strategies, and high-converting leads. Let us take your business to the next level.`,
+        alt: 'A home service pro, dreaming of a care-free relationship with their customers through technology',
+        description,
       },
     }
   },

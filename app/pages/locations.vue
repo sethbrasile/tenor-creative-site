@@ -28,6 +28,10 @@
       },
     },
   ]
+
+  useSeoMeta({
+    title: "Locations",
+  })
 </script>
 
 <template>

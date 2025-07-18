@@ -22,13 +22,13 @@ export const services = [
     title: "Social Media",
     description:
       "Social media is a powerful tool for building your brand and engaging with your audience. We can help you create a social media strategy that will help you reach your goals.",
-    icon: "bx:bxs-social",
+    icon: "bxl:facebook-square",
   },
   {
     title: "Retargeting",
     description:
       "You know those ads that follow you around the internet after you have been browsing, we can make those happen for your business.<br /><br />Retargeting customers that visit your site and digital assets has proven unparalleled ROI for any business.<br /><br />We can help you manage your full customer lifecycle marketing strategy while making your brand look like the big guys on sites like the Wall Street Journal, CNN, and others at very low cost.<br /><br />Don't miss a no brainer opportunity to advance your Local Brand. Those that get it (digital marketing) will thrive and then there will be everyone else.",
-    icon: "bx:bxs-target",
+    icon: "bx:target-lock",
   },
   {
     title: "Website Design",

@@ -25,6 +25,10 @@ const features = [
   //   icon: "bx:book-content",
   // },
 ];
+
+useSeoMeta({
+  title: "",
+})
 </script>
 
 <template>

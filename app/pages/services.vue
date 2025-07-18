@@ -1,5 +1,9 @@
 <script setup>
 import { services } from '~/data/services';
+
+useSeoMeta({
+  title: "Services",
+})
 </script>
 
 <template>

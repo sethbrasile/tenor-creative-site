@@ -24,6 +24,9 @@
       url: "https://static-blog-example-1.tenorcreative.com",
     },
   ]
+  useSeoMeta({
+    title: "Sample Sites",
+  })
 </script>
 
 <template>

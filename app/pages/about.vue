@@ -2,7 +2,7 @@
 const team = [
   {
     name: "Seth Brasile",
-    title: "Founder, Solutions Engineer and Primary Developer",
+    title: "Founder, Marketing Systems Developer",
     linkedIn: "https://www.linkedin.com/in/seth-brasile-43a315a0/",
     location: "Durant, OK",
     extra: `Founder and author at <a target="_blank" class="underline" href="https://bytemycache.com">byteMyCache</a>`,
@@ -12,32 +12,33 @@ const team = [
       height: 400,
     },
   },
-  {
-    name: "Michele Pulec",
-    title: "Bizdev, Sales and Customer Success",
-    linkedIn: "https://www.linkedin.com/in/michelepulec/",
-    location: "Gainesville, TX",
-    avatar: {
-      src: '/img/team/michele.webp',
-      width: 400,
-      height: 400,
-    },
-  },
-  {
-    name: "Derek Wood",
-    title: "Creative Director and UI/UX Engineer",
-    linkedIn: "https://www.linkedin.com/in/derekthomaswood/",
-    location: "South Pasadena, CA",
-    extra: `Founder, director and mentor at <a target="_blank" class="underline" href="https://perpetual.education">perpetual.education</a>`,
-    avatar: {
-      src: '/img/team/derek.webp',
-      width: 400,
-      height: 400,
-    },
-  },
+  // {
+  //   name: "Michele Pulec",
+  //   title: "Bizdev, Sales and Customer Success",
+  //   linkedIn: "https://www.linkedin.com/in/michelepulec/",
+  //   location: "Gainesville, TX",
+  //   avatar: {
+  //     src: '/img/team/michele.webp',
+  //     width: 400,
+  //     height: 400,
+  //   },
+  // },
+  // {
+  //   name: "Derek Wood",
+  //   title: "Creative Director and UI/UX Engineer",
+  //   linkedIn: "https://www.linkedin.com/in/derekthomaswood/",
+  //   location: "South Pasadena, CA",
+  //   extra: `Founder, director and mentor at <a target="_blank" class="underline" href="https://perpetual.education">perpetual.education</a>`,
+  //   avatar: {
+  //     src: '/img/team/derek.webp',
+  //     width: 400,
+  //     height: 400,
+  //   },
+  // },
   {
     name: "Noah Weir",
-    title: "Security Director and Infrastructure Engineer",
+    title: "Wordpress Expert, Security Specialist",
+    extra: "We do our best to steer folks away from Wordpress where we can, but sometimes Wordpress is the best solution, and Noah is the best man to manage it.",
     linkedIn: "https://www.linkedin.com/in/noahweir/",
     location: "Potterville, MI",
     avatar: {
@@ -47,6 +48,10 @@ const team = [
     },
   }
 ];
+
+useSeoMeta({
+  title: "About Us",
+})
 </script>
 
 <template>
@@ -54,12 +59,7 @@ const team = [
     <Sectionhead>
       <template v-slot:title>About us</template>
       <template v-slot:desc>
-        <p>Our team has built, hosted, maintained, and consulted for many successful sites, SaaS products, mobile apps, and more.</p>
-
-        <p>
-          We specialize in recognizing your unique needs and tailoring our solutions to meet them. We're here to find a solution that provides the best possible experience for your customers, and the highest
-          possible ROI.
-        </p>
+        <p>Our team has built, hosted, maintained, and consulted for many successful sites, SaaS products, mobile apps and ecommerce stores.</p>
       </template>
     </Sectionhead>
 

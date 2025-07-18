@@ -9,6 +9,11 @@ const subject = computed(() => {
   }
   return ''
 })
+
+useSeoMeta({
+  title: "Contact Us",
+  description: "Let's have a chat.",
+})
 </script>
 
 <template>
