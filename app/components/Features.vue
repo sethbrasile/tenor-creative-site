@@ -8,10 +8,10 @@ defineProps({
 </script>
 
 <template>
-  <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  <div class="grid sm:grid-cols-2 md:grid-cols-4 mt-16 gap-16">
     <div v-for="item of features" class="flex gap-4 items-start">
-      <div class="bg-black rounded-full p-2 w-8 h-8 shrink-0">
-        <Icon class="text-white -translate-y-0.5" :name="item.icon" />
+      <div class="bg-black rounded-full p-2 w-10 h-10 shrink-0">
+        <Icon class="text-white -translate-y-1 -translate-x-0.5 text-3xl" :name="item.icon" />
       </div>
       <div>
         <h3 class="font-semibold text-lg">{{ item.title }}</h3>

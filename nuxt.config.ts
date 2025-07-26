@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 const title = 'Tenor Creative'
-const description = `We help service businesses leverage proven marketing systems to get rapid and consistent growth.`
+const description = `We help service businesses of any size leverage proven systems to get rapid and consistent growth.`
 const env = process.env.VERCEL_ENV || 'development'
 const isProduction = env === 'production'
 
@@ -55,7 +55,7 @@ export default defineNuxtConfig({
       isProduction,
       hero: {
         title,
-        alt: 'A home service pro, dreaming of a care-free relationship with their customers through technology',
+        alt: 'A home service pro, dreaming of a care-free relationship with his customers, empowered by technology',
         description,
       },
     }

@@ -4,7 +4,7 @@
 </script>
 <template>
   <main class="grid md:grid-cols-2 place-items-center xs:pt-16 pb-8 md:pt-8" :class="{ 'md:pt-0': og, '-mt-8': og, 'ml-8': og }">
-    <div class="p-24 md:order-1 hidden md:block">
+    <div class="my-8 md:my-0 md:p-24 md:order-1">
       <NuxtPicture
         format="avif,webp"
         src="/img/hero.png"
@@ -12,7 +12,7 @@
         height="428"
         :alt="alt"
         sizes="428px"
-        :imgAttrs="{ class: 'rounded-r-full' }"
+        :imgAttrs="{ class: 'border-4 border-black rounded-md shadow-lg' }"
       />
     </div>
     <div>
