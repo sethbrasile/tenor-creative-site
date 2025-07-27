@@ -75,7 +75,7 @@ export const standardPricing: Price[] = [
     shortName: "business-plus",
     available: true,
     name: "Business Plus",
-    note: "+ one-time $599 setup fee",
+    note: "+ one-time $499 setup fee",
     price: {
       monthly: "$197",
       yearly: "$1,970",
@@ -83,7 +83,7 @@ export const standardPricing: Price[] = [
     },
     popular: false,
     features: [
-      "Everything in Business",
+      "All features in Business",
       "GBP Call tracking",
       "Email marketing",
       "Reputation management",
@@ -105,7 +105,7 @@ export const standardPricing: Price[] = [
   {
     shortName: "all-in",
     available: true,
-    name: "All-in Rapid Growth System",
+    name: "All-in Growth System",
     note: "+ one-time $1999 setup fee",
     price: {
       monthly: "$297",
@@ -114,7 +114,7 @@ export const standardPricing: Price[] = [
     },
     popular: false,
     features: [
-      "Everything in Business Plus",
+      "All features in Business Plus",
       "Automated lead nurturing",
       "AI Google Business Profile",
       "AI reputation management",
@@ -130,7 +130,7 @@ export const standardPricing: Price[] = [
       "15,000 Emails",
     ],
     button: {
-      text: "Go ALL IN on rapid Growth",
+      text: "I'm ready to go ALL IN on growing my business",
       link: "/contact",
     },
   },
@@ -140,7 +140,7 @@ export const oneOffPricing: Price[] = [
   {
     shortName: "website",
     available: true,
-    name: "Just a great Website",
+    name: "High Converting Website",
     note: "+ one-time $299 setup fee",
     price: {
       monthly: "$47",
@@ -151,7 +151,7 @@ export const oneOffPricing: Price[] = [
       "Optimized to convert",
       "Customized template-based site",
       "Hosting included",
-      "Follows all best practices",
+      "Follows all marketing best practices",
       "Growth system ready (See FAQ below)",
       "No compromises (See FAQ below)",
     ],
@@ -163,19 +163,24 @@ export const oneOffPricing: Price[] = [
   {
     shortName: "custom-website",
     available: true,
-    name: "Fully Custom Website",
+    name: "Custom Static Website",
     note: "+ one-time $299 setup fee",
     price: {
-      monthly: "$197",
-      yearly: "$1,970",
+      monthly: "$297",
+      yearly: "$2,970",
     },
     popular: false,
     features: [
-      "Custom static site",
-      "Built using the latest technologies",
-      "Best hosting on the planet",
+      "Custom designed static site",
       "Google Business Profile",
-      "Technical + Local SEO",
+      "Best in the industry",
+      "Built using the latest technologies",
+      "Lightning fast",
+      "Best hosting on the planet",
+      "Perfect technical SEO",
+      "Perfect core web vitals",
+      "Fully responsive",
+      "Fully accessible",
       // "Basic Analytics (Umami)",
     ],
     button: {
@@ -245,9 +250,9 @@ export const oneOffPricing: Price[] = [
     },
     popular: false,
     features: [
-      "Must add to a website plan",
       "Fully managed blog",
       "Full CMS capabilities",
+      "Can add to any plan",
     ],
     button: {
       text: "Get a custom blog",
