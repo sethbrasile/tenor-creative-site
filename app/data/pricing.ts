@@ -7,6 +7,7 @@ export interface Price {
     monthly: string;
     original?: string;
     compare?: string;
+    note?: string;
   };
   popular: boolean;
   features: string[];
@@ -18,21 +19,137 @@ export interface Price {
 
 export const standardPricing: Price[] = [
   {
-    shortName: "basic",
+    shortName: "business",
     available: true,
-    name: "Turnkey site",
-    note: "+ one-time $300 setup fee",
+    name: "Business Plan",
+    note: "+ one-time $299 setup fee",
     price: {
-      monthly: "$229",
+      monthly: "$97",
+      note: "3 team members included",
     },
     popular: true,
     features: [
-      "Custom site (static)",
+      "High Converting Website",
+      "Hosting",
+      "Web Chat + AI Chatbot",
+      "AI Answering Service",
+      "Lead list generation",
+      "Review generation",
+      "Reputation management",
+      "Missed call text-back",
+      "Phone and SMS",
+      "Unified inbox (SMS/Email/Chat/Social)",
+      "Birthday Funnels",
+      "Birthday Resell Campaigns",
+    ],
+    button: {
+      text: "Get Started",
+      link: "/contact",
+    },
+  },
+  // {
+  //   shortName: "business+site",
+  //   available: true,
+  //   name: "Business + Custom Site",
+  //   note: "+ one-time $599 setup fee",
+  //   price: {
+  //     monthly: "$197",
+  //     // original: "$1200",
+  //   },
+  //   popular: false,
+  //   features: [
+  //     "Everything in the Business Plan",
+  //     "+ Fully Custom static website (below)",
+  //     "Google Analytics"
+  //   ],
+  //   button: {
+  //     text: "Get Started",
+  //     link: "/contact",
+  //   },
+  // },
+  {
+    shortName: "business+",
+    available: true,
+    name: "Business Plus",
+    note: "+ one-time $599 setup fee",
+    price: {
+      monthly: "$197",
+    },
+    popular: false,
+    features: [
+      "Everything in the Business Plan",
+      "Call Tracking",
+      "Payments and Invoicing",
+      "Text-to-Pay",
+      "Tap to Pay",
+    ],
+    button: {
+      text: "Get Started",
+      link: "/contact",
+    },
+  },
+  {
+    shortName: "all-in",
+    available: true,
+    name: "All-in Growth System",
+    note: "+ one-time $1999 setup fee",
+    price: {
+      monthly: "$297",
+      note: "3 team members included",
+    },
+    popular: false,
+    features: [
+      "Everything in Business Plan + Custom Site",
+      "Everything in \"The AI Assist\" (below)",
+      "Automated lead nurturing",
+      "Call tracking",
+      "Payments and Invoicing",
+      "Booking / Calendar",
+    ],
+    button: {
+      text: "Go All-in on Growth",
+      link: "/contact",
+    },
+  },
+];
+
+export const oneOffPricing: Price[] = [
+  {
+    shortName: "website",
+    available: true,
+    name: "Just a great Website",
+    note: "+ one-time $300 setup fee",
+    price: {
+      monthly: "$47",
+    },
+    popular: true,
+    features: [
+      "Optimized to convert",
+      "Customized template-based site",
+      "Integration ready (See FAQ below)",
+      "No compromises (See FAQ below)",
+      "Follows all best practices",
       "Hosting included",
+    ],
+    button: {
+      text: "Get Started",
+      link: "/contact",
+    },
+  },
+  {
+    shortName: "custom-website",
+    available: true,
+    name: "Fully Custom Website",
+    note: "+ one-time $300 setup fee",
+    price: {
+      monthly: "$97",
+    },
+    popular: false,
+    features: [
+      "Custom static site",
+      "Built using the latest technologies",
+      "Best hosting on the planet",
       "Basic Google Business Profile",
-      "Unlimited small edits",
-      "1 design revision per year",
-      "Contact form",
       "Technical + Local SEO",
       "Basic Analytics (Umami)",
     ],
@@ -42,187 +159,54 @@ export const standardPricing: Price[] = [
     },
   },
   {
-    shortName: "blog",
+    shortName: "ai-assist",
     available: true,
-    name: "Turnkey blog",
-    note: "+ one-time $300 setup fee",
-    price: {
-      monthly: "$449",
-      // original: "$1200",
-    },
+    name: "The AI Assist",
     popular: false,
+    price: {
+      monthly: "$97",
+    },
     features: [
-      "Turnkey site",
-      "SEO-optimized blog",
-      "Content dramatically helps SEO",
-      "Static HTML (even though it's a blog!)",
-      "Built-in CMS",
-      "Optional comments system",
-      "Optional Google Analytics",
-      // "Support via ticketing system",
+      "AI Google Business Profile",
+      "AI Reputation Management",
+      "AI Citation Management",
+      "AI Chatbot on site",
+      "AI Answering Service",
     ],
     button: {
       text: "Get Started",
-      link: "/contact",
-    },
+      link: "/contact"
+    }
   },
   {
-    shortName: "advanced",
-    available: false,
-    name: "Advanced SEO and content",
-    note: "NO commitment",
-    price: "TBD",
-    // price: {
-    //   // monthly: "$2997",
-    // },
+    // reach services
+    shortName: "reach",
+    available: true,
+    name: "Reach Services",
+    note: "Make sure to get the stuff up ^ there right first!",
+    price: {
+      monthly: "custom",
+    },
     popular: false,
     features: [
-      "Turnkey blog",
-      "Advanced Google Business Profile",
-      "Monthly SEO audits",
-      "Monthly SEO reports",
-      "Search Console Management",
-      "Data-driven content strategy",
-      "Human authored blog post every month",
-      "Advanced Analytics",
+      "Ad Campaigns",
+      "Social Media Management",
+      "Content Creation",
+      "Email Marketing",
+      "Lead Generation",
+      "Analytics and Reporting",
+      "Brand Strategy",
+      "Market Research",
+      "SEO Optimization",
+      "Funnels",
+      "Lead Magnets",
+      "And more...",
     ],
     button: {
       text: "Get Started",
       link: "/contact",
     },
   }
-];
-
-export const oneOffPricing: Price[] = [
-  {
-    shortName: "advance-gmb",
-    available: true,
-    name: "Advanced Google Business Profile",
-    price: {
-      monthly: "$129",
-      compare: "$400/mo",
-    },
-    popular: false,
-    features: [
-      "Fully managed GMB",
-      "Managed by experts",
-      "Get more calls and visits",
-      "Curate real reviews from your customers",
-      "Citation management",
-    ],
-    button: {
-      text: "Get Started",
-      link: "/contact",
-    },
-  },
-  {
-    // Price goes up if bandwidth exceeds 200GB/mo on avg monthly
-    shortName: "hosting",
-    available: true,
-    name: "Hosting",
-    note: "+ one-time $300 setup fee",
-    price: {
-      monthly: "$49",
-    },
-    popular: false,
-    features: [
-      "Static hosting",
-      "Fully managed",
-      "Best possible performance",
-      "Best possible security",
-      "Bot/DDoS Protection",
-      "SSL",
-      "CDN",
-      // "Automatic updates (WP)",
-      // "Automatic daily backups (WP)",
-      // "Includes Staging Site (WP)",
-      // "Support via email",
-    ],
-    button: {
-      text: "Get Started",
-      link: "/contact",
-    },
-  },
-  {
-    shortName: "custom",
-    available: true,
-    name: "Custom site",
-    price: "$4,795",
-    note: "Non-recurring",
-    popular: false,
-    features: [
-      "Own your source code",
-      "Up to 8 pages",
-      "Custom static site",
-      "OR custom WP theme",
-      "Logo design or HD upgrade",
-      "Up to 3 revisions",
-      "Static reviews embed",
-    ],
-    button: {
-      text: "Get Started",
-      link: "/contact",
-    },
-  },
-  {
-    shortName: "content",
-    available: true,
-    name: "Content writing",
-    price: "$.09/word",
-    note: "Non-recurring",
-    popular: false,
-    features: [
-      "SEO-optimized content",
-      "Human-authored",
-      "Up to 2 revisions",
-      "Up to 1,000 words",
-      "Turnaround: 1 week",
-    ],
-    button: {
-      text: "Get Started",
-      link: "/contact",
-    },
-  },
-  {
-    shortName: "leadgen",
-    available: false,
-    name: "Warm lead gen",
-    price: "TBD",
-    // price: "$1497/mo",
-    note: "NO commitment",
-    popular: false,
-    features: [
-      "High converting leads every month",
-      "No commitment",
-      "State of the art automated AI system",
-      "Guaranteed to impress",
-      "Already warm when you get them",
-    ],
-    button: {
-      text: "Contact us",
-      link: "/contact",
-    },
-  },
-  {
-    shortName: "full",
-    available: false,
-    name: "Full digital marketing suite",
-    // price: "$5497/mo",
-    price: "TBD",
-    note: "NO commitment",
-    popular: false,
-    features: [
-      "Includes Everything you see on this page",
-      "No commitment",
-      "Campaigns tailored to your business",
-      "Funnel optimization and tracking",
-      "CRM integration",
-    ],
-    button: {
-      text: "Contact us",
-      link: "/contact",
-    },
-  },
 ]
 
 export const prices: Price[] = [

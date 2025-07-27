@@ -7,10 +7,10 @@ const features = [
     icon: "mdi:thumbs-up",
   },
   {
-    title: "Reach",
+    title: "Readiness",
     description:
-      "Where do you show up? 95.91% of all clicks occur on page 1 of Google, and the top three positions deliver 58.4% of traffic.",
-    icon: "bxs:paper-plane",
+      "Are you ready to convert leads into customers? Does your team capture 100% of leads? Studies show that 40% of leads are missed simply because they didn't get in contact in a timely manner.",
+    icon: "mdi:people-group",
   },
   {
     title: "Resell",
@@ -18,11 +18,17 @@ const features = [
       "Are you maximizing the value of your existing customer base? On average it costs 5 times more to acquire a new customer than it does to sell new services to an existing customer.",
     icon: "mdi:database-sync",
   },
+  // {
+  //   title: "Remarketing",
+  //   description:
+  //     "Are you staying top of mind with your customers? 70% of consumers say they would prefer to hear from a business they have already purchased from rather than a new one.",
+  //   icon: "mdi:email",
+  // },
   {
-    title: "Referral",
+    title: "Reach",
     description:
-      "Do you have a program to systematically gain quality referrals from current customers? FACT: Referrals spend more, convert better and shop faster.",
-    icon: "mdi:people-group",
+      "Where do you show up? 95.91% of all clicks occur on page 1 of Google, and the top three positions deliver 58.4% of traffic.",
+    icon: "bxs:paper-plane",
   },
 ];
 

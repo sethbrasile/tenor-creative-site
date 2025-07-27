@@ -54,8 +54,8 @@ export const comingSoon = [
     icon: "bx:book-content"
   },
   {
-    title: "Lead Generation",
-    description: "We use AI to identify and warm up high quality leads, delivering consistent conversions without the manual effort. Better leads, less work.",
+    title: "AI Lead Generation",
+    description: "We use AI to reach out, locate and warm up high quality leads, delivering consistent conversions without the manual effort. Better leads, less work.",
     icon: "iconamoon:profile-duotone",
   },
 ]

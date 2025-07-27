@@ -20,7 +20,10 @@ defineProps(["plan"]);
         <p v-if="plan.price.compare" class="max-w-[800px] text-gray-400 text-sm">
           Compare at {{plan.price.compare}}!
         </p>
-        <p v-if="plan.note" class="mt-4 max-w-[800px] text-gray-400 text-sm">{{plan.note}}</p>
+        <p v-if="plan.note" class="max-w-[800px] text-gray-400 text-sm">{{plan.note}}</p>
+        <p v-if="plan.price.note" class="mt-2 max-w-[800px] text-gray-400 text-sm">
+          {{plan.price.note}}
+        </p>
       </div>
       <ul class="grid my-8 text-left gap-y-4">
         <li
