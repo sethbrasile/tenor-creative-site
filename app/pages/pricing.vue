@@ -36,16 +36,19 @@ useSeoMeta({
     <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
       <!-- <PricingCard v-for="item of standardPricing" :plan="item" :key="item.name" /> -->
       <p>
-        <strong>Q: What does "No compromises" mean on the "Just a great Website" option?</strong>
+        <strong>Q: What does "No compromises" mean?</strong>
         <br />
-        A: It means we build your site using best practices, ensuring optimal user experience, and in most circumstances this is a great and high performing
-        option. Some competitive industries or markets may require a custom static site in order to exceed competitor SEO baseline. We can assess
-        your needs and determine if this is necessary.
+        A: We build our sites using industry standard best practices, ensuring optimal user experience, and in most circumstances the result is a
+        high-converting site that is ready to grow your business. We don't cut corners, and we don't use templates that are not designed to convert
+        visitors into customers. Some competitive industries or markets may require a custom ultra-high-performance static site in order to exceed
+        competitor SEO positioning in organic search. We can assess your market and competition and determine if this is necessary.
       </p>
       <p>
-        <strong>Q: What is included in the "Hosting included" feature?</strong>
+        <strong>Q: What does "Integration ready" mean?</strong>
         <br />
-        A: We provide top-tier hosting services as part of our packages, ensuring your site is fast, secure, and reliable.
+        A: Even if you don't opt to use one of our Growth system plans out of the gate, our sites are built to easily integrate with them in the future,
+        you won't need to worry about extra costs or rebuilding or redesigning anything. To take advantage of our growth systems in the future, all we need
+        to do is configure the Growth system and connect it to your site.
       </p>
       <p>
         <strong>Q: How does the "Lead list generation" feature work?</strong>
