@@ -20,7 +20,7 @@ useSeoMeta({
     <Sectionhead>
       <template v-slot:title>Coming Soon</template>
       <template v-slot:desc>
-        We're working on optimized, and AI-assisted (carefully, where it makes sense, not "AI slop") versions of these services, and will be launching them soon.
+        We're working on optimized, and AI-assisted (carefully where it makes sense, not "AI slop") versions of these services, and will be launching them soon.
       </template>
     </Sectionhead>
     <Features :features="comingSoon" />

@@ -59,7 +59,7 @@ const isAnnual = ref(false);
         competitor SEO positioning in organic search. We can assess your market and competition and determine if this is necessary.
       </p>
       <p>
-        <strong>Q: What does "Integration ready" mean?</strong>
+        <strong>Q: What does "Growth system ready" mean?</strong>
         <br />
         A: Even if you don't opt to use one of our Growth system plans out of the gate, our sites are built to easily integrate with them in the future,
         you won't need to worry about extra costs or rebuilding or redesigning anything. To take advantage of our growth systems in the future, all we need
@@ -68,24 +68,31 @@ const isAnnual = ref(false);
       <p>
         <strong>Q: How does the "Lead list generation" feature work?</strong>
         <br />
-        A: We utilize advanced tools to generate a list of potential leads tailored to your business, helping you reach your target audience effectively.
+        A: We utilize advanced systems that collect and organize leads who come into contact with your business and opt to engage through various
+        channels, such as your website, social media, and other marketing efforts. This feature helps you build a comprehensive database of
+        potential customers, making it easier to nurture leads and convert them into paying clients. The channels which are available for lead
+        generation become more powerful as you move up the Growth system pricing tiers, but the concept is the same across all plans.
       </p>
       <p>
         <strong>Q: What is "Automated lead nurturing"?</strong>
         <br />
-        A: This feature automates the process of engaging with leads through personalized emails and follow-ups, increasing your chances of conversion without manual effort.
+        A: This feature automates the process of engaging with leads through personalized emails and follow-ups, increasing your chances of conversion without
+        manual effort. These well-designed touchpoints keep your business top-of-mind for potential customers (without being annoying), and can be
+        customized based on the particular needs of your audience.
       </p>
       <p>
         <strong>Q: Can I customize the features in my plan?</strong>
         <br />
-        A: Not really... But this is a good thing! The honest truth is that in the basic business plan, we're including every feature that most businesses
-        are going to need to grow their business. The boosted features in higher-tier plans are for businesses that need more advanced capabilities,
+        A: A bit.. Not much... But this is a good thing! The honest truth is that in the lowest tier business plan, we're including every feature that most businesses
+        are going to need to grow their business! The boosted features in higher-tier plans are for businesses that need more advanced capabilities,
         want AI to replace some manual processes, or want to take their marketing to the next level with funnels and lead magnets.
       </p>
       <p>
-        <strong>Q: What if I need additional support?</strong>
+        <strong>Q: I have more questions. How can I get in touch?</strong>
         <br />
-        A: We provide ongoing support and maintenance options to ensure your site runs smoothly and meets your evolving needs.
+        A: Please book a free consultation with us, and we'll be happy to answer any questions you have and help you choose the right plan for your business.
+        <br />
+        <CtaLink href="/contact" styleName="primary" class="block mt-4">Book a Free Consultation</CtaLink>
       </p>
     </div>
   </Container>

@@ -33,6 +33,8 @@ export const standardPricing: Price[] = [
     features: [
       "High Converting Website",
       "Hosting",
+      "Google Business Profile (GBP)",
+      "GBP Messaging",
       "Web Chat + AI Chatbot",
       "AI Answering Service",
       "Lead list generation",
@@ -40,10 +42,7 @@ export const standardPricing: Price[] = [
       "Missed call text-back",
       "Phone number",
       "Unified inbox (SMS/Email/Chat/Social)",
-      "2-way SMS",
-      "2-way Email",
-      "2-way Chat",
-      "2-way Social",
+      "2-way SMS/Email/Chat/Social",
       "500 SMS/Calls",
       "5,000 Emails",
     ],
@@ -85,9 +84,8 @@ export const standardPricing: Price[] = [
     popular: false,
     features: [
       "Everything in Business",
-      "Google Business Profile (GBP)",
-      "GBP Messaging",
       "GBP Call tracking",
+      "Email marketing",
       "Reputation management",
       "Booking / calendar",
       "Payments/estimates/invoicing",
@@ -100,14 +98,14 @@ export const standardPricing: Price[] = [
       "10,000 Emails",
     ],
     button: {
-      text: "Get Started",
+      text: "I'm ready to take my business to the next level",
       link: "/contact",
     },
   },
   {
     shortName: "all-in",
     available: true,
-    name: "All-in Growth System",
+    name: "All-in Rapid Growth System",
     note: "+ one-time $1999 setup fee",
     price: {
       monthly: "$297",
@@ -123,15 +121,16 @@ export const standardPricing: Price[] = [
       "AI citation management",
       "AI voice (inbound)",
       "AI voice (outbound)",
-      "Automated Follow up",
-      "Automated Anniversary",
-      "Automated Reactivation",
-      "Automated Referral",
+      "Follow up campaigns",
+      "Anniversary campaigns",
+      "Reactivation campaigns",
+      "Referral campaigns",
+      "Social planner",
       "1,500 SMS/Calls",
       "15,000 Emails",
     ],
     button: {
-      text: "Go ALL IN on Growth",
+      text: "Go ALL IN on rapid Growth",
       link: "/contact",
     },
   },
@@ -153,11 +152,11 @@ export const oneOffPricing: Price[] = [
       "Customized template-based site",
       "Hosting included",
       "Follows all best practices",
-      "Integration ready (See FAQ below)",
+      "Growth system ready (See FAQ below)",
       "No compromises (See FAQ below)",
     ],
     button: {
-      text: "Get Started",
+      text: "Get a great website",
       link: "/contact",
     },
   },
@@ -180,7 +179,7 @@ export const oneOffPricing: Price[] = [
       // "Basic Analytics (Umami)",
     ],
     button: {
-      text: "Get Started",
+      text: "Get a fully custom site",
       link: "/contact",
     },
   },
@@ -199,10 +198,11 @@ export const oneOffPricing: Price[] = [
       "AI reputation management",
       "AI citation management",
       "AI chatbot on site",
-      "AI answering service",
+      "AI voice (inbound)",
+      "AI Support Desk and Ticketing",
     ],
     button: {
-      text: "Get Started",
+      text: "Hire AI to ease your workload",
       link: "/contact"
     }
   },
@@ -229,10 +229,31 @@ export const oneOffPricing: Price[] = [
       "And more...",
     ],
     button: {
-      text: "Get Started",
+      text: "I'm ready to reach my audience",
       link: "/contact",
     },
-  }
+  },
+  // blog
+  {
+    shortName: "blog",
+    available: true,
+    name: "Blog addon",
+    note: "+ one-time $499 setup fee",
+    price: {
+      monthly: "$97",
+      yearly: "$970",
+    },
+    popular: false,
+    features: [
+      "Must add to a website plan",
+      "Fully managed blog",
+      "Full CMS capabilities",
+    ],
+    button: {
+      text: "Get a custom blog",
+      link: "/contact",
+    },
+  },
 ]
 
 export const prices: Price[] = [
