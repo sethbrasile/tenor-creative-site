@@ -5,6 +5,7 @@ export interface Price {
   note?: string;
   price: string | {
     monthly: string;
+    yearly?: string;
     original?: string;
     compare?: string;
     note?: string;
@@ -25,6 +26,7 @@ export const standardPricing: Price[] = [
     note: "+ one-time $299 setup fee",
     price: {
       monthly: "$97",
+      yearly: "$970",
       note: "1 team member included",
     },
     popular: true,
@@ -36,7 +38,7 @@ export const standardPricing: Price[] = [
       "Lead list generation",
       "Review generation",
       "Missed call text-back",
-      "Phone and SMS",
+      "Phone number",
       "Unified inbox (SMS/Email/Chat/Social)",
       "2-way SMS",
       "2-way Email",
@@ -71,20 +73,22 @@ export const standardPricing: Price[] = [
   //   },
   // },
   {
-    shortName: "business+",
+    shortName: "business-plus",
     available: true,
     name: "Business Plus",
     note: "+ one-time $599 setup fee",
     price: {
       monthly: "$197",
+      yearly: "$1,970",
       note: "2 team members included",
     },
     popular: false,
     features: [
       "Everything in Business",
-      "Google Business Profile",
+      "Google Business Profile (GBP)",
+      "GBP Messaging",
+      "GBP Call tracking",
       "Reputation management",
-      "Call tracking",
       "Booking / calendar",
       "Payments/estimates/invoicing",
       "Text to pay",
@@ -107,6 +111,7 @@ export const standardPricing: Price[] = [
     note: "+ one-time $1999 setup fee",
     price: {
       monthly: "$297",
+      yearly: "$2,970",
       note: "$297/mo-$997/mo based on usage. 3 team members included in base price",
     },
     popular: false,
@@ -116,9 +121,8 @@ export const standardPricing: Price[] = [
       "AI Google Business Profile",
       "AI reputation management",
       "AI citation management",
-      "AI chatbot on site",
-      "AI answering service",
-      "AI Voice (outbound)",
+      "AI voice (inbound)",
+      "AI voice (outbound)",
       "Automated Follow up",
       "Automated Anniversary",
       "Automated Reactivation",
@@ -127,7 +131,7 @@ export const standardPricing: Price[] = [
       "15,000 Emails",
     ],
     button: {
-      text: "Go All-in on Growth",
+      text: "Go ALL IN on Growth",
       link: "/contact",
     },
   },
@@ -141,6 +145,7 @@ export const oneOffPricing: Price[] = [
     note: "+ one-time $299 setup fee",
     price: {
       monthly: "$47",
+      yearly: "$470",
     },
     popular: true,
     features: [
@@ -163,6 +168,7 @@ export const oneOffPricing: Price[] = [
     note: "+ one-time $299 setup fee",
     price: {
       monthly: "$197",
+      yearly: "$1,970",
     },
     popular: false,
     features: [
@@ -186,6 +192,7 @@ export const oneOffPricing: Price[] = [
     popular: false,
     price: {
       monthly: "$197",
+      yearly: "$1,970",
     },
     features: [
       "AI Google Business Profile",
@@ -200,10 +207,10 @@ export const oneOffPricing: Price[] = [
     }
   },
   {
-    // reach services
+    // reach systems
     shortName: "reach",
     available: true,
-    name: "Reach Services",
+    name: "Reach Systems",
     note: "Make sure to get the stuff up ^ there right first!",
     price: "Contact us",
     popular: false,

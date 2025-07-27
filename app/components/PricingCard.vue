@@ -1,5 +1,6 @@
-<script setup>
-defineProps(["plan"]);
+<script setup lang="ts">
+import type { Price } from '~/data/pricing';
+defineProps<{ plan: Price; yearly: boolean }>();
 </script>
 
 <template>
@@ -13,15 +14,17 @@ defineProps(["plan"]);
         <p class="mt-3 text-4xl font-bold text-black md:text-4xl">
           {{
             plan.price && typeof plan.price === "object"
-              ? plan.price.monthly + "/mo "
+              ? yearly
+                ? plan.price.yearly + "/yr"
+                : plan.price.monthly + "/mo"
               : plan.price
           }}
         </p>
-        <p v-if="plan.price.compare" class="max-w-[800px] text-gray-400 text-sm">
+        <p v-if="typeof plan.price === 'object' && plan.price.compare" class="max-w-[800px] text-gray-400 text-sm">
           Compare at {{plan.price.compare}}!
         </p>
         <p v-if="plan.note" class="max-w-[800px] text-gray-400 text-sm">{{plan.note}}</p>
-        <p v-if="plan.price.note" class="mt-2 max-w-[800px] text-gray-400 text-sm">
+        <p v-if="typeof plan.price === 'object' && plan.price.note" class="mt-2 max-w-[800px] text-gray-400 text-sm">
           {{plan.price.note}}
         </p>
       </div>
@@ -39,7 +42,7 @@ defineProps(["plan"]);
       <div class="flex mt-auto">
         <CtaLink
           :ctaName="plan.shortName + '-cta'"
-          :href="(plan.button.link || '#') + '?plan=' + plan.shortName"
+          :href="(plan.button.link || '#') + '?plan=' + plan.shortName + (yearly ? '-yearly' : '')"
           block
           :disabled="!plan.available"
           :styleName="plan.available ? (plan.popular ? 'primary' : 'outline') : 'muted'"
