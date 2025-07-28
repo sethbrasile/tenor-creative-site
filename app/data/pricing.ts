@@ -22,7 +22,7 @@ export const standardPricing: Price[] = [
   {
     shortName: "business",
     available: true,
-    name: "Business Plan",
+    name: "Business System",
     note: "+ one-time $299 setup fee",
     price: {
       monthly: "$97",
@@ -74,7 +74,7 @@ export const standardPricing: Price[] = [
   {
     shortName: "business-plus",
     available: true,
-    name: "Business Plus",
+    name: "Business Plus System",
     note: "+ one-time $499 setup fee",
     price: {
       monthly: "$197",
@@ -93,7 +93,7 @@ export const standardPricing: Price[] = [
       "Tap to pay",
       "Quickpay links",
       "Birthday funnel",
-      "Birthday resell campaign",
+      "Birthday campaign",
       "1,000 SMS/Calls",
       "10,000 Emails",
     ],
@@ -195,8 +195,9 @@ export const oneOffPricing: Price[] = [
     note: "+ one-time $299 setup fee",
     popular: false,
     price: {
-      monthly: "$197",
-      yearly: "$1,970",
+      monthly: "$97",
+      yearly: "$970",
+      note: "$97/mo-$297/mo based on usage",
     },
     features: [
       "AI Google Business Profile",
@@ -204,7 +205,9 @@ export const oneOffPricing: Price[] = [
       "AI citation management",
       "AI chatbot on site",
       "AI voice (inbound)",
-      "AI Support Desk and Ticketing",
+      "AI voice (outbound)",
+      "AI content creation",
+      "AI funnel building",
     ],
     button: {
       text: "Hire AI to ease your workload",
@@ -256,6 +259,35 @@ export const oneOffPricing: Price[] = [
     ],
     button: {
       text: "Get a custom blog",
+      link: "/contact",
+    },
+  },
+  {
+    shortName: "ai-support",
+    available: true,
+    name: "AI Support Tech + Ticketing System",
+    note: "+ one-time $499 setup fee",
+    price: {
+      monthly: "$297",
+      yearly: "$2970",
+    },
+    popular: false,
+    features: [
+      "AI Chatbot for customer inquiries",
+      "Offer 24/7 support to your customers",
+      "Trained on your business",
+      "Integrated Ticketing system",
+      "Automated ticket management",
+      "Customizable workflows",
+      "Analytics and reporting",
+      "Scalable solution",
+      "Improved customer satisfaction",
+      "Reduced response times",
+      "Increased efficiency",
+      "Cost-effective support solution",
+    ],
+    button: {
+      text: "Get AI support",
       link: "/contact",
     },
   },
