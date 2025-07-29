@@ -8,7 +8,7 @@ defineProps<{ plan: Price; yearly: boolean }>();
     <div
       class="flex h-full flex-col w-full order-first lg:order-none border-2 border-[#D8DEE9] border-opacity-50 py-5 px-6 rounded-md"
     >
-      <div class="text-center">
+      <div class="">
         <h4 class="text-lg font-medium text-gray-800">{{ plan.name }}</h4>
 
         <p class="mt-3 text-4xl font-bold text-black md:text-4xl">
@@ -28,18 +28,24 @@ defineProps<{ plan: Price; yearly: boolean }>();
           {{plan.price.note}}
         </p>
       </div>
+      <!-- Description text -->
+      <p class="mt-4 text-gray-600 text-sm">
+        {{ plan.description }}
+      </p>
       <ul class="grid my-8 text-left gap-y-4">
         <li
           v-for="item of plan.features"
           class="flex items-start gap-3 text-gray-800"
         >
-          <Tick className="w-6 h-6" />
+          <Tick className="w-6 h-6 flex-shrink-0" />
           <span>{{ item }}</span>
         </li>
       </ul>
       <!-- coming soon -->
-
-      <div class="flex mt-auto">
+      <div class="flex flex-col mt-auto">
+      <div v-if="plan.popular" class="flex-row text-gray-800 text-sm">
+        <p>Our most popular plan!</p>
+      </div>
         <CtaLink
           :ctaName="plan.shortName + '-cta'"
           :href="(plan.button.link || '#') + '?plan=' + plan.shortName + (yearly ? '-yearly' : '')"

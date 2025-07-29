@@ -23,7 +23,7 @@ const isAnnual = ref(false);
             <button class="relative flex-1 text-sm font-medium h-8 rounded-full focus-visible:outline-none focus-visible:ring focus-visible:ring-gray-300 transition-colors duration-150 ease-in-out" :class="isAnnual ? 'text-gray-800' : 'text-white'" @click="isAnnual = false" :aria-pressed="isAnnual">Monthly</button>
         </div>
     </div>
-    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
+    <div class="grid md:grid-cols-2 gap-2 mx-auto max-w-screen-lg mt-12">
       <PricingCard v-for="item of standardPricing" :plan="item" :key="item.name" :yearly="isAnnual" />
     </div>
 
@@ -40,7 +40,7 @@ const isAnnual = ref(false);
             <button class="relative flex-1 text-sm font-medium h-8 rounded-full focus-visible:outline-none focus-visible:ring focus-visible:ring-gray-300 transition-colors duration-150 ease-in-out" :class="isAnnual ? 'text-gray-800' : 'text-white'" @click="isAnnual = false" :aria-pressed="isAnnual">Monthly</button>
         </div>
     </div>
-    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
+    <div class="grid md:grid-cols-3 gap-2 mx-auto max-w-screen-lg mt-12">
       <PricingCard v-for="item of oneOffPricing" :plan="item" :key="item.name" :yearly="isAnnual" />
     </div>
 
@@ -48,7 +48,7 @@ const isAnnual = ref(false);
       <template v-slot:title>FAQ</template>
       <template v-slot:desc>Frequently Asked Questions</template>
     </Sectionhead>
-    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
+    <div class="grid md:grid-cols-1 gap-10 mx-auto max-w-screen-lg mt-12">
       <!-- <PricingCard v-for="item of standardPricing" :plan="item" :key="item.name" /> -->
       <p>
         <strong>Q: What does "No compromises" mean?</strong>
@@ -88,10 +88,34 @@ const isAnnual = ref(false);
         want AI to replace some manual processes, or want to take their marketing to the next level with funnels and lead magnets.
       </p>
       <p>
+        <strong>Q: Your plans mention Google Business Profile (GBP) but I already have one?</strong>
+        <br />
+        A: That's great! If you already have a Google Business Profile, we can help you optimize it and integrate it with our systems to maximize its effectiveness.
+        Our Growth system is designed to work seamlessly with existing profiles, ensuring you get the most out of your online presence. We will ensure it's always
+        up-to-date and working for you. We even have systems that can help you get more reviews and respond to them automatically, post and image post automation, and more.
+      </p>
+      <p>
+        <strong>Q: All the places on the internet have incorrect information about my business. Can you help me fix that?</strong>
+        <br />
+        A: Yes! We can help you clean up your online presence and ensure that all information about your business is accurate and consistent across the web.
+        We keep this information up-to-date over time, so you don't have to worry about it. This feature is called "Citation Management" and is included
+        in our Business plan and above.
+      </p>
+      <p>
+        <strong>Q: What if I need more than one website?</strong>
+        <br />
+        A: No problem! We can add additional websites to your plan for $47/mo. This is a great option for businesses that have multiple locations or brands.
+      </p>
+      <p>
         <strong>Q: My team needs more member logins...</strong>
         <br />
         A: That's no problem! We can add additional team members to your plan for $29/mo. The all-in growth system also includes more team member logins as
         you graduate to higher usage tiers, so you can scale your team as your business grows.
+      </p>
+      <p>
+        <strong>Q: I need help with Google My Business (GMB) but I only see you mentioning Google Business Profile (GBP)</strong>
+        <br />
+        A: Google has changed the name of GMB to GBP, but it's the same thing.
       </p>
     </div>
     <div class="mx-auto max-w-screen-lg mt-12">
