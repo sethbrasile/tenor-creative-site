@@ -25,10 +25,17 @@
       <div v-if="!og" class="mt-6 flex flex-col sm:flex-row gap-3">
         <CtaLink
           cta-name="Hero"
-          href="/contact"
-          rel="noopener"
-          >Get Started</CtaLink
-        >
+          href="/booking"
+          rel="noopener">
+            Book a free consultation
+        </CtaLink>
+        <CtaLink
+          cta-name="Hero"
+          href="/free-guide"
+          style-name="outline"
+          rel="noopener">
+            Unlock My Free Guide: <strong>The 'Secret Formula'</strong>
+        </CtaLink>
       </div>
     </div>
   </main>

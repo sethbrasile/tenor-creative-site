@@ -9,7 +9,7 @@ const features = [
   {
     title: "Readiness",
     description:
-      "Are you ready to convert leads into customers? Does your team capture 100% of leads? Studies show that 40% of leads are missed simply because they didn't get in contact in a timely manner.",
+      "Are you ready to convert leads into customers? Does your team capture 100% of leads? Studies show that 40%-65% of leads are missed simply because their call was missed and no one immediately followed up.",
     icon: "mdi:people-group",
   },
   {
@@ -41,7 +41,7 @@ useSeoMeta({
   <Container>
     <Hero></Hero>
     <CallOut />
-    <Features :features="features"></Features>
+    <Features :features="features" url-base="the-4-rs"></Features>
     <!-- <Logos></Logos> -->
     <Cta location="Home"></Cta>
   </Container>

@@ -88,11 +88,19 @@ const isAnnual = ref(false);
         want AI to replace some manual processes, or want to take their marketing to the next level with funnels and lead magnets.
       </p>
       <p>
+        <strong>Q: My team needs more member logins...</strong>
+        <br />
+        A: That's no problem! We can add additional team members to your plan for $29/mo. The all-in growth system also includes more team member logins as
+        you graduate to higher usage tiers, so you can scale your team as your business grows.
+      </p>
+    </div>
+    <div class="mx-auto max-w-screen-lg mt-12">
+      <p>
         <strong>Q: I have more questions. How can I get in touch?</strong>
         <br />
         A: Please book a free consultation with us, and we'll be happy to answer any questions you have and help you choose the right plan for your business.
         <br />
-        <CtaLink href="/contact" styleName="primary" class="block mt-4">Book a Free Consultation</CtaLink>
+        <CtaLink href="/booking" styleName="primary" class="block mt-4">Book a Free Consultation</CtaLink>
       </p>
     </div>
   </Container>
