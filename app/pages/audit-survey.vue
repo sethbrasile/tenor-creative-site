@@ -1,0 +1,29 @@
+<template>
+  <Container>
+    <Sectionhead>
+      <template v-slot:title>Business Audit</template>
+      <template v-slot:desc>
+        Please complete this business audit at least 2 business days before you attend your audit review call.
+        This allows our team to review the audit results and properly prepare for the call.
+      </template>
+    </Sectionhead>
+
+    <iframe src="https://hlapi.tenorcreative.com/widget/survey/v2Z0kU6nQMjGrOIpdl7T" style="border:none;width:100%;" scrolling="no" id="v2Z0kU6nQMjGrOIpdl7T" title="survey"></iframe>
+  </Container>
+</template>
+
+<script lang="ts" setup>
+useHead({
+  script: [
+    {
+      src: 'https://hlapi.tenorcreative.com/js/form_embed.js',
+      async: true,
+      defer: true,
+    },
+  ]
+})
+</script>
+
+<style>
+
+</style>

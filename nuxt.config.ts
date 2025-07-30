@@ -60,4 +60,24 @@ export default defineNuxtConfig({
       },
     }
   },
+
+  $development: {
+    runtimeConfig: {
+      public: {
+        plan1PaymentLink: 'https://buy.stripe.com/test_6oU9AV1xBgnt5DY7Bj7ss00',
+        plan2PaymentLink: 'https://buy.stripe.com/test_dRmcN75NRefleau4p77ss01',
+        plan3PaymentLink: 'https://buy.stripe.com/test_6oU9AVb8b6MTaYi5tb7ss02',
+      },
+    },
+  },
+
+  $production: {
+    runtimeConfig: {
+      public: {
+        plan1PaymentLink: 'https://buy.stripe.com/aFa28r464eCs1Bmeuc33W00',
+        plan2PaymentLink: 'https://buy.stripe.com/3cI9ATeKI2TK3Ju4TC33W01',
+        plan3PaymentLink: 'https://buy.stripe.com/eVq7sL5a8fGw7ZK0Dm33W02',
+      },
+    },
+  }
 });

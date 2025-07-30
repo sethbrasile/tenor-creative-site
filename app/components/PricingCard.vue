@@ -1,6 +1,22 @@
 <script setup lang="ts">
 import type { Price } from '~/data/pricing';
-defineProps<{ plan: Price; yearly: boolean }>();
+const props = defineProps<{ plan: Price; yearly: boolean }>();
+const price = computed(() => {
+  const { price } = props.plan
+  // If the price is an object,
+  if (price && typeof price === "object") {
+    // Then make some decisions
+    if (price.static) {
+      return price.static
+    }
+    if (props.yearly && price.yearly) {
+      return price.yearly + "/yr"
+    }
+    return price.monthly + "/mo"
+  }
+  // If not an object, return the price as is
+  return price
+})
 </script>
 
 <template>
@@ -11,14 +27,8 @@ defineProps<{ plan: Price; yearly: boolean }>();
       <div class="">
         <h4 class="text-lg font-medium text-gray-800">{{ plan.name }}</h4>
 
-        <p class="mt-3 text-4xl font-bold text-black md:text-4xl">
-          {{
-            plan.price && typeof plan.price === "object"
-              ? yearly
-                ? plan.price.yearly + "/yr"
-                : plan.price.monthly + "/mo"
-              : plan.price
-          }}
+        <p class="mt-3 text-4xl font-medium text-gray-900">
+          {{ price }}
         </p>
         <p v-if="typeof plan.price === 'object' && plan.price.compare" class="max-w-[800px] text-gray-400 text-sm">
           Compare at {{plan.price.compare}}!
@@ -37,7 +47,7 @@ defineProps<{ plan: Price; yearly: boolean }>();
           v-for="item of plan.features"
           class="flex items-start gap-3 text-gray-800"
         >
-          <Tick className="w-6 h-6 flex-shrink-0" />
+          <Tick />
           <span>{{ item }}</span>
         </li>
       </ul>

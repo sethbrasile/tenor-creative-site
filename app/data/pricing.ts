@@ -1,15 +1,17 @@
 export interface Price {
+  tier?: number;
   shortName: string;
-  description: string;
+  description?: string;
   available: boolean;
   name: string;
   note?: string;
   price: string | {
-    monthly: string;
+    monthly?: string;
     yearly?: string;
     original?: string;
     compare?: string;
     note?: string;
+    static?: string;
   };
   popular: boolean;
   features: string[];
@@ -21,10 +23,11 @@ export interface Price {
 
 export const standardPricing: Price[] = [
   {
+    tier: 1,
     shortName: "fast-start",
-    description: "Perfect for new businesses or those looking to get started quickly - focused on getting you up and running with the essentials. Any business will benefit from this system.",
+    description: "Perfect for new businesses or those looking to get started quickly - focused on getting you up and running with the essentials. Every business would benefit from this system.",
     available: true,
-    name: "Fast Start System",
+    name: "Fast Start Growth System",
     note: "+ one-time $99 setup fee",
     price: {
       monthly: "$97",
@@ -41,13 +44,15 @@ export const standardPricing: Price[] = [
       "Web Chat lead generation",
       "Phone number",
       "AI Voice (inbound)",
-      "Lead generation campaign",
-      "Reactivation campaign",
+      "Lead generation",
+      "Follow up campaign",
+      "Automated lead nurturing",
+      "Remarketing campaign",
       "SMS list building",
       "Google Business Profile (GBP)",
       "GBP Call Tracking",
-      "500 SMS/Calls",
-      "5,000 Emails",
+      // "500 SMS/Calls",
+      // "5,000 Emails",
     ],
     button: {
       text: "I'm ready to grow my business",
@@ -55,10 +60,11 @@ export const standardPricing: Price[] = [
     },
   },
   {
+    tier: 2,
     shortName: "business",
     description: "Perfect for most small service or retail businesses - focused on helping you do a better job at capturing and maximizing existing opportunities by building your list.",
     available: true,
-    name: "Business System",
+    name: "Business Growth System",
     note: "+ one-time $299 setup fee",
     price: {
       monthly: "$197",
@@ -67,22 +73,24 @@ export const standardPricing: Price[] = [
     },
     popular: true,
     features: [
-      "All features in Fast Start",
-      "GBP Call tracking",
+      // "All features in Fast Start",
       "GBP Messaging",
       "Reputation management",
-      "Review generation (get tons of reviews)",
-      "AI citation management (automatically keeps your business information synced across the web)",
-      "Unified inbox (SMS/Email/Chat/Social)",
-      "2-way SMS/Email/Chat/Social",
+      // "Review generation (get tons of reviews)",
+      "Review generation",
+      // "AI citation management (automatically keeps your business information synced across the web)",
+      "AI citation management",
+      // "Unified inbox (SMS/Email/Chat/Social)",
+      "2-way SMS/Email/Social",
+      "Unified messaging inbox",
       "Payments/estimates/invoicing",
       "Text to pay",
       "Tap to pay",
       "Quickpay links",
       "Booking / calendar",
       "Birthday campaigns",
-      "1000 SMS/Calls",
-      "10,000 Emails",
+      // "1000 SMS/Calls",
+      // "10,000 Emails",
     ],
     button: {
       text: "I'm ready to take my business to the next level",
@@ -90,21 +98,22 @@ export const standardPricing: Price[] = [
     },
   },
   {
+    tier: 3,
     shortName: "all-in",
     description: "Perfect for serious businesses that want to go all-in on growth - focused on automating your marketing and sales processes to maximize your growth potential. This is the most powerful system we offer and is a complete marketing solution.",
     available: true,
-    name: "All-in Growth System",
+    name: "ALL-IN Growth System",
     note: "+ one-time $599 setup fee",
     price: {
       monthly: "$297",
       yearly: "$2,970",
-      note: "$297/mo-$997/mo based on usage. 3 team members included in base price",
+      note: `3 team members included`,
     },
     popular: false,
     features: [
-      "All features in Business Plus",
-      "Automated lead nurturing",
-      "AI Google Business Profile (GBP) optimization",
+      // "All features in Business Plus",
+      // "AI Google Business Profile (GBP) optimization",
+      "AI Google Business Profile",
       "Automated local SEO reports",
       "AI reputation management",
       "AI voice (outbound)",
@@ -114,8 +123,8 @@ export const standardPricing: Price[] = [
       "Additional reactivation campaigns",
       "Social planner",
       "Email marketing",
-      "1,500 SMS/Calls",
-      "15,000 Emails",
+      // "1,500 SMS/Calls",
+      // "15,000 Emails",
     ],
     button: {
       text: "I'm ready to go ALL IN on my business",
@@ -129,19 +138,19 @@ export const oneOffPricing: Price[] = [
     shortName: "website",
     available: true,
     name: "High Converting Website",
-    note: "+ one-time $299 setup fee",
+    note: "requires standard hosting",
     price: {
-      monthly: "$47",
-      yearly: "$470",
+      static: "$1,997",
     },
-    popular: true,
+    popular: false,
     features: [
       "Optimized to convert",
-      "Hosting included",
       "Beautiful and tailored for your business",
       "Follows all marketing best practices",
-      "Growth system ready (See FAQ below)",
-      "No compromises (See FAQ below)",
+      "Mobile responsive",
+      "Fully accessible",
+      "Growth system ready (See FAQ)",
+      "No compromises (See FAQ)",
     ],
     button: {
       text: "Get a great website",
@@ -152,27 +161,72 @@ export const oneOffPricing: Price[] = [
     shortName: "custom-website",
     available: true,
     name: "Custom Static Website",
-    note: "+ one-time $599 setup fee",
-    price: {
-      monthly: "$297",
-      yearly: "$2,970",
-    },
+    note: "requires performance hosting",
+    price: "$5,997",
     popular: false,
     features: [
       "Custom designed static site",
-      "Google Business Profile",
-      "Best in the industry",
+      "Optimized to convert",
       "Built using the latest technologies",
       "Lightning fast",
-      "Best hosting on the planet",
       "Perfect technical SEO",
       "Perfect core web vitals",
-      "Fully responsive",
+      "Mobile responsive",
       "Fully accessible",
+      "Growth system ready",
       // "Basic Analytics (Umami)",
     ],
     button: {
       text: "Get a fully custom site",
+      link: "/contact",
+    },
+  },
+  {
+    shortName: "standard-hosting",
+    available: true,
+    name: "Standard Website Hosting",
+    note: "+ one-time $99 setup fee",
+    price: {
+      monthly: "$97",
+      yearly: "$970",
+    },
+    popular: false,
+    features: [
+      "Business class hosting",
+      "World class infrastructure",
+      "Includes basic site revisions",
+      "99.99% uptime",
+      "SSL Included",
+    ],
+    button: {
+      text: "Get started",
+      link: "/contact",
+    },
+  },
+  {
+    shortName: "performance-hosting",
+    available: true,
+    name: "High Performance Hosting",
+    note: "+ one time $299 setup fee",
+    price: {
+      note: "compatible with static sites",
+      monthly: "$197",
+      yearly: "$1970",
+    },
+    popular: false,
+    features: [
+      "Includes Business growth plan above",
+      "Optimized hosting using latest technology",
+      "Best performance hosting on the planet",
+      "Basic site revisions",
+      "Yearly design review",
+      "Built on a CDN",
+      "Lightning fast",
+      "99.99% uptime",
+      "SSL Included",
+    ],
+    button: {
+      text: "Get the best hosting in the world",
       link: "/contact",
     },
   },
@@ -189,10 +243,10 @@ export const oneOffPricing: Price[] = [
     features: [
       "Fully managed blog",
       "Full CMS capabilities",
-      "Can add to any plan",
+      "Can add to any of our sites",
     ],
     button: {
-      text: "Get a custom blog",
+      text: "Start writing content",
       link: "/contact",
     },
   },
@@ -236,12 +290,10 @@ export const oneOffPricing: Price[] = [
     features: [
       "AI receptionist for your business",
       "24/7 availability",
+      "Answers calls and messages",
+      "Handles appointment scheduling",
       "Handles customer inquiries",
       "Trained on your business",
-      "Improved customer satisfaction",
-      "Reduced response times",
-      "Increased efficiency",
-      "Cost-effective solution",
     ],
     button: {
       text: "Get an AI receptionist",
@@ -282,25 +334,27 @@ export const oneOffPricing: Price[] = [
     shortName: "reach",
     available: true,
     name: "Reach Systems",
-    note: "Make sure to get the stuff up ^ there right first!",
-    price: "Contact us",
+    note: "Make sure to get the growth system stuff right first!",
+    price: {
+      static: "Contact us",
+    },
     popular: false,
     features: [
       "Ad campaigns",
-      "Social media management",
+      "Managed social media",
       "Content creation",
-      "Email marketing",
+      "Managed email marketing",
       "AI outreach lead generation",
       "Analytics and reporting",
       "Brand strategy",
       "Market research",
       "SEO optimization",
-      "Funnels",
-      "Lead magnets",
+      "Managed funnels",
+      "Managed lead magnets",
       "And more...",
     ],
     button: {
-      text: "I'm ready to reach my audience",
+      text: "The foundation of my business is ready, I'm ready to reach my audience",
       link: "/contact",
     },
   },
@@ -310,3 +364,26 @@ export const prices: Price[] = [
   ...standardPricing,
   ...oneOffPricing,
 ];
+
+export function getStandardPlanByTier(tier: number) {
+  return standardPricing.find((item) => item.tier === tier);
+}
+
+export const tier1Features = getStandardPlanByTier(1)?.features || [];
+export const tier2Features = getStandardPlanByTier(2)?.features || [];
+export const tier3Features = getStandardPlanByTier(3)?.features || [];
+
+export const features = [ ...tier1Features, ...tier2Features, ...tier3Features ];
+
+export function getFeatureIsIncluded(tier: number, feature: string) {
+  switch(tier) {
+    case 1:
+      return tier1Features.includes(feature)
+    case 2:
+      return tier2Features.includes(feature) || tier1Features.includes(feature)
+    case 3:
+      return tier3Features.includes(feature) || tier2Features.includes(feature) || tier1Features.includes(feature)
+    default:
+      return false
+  }
+}

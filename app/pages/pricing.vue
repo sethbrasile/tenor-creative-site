@@ -12,7 +12,9 @@ const isAnnual = ref(false);
   <Container>
     <Sectionhead>
       <template v-slot:title>Growth System Plans</template>
-      <template v-slot:desc>Massive access and growth potential with simple & predictable pricing. Important to note that these are not tools, these are systems designed to drive growth.</template>
+      <template v-slot:desc>Massive access and growth potential with simple & predictable pricing. Important to note that these are not tools, these are
+        systems designed to act for you and drive growth for your business, and they're designed to do so at a tiny fraction of the cost of traditional marketing efforts.
+      </template>
     </Sectionhead>
      <div class="flex justify-center max-w-[14rem] m-auto my-8">
         <div class="relative flex w-full p-2 bg-gray-300 rounded-full">
@@ -23,12 +25,23 @@ const isAnnual = ref(false);
             <button class="relative flex-1 text-sm font-medium h-8 rounded-full focus-visible:outline-none focus-visible:ring focus-visible:ring-gray-300 transition-colors duration-150 ease-in-out" :class="isAnnual ? 'text-gray-800' : 'text-white'" @click="isAnnual = false" :aria-pressed="isAnnual">Monthly</button>
         </div>
     </div>
-    <div class="grid md:grid-cols-2 gap-2 mx-auto max-w-screen-lg mt-12">
+    <div class="hidden lg:block">
+      <PricingTable :yearly="isAnnual" :items="standardPricing" />
+    </div>
+    <div class="grid lg:hidden md:grid-cols-2 gap-2 mx-auto max-w-screen-lg mt-12">
       <PricingCard v-for="item of standardPricing" :plan="item" :key="item.name" :yearly="isAnnual" />
     </div>
 
+    <Cta
+      location="pricing"
+      button-text="Book my FREE consultation"
+      description="If you're not sure, or have more complex needs, book a slot with us and we can take a look together."
+      heading="Not sure which system is right for your business?"
+      name="consult"
+      to="/booking"
+    />
     <Sectionhead>
-      <template v-slot:title>Other Services and Addons</template>
+      <template v-slot:title>Standard Services and Growth System Addons</template>
       <template v-slot:desc>If our growth system packages don't meet your needs, we also offer these services and addons.</template>
     </Sectionhead>
     <div class="flex justify-center max-w-[14rem] m-auto my-8">
@@ -40,7 +53,7 @@ const isAnnual = ref(false);
             <button class="relative flex-1 text-sm font-medium h-8 rounded-full focus-visible:outline-none focus-visible:ring focus-visible:ring-gray-300 transition-colors duration-150 ease-in-out" :class="isAnnual ? 'text-gray-800' : 'text-white'" @click="isAnnual = false" :aria-pressed="isAnnual">Monthly</button>
         </div>
     </div>
-    <div class="grid md:grid-cols-3 gap-2 mx-auto max-w-screen-lg mt-12">
+    <div class="grid md:grid-cols-3 gap-2 mx-auto mt-12">
       <PricingCard v-for="item of oneOffPricing" :plan="item" :key="item.name" :yearly="isAnnual" />
     </div>
 
@@ -48,7 +61,7 @@ const isAnnual = ref(false);
       <template v-slot:title>FAQ</template>
       <template v-slot:desc>Frequently Asked Questions</template>
     </Sectionhead>
-    <div class="grid md:grid-cols-1 gap-10 mx-auto max-w-screen-lg mt-12">
+    <div class="grid md:grid-cols-1 gap-10 mx-auto mt-12">
       <!-- <PricingCard v-for="item of standardPricing" :plan="item" :key="item.name" /> -->
       <p>
         <strong>Q: What does "No compromises" mean?</strong>
@@ -104,13 +117,12 @@ const isAnnual = ref(false);
       <p>
         <strong>Q: What if I need more than one website?</strong>
         <br />
-        A: No problem! We can add additional websites to your plan for $47/mo. This is a great option for businesses that have multiple locations or brands.
+        A: No problem! We can add additional websites to your plan at the rates listed above. This is a great option for businesses that have multiple locations or brands.
       </p>
       <p>
         <strong>Q: My team needs more member logins...</strong>
         <br />
-        A: That's no problem! We can add additional team members to your plan for $29/mo. The all-in growth system also includes more team member logins as
-        you graduate to higher usage tiers, so you can scale your team as your business grows.
+        A: That's no problem! We can add additional team members to your plan for $29/mo.
       </p>
       <p>
         <strong>Q: I need help with Google My Business (GMB) but I only see you mentioning Google Business Profile (GBP)</strong>
@@ -118,7 +130,7 @@ const isAnnual = ref(false);
         A: Google has changed the name of GMB to GBP, but it's the same thing.
       </p>
     </div>
-    <div class="mx-auto max-w-screen-lg mt-12">
+    <div class="mx-auto mt-12">
       <p>
         <strong>Q: I have more questions. How can I get in touch?</strong>
         <br />

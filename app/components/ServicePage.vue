@@ -1,5 +1,5 @@
 <template>
-  <Sectionhead  class="mt-4" :subtitle-callout="comingSoon">
+  <Sectionhead class="mt-4" :subtitle-callout="comingSoon">
     <template v-slot:title>{{ title }}</template>
     <template v-slot:subtitle-callout>
       Not Available Yet
