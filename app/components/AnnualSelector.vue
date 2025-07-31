@@ -4,7 +4,7 @@ defineEmits(['yearly', 'monthly'])
 </script>
 
 <template>
-  <div class="flex justify-center max-w-[14rem] m-auto my-8">
+  <div class="flex justify-center max-w-[24rem] m-auto my-8">
     <div class="relative flex w-full p-2 bg-gray-300 rounded-full">
       <span class="absolute inset-0 m-1 pointer-events-none" aria-hidden="true">
         <span
@@ -14,7 +14,7 @@ defineEmits(['yearly', 'monthly'])
       <button
         class="button"
         :class="isAnnual ? 'text-white' : 'text-gray-800'" @click="$emit('yearly')" :aria-pressed="isAnnual">Yearly
-        <span :class="isAnnual ? 'text-gray-200' : 'text-gray-600'">(-16%)</span></button>
+        <span :class="isAnnual ? 'text-gray-200' : 'text-gray-600'">(2 free months)</span></button>
       <button
         class="button"
         :class="isAnnual ? 'text-gray-800' : 'text-white'" @click="$emit('monthly')"
