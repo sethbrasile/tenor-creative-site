@@ -1,5 +1,10 @@
 <script setup lang="ts">
 const { leadMagnet } = useRuntimeConfig().public
+useSeoMeta({
+  ogTitle: leadMagnet.name,
+  ogDescription: leadMagnet.description,
+  twitterCard: 'summary'
+})
 </script>
 
 <template>
