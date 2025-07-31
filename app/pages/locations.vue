@@ -2,7 +2,7 @@
   const locations = [
     {
       name: "Durant, OK",
-      title: "Seth Brasile local to Durant",
+      // title: "Seth Brasile local to Durant",
       avatar: {
         src: '/img/locations/durant.png',
         width: 305,
@@ -11,7 +11,7 @@
     },
     {
       name: "Sherman, TX",
-      title: "Seth and Michele both local to Sherman",
+      // title: "Seth and Michele both local to Sherman",
       avatar: {
         src: '/img/locations/sherman.png',
         width: 305,
@@ -20,7 +20,7 @@
     },
     {
       name: "Gainesville, TX",
-      title: "Michele Pulec local to Gainesville",
+      // title: "Michele Pulec local to Gainesville",
       avatar: {
         src: '/img/locations/gainesville.png',
         width: 305,
