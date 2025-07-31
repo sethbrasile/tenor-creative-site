@@ -1,9 +1,9 @@
 <template>
   <Container>
     <Sectionhead>
-      <template v-slot:title>Business Audit</template>
+      <template v-slot:title>Business marketing audit</template>
       <template v-slot:desc>
-        Please complete this business audit at least 2 business days before you attend your audit review call.
+        Please complete this marketing audit before you schedule (or at least 2 business days before) your audit review call.
         This allows our team to review the audit results and properly prepare for the call.
       </template>
     </Sectionhead>
