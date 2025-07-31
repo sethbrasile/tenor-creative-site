@@ -17,7 +17,7 @@
 
   const description = computed(() => {
     if (!props.description) {
-      return `Download your free guide - ${leadMagnet.name}:`
+      return `Unlock your free guide - ${leadMagnet.name}:`
     }
     return props.description
   })

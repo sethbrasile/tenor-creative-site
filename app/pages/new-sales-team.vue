@@ -10,7 +10,7 @@ useSeoMeta({
 <template>
   <Container>
     <Sectionhead>
-      <template v-slot:title>Download your free guide</template>
+      <template v-slot:title>Unlock your free guide</template>
       <template v-slot:desc>
         <p class="text-lg mb-6 font-bold">
           "{{ leadMagnet.name }}"
