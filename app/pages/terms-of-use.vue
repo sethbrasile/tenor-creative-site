@@ -69,7 +69,7 @@
 
       <section>
         <h2 class="text-2xl font-semibold mb-4">11. Governing Law</h2>
-        <p>These Terms are governed by Delaware law. Disputes will be resolved in Delaware courts.</p>
+        <p>These Terms are governed by Oklahoma law. Disputes will be resolved in Oklahoma courts.</p>
       </section>
 
       <section>
