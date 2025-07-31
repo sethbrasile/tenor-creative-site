@@ -21,11 +21,11 @@ export const services = [
     body: "Through a wealth of online tools, prospects now have massive visibility into your companies reputation, good or bad. It's unbelievably important to ensure you're nailing this. We offer automated systems, easy-to-use tools and even AI management, which come together and allow you to maintain control of your online reputation.",
   },
   {
-    title: "Retargeting",
-    slug: "retargeting",
+    title: "Remarketing",
+    slug: "remarketing",
     description: "Are you maximizing the value of your existing customer base? On average it costs 5 times more to acquire a new customer than it does to sell new services to an existing customer.",
     icon: "bx:target-lock",
-    body: "One of the most profitable (also one of the most seldom used) pools of potential prospects will always be previous customers. Let's face it, there aren't many avenues for most small businesses to manage and keep up with existing customer relationships. Traditional marketing agencies tend to ignore this entire topic, assuming the business has it under control. We recognize that most businessed need help here and we offer systems to help you keep up great relationships and help you make the most of your existing customers.",
+    body: "One of the most profitable (also one of the most seldom used) pools of potential prospects will always be existing customers. Let's face it, there aren't many avenues for most small businesses to manage and keep up with existing customer relationships. Traditional marketing agencies tend to ignore this entire topic, assuming the business has it under control. We recognize that most businessed need help here and we offer systems to help you keep up great relationships and help you make the most of your existing customers.",
   },
   {
     title: "Website Design",

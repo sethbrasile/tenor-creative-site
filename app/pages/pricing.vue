@@ -40,7 +40,7 @@ const isAnnual = ref(false);
       <template v-slot:desc>If our growth system packages don't meet your needs, we also offer these services and addons.</template>
     </Sectionhead>
 
-    <AnnualSelector @yearly="isAnnual = true" @monthly="isAnnual = false" />
+    <AnnualSelector :is-annual="isAnnual" @yearly="isAnnual = true" @monthly="isAnnual = false" />
 
     <div class="grid md:grid-cols-3 gap-2 mx-auto mt-12">
       <PricingCard v-for="item of oneOffPricing" :plan="item" :key="item.name" :yearly="isAnnual" />
