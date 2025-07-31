@@ -1,51 +1,32 @@
 <script setup lang="ts">
-useHead({
-  script: [
-    {
-      src: "https://hlapi.tenorcreative.com/js/form_embed.js",
-      async: true,
-      defer: true,
-    },
-  ],
-});
+const { leadMagnet } = useRuntimeConfig().public
 </script>
 
 <template>
   <Container>
     <Sectionhead>
-      <template v-slot:title>Unlock Your Free Guide</template>
+      <template v-slot:title>Download your free guide</template>
       <template v-slot:desc>
         <p class="text-lg mb-6 font-bold">
-          The Secret Formula that the most successful businesses use to fuel growth and outperform the competition.
-        </p>
-        <p class="text-lg">
-          In this guide, you'll learn the key elements that drive growth, why most businesses get them wrong, and how to implement them in your own business.
+          "{{ leadMagnet.name }}"
         </p>
       </template>
     </Sectionhead>
 
-    <div class="flex flex-col mt-8 w-full gap-4 lg:grid lg:grid-cols-2">
-      <NuxtPicture
-        src="/img/secret-formula.png"
-        class="lg:mt-14 mx-auto lg:px-8"
-      />
-      <iframe
-        src="https://hlapi.tenorcreative.com/widget/form/rCmANP5zSLYEtRs6TALv"
-        style="width:100%;height:100%;border:none;border-radius:4px"
-        id="inline-rCmANP5zSLYEtRs6TALv"
-        data-layout="{'id':'INLINE'}"
-        data-trigger-type="alwaysShow"
-        data-trigger-value=""
-        data-activation-type="alwaysActivated"
-        data-activation-value=""
-        data-deactivation-type="neverDeactivate"
-        data-deactivation-value=""
-        data-form-name="Lead Magnet Opt In"
-        data-height="707"
-        data-layout-iframe-id="inline-rCmANP5zSLYEtRs6TALv"
-        data-form-id="rCmANP5zSLYEtRs6TALv"
-        title="Lead Magnet Opt In">
-    </iframe>
+    <p class="text-lg">
+      {{ leadMagnet.description }}
+    </p>
+
+    <p class="text-lg mt-6">
+      Who can we send the free guide to?
+    </p>
+
+    <div class="flex flex-col w-full gap-4 lg:grid lg:grid-cols-2">
+      <!-- <NuxtImg
+        :src="previewImage"
+        class="mx-auto border border-solid rounded-md"
+      /> -->
+      <HlForm form-id="sLuHUrIuc4bSq3WMsdkl" form-name="Lead Magnet - New Sales Team - Opt In" />
     </div>
 
 

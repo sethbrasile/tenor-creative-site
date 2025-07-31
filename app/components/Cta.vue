@@ -1,30 +1,33 @@
-<script setup>
-  const props = defineProps({
-    location: {
-      type: String,
-      default: "unknown location",
-    },
-    description: {
-      type: String,
-      default: `Access your free guide: "The 'Secret Formula' that the most successful businesses use to fuel growth and outperform the competition."`,
-    },
-    heading: {
-      type: String,
-      default: "Start growing your business now for free!",
-    },
-    to: {
-      type: String,
-      default: "/free-guide",
-    },
-    buttonText: {
-      type: String,
-      default: "Unlock My Free Guide",
-    },
-    name: {
-      type: String,
-      default: 'You Deserve - ',
-    }
+<script setup lang="ts">
+  const { leadMagnet } = useRuntimeConfig().public
+
+  const props = withDefaults(defineProps<{
+    location?: string;
+    description?: string;
+    heading?: string;
+    to?: string;
+    buttonText?: string;
+    name?: string;
+  }>(), {
+    location: "unknown location",
+    heading: "Start growing your business now for free!",
+    buttonText: "Unlock My Free Guide",
+    name: 'You Deserve - ',
   });
+
+  const description = computed(() => {
+    if (!props.description) {
+      return `Download your free guide - ${leadMagnet.name}:`
+    }
+    return props.description
+  })
+
+  const to = computed(() => {
+    if (!props.to) {
+      return leadMagnet.url
+    }
+    return props.to
+  })
 
   const ctaName = computed(() => {
     return props.name + props.location

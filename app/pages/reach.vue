@@ -18,7 +18,7 @@ useHead({
         <p class="text-lg mb-6 font-bold">
           If you've got the foundation of your marketing systems completely handled, then you're ready for our Reach systems.
         </p>
-        <p class="text-md mb-6">(If you're not sure what that means, please download your <NuxtLink class="underline" to="/free-guide">Free Guide</NuxtLink> on the topic.)</p>
+        <p class="text-md mb-6">(If you're not sure what that means, please download your <NuxtLink class="underline" to="/pull-the-right-lever">Free Guide</NuxtLink> on the topic.)</p>
         <p class="text-md">Tell us a little bit about yourself and we'll get started!</p>
       </template>
     </Sectionhead>

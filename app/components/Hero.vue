@@ -1,6 +1,6 @@
 <script setup lang="ts">
   defineProps<{ og?: boolean }>()
-  const { hero: { title, description, alt } } = useRuntimeConfig().public
+  const { hero: { title, description, alt }, leadMagnet: { url, name } } = useRuntimeConfig().public
 </script>
 <template>
   <main class="grid md:grid-cols-2 place-items-center xs:pt-16 pb-8 md:pt-8" :class="{ 'md:pt-0': og, '-mt-8': og, 'ml-8': og }">
@@ -31,10 +31,10 @@
         </CtaLink>
         <CtaLink
           cta-name="Hero"
-          href="/free-guide"
+          :href="url"
           style-name="outline"
           rel="noopener">
-            Unlock My Free Guide: <strong>The 'Secret Formula'</strong>
+            Unlock My Free Guide <strong>{{ name }}</strong>
         </CtaLink>
       </div>
     </div>

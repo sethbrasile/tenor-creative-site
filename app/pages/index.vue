@@ -15,18 +15,12 @@ const features = [
     slug: 'readiness',
   },
   {
-    title: "Resell",
+    title: "Remarket/Resell",
     description:
       "Are you maximizing the value of your existing customer base? On average it costs 5 times more to acquire a new customer than it does to sell new services to an existing customer.",
-    icon: "mdi:database-sync",
-    slug: 'resell',
+    icon: "mdi:email",
+    slug: 'remarket',
   },
-  // {
-  //   title: "Remarketing",
-  //   description:
-  //     "Are you staying top of mind with your customers? 70% of consumers say they would prefer to hear from a business they have already purchased from rather than a new one.",
-  //   icon: "mdi:email",
-  // },
   {
     title: "Reach",
     description:
