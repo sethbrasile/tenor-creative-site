@@ -76,9 +76,12 @@ export default defineNuxtConfig({
   $development: {
     runtimeConfig: {
       public: {
-        plan1PaymentLink: 'https://buy.stripe.com/test_6oU9AV1xBgnt5DY7Bj7ss00',
-        plan2PaymentLink: 'https://buy.stripe.com/test_dRmcN75NRefleau4p77ss01',
-        plan3PaymentLink: 'https://buy.stripe.com/test_6oU9AVb8b6MTaYi5tb7ss02',
+        plan1PaymentLink: 'https://buy.stripe.com/aFa28r464eCs1Bmeuc33W00',
+        plan1AnnualPaymentLink: 'https://buy.stripe.com/aFa28r464eCs1Bmeuc33W00',
+        plan2PaymentLink: 'https://buy.stripe.com/aFa28r464eCs1Bmeuc33W00',
+        plan2AnnualPaymentLink: 'https://buy.stripe.com/aFa28r464eCs1Bmeuc33W00',
+        plan3PaymentLink: 'https://buy.stripe.com/aFa28r464eCs1Bmeuc33W00',
+        plan3AnnualPaymentLink: 'https://buy.stripe.com/aFa28r464eCs1Bmeuc33W00',
       },
     },
   },
@@ -87,8 +90,11 @@ export default defineNuxtConfig({
     runtimeConfig: {
       public: {
         plan1PaymentLink: 'https://buy.stripe.com/aFa28r464eCs1Bmeuc33W00',
-        plan2PaymentLink: 'https://buy.stripe.com/3cI9ATeKI2TK3Ju4TC33W01',
-        plan3PaymentLink: 'https://buy.stripe.com/eVq7sL5a8fGw7ZK0Dm33W02',
+        plan1AnnualPaymentLink: 'https://buy.stripe.com/8x26oH4649i85RC3Py33W05',
+        plan2PaymentLink: 'https://buy.stripe.com/3cI28r1XWgKA1Bm2Lu33W03',
+        plan2AnnualPaymentLink: 'https://buy.stripe.com/6oU6oH7ig1PGfscfyg33W06',
+        plan3PaymentLink: 'https://buy.stripe.com/28E14nfOMgKAfsc99S33W04',
+        plan3AnnualPaymentLink: 'https://buy.stripe.com/3cIcN5cCA51Seo885O33W07',
       },
     },
   }

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { features, getFeatureIsIncluded, getStandardPlanByTier } from '~/data/pricing';
 defineProps<{ yearly: boolean }>()
-const { plan1PaymentLink, plan2PaymentLink, plan3PaymentLink }  = useRuntimeConfig().public
+const { plan1PaymentLink, plan2PaymentLink, plan3PaymentLink, plan1AnnualPaymentLink, plan2AnnualPaymentLink, plan3AnnualPaymentLink }  = useRuntimeConfig().public
 const plan1 = getStandardPlanByTier(1)
 const plan2 = getStandardPlanByTier(2)
 const plan3 = getStandardPlanByTier(3)
@@ -39,7 +39,7 @@ const filteredFeatures = computed(() => {
             <Tick v-if="getFeatureIsIncluded(1, feature)" />
           </p>
 
-          <NuxtLink :to="plan1PaymentLink">
+          <NuxtLink :to="yearly ? plan1AnnualPaymentLink : plan1PaymentLink">
             <IconButton
               :button-text="'Get the ' + plan1?.name"
               :note="plan1?.description"
@@ -67,7 +67,7 @@ const filteredFeatures = computed(() => {
             <Tick v-if="getFeatureIsIncluded(2, feature)" />
           </p>
 
-          <NuxtLink :to="plan2PaymentLink">
+          <NuxtLink :to="yearly ? plan2AnnualPaymentLink : plan2PaymentLink">
             <IconButton
               :button-text="'Get the ' + plan2?.name"
               :note="plan2?.description"
@@ -94,7 +94,7 @@ const filteredFeatures = computed(() => {
             <Tick v-if="getFeatureIsIncluded(3, feature)" />
           </p>
 
-          <NuxtLink :to="plan3PaymentLink">
+          <NuxtLink :to="yearly ? plan3AnnualPaymentLink : plan3PaymentLink">
             <IconButton
               :button-text="'Get the ' + plan3?.name"
               :note="plan3?.description"
