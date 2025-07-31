@@ -29,7 +29,7 @@ const menuitems = [
   //   path: "/sample-sites",
   // },
   {
-    title: "Book us",
+    title: "Contact",
     path: "/booking",
   },
 ];
