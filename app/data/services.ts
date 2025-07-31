@@ -1,3 +1,19 @@
+import { standardPricing } from "./pricing"
+
+const fastStart = standardPricing.find((price) => price.shortName === 'fast-start')
+const business = standardPricing.find((price) => price.shortName === 'business')
+const ai = standardPricing.find((price) => price.shortName === 'business-plus-ai')
+
+export const systems = [fastStart, business, ai].map((price) => {
+  return {
+    title: price?.name,
+    slug: price?.shortName,
+    icon: "mdi:cogs",
+    description: price?.description,
+    features: price?.features
+  }
+})
+
 export const services = [
   {
     title: "Curate Customer Reviews",

@@ -1,5 +1,5 @@
 <script setup>
-import { standardPricing, oneOffPricing } from '~/data/pricing';
+import { standardPricing, oneOffPricing, aiServices } from '~/data/pricing';
 
 useSeoMeta({
   title: "Pricing",
@@ -47,6 +47,17 @@ const isAnnual = ref(false);
     </div>
 
     <Sectionhead>
+      <template v-slot:title>AI Systems</template>
+      <template v-slot:desc>Ala carte AI systems that can be added to any business</template>
+    </Sectionhead>
+
+    <AnnualSelector :is-annual="isAnnual" @yearly="isAnnual = true" @monthly="isAnnual = false" />
+
+    <div class="grid md:grid-cols-3 gap-2 mx-auto mt-12">
+      <PricingCard v-for="item of aiServices" :plan="item" :key="item.name" :yearly="isAnnual" />
+    </div>
+
+    <Sectionhead>
       <template v-slot:title>FAQ</template>
       <template v-slot:desc>Frequently Asked Questions</template>
     </Sectionhead>
@@ -81,13 +92,6 @@ const isAnnual = ref(false);
         A: This feature automates the process of engaging with leads through personalized emails and follow-ups, increasing your chances of conversion without
         manual effort. These well-designed touchpoints keep your business top-of-mind for potential customers (without being annoying), and can be
         customized based on the particular needs of your audience.
-      </p>
-      <p>
-        <strong>Q: Can I customize the features in my plan?</strong>
-        <br />
-        A: A bit.. Not much... But this is a good thing! The honest truth is that in the lowest tier business plan, we're including every feature that most businesses
-        are going to need to grow their business! The boosted features in higher-tier plans are for businesses that need more advanced capabilities,
-        want AI to replace some manual processes, or want to take their marketing to the next level with funnels and lead magnets.
       </p>
       <p>
         <strong>Q: Your plans mention Google Business Profile (GBP) but I already have one?</strong>

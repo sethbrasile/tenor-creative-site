@@ -8,14 +8,31 @@
       {{ description }}
     </template>
   </Sectionhead>
-  <p class="text-lg mt-8">{{ body }}</p>
+  <p v-if="body" class="text-lg mt-8">{{ body }}</p>
+  <!-- features list -->
+   <div v-if="features">
+    <ul class="grid sm:grid-cols-2 md:grid-cols-4 mt-8 gap-6 text-lg font-light">
+      <li
+        v-for="feature in features"
+        class="item border border-gray-200 bg-white shadow-sm hover:shadow-lg hover:border-primary-400 transition-all p-6 rounded-xl flex items-center gap-3"
+      >
+        <span class="text-primary-600 text-xl">•</span>
+        <span>{{ feature }}</span>
+      </li>
+    </ul>
+   </div>
 </template>
 
 <script lang="ts" setup>
 defineProps<{
   title: string;
   description: string;
-  body: string;
+  body?: string;
   comingSoon?: boolean;
+  features?: string[];
 }>();
 </script>
+
+<style>
+
+</style>
