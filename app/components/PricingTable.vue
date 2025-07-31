@@ -5,6 +5,10 @@ const { plan1PaymentLink, plan2PaymentLink, plan3PaymentLink }  = useRuntimeConf
 const plan1 = getStandardPlanByTier(1)
 const plan2 = getStandardPlanByTier(2)
 const plan3 = getStandardPlanByTier(3)
+
+const filteredFeatures = computed(() => {
+  return features.filter((f) => !f.includes("All features"))
+})
 </script>
 
 <template>
@@ -12,7 +16,7 @@ const plan3 = getStandardPlanByTier(3)
   <div class="container px-5 py-8 mx-auto flex flex-wrap">
     <div class="lg:w-1/4 mt-48 hidden lg:block">
       <div class="mt-px border-t border-gray-300 border-b border-l rounded-tl-lg rounded-bl-lg overflow-hidden">
-        <p v-for="feature in features" :key="feature" class="feature text-gray-900 h-12 text-center px-4 flex items-center justify-start">{{ feature }}</p>
+        <p v-for="feature in filteredFeatures" :key="feature" class="feature text-gray-900 h-12 text-center px-4 flex items-center justify-start">{{ feature }}</p>
       </div>
     </div>
 
@@ -31,7 +35,7 @@ const plan3 = getStandardPlanByTier(3)
           <span class="text-sm text-gray-600">{{ plan1?.price.note }}</span>
         </div>
         <div>
-          <p v-for="feature in features" :key="feature" class="feature tick text-center h-12 flex items-center justify-center">
+          <p v-for="feature in filteredFeatures" :key="feature" class="feature tick text-center h-12 flex items-center justify-center">
             <Tick v-if="getFeatureIsIncluded(1, feature)" />
           </p>
 
@@ -59,7 +63,7 @@ const plan3 = getStandardPlanByTier(3)
           <span class="text-sm text-gray-600">{{ plan2?.price.note }}</span>
         </div>
         <div>
-          <p v-for="feature in features" :key="feature" class="feature tick text-center h-12 flex items-center justify-center">
+          <p v-for="feature in filteredFeatures" :key="feature" class="feature tick text-center h-12 flex items-center justify-center">
             <Tick v-if="getFeatureIsIncluded(2, feature)" />
           </p>
 
@@ -86,7 +90,7 @@ const plan3 = getStandardPlanByTier(3)
           <span class="text-sm text-gray-600">{{ plan3?.price.note }}</span>
         </div>
         <div>
-          <p v-for="feature in features" :key="feature" class="feature tick text-center h-12 flex items-center justify-center">
+          <p v-for="feature in filteredFeatures" :key="feature" class="feature tick text-center h-12 flex items-center justify-center">
             <Tick v-if="getFeatureIsIncluded(3, feature)" />
           </p>
 

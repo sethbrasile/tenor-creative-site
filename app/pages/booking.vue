@@ -1,17 +1,6 @@
-<template>
-  <Container>
-    <Sectionhead>
-      <template v-slot:title>Book a FREE consultation</template>
-      <template v-slot:desc>
-        Let's have a chat about your needs and see how our proven marketing systems can help your business grow.
-      </template>
-    </Sectionhead>
-
-  <iframe src="https://hlapi.tenorcreative.com/widget/booking/b1WPdFo5YUhyHJkPVxOV" style="width: 100%;border:none;overflow: hidden;" scrolling="no" id="msgsndr-calendar"></iframe>
-  </Container>
-</template>
-
 <script lang="ts" setup>
+import { prices } from '~/data/pricing';
+
 useHead({
   script: [
     {
@@ -21,8 +10,27 @@ useHead({
     },
   ]
 })
+
+const planName = useRoute().query.plan
+
+const plan = computed(() => {
+  if (planName) {
+    return prices.find((price) => price.shortName === planName)
+  }
+})
 </script>
 
-<style>
+<template>
+  <Container>
+    <Sectionhead>
+      <template v-slot:title>Let's talk about the {{ plan?.name }} service</template>
+      <template v-slot:desc>
+        Let's have a chat about your needs and see how our proven marketing systems can help your business grow.
+      </template>
+    </Sectionhead>
 
-</style>
+    <p class="mt-4">{{ plan?.description }}</p>
+
+    <iframe src="https://hlapi.tenorcreative.com/widget/booking/b1WPdFo5YUhyHJkPVxOV" style="width: 100%;border:none;overflow: hidden;" scrolling="no" id="msgsndr-calendar"></iframe>
+  </Container>
+</template>

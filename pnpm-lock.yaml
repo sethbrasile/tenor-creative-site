@@ -24,6 +24,9 @@ devDependencies:
   '@iconify-json/iconamoon':
     specifier: ^1.2.2
     version: 1.2.2
+  '@iconify-json/mdi':
+    specifier: ^1.2.3
+    version: 1.2.3
   '@iconify-json/uil':
     specifier: ^1.2.3
     version: 1.2.3
@@ -879,6 +882,12 @@ packages:
 
   /@iconify-json/iconamoon@1.2.2:
     resolution: {integrity: sha512-Xn7YeSDniPgutPr0qil/iQwQelq975OYQ/i2twGjcK4DjGOXBrBC+6q45WtVuQbFfXzM7bgijv4yVnxy0OqUdQ==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
+  /@iconify-json/mdi@1.2.3:
+    resolution: {integrity: sha512-O3cLwbDOK7NNDf2ihaQOH5F9JglnulNDFV7WprU2dSoZu3h3cWH//h74uQAB87brHmvFVxIOkuBX2sZSzYhScg==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true

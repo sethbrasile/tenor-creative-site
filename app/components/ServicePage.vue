@@ -8,7 +8,7 @@
       {{ description }}
     </template>
   </Sectionhead>
-  <div v-if="body" v-html="body" />
+  <p class="text-lg mt-8">{{ body }}</p>
 </template>
 
 <script lang="ts" setup>

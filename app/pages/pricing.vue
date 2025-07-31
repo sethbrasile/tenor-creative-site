@@ -16,15 +16,9 @@ const isAnnual = ref(false);
         systems designed to act for you and drive growth for your business, and they're designed to do so at a tiny fraction of the cost of traditional marketing efforts.
       </template>
     </Sectionhead>
-     <div class="flex justify-center max-w-[14rem] m-auto my-8">
-        <div class="relative flex w-full p-2 bg-gray-300 rounded-full">
-            <span class="absolute inset-0 m-1 pointer-events-none" aria-hidden="true">
-                <span class="absolute inset-0 w-1/2 bg-gray-800 rounded-full shadow-sm shadow-gray-950/10 transform transition-transform duration-150 ease-in-out" :class="isAnnual ? 'translate-x-0' : 'translate-x-full'"></span>
-            </span>
-            <button class="relative flex-1 text-sm font-medium h-8 rounded-full focus-visible:outline-none focus-visible:ring focus-visible:ring-gray-300 transition-colors duration-150 ease-in-out" :class="isAnnual ? 'text-white' : 'text-gray-800'" @click="isAnnual = true" :aria-pressed="isAnnual">Yearly <span :class="isAnnual ? 'text-gray-200' : 'text-gray-600'">(-16%)</span></button>
-            <button class="relative flex-1 text-sm font-medium h-8 rounded-full focus-visible:outline-none focus-visible:ring focus-visible:ring-gray-300 transition-colors duration-150 ease-in-out" :class="isAnnual ? 'text-gray-800' : 'text-white'" @click="isAnnual = false" :aria-pressed="isAnnual">Monthly</button>
-        </div>
-    </div>
+
+    <AnnualSelector :is-annual="isAnnual" @yearly="isAnnual = true" @monthly="isAnnual = false" />
+
     <div class="hidden lg:block">
       <PricingTable :yearly="isAnnual" :items="standardPricing" />
     </div>
@@ -40,19 +34,14 @@ const isAnnual = ref(false);
       name="consult"
       to="/booking"
     />
+
     <Sectionhead>
       <template v-slot:title>Standard Services and Growth System Addons</template>
       <template v-slot:desc>If our growth system packages don't meet your needs, we also offer these services and addons.</template>
     </Sectionhead>
-    <div class="flex justify-center max-w-[14rem] m-auto my-8">
-        <div class="relative flex w-full p-2 bg-gray-300 rounded-full">
-            <span class="absolute inset-0 m-1 pointer-events-none" aria-hidden="true">
-                <span class="absolute inset-0 w-1/2 bg-gray-800 rounded-full shadow-sm shadow-gray-950/10 transform transition-transform duration-150 ease-in-out" :class="isAnnual ? 'translate-x-0' : 'translate-x-full'"></span>
-            </span>
-            <button class="relative flex-1 text-sm font-medium h-8 rounded-full focus-visible:outline-none focus-visible:ring focus-visible:ring-gray-300 transition-colors duration-150 ease-in-out" :class="isAnnual ? 'text-white' : 'text-gray-800'" @click="isAnnual = true" :aria-pressed="isAnnual">Yearly <span :class="isAnnual ? 'text-gray-200' : 'text-gray-600'">(-16%)</span></button>
-            <button class="relative flex-1 text-sm font-medium h-8 rounded-full focus-visible:outline-none focus-visible:ring focus-visible:ring-gray-300 transition-colors duration-150 ease-in-out" :class="isAnnual ? 'text-gray-800' : 'text-white'" @click="isAnnual = false" :aria-pressed="isAnnual">Monthly</button>
-        </div>
-    </div>
+
+    <AnnualSelector @yearly="isAnnual = true" @monthly="isAnnual = false" />
+
     <div class="grid md:grid-cols-3 gap-2 mx-auto mt-12">
       <PricingCard v-for="item of oneOffPricing" :plan="item" :key="item.name" :yearly="isAnnual" />
     </div>

@@ -13,7 +13,7 @@
   });
   const body = computed(() => {
     const service = services.find(service => service.slug === slug[0]);
-    return service && service.body ? service.body : '<p>Content not available</p>';
+    return service && service.body ? service.body : 'Content not available';
   });
 
   useSeoMeta({

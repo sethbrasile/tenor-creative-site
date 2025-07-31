@@ -28,7 +28,7 @@ export const standardPricing: Price[] = [
     description: "Perfect for new businesses or those looking to get started quickly - focused on getting you up and running with the essentials. Every business would benefit from this system.",
     available: true,
     name: "Fast Start Growth System",
-    note: "+ one-time $99 setup fee",
+    note: "+ one-time $299 setup fee",
     price: {
       monthly: "$97",
       yearly: "$970",
@@ -36,8 +36,8 @@ export const standardPricing: Price[] = [
     },
     popular: false,
     features: [
-      "High Converting Website",
-      "Hosting",
+      "FREE High Converting Website",
+      "FREE Hosting",
       "Review management",
       "Missed call text-back",
       "Web Chat + AI Chatbot",
@@ -56,7 +56,7 @@ export const standardPricing: Price[] = [
     ],
     button: {
       text: "I'm ready to grow my business",
-      link: "/contact",
+      link: "/booking",
     },
   },
   {
@@ -65,7 +65,7 @@ export const standardPricing: Price[] = [
     description: "Perfect for most small service or retail businesses - focused on helping you do a better job at capturing and maximizing existing opportunities by building your list.",
     available: true,
     name: "Business Growth System",
-    note: "+ one-time $299 setup fee",
+    note: "+ one-time $499 setup fee",
     price: {
       monthly: "$197",
       yearly: "$1970",
@@ -73,7 +73,7 @@ export const standardPricing: Price[] = [
     },
     popular: true,
     features: [
-      // "All features in Fast Start",
+      "All features in Fast Start",
       "GBP Messaging",
       "Reputation management",
       // "Review generation (get tons of reviews)",
@@ -94,7 +94,7 @@ export const standardPricing: Price[] = [
     ],
     button: {
       text: "I'm ready to take my business to the next level",
-      link: "/contact",
+      link: "/booking",
     },
   },
   {
@@ -103,7 +103,7 @@ export const standardPricing: Price[] = [
     description: "Perfect for serious businesses that want to go all-in on growth - focused on automating your marketing and sales processes to maximize your growth potential. This is the most powerful system we offer and is a complete marketing solution.",
     available: true,
     name: "ALL-IN Growth System",
-    note: "+ one-time $599 setup fee",
+    note: "+ one-time $799 setup fee",
     price: {
       monthly: "$297",
       yearly: "$2,970",
@@ -111,24 +111,25 @@ export const standardPricing: Price[] = [
     },
     popular: false,
     features: [
-      // "All features in Business Plus",
+      "All features in Business Plus",
       // "AI Google Business Profile (GBP) optimization",
       "AI Google Business Profile",
       "Automated local SEO reports",
       "AI reputation management",
+      "AI suggested reviews helper",
       "AI voice (outbound)",
       "Follow up campaigns",
       "Anniversary campaigns",
       "Referral campaigns",
       "Additional reactivation campaigns",
-      "Social planner",
+      "Social media planner",
       "Email marketing",
       // "1,500 SMS/Calls",
       // "15,000 Emails",
     ],
     button: {
       text: "I'm ready to go ALL IN on my business",
-      link: "/contact",
+      link: "/booking",
     },
   },
 ];
@@ -139,6 +140,7 @@ export const oneOffPricing: Price[] = [
     available: true,
     name: "High Converting Website",
     note: "requires standard hosting",
+    description: "Beautiful and tailored for your business, our mobile responsive and accessible websites are growth-system ready, and optimized to convert leads to customers.",
     price: {
       static: "$1,997",
     },
@@ -154,31 +156,7 @@ export const oneOffPricing: Price[] = [
     ],
     button: {
       text: "Get a great website",
-      link: "/contact",
-    },
-  },
-  {
-    shortName: "custom-website",
-    available: true,
-    name: "Custom Static Website",
-    note: "requires performance hosting",
-    price: "$5,997",
-    popular: false,
-    features: [
-      "Custom designed static site",
-      "Optimized to convert",
-      "Built using the latest technologies",
-      "Lightning fast",
-      "Perfect technical SEO",
-      "Perfect core web vitals",
-      "Mobile responsive",
-      "Fully accessible",
-      "Growth system ready",
-      // "Basic Analytics (Umami)",
-    ],
-    button: {
-      text: "Get a fully custom site",
-      link: "/contact",
+      link: "/booking",
     },
   },
   {
@@ -200,7 +178,32 @@ export const oneOffPricing: Price[] = [
     ],
     button: {
       text: "Get started",
-      link: "/contact",
+      link: "/booking",
+    },
+  },
+  {
+    shortName: "custom-website",
+    available: true,
+    name: "Custom Static Website",
+    note: "requires performance hosting",
+    description: "",
+    price: "$5,997",
+    popular: false,
+    features: [
+      "Custom designed static site",
+      "Optimized to convert",
+      "Built using the latest technologies",
+      "Lightning fast",
+      "Perfect technical SEO",
+      "Perfect core web vitals",
+      "Mobile responsive",
+      "Fully accessible",
+      "Growth system ready",
+      // "Basic Analytics (Umami)",
+    ],
+    button: {
+      text: "Get a fully custom site",
+      link: "/booking",
     },
   },
   {
@@ -218,6 +221,7 @@ export const oneOffPricing: Price[] = [
       "Includes Business growth plan above",
       "Optimized hosting using latest technology",
       "Best performance hosting on the planet",
+      "Bring your own site, or we build it",
       "Basic site revisions",
       "Yearly design review",
       "Built on a CDN",
@@ -227,7 +231,7 @@ export const oneOffPricing: Price[] = [
     ],
     button: {
       text: "Get the best hosting in the world",
-      link: "/contact",
+      link: "/booking",
     },
   },
   {
@@ -241,13 +245,41 @@ export const oneOffPricing: Price[] = [
     },
     popular: false,
     features: [
-      "Fully managed blog",
       "Full CMS capabilities",
       "Can add to any of our sites",
+      "Compatible with both Static and Standard"
     ],
     button: {
-      text: "Start writing content",
-      link: "/contact",
+      text: "Reach my audience with content",
+      link: "/booking",
+    },
+  },
+  {
+    shortName: "wordpress",
+    available: true,
+    name: "Wordpress hosting",
+    note: "+ one-time $499 setup fee",
+    price: {
+      monthly: "$297",
+      yearly: "$2,970",
+    },
+    popular: false,
+    features: [
+      "The full Wordpress experience",
+      "Free migration by WP experts",
+      "Automated updates",
+      "Automated backups",
+      "Extremely high performance",
+      "Integrated CDN",
+      "Integrated email",
+      "Performance monitoring",
+      "No traffic limits or metering",
+      "Free Object Cache Pro",
+      "Automatic image optimization"
+    ],
+    button: {
+      text: "Get the best WP hosting on the planet",
+      link: "/booking",
     },
   },
   {
@@ -257,9 +289,9 @@ export const oneOffPricing: Price[] = [
     note: "+ one-time $499 setup fee",
     popular: false,
     price: {
-      monthly: "$297",
-      yearly: "$2,970",
-      note: "$297/mo-$997/mo based on usage and needs",
+      monthly: "$397",
+      yearly: "$3,970",
+      note: "$397/mo-$997/mo based on usage and needs",
     },
     features: [
       "AI Google Business Profile",
@@ -273,7 +305,7 @@ export const oneOffPricing: Price[] = [
     ],
     button: {
       text: "Hire AI to ease your workload",
-      link: "/contact"
+      link: "/booking"
     }
   },
   {
@@ -283,8 +315,8 @@ export const oneOffPricing: Price[] = [
     name: "AI Receptionist",
     note: "+ one-time $499 setup fee",
     price: {
-      monthly: "$97",
-      yearly: "$970",
+      monthly: "$197",
+      yearly: "$1,970",
     },
     popular: false,
     features: [
@@ -297,7 +329,7 @@ export const oneOffPricing: Price[] = [
     ],
     button: {
       text: "Get an AI receptionist",
-      link: "/contact",
+      link: "/booking",
     },
   },
   {
@@ -326,7 +358,7 @@ export const oneOffPricing: Price[] = [
     ],
     button: {
       text: "Get AI support",
-      link: "/contact",
+      link: "/booking",
     },
   },
   {
@@ -342,7 +374,7 @@ export const oneOffPricing: Price[] = [
     features: [
       "Ad campaigns",
       "Managed social media",
-      "Content creation",
+      "Human-authored content creation",
       "Managed email marketing",
       "AI outreach lead generation",
       "Analytics and reporting",
@@ -355,7 +387,7 @@ export const oneOffPricing: Price[] = [
     ],
     button: {
       text: "The foundation of my business is ready, I'm ready to reach my audience",
-      link: "/contact",
+      link: "/reach",
     },
   },
 ]
