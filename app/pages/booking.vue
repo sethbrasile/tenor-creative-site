@@ -26,12 +26,16 @@ const plan = computed(() => {
       <template v-if="plan?.name" v-slot:title>Let's talk about the {{ plan?.name }} service</template>
       <template v-else v-slot:title>How can we help you?</template>
       <template v-slot:desc>
-        Let's have a chat about your needs and see how our proven marketing systems can help your business grow.
+        Let's talk about your needs and see how proven marketing systems can drive growth for your business.
       </template>
     </Sectionhead>
 
     <p class="mt-4">{{ plan?.description }}</p>
 
-    <iframe src="https://hlapi.tenorcreative.com/widget/booking/b1WPdFo5YUhyHJkPVxOV" style="width: 100%;border:none;overflow: hidden;" scrolling="no" id="msgsndr-calendar"></iframe>
+    <iframe src="https://hlapi.tenorcreative.com/widget/booking/b1WPdFo5YUhyHJkPVxOV" style="width: 100%; height: auto;" scrolling="yes" id="msgsndr-calendar"></iframe>
   </Container>
 </template>
+
+<style lang="postcss" scoped>
+
+</style>
