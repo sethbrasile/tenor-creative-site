@@ -63,7 +63,7 @@ export const standardPricing: Price[] = [
   {
     tier: 2,
     shortName: "business",
-    description: "Perfect for serious service and retail businesses that want to go ALL-IN on growth! This system will help you do a better job at capturing and maximizing existing opportunities by building your list. ",
+    description: "Perfect for serious service and retail businesses that want to go ALL-IN on growth! This system will give you all the systems and tools you need to capture and maximize every opportunity.",
     available: true,
     name: "Business Growth System",
     note: "+ one-time $499 setup fee",
