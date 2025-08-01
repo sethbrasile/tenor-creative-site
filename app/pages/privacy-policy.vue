@@ -30,10 +30,10 @@
         <ul class="list-disc pl-8 space-y-2">
           <li>Deliver and market our growth systems</li>
           <li>Send newsletters, SMS, and email communications</li>
-          <li>Analyze engagement through privacy-focused analytics</li>
+          <li>Analyze engagement through analytics</li>
           <li>Facilitate payments and scheduling</li>
         </ul>
-        <p class="font-bold">We never sell your Personal Information.</p>
+        <p class="font-bold">We never sell or share your Personal Information.</p>
       </section>
 
       <section>
@@ -43,6 +43,9 @@
           <li><strong>Service Providers:</strong> Essential partners bound by confidentiality</li>
           <li><strong>Legal Compliance:</strong> When required by law</li>
           <li><strong>Business Transfers:</strong> During mergers or acquisitions</li>
+          <li>No mobile information will be shared with third parties or affiliates for marketing/promotional purposes</li>
+          <li>Text messaging originator opt-in data and consent will not be shared with any third parties, except for aggregators and providers of the Text Message services</li>
+          <li>All the above categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties, excluding aggregators and providers of the Text Message services.</li>
         </ul>
       </section>
 
