@@ -1,6 +1,6 @@
 <template>
   <Container>
-    <h1 class="text-3xl font-bold mb-6">Terms of Service</h1>
+    <h1 class="text-3xl font-bold mb-6">Terms of Use</h1>
     <p class="italic mb-8"><strong>Last Updated:</strong> August 1, 2025</p>
 
     <div class="space-y-8">
