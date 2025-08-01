@@ -1,11 +1,9 @@
 <template>
   <Container>
     <Sectionhead>
-      <template v-slot:title>Thank you for choosing to work with us!</template>
+      <template v-slot:title>Book your strategy call</template>
       <template v-slot:desc>
-        We are so excited to work with you. Please book a spot on the calendar below so that we can get your services fully activated. This will be
-        a somewhat technical call, so please have someone handy with access to DNS and related. You will also be receiving some emails shortly with
-        access and some instructions, so please be on the lookout for that.
+        Let's take a look at your current state and systems together and see how we can help.
       </template>
     </Sectionhead>
 
