@@ -9,3 +9,7 @@
 .heading {
   @apply text-lg text-gray-800;
 }
+
+.subheading {
+  @apply text-xl lg:text-2xl xl:text-3xl;
+}

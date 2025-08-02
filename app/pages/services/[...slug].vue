@@ -1,31 +1,23 @@
 <script lang="ts" setup>
   import { services } from '~/data/services';
-  const { slug } = defineProps<{
-    slug: string[];
-  }>();
-  const title = computed(() => {
-    const service = services.find(service => service.slug === slug[0]);
-    return service ? service.title : 'Service Not Found';
-  });
-  const description = computed(() => {
-    const service = services.find(service => service.slug === slug[0]);
-    return service ? service.description : 'Description not available';
-  });
-  const body = computed(() => {
-    const service = services.find(service => service.slug === slug[0]);
-    return service && service.body ? service.body : 'Content not available';
-  });
+
+  const { slug } = defineProps<{ slug: string[] }>();
+
+  const service = computed(() => {
+    return services.find(service => service.slug === slug[0]);
+  })
 
   useSeoMeta({
-    title,
-    description,
+    title: service.value?.title,
+    description: service.value?.description,
   });
 </script>
 
 <template>
   <ServicePage
-    :title="title"
-    :description="description"
-    :body="body"
+    :title="service?.title || ''"
+    :description="service?.description || ''"
+    :body="service?.body"
+    :cta="service?.cta"
   />
 </template>

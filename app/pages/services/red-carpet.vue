@@ -19,8 +19,8 @@
       </div> -->
 
       <Sectionhead>
-        <template v-slot:title>What if you could turn those anonymous visitors into eager leads?</template>
-        <template v-slot:desc>Introducing the <strong class="font-semibold">Red Carpet Lead Generation System</strong> - your all-in-one solution to greet, engage, and convert website visitors on autopilot.</template>
+        <template v-slot:title><span class="subheading">What if you could turn those anonymous visitors into eager leads?</span></template>
+        <template v-slot:desc><span class="text-lg text-slate-900">Introducing the <strong class="font-semibold">Red Carpet Lead Generation System</strong> - your all-in-one solution to greet, engage, and convert website visitors on autopilot.</span></template>
       </Sectionhead>
 
       <p class="text-xl font-semibold pt-2">Why It Works:</p>
@@ -60,10 +60,10 @@
       <Cta
         location="lead-gen"
         name="lead-gen"
-        heading="Unroll Your Red Carpet"
-        description="Start Converting Visitors Today"
-        button-text="Get Started Now"
-        to="/booking"
+        heading="Roll out Your Red Carpet"
+        description="Included in all of our Growth System plans, or available ala-carte"
+        button-text="Start converting visitors today"
+        to="/pricing"
       />
     </div>
   </Container>

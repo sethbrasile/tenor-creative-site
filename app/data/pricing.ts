@@ -23,9 +23,28 @@ export interface Price {
 
 export const standardPricing: Price[] = [
   {
+    tier: 0,
+    shortName: "red-carpet",
+    description: "You're driving traffic to your website, but 95-97% of visitors leave without taking action. That's money walking out the door. This is your all-in-one system to greet, engage, and convert website visitors on autopilot.",
+    available: true,
+    name: "Red Carpet Lead Generation System",
+    note: "+ 199 setup fee",
+    price: {
+      monthly: "$97",
+      yearly: "$970"
+    },
+    popular: false,
+    features: [
+    ],
+    button: {
+      text: "",
+      link: "/pricing",
+    }
+  },
+  {
     tier: 1,
     shortName: "fast-start",
-    description: "Perfect for new businesses or those looking to get started quickly with some powerful systems focused on getting you up and running with the essentials for managing customer relationships. If you're not sure which plan to choose, start here! It's no sweat to upgrade later.",
+    description: "Perfect for new businesses or those looking to get started quickly with some powerful systems focused on getting you up and running with the essentials for managing customer relationships and turning leads into customers. Start here! It's no sweat to upgrade later.",
     available: true,
     name: "Fast Start Growth System",
     note: "+ one-time $299 setup fee",
@@ -38,10 +57,11 @@ export const standardPricing: Price[] = [
     features: [
       "FREE High Converting Website",
       "FREE Hosting",
-      "Review management",
+      "Automated review requests",
       "Missed call text-back",
-      "Web Chat + AI Chatbot",
-      "'Red Carpet' Lead Gen System",
+      "Web Chat",
+      "AI Chatbot",
+      "Red Carpet Lead Gen System",
       "SMS list building",
       "Follow up Campaigns",
       "Phone number + phone features",
@@ -76,9 +96,8 @@ export const standardPricing: Price[] = [
     features: [
       "All features in Fast Start Growth",
       "Automated lead nurturing",
-      "Reputation management",
+      "Full reputation management",
       // "Review generation (get tons of reviews)",
-      "Review generation",
       // "AI citation management (automatically keeps your business information synced across the web)",
       // "Unified inbox (SMS/Email/Chat/Social)",
       "AI voice (outbound)",
@@ -119,9 +138,9 @@ export const standardPricing: Price[] = [
     name: "Business Growth + AI System",
     note: "+ one-time $799 setup fee",
     price: {
-      monthly: "$397",
-      yearly: "$3,970",
-      note: "$397 - $997 based on usage",
+      monthly: "$497",
+      yearly: "$4,970",
+      note: "$497 - $997 based on usage",
     },
     popular: false,
     features: [

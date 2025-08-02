@@ -10,7 +10,7 @@
   </Sectionhead>
   <p v-if="body" class="text-lg mt-8">{{ body }}</p>
   <!-- features list -->
-   <div v-if="features">
+  <div v-if="features">
     <ul class="grid sm:grid-cols-2 md:grid-cols-4 mt-8 gap-6 text-lg font-light">
       <li
         v-for="feature in features"
@@ -20,7 +20,15 @@
         <span>{{ feature }}</span>
       </li>
     </ul>
-   </div>
+  </div>
+  <Cta
+    location="services"
+    :name="title"
+    :heading="cta?.heading"
+    :description="cta?.description"
+    :button-text="cta?.buttonText"
+    :to="cta?.to"
+  />
 </template>
 
 <script lang="ts" setup>
@@ -30,6 +38,7 @@ defineProps<{
   body?: string;
   comingSoon?: boolean;
   features?: string[];
+  cta?: { heading: string, description: string, buttonText: string, to: string }
 }>();
 </script>
 

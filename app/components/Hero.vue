@@ -19,7 +19,7 @@
       <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold lg:tracking-tight">
         {{ title }}
       </h1>
-      <h2 class="text-xl lg:text-2xl xl:text-3xl font-light">{{ subtitle }}</h2>
+      <h2 class="subheading font-light">{{ subtitle }}</h2>
       <p class="text-lg mt-4 text-slate-600 max-w-xl">
         {{ description }}
       </p>

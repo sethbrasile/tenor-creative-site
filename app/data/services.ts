@@ -3,8 +3,9 @@ import { standardPricing } from "./pricing"
 const fastStart = standardPricing.find((price) => price.shortName === 'fast-start')
 const business = standardPricing.find((price) => price.shortName === 'business')
 const ai = standardPricing.find((price) => price.shortName === 'business-plus-ai')
+const carpet = standardPricing.find((price) => price.shortName === 'red-carpet')
 
-export const systems = [fastStart, business, ai].map((price) => {
+export const systems = [carpet, fastStart, business, ai].map((price) => {
   return {
     title: price?.name,
     slug: price?.shortName,
@@ -20,19 +21,33 @@ export const services = [
     slug: "curate-customer-reviews",
     description: "Online reviews carry as much weight as personal recommendations. We automate feedback collection, turn satisfied customers into 5-star reviews, and strategically showcase them where they matter most.",
     icon: "bx:folder-plus",
-    body: "Around 40% of people when faced with the opportunity to leave a review will just duck out, simply because they don't know what to say! We can enable “Suggested Reviews” to help them! When enabled, our review request tool will ask what they liked the most about your business then instantly write a review for them to paste into Google, giving you more valuable SEO optimized reviews. We instantly flag bad reviews for removal and ping the business for immediate response.",
+    body: "Reviews are the foundation of your online reputation, with 97% of people reading up on your business before making contact. Many customers, won't even think to leave a review, or when faced with the opportunity to leave a review, will just duck out because they don't know what to say! The result is that even when you've got mostly happy customers, people only generally leave reviews when they're mad. Not only can we automate gathering a customer review, we can enable “Suggested Reviews” to help them write! When enabled, our review request tool will ask what they liked the most about your business then instantly write a review for them to paste into Google, giving you more valuable SEO optimized reviews. We instantly flag bad reviews for removal and ping the business for immediate response.",
+    cta: {
+      name: "reviews",
+      heading: "Start collecting 5 star reviews",
+      description: "All of our Growth Systems include incredible review management features",
+      buttonText: "Collect the reviews you already deserve",
+      to: "/pricing?service=reviews",
+    }
   },
   {
     title: "Local Search Optimization",
     slug: "local-search-optimization",
     description: "85% of consumers use local search to find businesses like yours. We optimize your online presence so you appear when it counts—because 97% of customers search online before making a decision.",
     icon: "bx:bxs-file-find",
-    body: "We use a revolutionary & award winning Google Business Profile optimization system that gets your business in front of 90% of local customers who are 74% likely to purchase within 24 hours. Get more customers without spending a single dollar on ads. Google Business Profiles SEO is faster and cheaper than website SEO.",
+    body: "We use a revolutionary & award winning AI-driven Google Business Profile (GBP) optimization system that gets your business in front of 90% of local customers who are 74% likely to purchase within 24 hours. Get more customers without spending a single dollar on ads. GBP SEO is faster, easier, and more cost effective than any website SEO. Plus, weekly automated reports prove the value of the work the system is doing.",
+    cta: {
+      name: "local-seo",
+      heading: "Optimize your local presence",
+      description: "Available in our Business Growth + AI System or available ala-carte",
+      buttonText: "Improve your local rank now",
+      to: "/pricing?service=local-seo",
+    },
   },
   {
-    title: "'Red Carpet' Lead Generation System",
-    slug: "lead-generation-systems",
-    description: "You're currently missing 95%-97% of the people who arrive at your site. Roll out the red carpet for your visitors and start making the most of your traffic.",
+    title: carpet?.name,
+    slug: carpet?.shortName,
+    description: carpet?.description,
     icon: "mdi:people",
     body: "Let's capitalize on those interested prospects and turn them into hot leads.",
   },
@@ -41,21 +56,42 @@ export const services = [
     slug: "reputation-management",
     description: "Protect your brand from negative feedback by monitoring and responding to reviews and amplify your best customer stories. We provide systems that make rescuing a negative customer relationship easy.",
     icon: "bx:bxs-star",
-    body: "Through a wealth of online tools, prospects now have massive visibility into your companies reputation, good or bad. It's unbelievably important to ensure you're nailing this. We offer automated systems, easy-to-use tools and even AI management, which come together and allow you to maintain control of your online reputation.",
+    body: "Through a wealth of online tools available to everyone, prospects now have absolute transparency into your companies reputation, good or bad. It's unbelievably important to ensure you're nailing this. We offer automated systems, easy-to-use tools and even AI management, which come together and allow you to maintain control of your online reputation. With a centralized reputation management dashboard, you'll be able monitor and manage your reputation on over 50 platforms, remind customers to leave reviews, create review QR codes, use AI to respond to reviews, auto flag spam reviews, get detailed competitor analyses, and more!",
+    cta: {
+      name: "reputation",
+      heading: "Your online reputation can't be ignored",
+      description: "It's one of the most valuable assets your company has. Reputation management features available in our Business Growth System",
+      buttonText: "Maintain the best reputation in your market",
+      to: "/pricing?service=reputation",
+    },
   },
   {
     title: "Follow up campaigns",
     slug: "follow-up",
-    description: "Strike when the iron is hot! When a lead expresses interest in your business, THAT is the right time to make an impression and make the sale. Our automated follow-up systems can take care of this for you.",
+    description: "When a lead expresses interest in your business, THAT is the right time to make an impression and make the sale. Our automated follow-up systems can take care of this for you.",
     icon: "bx:target-lock",
-    body: "We can take the human error and inconsistency out of follow-ups and keep your company at the top of the leads' mind.",
+    body: "We can take the human error and inconsistency out of follow-ups and keep your company at the top of every leads' mind.",
+    cta: {
+      name: "follow-up",
+      heading: "Don't lose out on leads because they got distracted",
+      description: "Follow-up campaigns are the other half of the lead-generation picture and are available starting in our Fast Start Growth System.",
+      buttonText: "Strike while the iron is hot!",
+      to: "/pricing?service=follow-up",
+    }
   },
   {
     title: "Missed call text-back",
-    slug: "follow-up",
-    description: "Did you know that research has shown that SMB businesses lose around 40%-65% of leads simply because their call was missed and no one immediately followed up",
+    slug: "text-back",
+    description: "Did you know that research has shown that SMB businesses lose around 40%-65% of leads simply because their call was missed?",
     icon: "bx:target-lock",
-    body: "We can take the human error and inconsistency out of follow-ups and keep your company at the top of the leads' mind.",
+    body: "Simply by quickly reaching back out to every missed call, you can double your conversion rates. You can't be available 24/7, but our systems can.",
+    // cta: {
+    //   name: "text-back",
+    //   heading: "",
+    //   description: "",
+    //   buttonText: "Stop missing calls",
+    //   to: "/pricing?service=text-back",
+    // }
   },
   {
     title: "Remarketing and Reactivation",
