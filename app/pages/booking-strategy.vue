@@ -7,22 +7,6 @@
       </template>
     </Sectionhead>
 
-    <iframe src="https://hlapi.tenorcreative.com/widget/booking/YBDMCK4O7UmrdZ2n5tMV" style="width: 100%;border:none;overflow: hidden;" scrolling="no" id="msgsndr-calendar"></iframe>
+    <BookingForm form-id="YBDMCK4O7UmrdZ2n5tMV" />
   </Container>
 </template>
-
-<script lang="ts" setup>
-useHead({
-  script: [
-    {
-      src: 'https://hlapi.tenorcreative.com/js/embed.js',
-      async: true,
-      defer: true,
-    },
-  ]
-})
-</script>
-
-<style>
-
-</style>
