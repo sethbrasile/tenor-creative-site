@@ -47,9 +47,9 @@ const price = computed(() => {
         </li>
       </ul>
       <div class="flex flex-col mt-auto">
-        <div v-if="plan.popular" class="flex-row text-gray-800 text-sm">
+        <!-- <div v-if="plan.popular" class="flex-row text-gray-800 text-sm">
           <p>Our most popular plan!</p>
-        </div>
+        </div> -->
         <CtaLink :ctaName="plan.shortName + '-cta'"
           :href="(plan.button.link || '#') + '?plan=' + plan.shortName + (yearly ? '-yearly' : '')" block
           :disabled="!plan.available" :styleName="plan.available ? (plan.popular ? 'primary' : 'outline') : 'muted'">

@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 const title = 'Tenor Creative'
-const description = `We help service businesses of any size leverage proven systems to get rapid and consistent growth. Implementation is painless and you can keep using your existing business systems. Growth systems aren't just for the big guys anymore.`
+const subtitle = 'We Give Local Pros a Louder Voice'
+const description = `We help service businesses of any size leverage proven systems to get rapid and consistent growth. Implementation is painless and you can keep using your existing business systems.`
 const env = process.env.VERCEL_ENV || 'development'
 const isProduction = env === 'production'
 
@@ -55,6 +56,7 @@ export default defineNuxtConfig({
       isProduction,
       hero: {
         title,
+        subtitle,
         alt: 'A home service pro, dreaming of a care-free relationship with his customers, empowered by technology',
         description,
       },
@@ -97,5 +99,5 @@ export default defineNuxtConfig({
         plan3AnnualPaymentLink: 'https://buy.stripe.com/3cIcN5cCA51Seo885O33W07',
       },
     },
-  }
+  },
 });

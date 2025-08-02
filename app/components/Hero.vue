@@ -1,6 +1,6 @@
 <script setup lang="ts">
   defineProps<{ og?: boolean }>()
-  const { hero: { title, description, alt }, leadMagnet: { url, name } } = useRuntimeConfig().public
+  const { hero: { title, description, subtitle, alt }, leadMagnet: { url, name } } = useRuntimeConfig().public
 </script>
 <template>
   <main class="grid md:grid-cols-2 place-items-center xs:pt-16 pb-8 md:pt-8" :class="{ 'md:pt-0': og, '-mt-8': og, 'ml-8': og }">
@@ -19,6 +19,7 @@
       <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold lg:tracking-tight">
         {{ title }}
       </h1>
+      <h2 class="text-xl lg:text-2xl xl:text-3xl font-light">{{ subtitle }}</h2>
       <p class="text-lg mt-4 text-slate-600 max-w-xl">
         {{ description }}
       </p>
