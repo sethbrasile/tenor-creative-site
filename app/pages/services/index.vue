@@ -1,6 +1,7 @@
 <script setup>
-import { services } from '~/data/services';
-import { comingSoon } from '~/data/services';
+import { services, comingSoon } from '~/data/services';
+import { aiServices, oneOffPricing } from '~/data/pricing';
+
 useSeoMeta({
   title: "Services",
 })
@@ -15,6 +16,28 @@ useSeoMeta({
   </Sectionhead>
 
   <Features :features="services" url-base="/services" />
+
+  <Sectionhead>
+    <template v-slot:title>Standard Services and Growth System Addons</template>
+    <template v-slot:desc>If our growth system packages don't meet your needs, we also offer these services and addons.</template>
+  </Sectionhead>
+
+  <AnnualSelector :is-annual="isAnnual" @yearly="isAnnual = true" @monthly="isAnnual = false" />
+
+  <div class="grid md:grid-cols-3 gap-2 mx-auto mt-12">
+    <PricingCard v-for="item of oneOffPricing" :plan="item" :key="item.name" :yearly="isAnnual" />
+  </div>
+
+  <Sectionhead>
+    <template v-slot:title>AI Systems</template>
+    <template v-slot:desc>Ala carte AI systems that can be added to any business</template>
+  </Sectionhead>
+
+  <AnnualSelector :is-annual="isAnnual" @yearly="isAnnual = true" @monthly="isAnnual = false" />
+
+  <div class="grid md:grid-cols-3 gap-2 mx-auto mt-12">
+    <PricingCard v-for="item of aiServices" :plan="item" :key="item.name" :yearly="isAnnual" />
+  </div>
 
   <Sectionhead>
     <template v-slot:title>Coming Soon</template>

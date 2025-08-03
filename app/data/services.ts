@@ -56,7 +56,7 @@ export const services = [
     slug: "reputation-management",
     description: "Protect your brand from negative feedback by monitoring and responding to reviews and amplify your best customer stories. We provide systems that make rescuing a negative customer relationship easy.",
     icon: "bx:bxs-star",
-    body: "Through a wealth of online tools available to everyone, prospects now have absolute transparency into your companies reputation, good or bad. It's unbelievably important to ensure you're nailing this. We offer automated systems, easy-to-use tools and even AI management, which come together and allow you to maintain control of your online reputation. With a centralized reputation management dashboard, you'll be able monitor and manage your reputation on over 50 platforms, remind customers to leave reviews, create review QR codes, use AI to respond to reviews, auto flag spam reviews, get detailed competitor analyses, and more!",
+    body: "Prospects now have absolute transparency into your companies reputation, good or bad. It's unbelievably important to ensure you're nailing this. We offer automated systems, easy-to-use tools and even AI management, which come together and allow you to maintain control of your online reputation. With a centralized reputation management dashboard, you'll be able monitor and manage your reputation on over 50 platforms, remind customers to leave reviews, create review QR codes, use AI to respond to reviews, auto flag spam reviews, get detailed competitor analyses, and more!",
     cta: {
       name: "reputation",
       heading: "Your online reputation can't be ignored",

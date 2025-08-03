@@ -24,6 +24,10 @@ const menuitems = [
     title: "Locations",
     path: "/locations",
   },
+  {
+    title: "FAQ",
+    path: "frequently-asked-questions",
+  },
   // {
   //   title: "Sample Sites",
   //   path: "/sample-sites",

@@ -13,9 +13,9 @@ const plan = computed(() => {
   <Container>
     <Sectionhead>
       <template v-if="plan?.name" v-slot:title>Let's talk about the {{ plan?.name }} service</template>
-      <template v-else v-slot:title>How can we help you?</template>
+      <template v-else v-slot:title>Ready to grow your business?</template>
       <template v-slot:desc>
-        Let's talk about your needs and see how proven marketing systems can drive growth for your business.
+        Book us now to see how proven marketing systems can drive growth for your business.
       </template>
     </Sectionhead>
 

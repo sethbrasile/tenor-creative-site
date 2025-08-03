@@ -23,7 +23,7 @@ export interface Price {
 
 export const standardPricing: Price[] = [
   {
-    tier: 0,
+    tier: 99,
     shortName: "red-carpet",
     description: "You're driving traffic to your website, but 95-97% of visitors leave without taking action. That's money walking out the door. This is your all-in-one system to greet, engage, and convert website visitors on autopilot.",
     available: true,
