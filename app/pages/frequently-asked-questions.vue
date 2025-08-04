@@ -27,7 +27,7 @@
       systems in the future, all we need
       to do is configure the Growth system and connect it to your site.
     </p>
-    <p>
+    <!-- <p>
       <strong>Q: How does the "Lead list generation" feature work?</strong>
       <br />
       A: We utilize advanced systems that collect and organize leads who come into contact with your business and opt to
@@ -39,7 +39,7 @@
       available for lead
       generation become more powerful as you move up the Growth system pricing tiers, but the concept is the same across
       all plans.
-    </p>
+    </p> -->
     <p>
       <strong>Q: What is "Automated lead nurturing"?</strong>
       <br />
