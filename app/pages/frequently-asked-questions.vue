@@ -1,5 +1,4 @@
 <template>
-<Container>
   <Sectionhead>
     <template v-slot:title>FAQ</template>
     <template v-slot:desc>Frequently Asked Questions</template>
@@ -102,11 +101,4 @@
       <CtaLink href="/booking" styleName="primary" class="block mt-4">Book a Free Consultation</CtaLink>
     </p>
   </div>
-</Container>
 </template>
-
-<script lang="ts" setup>
-
-</script>
-
-<style></style>

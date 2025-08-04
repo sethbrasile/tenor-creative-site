@@ -42,7 +42,6 @@ const open = ref(false);
 </script>
 
 <template>
-  <Container>
     <header class="flex flex-col lg:flex-row justify-between items-center my-5">
       <div class="flex w-full lg:w-auto items-center justify-between">
         <a href="/" class="text-lg content-center grid grid-cols-2 w-14">
@@ -111,5 +110,4 @@ const open = ref(false);
         </div>
       </div> -->
     </header>
-  </Container>
 </template>

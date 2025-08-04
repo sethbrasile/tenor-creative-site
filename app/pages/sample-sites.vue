@@ -30,25 +30,21 @@
 </script>
 
 <template>
-  <div>
-    <Container>
-      <Sectionhead>
-        <template #title>Sample Sites</template>
-        <template #desc>
-          While we're more than happy to help you build or host a Wordpress site, most are better off without Wordpress, so you'll see that all of our examples are static.
-        </template>
-      </Sectionhead>
-      <div class="grid md:grid-cols-3">
-        <LinksListCard
-          :links="landingLinks"
-          title="Static Landing"
-        />
-        <LinksListCard
-          :links="blogLinks"
-          title="Static Blogs"
-        />
-      </div>
-  </Container>
+  <Sectionhead>
+    <template #title>Sample Sites</template>
+    <template #desc>
+      While we're more than happy to help you build or host a Wordpress site, most are better off without Wordpress, so you'll see that all of our examples are static.
+    </template>
+  </Sectionhead>
+  <div class="grid md:grid-cols-3">
+    <LinksListCard
+      :links="landingLinks"
+      title="Static Landing"
+    />
+    <LinksListCard
+      :links="blogLinks"
+      title="Static Blogs"
+    />
   </div>
 </template>
 

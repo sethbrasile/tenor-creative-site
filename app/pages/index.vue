@@ -36,11 +36,9 @@ useSeoMeta({
 </script>
 
 <template>
-  <Container>
-    <Hero></Hero>
-    <CallOut />
-    <Features :features="features" url-base="/services"></Features>
-    <!-- <Logos></Logos> -->
-    <Cta location="Home"></Cta>
-  </Container>
+  <Hero></Hero>
+  <CallOut />
+  <Features :features="features" url-base="/services"></Features>
+  <!-- <Logos></Logos> -->
+  <Cta location="Home"></Cta>
 </template>
