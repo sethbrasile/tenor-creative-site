@@ -57,6 +57,8 @@ export const standardPricing: Price[] = [
     features: [
       "FREE High Converting Website",
       "FREE Hosting",
+      "Google Business Profile (GBP)",
+      "Citation management",
       "Automated review requests",
       "Missed call text-back",
       "Web Chat",
@@ -66,8 +68,6 @@ export const standardPricing: Price[] = [
       "Follow up Campaigns",
       "Phone number + phone features",
       "AI Voice (inbound)",
-      "Citation management",
-      "Google Business Profile (GBP)",
       "GBP Call Tracking",
       "Automations and workflows",
       "Integrated mobile app",
