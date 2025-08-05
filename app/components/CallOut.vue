@@ -2,11 +2,11 @@
   defineProps({
       heading: {
       type: String,
-      default: "We make growth easy",
+      default: "Attract Customers",
     },
     tagline: {
       type: String,
-      default: "We help businesses grow by implementing and optimizing marketing systems in four critical areas:",
+      default: "We help service businesses get more customers by focusing on four critical areas:",
     },
   })
 </script>

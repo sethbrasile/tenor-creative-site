@@ -17,40 +17,15 @@ useSeoMeta({
 </script>
 
 <template>
-  <Sectionhead align="center">
+  <Sectionhead>
     <template v-slot:title>Contact</template>
-    <template v-slot:desc>Let's have a chat.</template>
+    <template v-slot:desc>Send us a message. We'll get back to you asap!</template>
   </Sectionhead>
 
-  <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
-    <div>
-      <h2 class="font-medium text-2xl text-gray-800">
-        Schedule a free consultation
-      </h2>
-      <p class="text-lg leading-relaxed text-slate-500 mt-3">
-        Let us know what your availability looks like and we'll get back to you asap to schedule something.
-      </p>
-      <div class="mt-5">
-        <!-- <div class="flex items-center mt-2 space-x-2 text-gray-600">
-          <Icon class="text-gray-400 w-4 h-4" name="uil:map-marker" />
-          <span>Durant, OK</span>
-        </div> -->
-        <div class="flex items-center mt-2 space-x-2 text-gray-600">
-          <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" /><a
-            :href="`mailto:sales@tenorcreative.com?subject=${subject}`"
-            >sales@tenorcreative.com</a
-          >
-        </div>
-        <!-- <div class="flex items-center mt-2 space-x-2 text-gray-600">
-          <Icon class="text-gray-400 w-4 h-4" name="uil:phone" /><a
-            href="tel:+1 (234) 5678 999"
-            >+1 (234) 5678 999</a
-          >
-        </div> -->
-      </div>
-    </div>
-    <div>
-      <Contactform />
-    </div>
+  <div class="grid md:grid-cols-2 gap-10 mx-auto mt-16">
+    <p class="text-lg leading-relaxed text-slate-500 mt-6">
+      If you'd rather have a quick chat, <NuxtLink to="/booking" class="underline">please schedule your free consultation.</NuxtLink>
+    </p>
+  <Contactform />
   </div>
 </template>

@@ -8,6 +8,14 @@ const menuitems = [
     title: "Terms",
     path: "/terms",
   },
+  {
+    title: "Locations",
+    path: "/locations",
+  },
+  {
+    title: "Systems",
+    path: "/systems",
+  },
 ];
 </script>
 

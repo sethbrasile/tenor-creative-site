@@ -17,7 +17,7 @@ export const systems = [carpet, fastStart, business, ai].map((price) => {
 
 export const services = [
   {
-    title: "Curate Customer Reviews",
+    title: "Get tons of reviews",
     slug: "curate-customer-reviews",
     description: "Online reviews carry as much weight as personal recommendations. We automate feedback collection, turn satisfied customers into 5-star reviews, and strategically showcase them where they matter most.",
     icon: "bx:folder-plus",
@@ -31,7 +31,7 @@ export const services = [
     }
   },
   {
-    title: "Local Search Optimization",
+    title: "Improve your local Google rank",
     slug: "local-search-optimization",
     description: "85% of consumers use local search to find businesses like yours. We optimize your online presence so you appear when it counts—because 97% of customers search online before making a decision.",
     icon: "bx:bxs-file-find",
@@ -45,14 +45,14 @@ export const services = [
     },
   },
   {
-    title: carpet?.name,
+    title: "Get all the leads",
     slug: carpet?.shortName,
     description: carpet?.description,
     icon: "mdi:people",
     body: "Let's capitalize on those interested prospects and turn them into hot leads.",
   },
   {
-    title: "Reputation Management",
+    title: "Keep an awesome reputation",
     slug: "reputation-management",
     description: "Protect your brand from negative feedback by monitoring and responding to reviews and amplify your best customer stories. We provide systems that make rescuing a negative customer relationship easy.",
     icon: "bx:bxs-star",
@@ -66,7 +66,7 @@ export const services = [
     },
   },
   {
-    title: "Follow up campaigns",
+    title: "Keep up with your customers",
     slug: "follow-up",
     description: "When a lead expresses interest in your business, THAT is the right time to make an impression and make the sale. Our automated follow-up systems can take care of this for you.",
     icon: "bx:target-lock",
@@ -80,9 +80,9 @@ export const services = [
     }
   },
   {
-    title: "Missed call text-back",
+    title: "Never miss another call",
     slug: "text-back",
-    description: "Did you know that research has shown that SMB businesses lose around 40%-65% of leads simply because their call was missed?",
+    description: "Did you know that research has shown that SMB businesses lose around 40%-65% of leads simply because their call was missed? We can make sure that you never miss a call again.",
     icon: "bx:target-lock",
     body: "Simply by quickly reaching back out to every missed call, you can double your conversion rates. You can't be available 24/7, but our systems can.",
     // cta: {
@@ -94,14 +94,14 @@ export const services = [
     // }
   },
   {
-    title: "Remarketing and Reactivation",
+    title: "Maximize existing customers",
     slug: "remarketing",
     description: "Are you maximizing the value of your existing customer base? On average it costs 5 times more to acquire a new customer than it does to sell new services to an existing customer.",
     icon: "bx:target-lock",
     body: "One of the most profitable (also one of the most seldom used) pools of potential prospects will always be existing customers. Let's face it, there aren't many avenues for most small businesses to manage and keep up with existing customer relationships. Traditional marketing agencies tend to ignore this entire topic, assuming the business has it under control. We recognize that most businessed need help here and we offer systems to help you keep up great relationships and help you make the most of your existing customers. We will automate campaigns to make careful and well designed promotions and announcements to your existing customer base and ensure your customers are repeat customers.",
   },
   {
-    title: "Website Design",
+    title: "Websites that get you customers",
     slug: "website-design",
     description: "Your website needs to convert, not just look good. We build sites that attract local customers and drive action—combining aesthetics with proven conversion tactics.",
     icon: "bx:bxs-palette",
@@ -115,21 +115,21 @@ export const services = [
     body: "We focus on the absolute foundations of your marketing stack before we ever even look at paying for an advertisement. Most traditional agencies are 100% focused on bringing new leads to your site, but they leave out the part where the leads need to convert. Our systems are designed to make the most of every lead."
   },
   {
-    title: "Social Media Management",
+    title: "Social Media",
     slug: "social",
     description: "We offer systems to make planning and carrying out your social media posts a breeze.",
     icon: "bxl:facebook-square",
     body: "If that's still too much, we offer automated AI content generation that can run social media campaigns for you. If you'd like a human touch but don't want to run it yourself, let us design a fully human-managed setup for you."
   },
   {
-    title: "Performance Optimization",
+    title: "Performance",
     slug: "performance",
-    description: "Every 100ms of page load time costs you 1% in conversions. We use the latest tools and techniques to optimize your site for speed and performance and achieve technically perfect results.",
+    description: "Every 100ms of page load time costs you 1% in conversions. We use the latest tools and techniques to optimize your site for speed and performance.",
     icon: "bx:bxs-tachometer",
     body: "47% of users expect pages to load in ≤2 seconds, yet delays of just 1 second cause a 7% reduction in conversions. Sites taking 5+ seconds convert 3x worse than those loading in 1 second. Your site's performance is of utmost importance, yet most web hosts and web designers don't take the topic seriously. We do. We are experts at site performance, and we won't rest until your site is as performant as technically possible."
   },
   {
-    title: "Citation Management",
+    title: "Show up everywhere",
     slug: "citation-management",
     description: "It's incredibly complicated to keep your business information available and up to date across the internet. There are literally thousands of places where your business might be listed. Let us automate it.",
     icon: "mdi:internet-search",

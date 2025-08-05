@@ -8,10 +8,6 @@ const menuitems = [
     title: "Services",
     path: "/services",
   },
-  {
-    title: "Systems",
-    path: "/systems",
-  },
   // {
   //   title: "About Us",
   //   path: "/about",
@@ -19,10 +15,6 @@ const menuitems = [
   {
     title: "Pricing",
     path: "/pricing",
-  },
-  {
-    title: "Locations",
-    path: "/locations",
   },
   {
     title: "FAQ",
@@ -34,7 +26,7 @@ const menuitems = [
   // },
   {
     title: "Contact",
-    path: "/booking",
+    path: "/contact",
   },
 ];
 

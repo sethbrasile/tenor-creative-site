@@ -11,7 +11,7 @@ useSeoMeta({
   <Sectionhead>
     <template v-slot:title>Services</template>
     <template v-slot:desc>
-      We help service businesses reach their growth potential and dominate their markets by implementing proven marketing systems. We leverage technology to maximize the potential of every opportunity, and we make systems approachable for businesses of any size.
+      We help businesses of any size get more customers.
     </template>
   </Sectionhead>
 
