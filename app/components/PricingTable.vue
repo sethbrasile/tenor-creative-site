@@ -49,9 +49,9 @@ const filteredFeatures = computed(() => {
         </div>
 
         <!-- business growth -->
-        <div class="lg:w-1/3 lg:-mt-[2px] w-full pt-4 mb-10 lg:mb-0 border-2 rounded-lg border-gray-800 relative">
+        <div class="lg:w-1/3 lg:-mt-[2px] w-full pt-4 mb-10 lg:mb-0 border-2 rounded-lg border-teal-600 relative">
           <span
-            class="bg-gray-800 text-white px-3 py-1 tracking-widest text-xs absolute right-0 top-0 rounded-bl">POPULAR</span>
+            class="bg-teal-800 text-white px-3 py-1 tracking-widest text-xs absolute right-0 top-0 rounded-bl">POPULAR</span>
           <div class="px-2 text-center h-48 flex flex-col items-center justify-center">
             <h3 class="tracking-widest">{{ plan2?.name }}</h3>
             <h2 class="text-5xl text-gray-900 font-medium flex items-center justify-center leading-none mb-4 mt-2">
@@ -70,7 +70,7 @@ const filteredFeatures = computed(() => {
             </p>
 
             <NuxtLink :to="yearly ? plan2AnnualPaymentLink : plan2PaymentLink">
-              <IconButton :button-text="'Buy ' + plan2?.name" :note="plan2?.description" />
+              <IconButton :button-text="'Buy ' + plan2?.name" :note="plan2?.description" popular />
             </NuxtLink>
           </div>
         </div>

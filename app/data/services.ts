@@ -8,7 +8,7 @@ const carpet = standardPricing.find((price) => price.shortName === 'red-carpet')
 export const systems = [fastStart, business, ai].map((price) => {
   return {
     title: price?.name,
-    slug: price?.shortName,
+    slug: '',
     icon: "mdi:cogs",
     description: price?.description,
     features: price?.features

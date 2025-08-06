@@ -28,7 +28,7 @@
           cta-name="Hero"
           :href="url"
           rel="noopener">
-            <strong>Unlock My Free Guide: </strong> {{ name }}
+            <strong>Unlock Your Free Guide: </strong> {{ name }}
         </CtaLink>
       </div>
     </div>

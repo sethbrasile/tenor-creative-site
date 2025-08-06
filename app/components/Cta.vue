@@ -11,7 +11,7 @@
   }>(), {
     location: "unknown location",
     heading: "Start growing your business now for free!",
-    buttonText: "Unlock My Free Guide",
+    buttonText: "Unlock Your Free Guide",
     name: 'You Deserve - ',
   });
 

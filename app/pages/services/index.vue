@@ -17,7 +17,7 @@ const isAnnual = ref(false)
     </template>
   </Sectionhead>
 
-  <Features :features="systems" url-base="/systems" />
+  <Features :features="systems" url-base="/pricing" />
 
   <Sectionhead>
     <template v-slot:title>Growth System Features</template>
