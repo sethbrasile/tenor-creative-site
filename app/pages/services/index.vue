@@ -13,7 +13,7 @@ const isAnnual = ref(false)
   <Sectionhead>
     <template v-slot:title>Service Business Growth Systems</template>
     <template v-slot:desc>
-      Our signature growth systems are HOW we get service businesses more customers and more sales.
+      Our service business growth systems are HOW we get you more customers and more sales.
     </template>
   </Sectionhead>
 
