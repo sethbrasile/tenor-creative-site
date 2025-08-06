@@ -5,7 +5,7 @@ const business = standardPricing.find((price) => price.shortName === 'business')
 const ai = standardPricing.find((price) => price.shortName === 'business-plus-ai')
 const carpet = standardPricing.find((price) => price.shortName === 'red-carpet')
 
-export const systems = [carpet, fastStart, business, ai].map((price) => {
+export const systems = [fastStart, business, ai].map((price) => {
   return {
     title: price?.name,
     slug: price?.shortName,
@@ -107,13 +107,13 @@ export const services = [
     icon: "bx:bxs-palette",
     body: "It's hard to believe, but over 80% of websites exhibit critical failures in speed, mobile UX, navigation, or trust-building, directly causing poor conversions. Over 50% of web traffic is mobile, but many sites remain desktop-optimized. Google's mobile-first indexing penalizes non-responsive sites, directly hurting visibility and conversions."
   },
-  {
-    title: "Digital Marketing",
-    slug: "digital-marketing",
-    description: "We build targeted campaigns that attract the right customers and optimize their journey—because leads only matter if they convert.",
-    icon: "bx:bxs-shopping-bag",
-    body: "We focus on the absolute foundations of your marketing stack before we ever even look at paying for an advertisement. Most traditional agencies are 100% focused on bringing new leads to your site, but they leave out the part where the leads need to convert. Our systems are designed to make the most of every lead."
-  },
+  // {
+  //   title: "Digital Marketing",
+  //   slug: "digital-marketing",
+  //   description: "We build targeted campaigns that attract the right customers and optimize their journey—because leads only matter if they convert.",
+  //   icon: "bx:bxs-shopping-bag",
+  //   body: "We focus on the absolute foundations of your marketing stack before we ever even look at paying for an advertisement. Most traditional agencies are 100% focused on bringing new leads to your site, but they leave out the part where the leads need to convert. Our systems are designed to make the most of every lead."
+  // },
   {
     title: "Social Media",
     slug: "social",

@@ -1,25 +1,36 @@
 <script setup>
-import { services, comingSoon } from '~/data/services';
+import { services, systems, comingSoon } from '~/data/services';
 import { aiServices, oneOffPricing } from '~/data/pricing';
 
 useSeoMeta({
   title: "Services",
 })
+
+const isAnnual = ref(false)
 </script>
 
 <template>
   <Sectionhead>
-    <template v-slot:title>Services</template>
+    <template v-slot:title>Service Business Growth Systems</template>
     <template v-slot:desc>
-      We help businesses of any size get more customers.
+      Our signature growth systems are HOW we get service businesses more customers and more sales.
+    </template>
+  </Sectionhead>
+
+  <Features :features="systems" url-base="/systems" />
+
+  <Sectionhead>
+    <template v-slot:title>Growth System Features</template>
+    <template v-slot:desc>
+      Some of the features bundled into all of our Growth Systems:
     </template>
   </Sectionhead>
 
   <Features :features="services" url-base="/services" />
 
   <Sectionhead>
-    <template v-slot:title>Standard Services and Growth System Addons</template>
-    <template v-slot:desc>If our growth system packages don't meet your needs, we also offer these services and addons.</template>
+    <template v-slot:title>Standalone Services and Growth System Addons</template>
+    <template v-slot:desc>If our growth systems don't meet your needs, we also offer these standalone services and addons.</template>
   </Sectionhead>
 
   <AnnualSelector :is-annual="isAnnual" @yearly="isAnnual = true" @monthly="isAnnual = false" />

@@ -1,5 +1,4 @@
 <script setup>
-import { systems as services } from '~/data/services';
 useSeoMeta({
   title: "Systems",
 })

@@ -10,10 +10,8 @@ const isAnnual = ref(false);
 
 <template>
   <Sectionhead>
-    <template v-slot:title>Growth System Plans</template>
-    <template v-slot:desc>Massive access and growth potential with simple & predictable pricing. Important to note that these are not tools, these are
-      systems designed to act for you and drive growth for your business, and they're designed to do so at a tiny fraction of the cost of traditional marketing efforts.
-    </template>
+    <template v-slot:title>Service Business Growth Systems</template>
+    <template v-slot:desc>Stop wondering where your next customer is coming from and start filling your calendar.</template>
   </Sectionhead>
 
   <AnnualSelector :is-annual="isAnnual" @yearly="isAnnual = true" @monthly="isAnnual = false" />
@@ -28,8 +26,8 @@ const isAnnual = ref(false);
   <Cta
     location="pricing"
     button-text="Book my FREE consultation"
-    description="If you're not sure, or have more complex needs, book a slot with us and we can take a look together."
-    heading="Not sure which system is right for your business?"
+    description="If you're not sure what this giant list of features means or have more complex needs, no sweat!"
+    heading="Book Us"
     name="consult"
     to="/booking"
   />

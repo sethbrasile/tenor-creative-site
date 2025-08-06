@@ -15,7 +15,7 @@ const filteredFeatures = computed(() => {
   <section class="text-gray-700 body-font overflow-hidden">
     <div class="container px-5 py-8 mx-auto flex flex-wrap">
       <div class="lg:w-1/4 pt-4 mt-48 hidden lg:block">
-        <div class="mt-px border-t border-gray-300 border-b border-l rounded-tl-lg rounded-bl-lg overflow-hidden">
+        <div class="border-t border-gray-300 border-b border-l rounded-tl-lg rounded-bl-lg overflow-hidden">
           <p v-for="feature in filteredFeatures" :key="feature"
             class="feature text-gray-900 h-12 text-center px-4 flex items-center justify-start">{{ feature }}</p>
         </div>
@@ -43,7 +43,7 @@ const filteredFeatures = computed(() => {
             </p>
 
             <NuxtLink :to="yearly ? plan1AnnualPaymentLink : plan1PaymentLink">
-              <IconButton :button-text="'Get the ' + plan1?.name" :note="plan1?.description" />
+              <IconButton :button-text="'Buy ' + plan1?.name" :note="plan1?.description" />
             </NuxtLink>
           </div>
         </div>
@@ -70,7 +70,7 @@ const filteredFeatures = computed(() => {
             </p>
 
             <NuxtLink :to="yearly ? plan2AnnualPaymentLink : plan2PaymentLink">
-              <IconButton :button-text="'Get the ' + plan2?.name" :note="plan2?.description" />
+              <IconButton :button-text="'Buy ' + plan2?.name" :note="plan2?.description" />
             </NuxtLink>
           </div>
         </div>
@@ -95,7 +95,7 @@ const filteredFeatures = computed(() => {
             </p>
 
             <NuxtLink :to="yearly ? plan3AnnualPaymentLink : plan3PaymentLink">
-              <IconButton :button-text="'Get the ' + plan3?.name" :note="plan3?.description" />
+              <IconButton :button-text="'Buy ' + plan3?.name" :note="plan3?.description" />
             </NuxtLink>
           </div>
         </div>
@@ -107,6 +107,10 @@ const filteredFeatures = computed(() => {
 <style lang="postcss" scoped>
 .feature:nth-child(odd) {
   @apply bg-gray-100;
+}
+
+.feature:first-of-type {
+  @apply -mb-px -mt-px;
 }
 
 .feature.tick:nth-of-type(1) {

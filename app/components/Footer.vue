@@ -12,10 +12,10 @@ const menuitems = [
     title: "Locations",
     path: "/locations",
   },
-  {
-    title: "Systems",
-    path: "/systems",
-  },
+  // {
+  //   title: "Systems",
+  //   path: "/systems",
+  // },
 ];
 </script>
 
