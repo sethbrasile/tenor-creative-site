@@ -22,10 +22,10 @@ useSeoMeta({
     <template v-slot:desc>Send us a message. We'll get back to you asap!</template>
   </Sectionhead>
 
-  <div class="grid md:grid-cols-2 gap-10 mx-auto mt-16">
+  <HlForm form-id="tfuPDSrhu486M5BhL3j2" form-name="Contact" class="-mt-8" />
+  <!-- <div class="grid md:grid-cols-2 gap-10 mx-auto mt-16">
     <p class="text-lg leading-relaxed text-slate-500 mt-6">
       If you'd rather have a quick chat, <NuxtLink to="/booking" class="underline">please schedule your free consultation.</NuxtLink>
     </p>
-  <Contactform />
-  </div>
+  </div> -->
 </template>

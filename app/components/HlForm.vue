@@ -14,7 +14,7 @@ useHead({
 <template>
   <iframe
     :src="`https://hlapi.tenorcreative.com/widget/form/${formId}`"
-    style="width:100%;height:100%;border:none;border-radius:4px"
+    style="width:100%;height:100%;border:none;border-radius:4px;"
     :id="`inline-${formId}`"
     data-layout="{'id':'INLINE'}"
     data-trigger-type="alwaysShow"
