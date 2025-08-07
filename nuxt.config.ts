@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 const title = 'Tenor Creative'
 const subtitle = 'Generate Customers on Autopilot'
-const description = 'We help service businesses sell more services WITHOUT advertising.'
+const description = 'Stop wondering where your next customer is coming from and start filling your calendar.'
 const env = process.env.VERCEL_ENV || 'development'
 const isProduction = env === 'production'
 

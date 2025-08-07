@@ -1,5 +1,5 @@
 <script setup>
-import { standardPricing, oneOffPricing, aiServices } from '~/data/pricing';
+import { standardPricing } from '~/data/pricing';
 
 useSeoMeta({
   title: "Pricing",
@@ -11,7 +11,7 @@ const isAnnual = ref(false);
 <template>
   <Sectionhead>
     <template v-slot:title>Service Business Growth Systems</template>
-    <template v-slot:desc>Stop wondering where your next customer is coming from and start filling your calendar.</template>
+    <template v-slot:desc>We help service businesses sell more services WITHOUT advertising.</template>
   </Sectionhead>
 
   <AnnualSelector :is-annual="isAnnual" @yearly="isAnnual = true" @monthly="isAnnual = false" />

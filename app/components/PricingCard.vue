@@ -20,7 +20,7 @@ const price = computed(() => {
 </script>
 
 <template>
-  <div>
+  <div v-if="plan?.tier !== 99">
     <div
       class="flex h-full flex-col w-full order-first lg:order-none border-2 border-[#D8DEE9] border-opacity-50 py-5 px-6 rounded-md">
       <div class="">
