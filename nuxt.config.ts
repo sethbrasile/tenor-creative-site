@@ -68,7 +68,7 @@ export default defineNuxtConfig({
         // description: "In this guide, you'll learn the key elements that drive growth, why most businesses get them wrong, and how to implement them in your own business.",
         // formId: '',
         url: '/new-sales-team',
-        name: 'Why AI Automation is the New Sales Team for Smart Service Businesses',
+        name: 'AI Automation is the New Sales Team for Smart Service Businesses',
         description: `In today's hyper-competitive market, service businesses are increasingly expected to do more with less. Limited budgets, lean teams, and aggressive growth targets are all too common. Enter AI and automation—once exclusive to enterprise-level operations, now indispensable tools that smart service businesses are using to drive sales, streamline operations, and outperform larger competitors. This blog explores how artificial intelligence and automation are redefining the traditional sales team, empowering small businesses to scale efficiently and profitably.`,
         formId: 'sLuHUrIuc4bSq3WMsdkl',
       },

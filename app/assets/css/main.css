@@ -7,7 +7,7 @@
 }
 
 .heading {
-  @apply text-lg text-gray-800;
+  @apply text-lg text-slate-800;
 }
 
 .subheading {

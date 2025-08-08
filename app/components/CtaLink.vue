@@ -16,15 +16,16 @@ withDefaults(defineProps<Props>(), {
 });
 
 const sizes: any = {
-  lg: "px-5 py-2.5",
+  lg: "px-6 py-4",
   md: "px-4 py-2",
 };
 
 const styles: any = {
-  outline: "bg-white border-2 border-black hover:bg-gray-100 text-gray-900",
-  primary: "bg-black text-white hover:bg-gray-800  border-2 border-transparent",
-  inverted: "bg-white text-gray-900 border-2 border-transparent",
-  muted: "bg-gray-100 color-red hover:bg-gray-200 border-2 border-transparent",
+  outline: "bg-white border-2 border-black hover:bg-slate-100 text-slate-900",
+  primary: "bg-slate-900 text-white hover:bg-slate-800  border-2 border-transparent",
+  inverted: "bg-white text-slate-900 border-2 border-transparent",
+  muted: "bg-slate-100 color-red hover:bg-slate-200 border-2 border-transparent",
+  standout: "bg-teal-800 hover:bg-teal-700 text-white"
 };
 </script>
 
@@ -34,7 +35,7 @@ const styles: any = {
     :disabled="disabled"
     :href="href"
     :class="[
-      'rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200',
+      'rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-slate-200',
       block && 'w-full',
       disabled && 'opacity-80',
       sizes[size],

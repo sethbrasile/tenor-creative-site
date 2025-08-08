@@ -1,9 +1,9 @@
 <script setup lang="ts">
   defineProps<{ og?: boolean }>()
-  const { hero: { title, description, subtitle, alt }, leadMagnet: { url, name } } = useRuntimeConfig().public
+  const { hero: { title, description, subtitle, alt }, leadMagnet: { name, url } } = useRuntimeConfig().public
 </script>
 <template>
-  <main class="grid md:grid-cols-2 place-items-center xs:pt-16 pb-8 md:pt-8" :class="{ 'md:pt-0': og, '-mt-8': og, 'ml-8': og }">
+  <main class="grid md:grid-cols-2 place-items-center xs:pt-16" :class="{ 'md:pt-0': og, '-mt-8': og, 'ml-8': og }">
     <div class="my-8 md:my-0 md:p-24 md:order-1">
       <NuxtPicture
         format="avif,webp"
@@ -21,14 +21,15 @@
       </h1>
       <h2 class="subheading font-light">{{ subtitle }}</h2>
       <p class="text-lg mt-4 text-slate-600 max-w-xl">
-        {{ description }}
+        Automated solutions, AI-powered teams, and proven marketing strategies, all done-for-you so that you can finally step off the hamster wheel.
       </p>
       <div v-if="!og" class="mt-6 flex flex-col sm:flex-row gap-3">
         <CtaLink
           cta-name="Hero"
           :href="url"
+          size="lg"
           rel="noopener">
-            <strong>Unlock Your Free Guide: </strong> {{ name }}
+            <strong>Download Your Free Guide: </strong> {{ name }}
         </CtaLink>
       </div>
     </div>

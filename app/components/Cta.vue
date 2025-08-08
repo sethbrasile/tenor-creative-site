@@ -36,7 +36,7 @@
 
 <template>
   <div
-    class="bg-black px-20 py-20 mt-20 mx-auto max-w-5xl rounded-lg flex flex-col items-center text-center"
+    class="bg-black px-10 py-10 lg:px-20 lg:py-20 mt-20 mx-auto max-w-5xl rounded-lg flex flex-col items-center text-center"
   >
     <h2 class="text-white text-3xl md:text-6xl">{{ heading }}</h2>
     <p class="text-slate-300 mt-4 text-lg md:text-xl">

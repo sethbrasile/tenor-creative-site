@@ -5,25 +5,21 @@ const menuitems = [
     path: "/",
   },
   {
-    title: "Services",
+    title: "AI Voice Demo",
+    path: "/demo",
+  },
+  {
+    title: "Solutions",
     path: "/services",
   },
-  // {
-  //   title: "About Us",
-  //   path: "/about",
-  // },
   {
     title: "Pricing",
     path: "/pricing",
   },
   {
-    title: "FAQ",
-    path: "frequently-asked-questions",
+    title: "About",
+    path: "/about",
   },
-  // {
-  //   title: "Sample Sites",
-  //   path: "/sample-sites",
-  // },
   {
     title: "Contact",
     path: "/contact",
@@ -39,16 +35,14 @@ const open = ref(false);
         <a href="/" class="text-lg content-center grid grid-cols-2 w-14">
           <NuxtPicture
             format="png"
-            src="/img/logo.svg"
-            width="24"
-            height="24"
+            src="/img/logo-with-text.svg"
             alt="Tenor"
-            class="w-6"
+            class="w-56"
           />
-          <div>
+          <!-- <div>
             <span class="font-bold text-slate-800">Tenor</span>
             <span class="text-slate-500">Creative</span>
-          </div>
+          </div> -->
         </a>
         <div class="block lg:hidden">
           <button @click="open = !open" class="text-gray-800">
@@ -75,7 +69,7 @@ const open = ref(false);
         </div>
       </div>
       <nav
-        class="w-full lg:w-auto mt-2 lg:flex lg:mt-0"
+        class="w-full mt-2 p-4 lg:w-auto lg:flex lg:mt-0 border lg:border-none"
         :class="{ block: open, hidden: !open }"
       >
         <ul class="flex flex-col lg:flex-row lg:gap-3">
@@ -83,23 +77,24 @@ const open = ref(false);
             <NuxtLink
               :to="item.path"
               class="flex lg:px-3 py-2 text-gray-600 hover:text-gray-900"
+              @click="open = false"
             >
               {{ item.title }}
             </NuxtLink>
           </li>
         </ul>
-        <!-- <div class="lg:hidden flex items-center mt-3 gap-4">
-          <CtaLink href="#" styleName="muted" block size="md"
+        <div class="lg:hidden flex items-center mt-3 gap-4">
+          <CtaLink href="https://app.tenorcreative.com" styleName="muted" block size="md"
             >Log in</CtaLink
           >
-          <CtaLink href="#" size="md" block>Sign up</CtaLink>
-        </div> -->
-      </nav>
-      <!-- <div>
-        <div class="hidden lg:flex items-center gap-4">
-          <a href="#">Log in</a>
-          <CtaLink href="#" size="md">Sign up</CtaLink>
+          <CtaLink href="/pricing" size="md" block @click="open = false">Sign up</CtaLink>
         </div>
-      </div> -->
+      </nav>
+      <div>
+        <div class="hidden lg:flex items-center gap-4">
+          <a href="https://app.tenorcreative.com">Log in</a>
+          <CtaLink href="/pricing" size="md" @click="open = false">Sign up</CtaLink>
+        </div>
+      </div>
     </header>
 </template>
