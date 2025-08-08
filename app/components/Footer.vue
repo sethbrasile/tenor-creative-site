@@ -24,7 +24,7 @@ const menuitems = [
     <nav class="w-full mt-2 flex">
       <ul class="flex flex-row gap-3 m-auto">
         <li v-for="item of menuitems">
-          <NuxtLink :to="item.path" class="flex px-3 py-2 text-gray-600 hover:text-gray-900">
+          <NuxtLink :to="item.path" class="flex px-3 py-2 text-slate-600 hover:text-slate-900">
             {{ item.title }}
           </NuxtLink>
         </li>

@@ -14,7 +14,7 @@
     <ul class="grid sm:grid-cols-2 md:grid-cols-4 mt-8 gap-2 text-lg font-light">
       <li
         v-for="feature in features"
-        class="item border border-gray-200 bg-white shadow-sm hover:shadow-lg hover:border-primary-400 transition-all p-1 rounded-xl flex items-center gap-3"
+        class="item border border-slate-200 bg-white shadow-sm hover:shadow-lg hover:border-primary-400 transition-all p-1 rounded-xl flex items-center gap-3"
       >
         <span class="text-primary-600 text-xl">•</span>
         <span>{{ feature }}</span>

@@ -7,7 +7,7 @@ defineProps<{
 
 <template>
   <div class="grid sm:grid-cols-2 md:grid-cols-4 mt-16 gap-4">
-    <NuxtLink v-for="item of features" class="flex gap-4 items-start border border-gray-200 p-4 rounded-lg hover:shadow-lg transition-shadow duration-200 cursor-pointer" :key="item.title" :to="`${urlBase}/${item.slug}`">
+    <NuxtLink v-for="item of features" class="flex gap-4 items-start border border-slate-200 p-4 rounded-lg hover:shadow-lg transition-shadow duration-200 cursor-pointer" :key="item.title" :to="`${urlBase}/${item.slug}`">
       <div class="bg-black rounded-full p-2 w-10 h-10 shrink-0">
         <Icon class="text-white -translate-y-1 -translate-x-0.5 text-3xl" :name="item.icon" />
       </div>

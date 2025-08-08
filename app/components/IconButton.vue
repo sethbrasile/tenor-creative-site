@@ -3,7 +3,7 @@ defineProps<{ buttonText: string; note?: string; popular?: boolean }>()
 </script>
 
 <template>
-  <div class="p-6 text-center border-t border-gray-300">
+  <div class="p-6 text-center border-t border-slate-300">
     <button
       class="flex items-center mt-auto text-white border-0 py-2 px-4 w-full focus:outline-none rounded"
       :class="popular ? 'bg-teal-800 hover:bg-teal-700' : 'bg-slate-800 hover:bg-slate-700'"
@@ -13,6 +13,6 @@ defineProps<{ buttonText: string; note?: string; popular?: boolean }>()
         <path d="M5 12h14M12 5l7 7-7 7"></path>
       </svg>
     </button>
-    <p v-if="note" class="text-xs text-gray-500 mt-3">{{ note }}</p>
+    <p v-if="note" class="text-xs text-slate-500 mt-3">{{ note }}</p>
   </div>
 </template>

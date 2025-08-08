@@ -54,7 +54,7 @@
         type="text"
         placeholder="First Name"
         required
-        class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
+        class="w-full px-4 py-3 border-2 placeholder:text-slate-800 rounded-md outline-none focus:ring-4 border-slate-300 focus:border-slate-600 ring-slate-100"
         name="firstname"
       />
     </div>
@@ -64,7 +64,7 @@
         type="text"
         placeholder="Last Name"
         required
-        class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
+        class="w-full px-4 py-3 border-2 placeholder:text-slate-800 rounded-md outline-none focus:ring-4 border-slate-300 focus:border-slate-600 ring-slate-100"
         name="lastname"
       />
     </div>
@@ -76,7 +76,7 @@
         placeholder="Email Address"
         name="email"
         required
-        class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
+        class="w-full px-4 py-3 border-2 placeholder:text-slate-800 rounded-md outline-none focus:ring-4 border-slate-300 focus:border-slate-600 ring-slate-100"
       />
     </div>
     <div class="mb-5">
@@ -84,7 +84,7 @@
         v-model="form.phone"
         type="text"
         placeholder="Phone (optional)"
-        class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
+        class="w-full px-4 py-3 border-2 placeholder:text-slate-800 rounded-md outline-none focus:ring-4 border-slate-300 focus:border-slate-600 ring-slate-100"
         name="lastname"
       />
     </div>
@@ -94,7 +94,7 @@
         name="message"
         required
         placeholder="Your message...&#13;&#10;&#13;&#10;How did you hear about us?&#13;&#10;How can we help?"
-        class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none h-36 focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
+        class="w-full px-4 py-3 border-2 placeholder:text-slate-800 rounded-md outline-none h-36 focus:ring-4 border-slate-300 focus:border-slate-600 ring-slate-100"
       ></textarea>
     </div>
     <p v-if="errorState" class="text-red-800 text-sm mt-3 mb-3">

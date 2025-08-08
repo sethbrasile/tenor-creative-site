@@ -45,7 +45,7 @@ const open = ref(false);
           </div> -->
         </a>
         <div class="block lg:hidden">
-          <button @click="open = !open" class="text-gray-800">
+          <button @click="open = !open" class="text-slate-800">
             <svg
               fill="currentColor"
               class="w-4 h-4"
@@ -76,7 +76,7 @@ const open = ref(false);
           <li v-for="item of menuitems">
             <NuxtLink
               :to="item.path"
-              class="flex lg:px-3 py-2 text-gray-600 hover:text-gray-900"
+              class="flex lg:px-3 py-2 text-slate-600 hover:text-slate-900"
               @click="open = false"
             >
               {{ item.title }}
