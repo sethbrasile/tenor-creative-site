@@ -16,6 +16,10 @@ const menuitems = [
     title: "FAQ",
     path: "frequently-asked-questions",
   },
+  {
+    title: "Services",
+    path: "services",
+  },
 ];
 </script>
 

@@ -1,15 +1,22 @@
-<template>
-  <NuxtLink :to="'/services'" class="flex items-center text-slate-500 hover:text-slate-700 transition-colors text-lg">
-    <Button class="flex items-center gap-2">
-      <Icon name="mdi:arrow-left" />
-      Back to services
-    </Button>
-  </NuxtLink>
+<script setup lang="ts">
+import {solutions} from '~/data/solutions'
+const carpet = solutions.find(item => item.slug === 'get-leads')
+</script>
 
+<template>
   <Sectionhead>
-    <template v-slot:title>Red Carpet Lead Generation System</template>
-    <template v-slot:desc>You're driving traffic to your website, but 95-97% of visitors leave without taking action. That's money walking out the door.</template>
+    <template v-slot:title>Lead Generation System</template>
+    <template v-slot:desc>
+      <div class="grid sm:grid-cols-2 gap-4 py-6 mt-4 w-full">
+    <NuxtImg
+      src="/img/card-pics/get-leads.png"
+    />
+    <h2 class="text-xl font-semibold sm:pr-12 my-auto text-center text-slate-700">You're driving traffic to your website, but 95-97% of visitors leave without taking action. That's like flushing money down the toilet!</h2>
+  </div>
+  </template>
   </Sectionhead>
+
+
 
   <div class="space-y-5 mt-4">
     <p class="text-lg">
@@ -26,7 +33,7 @@
 
     <Sectionhead>
       <template v-slot:title><span class="subheading">What if you could turn those anonymous visitors into eager leads?</span></template>
-      <template v-slot:desc><span class="text-lg text-slate-900">Introducing the <strong class="font-semibold">Red Carpet Lead Generation System</strong> - your all-in-one solution to greet, engage, and convert website visitors on autopilot.</span></template>
+      <template v-slot:desc><span class="text-lg text-slate-900">Introducing the <strong class="font-semibold">Tenor Creative Lead Generation System</strong> - your all-in-one solution to greet, engage, and convert website visitors on autopilot.</span></template>
     </Sectionhead>
 
     <p class="text-xl font-semibold pt-2">Why It Works:</p>
@@ -58,17 +65,19 @@
       <!--<span class="flex items-start">✅ Monthly message updates to keep campaigns fresh</span>-->
     </p>
 
+    <h3 class="subheading">The easiest, most affordable way to grow your leads.</h3>
     <p class="text-lg">
-      <strong class="font-semibold text-2xl">The easiest, most affordable way to grow your leads.</strong><br>
-      Stop pouring money into ads pointed at a leaky funnel. Fix the funnel first! Capture the traffic you already have!
+      Stop pouring money down the toilet. Capture the traffic you already have!
     </p>
+    <SolutionCards v-if="carpet?.cards.length" :cards="carpet?.cards" />
+
 
     <Cta
       location="lead-gen"
       name="lead-gen"
-      heading="Roll out Your Red Carpet"
+      heading="Stop Missing Leads Right Now!"
       description="Included in all of our Growth System plans, or available ala-carte"
-      button-text="Start converting visitors today"
+      button-text="Start converting visitors into customers today"
       to="/pricing"
     />
   </div>

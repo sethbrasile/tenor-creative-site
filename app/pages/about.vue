@@ -63,18 +63,21 @@ useSeoMeta({
   </Sectionhead>
 
   <section class="py-12">
-    <p class="mb-4">We're Tenor Creative, and We're Here to Help You Grow.</p>
-    <p class="mb-4">Based in North Texas / Southern Oklahoma, our passion is helping local service businesses reach new customers, maximize relationships with existing customers, and empower them with technology that will enrich their business and create freedom without creating new headaches.</p>
-    <p class="mb-4 font-bold">Our mission? To help businesses work smarter, not harder—with a blend of modern marketing, automation, and a little bit of tech magic behind the scenes. (Okay, a lot of tech magic.)</p>
-    <p>We believe that every business—big or small—deserves tools and strategies that make life easier and growth faster. Whether you're looking for more leads, better systems, or just want to take a break from the busywork, we're the partner you can count on.</p>
+    <p class="text mb-4">We're Tenor Creative, and We're Here to Help You Grow.</p>
+    <p class="text mb-4">Based in North Texas / Southern Oklahoma, our passion is helping local service businesses reach new customers, maximize relationships with existing customers, and empower them with technology that will enrich their business and create freedom without creating new headaches.</p>
+    <p class="text mb-4 ">Our mission? To help businesses work smarter, not harder—with a blend of modern marketing, automation, and a little bit of tech magic behind the scenes. (Okay, a lot of tech magic.)</p>
+    <p class="text">We believe that every business—big or small—deserves tools and strategies that make life easier and growth faster. Whether you're looking for more leads, better systems, or just want to take a break from the busywork, we're the partner you can count on.</p>
   </section>
 
   <Cta location="About" />
 </template>
 
 <style scoped lang="postcss">
-p {
-  font-size: 18px;
-  @apply text-slate-700;
+.text {
+  font-size: 1rem;
+  &:nth-child(odd) {
+    font-size: 1.2rem;
+    @apply text-slate-900 font-semibold;
+   }
 }
 </style>

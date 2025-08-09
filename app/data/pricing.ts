@@ -217,6 +217,7 @@ export const oneOffPricing: Price[] = [
     available: true,
     name: "Custom Static Website",
     note: "requires performance hosting",
+    // description: "We will build you the most badass fastest most optimized and highest converting most beautiful cleanest best website you've ever seen. None of your family members will even believe that it's your website.",
     description: "",
     price: "$5,997",
     popular: false,

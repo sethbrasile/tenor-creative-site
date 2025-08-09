@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  html, body {
+    font-family: "Open Sans", "Inter";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Oswald";
+
+    &.txt {
+      font-family: "Open Sans";
+    }
+  }
+}
+
 .text {
   @apply text-sm text-slate-500;
 }
@@ -11,5 +25,5 @@
 }
 
 .subheading {
-  @apply text-xl lg:text-2xl xl:text-3xl;
+  @apply text-2xl lg:text-3xl xl:text-4xl tracking-wide;
 }

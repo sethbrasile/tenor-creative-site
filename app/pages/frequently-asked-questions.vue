@@ -4,9 +4,39 @@
     <template v-slot:desc>Frequently Asked Questions</template>
   </Sectionhead>
   <div class="grid md:grid-cols-1 gap-10 mx-auto mt-12">
-    <!-- <PricingCard v-for="item of standardPricing" :plan="item" :key="item.name" /> -->
     <p>
-      <strong>Q: What does "No compromises" mean?</strong>
+      <strong>Q: How quickly can I start seeing results?</strong>
+      <br />
+      A: That depends on the solution you're using. For things like websites and listings, improvements in visibility can happen within days.
+      For automation and review management, you'll start seeing impact as soon as you turn the systems on—but real growth compounds over time.
+    </p>
+    <p>
+      <strong>Q: Do I need technical experience to use these tools?</strong>
+      <br />
+      A: Not at all. Everything is designed to be user-friendly—even if you're not “techy.” And if you ever get stuck, our team is here to help get you moving again.
+    </p>
+    <p>
+      <strong>Q: Do I need technical experience to use these tools?</strong>
+      <br />
+      A: Not at all. Everything is designed to be user-friendly—even if you're not “techy.” And if you ever get stuck, our team is here to help get you moving again.
+    </p>
+    <p>
+      <strong>Q: Can I use just one solution or do I need the whole system?</strong>
+      <br />
+      A: Each solution is powerful on its own, but they're even better together. Start where it makes the most sense for your business—we'll help you scale up from there.
+    </p>
+    <p>
+      <strong>Q: What makes your system different from other platforms?</strong>
+      <br />
+      A: We don't just sell tools—we build growth systems. Powered by AI, automation, and proven strategies, our solutions are designed to actually grow your business, not just add more work.
+    </p>
+    <p>
+      <strong>Q: Is there a contract or long-term commitment?</strong>
+      <br />
+      A: Nope. We believe in earning your trust, not locking you in. Use what you need, when you need it. Cancel anytime.
+    </p>
+    <p>
+      <strong>Q: On your website services, what does "No compromises" mean?</strong>
       <br />
       A: We build our sites using industry standard best practices, ensuring optimal user experience, and in most
       circumstances the result is a
@@ -19,7 +49,7 @@
       necessary.
     </p>
     <p>
-      <strong>Q: What does "Growth system ready" mean?</strong>
+      <strong>Q: On your website services, what does "Growth system ready" mean?</strong>
       <br />
       A: Even if you don't opt to use one of our Growth system plans out of the gate, our sites are built to easily
       integrate with them in the future,

@@ -22,10 +22,10 @@ const sizes: any = {
 
 const styles: any = {
   outline: "bg-white border-2 border-black hover:bg-slate-100 text-slate-900",
-  primary: "bg-slate-900 text-white hover:bg-slate-800  border-2 border-transparent",
+  primary: "bg-slate-900 text-white hover:bg-slate-800 border-2 border-transparent",
   inverted: "bg-white text-slate-900 border-2 border-transparent",
   muted: "bg-slate-100 color-red hover:bg-slate-200 border-2 border-transparent",
-  standout: "bg-teal-800 hover:bg-teal-700 text-white"
+  highlight: "bg-slate-900 hover:bg-slate-800 text-white font-light uppercase"
 };
 </script>
 

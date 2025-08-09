@@ -1,4 +1,6 @@
 <script setup>
+import { solutions } from '~/data/solutions';
+
 const menuitems = [
   {
     title: "Home",
@@ -10,7 +12,7 @@ const menuitems = [
   },
   {
     title: "Solutions",
-    path: "/services",
+    path: "/solutions",
   },
   {
     title: "Pricing",
@@ -25,6 +27,14 @@ const menuitems = [
     path: "/contact",
   },
 ];
+
+const bananas = solutions.map((solution => {
+  return {
+    to: `/solutions/${solution.slug}`,
+    title: solution.title,
+    icon: solution.icon,
+  }
+}))
 
 const open = ref(false);
 </script>
@@ -83,18 +93,19 @@ const open = ref(false);
             </NuxtLink>
           </li>
         </ul>
-        <div class="lg:hidden flex items-center mt-3 gap-4">
+        <!-- <Dropdown title="Options" :items="bananas" /> -->
+        <!-- <div class="lg:hidden flex items-center mt-3 gap-4">
           <CtaLink href="https://app.tenorcreative.com" styleName="muted" block size="md"
             >Log in</CtaLink
           >
           <CtaLink href="/pricing" size="md" block @click="open = false">Sign up</CtaLink>
-        </div>
+        </div> -->
       </nav>
-      <div>
+      <!-- <div>
         <div class="hidden lg:flex items-center gap-4">
           <a href="https://app.tenorcreative.com">Log in</a>
           <CtaLink href="/pricing" size="md" @click="open = false">Sign up</CtaLink>
         </div>
-      </div>
+      </div> -->
     </header>
 </template>

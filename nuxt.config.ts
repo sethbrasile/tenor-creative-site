@@ -15,7 +15,13 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ["@nuxt/image", "@nuxtjs/seo", "@nuxt/icon"],
+  modules: ["@nuxt/image", "@nuxtjs/seo", "@nuxt/icon", "@nuxtjs/google-fonts"],
+  googleFonts: {
+    families: {
+      Oswald: true,
+      'Open Sans': true,
+    },
+  },
   app: {
     head: {
       htmlAttrs: {

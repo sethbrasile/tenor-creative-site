@@ -22,7 +22,7 @@
     </ul>
   </div>
   <Cta
-    location="services"
+    location="solutions"
     :name="title"
     :heading="cta?.heading"
     :description="cta?.description"

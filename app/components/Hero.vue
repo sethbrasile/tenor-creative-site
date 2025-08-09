@@ -16,20 +16,23 @@
       />
     </div>
     <div>
-      <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold lg:tracking-tight">
-        {{ title }}
+      <h2 class="txt text-sm md:text-md tracking-wide md:tracking-widest text-slate-600 max-w-xl">
+        Double Your Business and outperform your competition
+      </h2>
+      <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold">
+        {{ subtitle }}
       </h1>
-      <h2 class="subheading font-light">{{ subtitle }}</h2>
       <p class="text-lg mt-4 text-slate-600 max-w-xl">
-        Automated solutions, AI-powered teams, and proven marketing strategies, all done-for-you so that you can finally step off the hamster wheel.
+        We help service businesses get more customers with automated solutions, AI-powered teams, and proven marketing strategies. All done-for-you so that you can finally step off the hamster wheel.
       </p>
       <div v-if="!og" class="mt-6 flex flex-col sm:flex-row gap-3">
         <CtaLink
+          styleName="highlight"
           cta-name="Hero"
-          :href="url"
+          href="/booking"
           size="lg"
           rel="noopener">
-            <strong>Download Your Free Guide: </strong> {{ name }}
+            <strong>Find out more</strong>
         </CtaLink>
       </div>
     </div>

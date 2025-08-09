@@ -1,23 +1,23 @@
 <script lang="ts" setup>
-  import { services } from '~/data/services';
+  import { solutions } from '~/data/solutions';
 
   const { slug } = defineProps<{ slug: string[] }>();
 
-  const service = computed(() => {
-    return services.find(service => service.slug === slug[0]);
+  const solution = computed(() => {
+    return solutions.find(solution => solution.slug === slug[0]);
   })
 
   useSeoMeta({
-    title: service.value?.title,
-    description: service.value?.description,
+    title: solution.value?.title,
+    description: solution.value?.description,
   });
 </script>
 
 <template>
   <ServicePage
-    :title="service?.title || ''"
-    :description="service?.description || ''"
-    :body="service?.body"
-    :cta="service?.cta"
+    :title="solution?.title || ''"
+    :description="solution?.description || ''"
+    :body="solution?.body"
+    :cta="solution?.cta"
   />
 </template>

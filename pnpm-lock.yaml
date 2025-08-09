@@ -9,6 +9,12 @@ dependencies:
     version: 1.2.0(vue-router@4.5.1)(vue@3.5.17)
 
 devDependencies:
+  '@headlessui/vue':
+    specifier: ^1.7.23
+    version: 1.7.23(vue@3.5.17)
+  '@heroicons/vue':
+    specifier: ^2.2.0
+    version: 2.2.0(vue@3.5.17)
   '@hubspot/api-client':
     specifier: ^12.1.0
     version: 12.1.0
@@ -21,6 +27,9 @@ devDependencies:
   '@iconify-json/bxs':
     specifier: ^1.2.2
     version: 1.2.2
+  '@iconify-json/carbon':
+    specifier: ^1.2.11
+    version: 1.2.11
   '@iconify-json/iconamoon':
     specifier: ^1.2.2
     version: 1.2.2
@@ -36,6 +45,9 @@ devDependencies:
   '@nuxt/image':
     specifier: ^1.10.0
     version: 1.10.0
+  '@nuxtjs/google-fonts':
+    specifier: 3.2.0
+    version: 3.2.0
   '@tailwindcss/typography':
     specifier: ^0.5.16
     version: 0.5.16(tailwindcss@3.4.17)
@@ -847,6 +859,24 @@ packages:
       tslib: 2.8.1
     dev: false
 
+  /@headlessui/vue@1.7.23(vue@3.5.17):
+    resolution: {integrity: sha512-JzdCNqurrtuu0YW6QaDtR2PIYCKPUWq28csDyMvN4zmGccmE7lz40Is6hc3LA4HFeCI7sekZ/PQMTNmn9I/4Wg==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      '@tanstack/vue-virtual': 3.13.12(vue@3.5.17)
+      vue: 3.5.17(typescript@5.8.3)
+    dev: true
+
+  /@heroicons/vue@2.2.0(vue@3.5.17):
+    resolution: {integrity: sha512-G3dbSxoeEKqbi/DFalhRxJU4mTXJn7GwZ7ae8NuEQzd1bqdd0jAbdaBZlHPcvPD2xI1iGzNVB4k20Un2AguYPw==}
+    peerDependencies:
+      vue: '>= 3'
+    dependencies:
+      vue: 3.5.17(typescript@5.8.3)
+    dev: true
+
   /@hubspot/api-client@12.1.0:
     resolution: {integrity: sha512-HlmulztARNql01oZu4QvO7VP+YY7+gc9aDe3GyqLj1SCuHyNcTVAHq7TPGZ6kwlpYHCYzbjoVHO+Kh5fEZwqaQ==}
     dependencies:
@@ -876,6 +906,12 @@ packages:
 
   /@iconify-json/bxs@1.2.2:
     resolution: {integrity: sha512-uqQsDJDi9h+kjtKmx8IHZCO9tbLR3ff3GN+T5fTaNfxU4EnNX07iWF3kZfzyDZtrVgZNjR0ZIkdj3NfYf5rS4A==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
+  /@iconify-json/carbon@1.2.11:
+    resolution: {integrity: sha512-fWcoR0V4dLGLsgUvgjioBcTmj+l8NlMMEP/aMMUwR9PWAr5mCBg52rsTe/bvOnL1zj9PUCNxaj2M4H27GrnO3g==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true
@@ -1475,6 +1511,16 @@ packages:
       - vti
       - vue-tsc
       - yaml
+    dev: true
+
+  /@nuxtjs/google-fonts@3.2.0:
+    resolution: {integrity: sha512-cGAjDJoeQ2jm6VJCo4AtSmKO6KjsbO9RSLj8q261fD0lMVNMZCxkCxBkg8L0/2Vfgp+5QBHWVXL71p1tiybJFw==}
+    dependencies:
+      '@nuxt/kit': 3.17.7(magicast@0.3.5)
+      google-fonts-helper: 3.7.3
+      pathe: 1.1.2
+    transitivePeerDependencies:
+      - magicast
     dev: true
 
   /@nuxtjs/robots@5.4.0(vue@3.5.17):
@@ -2598,6 +2644,19 @@ packages:
       lodash.merge: 4.6.2
       postcss-selector-parser: 6.0.10
       tailwindcss: 3.4.17
+    dev: true
+
+  /@tanstack/virtual-core@3.13.12:
+    resolution: {integrity: sha512-1YBOJfRHV4sXUmWsFSf5rQor4Ss82G8dQWLRbnk3GA4jeP8hQt1hxXh0tmflpC0dz3VgEv/1+qwPyLeWkQuPFA==}
+    dev: true
+
+  /@tanstack/vue-virtual@3.13.12(vue@3.5.17):
+    resolution: {integrity: sha512-vhF7kEU9EXWXh+HdAwKJ2m3xaOnTTmgcdXcF2pim8g4GvI7eRrk2YRuV5nUlZnd/NbCIX4/Ja2OZu5EjJL06Ww==}
+    peerDependencies:
+      vue: ^2.7.0 || ^3.0.0
+    dependencies:
+      '@tanstack/virtual-core': 3.13.12
+      vue: 3.5.17(typescript@5.8.3)
     dev: true
 
   /@trysound/sax@0.2.0:
@@ -4801,6 +4860,15 @@ packages:
     hasBin: true
     dependencies:
       minimist: 1.2.8
+    dev: true
+
+  /google-fonts-helper@3.7.3:
+    resolution: {integrity: sha512-dENZeK6RMvkCOFoKbLbS+pyoDgpmk4U6BYmfXnztMar2d8SjEG6valxql/Lkyi7bu5F+3FTdE+gAEYSYZ5zzMA==}
+    dependencies:
+      deepmerge: 4.3.1
+      hookable: 5.5.3
+      ofetch: 1.4.1
+      ufo: 1.6.1
     dev: true
 
   /gopd@1.2.0:

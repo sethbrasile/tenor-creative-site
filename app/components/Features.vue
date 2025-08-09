@@ -1,19 +1,28 @@
 <script setup lang="ts">
+import type { Solution } from '~/data/solutions';
+
 defineProps<{
-  features: { title: string; description: string; icon: string; slug: string }[];
+  features: Solution[];
   urlBase?: string;
 }>()
 </script>
 
 <template>
-  <div class="grid sm:grid-cols-2 md:grid-cols-4 mt-16 gap-4">
-    <NuxtLink v-for="item of features" class="flex gap-4 items-start border border-slate-200 p-4 rounded-lg hover:shadow-lg transition-shadow duration-200 cursor-pointer" :key="item.title" :to="`${urlBase}/${item.slug}`">
-      <div class="bg-black rounded-full p-2 w-10 h-10 shrink-0">
-        <Icon class="text-white -translate-y-1 -translate-x-0.5 text-3xl" :name="item.icon" />
-      </div>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-16 gap-4">
+    <NuxtLink v-for="item of features" :key="item.title" :to="`${urlBase}/${item.slug}`" class="rounded overflow-hidden shadow hover:shadow-lg transition-shadow border duration-200 cursor-pointer">
       <div>
-        <h3 class="font-semibold text-lg">{{ item.title }}</h3>
-        <p v-html="item.description" class="text-slate-500 mt-2 leading-relaxed"></p>
+        <NuxtPicture height="293" width="390" :src="'/img/card-pics/' + item.image.url" :alt="item.image.alt" />
+        <div>
+          <div class="gap-2 p-4">
+            <div class="font-bold text-xl mb-2">{{ item.title }}</div>
+            <p class="text-gray-700 text-base h-20">
+              {{ item.subtitle }}
+            </p>
+          </div>
+          <div class="p-6 pt-0">
+            <p class="font-bold text-lg border rounded-md mt-2 p-1 bg-slate-200 border-slate-300 text-center">Learn more</p>
+          </div>
+        </div>
       </div>
     </NuxtLink>
   </div>

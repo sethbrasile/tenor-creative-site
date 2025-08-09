@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-  import { comingSoon as services } from '~/data/services';
+  import { comingSoon as services } from '~/data/solutions';
 
   useHead({
     script: [
