@@ -19,7 +19,7 @@ useSeoMeta({
   <Sectionhead>
     <template v-slot:title>Solutions</template>
     <template v-slot:desc>
-      Stop grinding to find your next customer
+      Stop grinding to find your next customer and start filling your calendar with customers
     </template>
   </Sectionhead>
 
