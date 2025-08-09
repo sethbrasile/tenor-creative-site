@@ -25,15 +25,11 @@ useSeoMeta({
     Who can we send the free guide to?
   </p>
 
-  <div class="flex flex-col w-full gap-4 lg:grid lg:grid-cols-2">
     <!-- <NuxtImg
       :src="previewImage"
       class="mx-auto border border-solid rounded-md"
     /> -->
-    <HlForm form-id="sLuHUrIuc4bSq3WMsdkl" form-name="Lead Magnet - New Sales Team - Opt In" />
-  </div>
-
-
+  <HlForm form-id="sLuHUrIuc4bSq3WMsdkl" form-name="Lead Magnet - New Sales Team - Opt In" />
 
   <!-- <div class="max-w-2xl mx-auto">
     <p class="text-lg mb-6">
