@@ -114,8 +114,8 @@ export const solutions: Solution[] = [
     ],
     image: {
       url: "get-leads.png",
-      caption: "",
-      alt: "",
+      caption: "You're driving traffic to your website, but 95-97% of visitors leave without taking action. That's like flushing money down the toilet!",
+      alt: "A magnet trying to yank people away from competition",
     },
     cards: [
       {
