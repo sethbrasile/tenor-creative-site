@@ -3,6 +3,7 @@
     heading="Wondering if an AI Employee can really be good at answering calls?"
     button-text="To hear our demo call: (580) 745-0069"
     description="Call now to try our live demo and see for yourself"
+    to="tel:+15807450069"
   />
 
   <Sectionhead>
