@@ -29,7 +29,7 @@
         <CtaLink
           styleName="highlight"
           cta-name="Hero"
-          href="/booking"
+          href="/solutions"
           size="lg"
           rel="noopener">
             <strong>Find out more</strong>

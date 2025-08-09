@@ -91,7 +91,7 @@ export const solutions: Solution[] = [
     cta: {
       name: "get-found",
       heading: "Optimize your local presence",
-      description: "Upgrade your local search management, available starting in our Fast Start Growth system OR get AI managed optimization",
+      description: "Upgrade your local search management, available starting in our Fast Start Growth system.",
       buttonText: "Improve your local rank now",
       to: "/pricing?service=local-seo",
     },

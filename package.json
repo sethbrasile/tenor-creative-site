@@ -10,7 +10,6 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@headlessui/vue": "^1.7.23",
     "@heroicons/vue": "^2.2.0",
     "@hubspot/api-client": "^12.1.0",
     "@iconify-json/bx": "^1.2.2",
