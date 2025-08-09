@@ -53,13 +53,15 @@ export const solutions: Solution[] = [
     subtitle: "Make it easy for new customers to discover your business online on search, maps, and social media.",
     pageTitle: "Get found everywhere that matters",
     description: [
-      "85% of consumers use local search to find businesses like yours. We optimize your online presence so you appear when it counts; because 97% of customers search online before making a decision. We use a revolutionary & award winning AI-driven Google Business Profile (GBP) optimization system that gets your business in front of 90% of local customers who are 74% likely to purchase within 24 hours. Get more customers without spending a single dollar on ads.",
-      "GBP SEO is faster, easier, and more cost effective than any website SEO. Plus, weekly automated reports prove the value of the work the system is doing."
+      "Being invisible online means losing business. With our automated “Get Found” solution, you're everywhere your customers are searching: Google, social platforms, maps, and more. We keep your listings fresh, help you shine in local SEO, and automate reputation management, all with the latest AI and marketing automation. This is how growth starts.",
+      "A beautiful, lightning-fast website that looks great on every device and converts clicks into customers. Designed with the latest SEO best practices and fully integrated with our automation suite.",
+      "Never chase reviews again! Our AI Team follows up with every customer, requests reviews at the perfect moment, and even helps you respond—so you're always putting your best foot forward.",
+      "Automatic updates to all your key business listings, driven by AI. No more outdated hours or missing contact info—just seamless, up-to-date visibility that builds trust with Google and your customers.",
     ],
     icon: "bx:bxs-file-find",
     image: {
       url: "get-found.png",
-      caption: "Dominate search, stay visible, and make the perfect first impression with smart automation and AI.",
+      caption: "Start getting found in the places your customers are already looking.",
       alt: "Local search display with map pins, from a search engine, on a laptop screen"
     },
     cards: [
@@ -221,12 +223,18 @@ export const solutions: Solution[] = [
         },
       },
     ],
-    cta: {},
+    cta: {
+      name: "grow-sales",
+      heading: "Consistently increase your sales",
+      description: "With automated systems that increase sales and decrease labor in all of our plans, you can't go wrong no matter your budget",
+      buttonText: "Turn more leads into paying customers",
+      to: "/pricing",
+    },
   },
   {
     title: "Drive repeat business",
     pageTitle: "Keep customers coming back - completely on autopilot",
-    slug: "remarketing",
+    slug: "repeat-business",
     subtitle: "Keep customers coming back with loyalty programs, smart reminders, and ongoing engagement.",
     icon: "mdi:repeat",
     description: [
@@ -265,7 +273,13 @@ export const solutions: Solution[] = [
         },
       },
     ],
-    cta: {},
+    cta: {
+      name: "repeat-business",
+      heading: "Turn one-time buyers into lifelong fans",
+      description: "Your customers stay connected, engaged, and loyal, without extra work from you.",
+      buttonText: "Show me how",
+      to: "/pricing",
+    },
   },
   // {
   //   title: "Keep an awesome reputation",
