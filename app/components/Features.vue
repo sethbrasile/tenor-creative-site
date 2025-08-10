@@ -12,10 +12,10 @@ defineProps<{
     <NuxtLink v-for="item of features" :key="item.title" :to="`${urlBase}/${item.slug}`" class="rounded overflow-hidden shadow hover:shadow-lg transition-shadow border duration-200 cursor-pointer">
       <div>
         <NuxtPicture height="293" width="390" :src="'/img/card-pics/' + item.image.url" :alt="item.image.alt" />
-        <div>
+        <div class="flex flex-col h-64 justify-between">
           <div class="gap-2 p-4">
-            <div class="font-bold text-xl mb-2 min-h-20">{{ item.title }}</div>
-            <p class="text-gray-700 text-base min-h-32 -mt-8">
+            <div class="font-bold text-xl mb-2">{{ item.title }}</div>
+            <p class="text-gray-700 text-base">
               {{ item.subtitle }}
             </p>
           </div>
