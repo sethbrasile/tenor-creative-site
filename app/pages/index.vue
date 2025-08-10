@@ -64,7 +64,7 @@ useSeoMeta({
       <div class="flex flex-col text-center my-4">
         <NuxtImg
           class="mx-auto"
-          src="/img/attract-circle.png"
+          src="/img/convert-circle.png"
           width="140"
           height="140"
         />
@@ -80,7 +80,7 @@ useSeoMeta({
       <div class="flex flex-col text-center my-4">
         <NuxtImg
           class="mx-auto"
-          src="/img/attract-circle.png"
+          src="/img/retain-circle.png"
           width="140"
           height="140"
         />
