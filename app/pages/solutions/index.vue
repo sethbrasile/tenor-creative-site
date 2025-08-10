@@ -24,5 +24,12 @@ useSeoMeta({
   </Sectionhead>
 
   <Features :features="solutions" url-base="/solutions" />
-  <Cta location="Solutions" />
+  <Cta
+    name="solutions"
+    location="Solutions"
+    heading="Ready to learn how?"
+    description="Book a call on our calendar and let us show you how we can help get you more business and achieve more freedom"
+    button-text="I'm ready to be free"
+    to="/booking"
+  />
 </template>
