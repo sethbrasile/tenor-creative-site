@@ -1,5 +1,15 @@
 <script setup lang="ts">
 import type { Price } from '~/data/pricing';
+
+const {
+  plan1PaymentLink,
+  plan1AnnualPaymentLink,
+  plan2PaymentLink,
+  plan2AnnualPaymentLink,
+  plan3PaymentLink,
+  plan3AnnualPaymentLink
+} = useRuntimeConfig().public
+
 const props = defineProps<{ plan: Price; yearly: boolean }>();
 const price = computed(() => {
   const { price } = props.plan
@@ -17,6 +27,19 @@ const price = computed(() => {
   // If not an object, return the price as is
   return price
 })
+
+function getPaymentLink(tier: number) {
+  switch (tier) {
+    case 1:
+      return props.yearly ? plan1AnnualPaymentLink : plan1PaymentLink
+    case 2:
+      return props.yearly ? plan2AnnualPaymentLink : plan2PaymentLink
+    case 3:
+      return props.yearly ? plan3AnnualPaymentLink : plan3PaymentLink
+    default:
+      return '/booking'
+  }
+}
 </script>
 
 <template>
@@ -50,13 +73,27 @@ const price = computed(() => {
         <!-- <div v-if="plan.popular" class="flex-row text-slate-800 text-sm">
           <p>Our most popular plan!</p>
         </div> -->
-        <CtaLink :ctaName="plan.shortName + '-cta'"
+        <p class="pb-2 font-semibold">{{ plan.name }}</p>
+        <CtaLink :ctaName="plan.shortName + 'learn-more-cta'"
           :href="(plan.button.link || '#') + '?plan=' + plan.shortName + (yearly ? '-yearly' : '')" block
           :disabled="!plan.available" :styleName="plan.available ? (plan.popular ? 'primary' : 'outline') : 'muted'">
           <p v-if="!plan.available" class="text-center text-slate-800 text-sm">
             Coming soon!
           </p>
           {{ plan.available ? (plan.button.text || "Get Started") : "Let us know you're interested!" }}
+        </CtaLink>
+
+        <p class="text-center p-2">- or -</p>
+
+        <CtaLink
+          block
+          :ctaName="plan.shortName + '-buy-cta'"
+          :href="getPaymentLink(plan.tier || 0)"
+          :disabled="!plan.available" :styleName="plan.available ? 'pop' : 'muted'">
+          <p v-if="!plan.available" class="text-center text-slate-800 text-sm">
+            Coming soon!
+          </p>
+          Sign up
         </CtaLink>
       </div>
     </div>

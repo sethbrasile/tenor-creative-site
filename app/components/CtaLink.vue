@@ -25,7 +25,8 @@ const styles: any = {
   primary: "bg-slate-900 text-white hover:bg-slate-800 border-2 border-transparent",
   inverted: "bg-white text-slate-900 border-2 border-transparent",
   muted: "bg-slate-100 color-red hover:bg-slate-200 border-2 border-transparent",
-  highlight: "bg-slate-900 hover:bg-slate-800 text-white font-light uppercase"
+  highlight: "bg-slate-900 hover:bg-slate-800 text-white font-light uppercase",
+  pop: "bg-teal-900 hover:bg-teal-800 text-white font-light uppercase",
 };
 </script>
 

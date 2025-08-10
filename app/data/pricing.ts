@@ -44,7 +44,7 @@ export const standardPricing: Price[] = [
   {
     tier: 1,
     shortName: "fast-start",
-    description: "Perfect for new businesses or those looking to get started quickly with some powerful systems focused on getting you up and running with the essentials for managing customer relationships and turning leads into customers. Start here! It's no sweat to upgrade later.",
+    description: "Perfect for new businesses or those looking to get started quickly with some powerful systems focused on managing customer relationships and turning leads into customers. Start here! It's no sweat to upgrade later.",
     available: true,
     name: "Fast Start Growth System",
     note: "+ one-time $299 setup fee",
@@ -75,14 +75,14 @@ export const standardPricing: Price[] = [
       "5,000 Emails",
     ],
     button: {
-      text: "Fast Start | How do I get started?",
+      text: "I'd like to learn more",
       link: "/booking",
     },
   },
   {
     tier: 2,
     shortName: "business",
-    description: "Perfect for serious service and retail businesses that want to go ALL-IN on growth! This system will give you all the systems and tools you need to capture and maximize every opportunity.",
+    description: "Perfect for serious service and retail businesses that want to stop grinding and work smarter! This system will give you all the systems and tools you need to capture and maximize every opportunity.",
     available: true,
     name: "Business Growth System",
     note: "+ one-time $499 setup fee",
@@ -127,7 +127,7 @@ export const standardPricing: Price[] = [
       "15,000 email",
     ],
     button: {
-      text: "Business Growth | How do I get started?",
+      text: "I'd like to learn more",
       link: "/booking",
     },
   },
@@ -160,7 +160,7 @@ export const standardPricing: Price[] = [
       // "15,000 Emails",
     ],
     button: {
-      text: "Business + AI | How do I get started?",
+      text: "I'd like to learn more",
       link: "/booking",
     },
   },
