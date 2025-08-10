@@ -93,7 +93,7 @@ function getPaymentLink(tier: number) {
           <p v-if="!plan.available" class="text-center text-slate-800 text-sm">
             Coming soon!
           </p>
-          Sign up
+          Sign up for {{ price }}
         </CtaLink>
       </div>
     </div>
