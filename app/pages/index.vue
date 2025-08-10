@@ -1,4 +1,5 @@
 <script setup>
+import { solutions } from '~/data/solutions'
 // const features = [
 //   {
 //     title: "Reach",
@@ -88,6 +89,11 @@ useSeoMeta({
         <p class="block text-slate-500 max-w-56 text-sm mt-4 mx-auto">Deliver the experience your customers expect, then keep them coming back for more.</p>
       </div>
     </div>
+  </section>
+  <section class="flex flex-col px-8 md:px-24 py-12 mt-8 md:mt-0 rounded-md">
+    <h2 class="text-5xl md:text-6xl font-semibold text-slate-800 mx-auto">Your Growth, Powered by Smart Solutions</h2>
+    <p class="text-lg text-slate-700 mt-6 text-center">Whether you need more leads, more sales, or more freedom in your day, our platform delivers. Explore our key solutions, each designed to help your business thrive, no complicated tech, no endless to-do lists.</p>
+    <Features :features="solutions" url-base="/solutions" />
   </section>
   <Cta location="Home"></Cta>
 </template>

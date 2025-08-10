@@ -15,7 +15,7 @@ defineProps<{
         <div>
           <div class="gap-2 p-4">
             <div class="font-bold text-xl mb-2">{{ item.title }}</div>
-            <p class="text-gray-700 text-base h-20">
+            <p class="text-gray-700 text-base min-h-32">
               {{ item.subtitle }}
             </p>
           </div>
