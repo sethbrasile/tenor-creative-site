@@ -41,5 +41,53 @@ useSeoMeta({
   <!-- <CallOut /> -->
   <!-- <Features :features="features" url-base="/services"></Features> -->
   <!-- <Logos></Logos> -->
+  <section class="flex flex-col bg-slate-100 px-8 md:px-24 py-12 mt-8 md:mt-0 rounded-md">
+    <h2 class="text-5xl md:text-6xl font-semibold text-slate-800 mx-auto">Three Clear Stages of Growth</h2>
+    <div class="flex flex-col md:flex-row justify-between mt-12">
+      <div class="flex flex-col text-center my-4">
+        <NuxtImg
+          class="mx-auto"
+          src="/img/attract-circle.png"
+          width="140"
+          height="140"
+        />
+        <h3 class="block text-3xl font-semibold text-slate-800 mt-4">Attract</h3>
+        <h4 class="block text-xl text-slate-800">Reach x Reputation</h4>
+        <p class="block text-slate-500 max-w-56 text-sm mt-4 mx-auto">Bring more prospects into your world and build a reputation that makes them want to do business with you.</p>
+      </div>
+      <NuxtPicture
+        class="md:my-auto my-4 mx-auto"
+        src="/img/right-chevrons.png"
+        width="54"
+      />
+      <div class="flex flex-col text-center my-4">
+        <NuxtImg
+          class="mx-auto"
+          src="/img/attract-circle.png"
+          width="140"
+          height="140"
+        />
+        <h3 class="block text-3xl font-semibold text-slate-800 mt-4">Convert</h3>
+        <h4 class="block text-xl text-slate-800">Readiness x Remarketing</h4>
+        <p class="block text-slate-500 max-w-56 text-sm mt-4 mx-auto">Turn interest into action by being ready to respond and staying top-of-mind with your prospects.</p>
+      </div>
+      <NuxtPicture
+        class="md:my-auto my-4 mx-auto"
+        src="/img/right-chevrons.png"
+        width="54"
+      />
+      <div class="flex flex-col text-center my-4">
+        <NuxtImg
+          class="mx-auto"
+          src="/img/attract-circle.png"
+          width="140"
+          height="140"
+        />
+        <h3 class="block text-3xl font-semibold text-slate-800 mt-4">Retain</h3>
+        <h4 class="block text-xl text-slate-800">Reliability x Resell</h4>
+        <p class="block text-slate-500 max-w-56 text-sm mt-4 mx-auto">Deliver the experience your customers expect, then keep them coming back for more.</p>
+      </div>
+    </div>
+  </section>
   <Cta location="Home"></Cta>
 </template>
