@@ -55,8 +55,9 @@ export const standardPricing: Price[] = [
     },
     popular: false,
     features: [
-      "FREE High Converting Website",
-      "FREE Hosting",
+      "FREE high-converting website",
+      "FREE hosting",
+      "NO commitments (cancel any time)",
       "Google Business Profile (GBP)",
       "Citation management",
       "Automated review requests",
@@ -74,7 +75,7 @@ export const standardPricing: Price[] = [
       "5,000 Emails",
     ],
     button: {
-      text: "I'm ready to grow my business",
+      text: "Fast Start | How do I get started?",
       link: "/booking",
     },
   },
@@ -126,7 +127,7 @@ export const standardPricing: Price[] = [
       "15,000 email",
     ],
     button: {
-      text: "I'm ready to take my business to the next level",
+      text: "Business Growth | How do I get started?",
       link: "/booking",
     },
   },
@@ -159,7 +160,7 @@ export const standardPricing: Price[] = [
       // "15,000 Emails",
     ],
     button: {
-      text: "I'm ready to go ALL IN on my business",
+      text: "Business + AI | How do I get started?",
       link: "/booking",
     },
   },

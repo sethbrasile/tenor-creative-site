@@ -11,7 +11,7 @@ const isAnnual = ref(false);
 <template>
   <Sectionhead>
     <template v-slot:title>Service Business Growth Systems</template>
-    <template v-slot:desc>We help service businesses sell more services WITHOUT advertising.</template>
+    <template v-slot:desc>We help service businesses get more customers and sell more services.</template>
   </Sectionhead>
 
   <AnnualSelector :is-annual="isAnnual" @yearly="isAnnual = true" @monthly="isAnnual = false" />
@@ -26,8 +26,8 @@ const isAnnual = ref(false);
   <Cta
     location="pricing"
     button-text="Book my FREE consultation"
-    description="If you're not sure what this giant list of features means or have more complex needs, no sweat!"
-    heading="Book Us"
+    description="No pushy sales pitch, just an honest conversation about your business."
+    heading="Questions? Let's chat."
     name="consult"
     to="/booking"
   />
