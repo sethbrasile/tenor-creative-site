@@ -232,7 +232,7 @@ export const solutions: Solution[] = [
     },
   },
   {
-    title: "Drive repeat business",
+    title: "Keep driving repeat business",
     pageTitle: "Keep customers coming back - completely on autopilot",
     slug: "repeat-business",
     subtitle: "Keep customers coming back with loyalty programs, smart reminders, and ongoing engagement.",
