@@ -14,8 +14,8 @@ defineProps<{
         <NuxtPicture height="293" width="390" :src="'/img/card-pics/' + item.image.url" :alt="item.image.alt" />
         <div>
           <div class="gap-2 p-4">
-            <div class="font-bold text-xl mb-2">{{ item.title }}</div>
-            <p class="text-gray-700 text-base min-h-32">
+            <div class="font-bold text-xl mb-2 min-h-20">{{ item.title }}</div>
+            <p class="text-gray-700 text-base min-h-32 -mt-8">
               {{ item.subtitle }}
             </p>
           </div>
