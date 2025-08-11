@@ -19,9 +19,9 @@ const carpet = solutions.find(item => item.slug === 'get-leads')
 
 
   <div class="space-y-5 mt-4">
-    <p class="text-lg">
+    <!-- <p class="text-lg">
 
-    </p>
+    </p> -->
     <!-- Intro Video Here! -->
     <!-- <div role="status" class="flex items-center justify-center h-56 max-w-sm bg-slate-300 rounded-lg animate-pulse dark:bg-slate-700">
         <svg class="w-10 h-10 text-slate-200 dark:text-slate-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 20">
