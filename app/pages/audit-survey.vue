@@ -7,21 +7,5 @@
     </template>
   </Sectionhead>
 
-  <iframe src="https://hlapi.tenorcreative.com/widget/survey/v2Z0kU6nQMjGrOIpdl7T" style="border:none;width:100%;" scrolling="no" id="v2Z0kU6nQMjGrOIpdl7T" title="survey"></iframe>
+  <HlForm form-id="DaRjGD5FyKCQIIY6Iuty" form-name="audit-survey"  />
 </template>
-
-<script lang="ts" setup>
-useHead({
-  script: [
-    {
-      src: 'https://hlapi.tenorcreative.com/js/form_embed.js',
-      async: true,
-      defer: true,
-    },
-  ]
-})
-</script>
-
-<style>
-
-</style>
