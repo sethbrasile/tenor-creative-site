@@ -7,5 +7,5 @@
     </template>
   </Sectionhead>
 
-  <HlForm form-id="DaRjGD5FyKCQIIY6Iuty" form-name="audit-survey"  />
+  <HlSurvey form-id="DaRjGD5FyKCQIIY6Iuty" form-name="audit-survey"  />
 </template>

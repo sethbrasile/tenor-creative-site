@@ -3,7 +3,7 @@ defineProps<{ formId: string, formName: string }>()
 useHead({
   script: [
     {
-      src: "https://hlapi.tenorcreative.com/js/form_embed.js",
+      src: "https://link.tenorcreative.com/js/form_embed.js",
       async: true,
       defer: true,
     },
@@ -13,7 +13,7 @@ useHead({
 
 <template>
   <iframe
-    :src="`https://hlapi.tenorcreative.com/widget/form/${formId}`"
+    :src="`https://link.tenorcreative.com/widget/form/${formId}`"
     style="width:100%;height:100%;border:none;border-radius:4px;"
     :id="`inline-${formId}`"
     data-layout="{'id':'INLINE'}"

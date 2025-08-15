@@ -1,5 +1,5 @@
 <template>
-  <iframe :src="`https://hlapi.tenorcreative.com/widget/booking/${formId}`" style="width: 100%; height: auto;" scrolling="yes" id="msgsndr-calendar"></iframe>
+  <iframe :src="`https://link.tenorcreative.com/widget/booking/${formId}`" style="width: 100%; height: auto;" scrolling="yes" id="msgsndr-calendar"></iframe>
 </template>
 
 <script lang="ts" setup>
@@ -7,7 +7,7 @@
   useHead({
     script: [
       {
-        src: 'https://hlapi.tenorcreative.com/js/embed.js',
+        src: 'https://link.tenorcreative.com/js/embed.js',
         async: true,
         defer: true,
       },

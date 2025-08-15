@@ -2,7 +2,7 @@
 useHead({
   script: [
     {
-      src: 'https://hlapi.tenorcreative.com/js/form_embed.js',
+      src: 'https://link.tenorcreative.com/js/form_embed.js',
       async: true,
       defer: true,
     },
@@ -18,5 +18,5 @@ useHead({
     </template>
   </Sectionhead>
 
-  <iframe src="https://hlapi.tenorcreative.com/widget/survey/tI7VEmslHqvZtD8zJ6TB" style="border:none;width:100%;" scrolling="no" id="tI7VEmslHqvZtD8zJ6TB" title="survey"></iframe>
+  <iframe src="https://link.tenorcreative.com/widget/survey/tI7VEmslHqvZtD8zJ6TB" style="border:none;width:100%;" scrolling="no" id="tI7VEmslHqvZtD8zJ6TB" title="survey"></iframe>
 </template>

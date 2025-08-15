@@ -4,7 +4,7 @@
   useHead({
     script: [
       {
-        src: "https://hlapi.tenorcreative.com/js/form_embed.js",
+        src: "https://link.tenorcreative.com/js/form_embed.js",
         async: true,
         defer: true,
       },

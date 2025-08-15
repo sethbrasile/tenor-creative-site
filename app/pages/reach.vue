@@ -2,7 +2,7 @@
 useHead({
   script: [
     {
-      src: "https://hlapi.tenorcreative.com/js/form_embed.js",
+      src: "https://link.tenorcreative.com/js/form_embed.js",
       async: true,
       defer: true,
     },
@@ -22,7 +22,7 @@ useHead({
     </template>
   </Sectionhead>
 
-  <iframe src="https://hlapi.tenorcreative.com/widget/form/doz5AvPd593WX8F3veHh"
+  <iframe src="https://link.tenorcreative.com/widget/form/doz5AvPd593WX8F3veHh"
     style="width:100%;height:100%;border:none;border-radius:4px" id="inline-doz5AvPd593WX8F3veHh"
     data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value=""
     data-activation-type="alwaysActivated" data-activation-value="" data-deactivation-type="neverDeactivate"
