@@ -55,8 +55,6 @@ export const standardPricing: Price[] = [
     },
     popular: false,
     features: [
-      "FREE high-converting website",
-      "FREE hosting",
       "NO commitments (cancel any time)",
       "Google Business Profile (GBP)",
       "Citation management",
