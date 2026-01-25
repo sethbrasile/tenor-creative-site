@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import StoryBrandSection from '~/components/marketing/StoryBrandSection.vue'
-import NeedMore from '~/components/marketing/NeedMore.vue'
-
 useSeoMeta({
   title: "Tenor Creative | High-Performance Digital Storefronts",
   description: "The essentials your business needs to be seen, found, and chosen. Web design, local SEO, and CRM automation for service businesses.",
@@ -14,7 +11,7 @@ useSeoMeta({
     <Hero />
 
     <!-- Section 1: The Stakes (Problem) -->
-    <StoryBrandSection layout="right-image" bgVariant="white">
+    <MarketingStoryBrandSection layout="right-image" bgVariant="white">
       <template #subtitle>The Problem</template>
       <template #title>Being Invisible is Expensive.</template>
       <template #description>
@@ -32,10 +29,10 @@ useSeoMeta({
           </div>
         </div>
       </template>
-    </StoryBrandSection>
+    </MarketingStoryBrandSection>
 
     <!-- Section 2: The Solution (Value) -->
-    <StoryBrandSection layout="left-image" bgVariant="light">
+    <MarketingStoryBrandSection layout="left-image" bgVariant="light">
       <template #subtitle>The Solution</template>
       <template #title>The "Essentials" for Modern Growth.</template>
       <template #description>
@@ -65,10 +62,10 @@ useSeoMeta({
           class="rounded-2xl shadow-2xl ring-1 ring-slate-900/10"
         />
       </template>
-    </StoryBrandSection>
+    </MarketingStoryBrandSection>
 
     <!-- Section 3: The Guide -->
-    <StoryBrandSection layout="centered" bgVariant="white">
+    <MarketingStoryBrandSection layout="centered" bgVariant="white">
       <template #subtitle>The Guide</template>
       <template #title>Your Partners in Growth.</template>
       <template #description>
@@ -77,7 +74,7 @@ useSeoMeta({
       <template #cta>
         <CtaLink href="/about" styleName="outline">Learn Our Process</CtaLink>
       </template>
-    </StoryBrandSection>
+    </MarketingStoryBrandSection>
 
     <!-- Section 4: The Plan -->
     <section class="py-24 sm:py-32 bg-slate-50">
@@ -113,6 +110,6 @@ useSeoMeta({
     <Cta location="Home" heading="Ready to fill your calendar?" />
 
     <!-- Need More? Upsell Bridge -->
-    <NeedMore />
+    <MarketingNeedMore />
   </div>
 </template>
