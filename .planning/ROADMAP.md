@@ -28,18 +28,22 @@ A strategic overhaul of Tenor Creative's digital presence, transitioning from ge
 - [x] 02-06-PLAN.md — Global Navigation Wiring & Verification (Completed: 2026-01-25)
 
 ### Phase 3: Conversion & Tools
-**Goal:** Implementation of high-converting tools and deep GHL integration, including the Contact page, GHL forms, calendars, and survey tool migrations.
+**Goal:** Implementation of high-converting tools and deep GHL integration using the newly defined Tenor Creative Design System. This includes the Contact page, GHL forms, calendars, and survey tool migrations, ensuring all elements strictly adhere to the `MASTER.md` styles (Plus Jakarta Sans, Deep Indigo/Cyan, Soft UI).
 **Dependencies:** Phase 2
-**Requirements:** `CORE-03`, `GHL-01`, `GHL-02`, `GHL-03`, `TOOL-01`, `TOOL-02`
-**Plans:** 0 plans
-- [ ] TBD
+**Requirements:** `CORE-03`, `GHL-01`, `GHL-02`, `GHL-03`, `TOOL-01`, `TOOL-02`, `DESIGN-01`
+**Plans:** 4 plans
+- [ ] 03-01-PLAN.md — Design System Integration: Global Styles, Tokens & Core Components (Buttons, Cards)
+- [ ] 03-02-PLAN.md — Contact Page & GHL Form Integration
+- [ ] 03-03-PLAN.md — Scheduling Tools & Calendar Integration
+- [ ] 03-04-PLAN.md — Survey Tools & Legacy Data Migration
 
 ### Phase 4: Polish & Launch
-**Goal:** Portfolio migration, final UI/UX polish, SEO auditing, and production deployment.
+**Goal:** Portfolio migration, final UI/UX polish against Design System Anti-Patterns, SEO auditing, and production deployment.
 **Dependencies:** Phase 3
 **Requirements:** `SERV-05`
-**Plans:** 0 plans
-- [ ] TBD
+**Plans:** 2 plans
+- [ ] 04-01-PLAN.md — Portfolio Migration & Case Studies
+- [ ] 04-02-PLAN.md — Final Polish, SEO Audit & Launch Readiness (Design System Verification)
 
 ## Progress
 
