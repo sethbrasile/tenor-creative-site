@@ -9,9 +9,8 @@ const contactSchema = z.object({
 })
 
 export default defineEventHandler(async (event) => {
-  const body = await readBody(event)
-  const result = contactSchema.safeParse(body)
-
+  const result = await readValidatedBody(event, (data) => contactSchema.safeParse(data))
+  
   if (!result.success) {
     throw createError({
       statusCode: 400,
@@ -20,12 +19,40 @@ export default defineEventHandler(async (event) => {
     })
   }
 
-  const { firstname } = result.data
+  const { firstname, lastname, email, phone } = result.data
 
-  // TODO: Implement GHL API integration in Plan 01-02
-  // console.log('Contact form submission:', result.data)
+  try {
+    // Post to GHL v2 Create/Update Contact endpoint
+    await ghlFetch('/contacts/', {
+      method: 'POST',
+      body: {
+        firstName: firstname,
+        lastName: lastname,
+        email: email,
+        phone: phone,
+        tags: ['website-lead'],
+        source: 'Website Contact Form'
+      }
+    })
 
-  return {
-    message: `Thank you for your message, ${firstname}! We will get back to you as soon as possible.`,
+    return {
+      success: true,
+      message: `Thank you for your message, ${firstname}! We will get back to you as soon as possible.`,
+    }
+  } catch (error: any) {
+    const statusCode = error.statusCode || 500
+    const statusMessage = error.statusMessage || 'Internal Server Error'
+    
+    console.error('GHL API Error:', {
+      statusCode,
+      statusMessage,
+      data: error.data
+    })
+
+    throw createError({
+      statusCode,
+      statusMessage,
+      message: 'Failed to process contact submission. Please try again later.'
+    })
   }
 })
