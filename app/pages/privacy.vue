@@ -90,7 +90,8 @@
 
     <section>
       <h2 class="text-2xl font-semibold mb-4">10. Policy Updates</h2>
-      <p>Changes will be posted here with a revised "Last Updated" date.</p>
+      <p class="mb-2">Changes will be posted here with a revised "Last Updated" date.</p>
+      <p>For more information on our service rules, please refer to our <NuxtLink to="/terms" class="underline font-medium">Terms of Use</NuxtLink>.</p>
     </section>
 
     <section>
