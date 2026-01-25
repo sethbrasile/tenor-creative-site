@@ -57,6 +57,7 @@ completed: 2026-01-25
 ## Task Commits
 
 1. **Task 1: Implement StoryBrand Home Page** - `9a79366` (feat)
+2. **Refactor: Component Naming** - `7d93482` (style)
 
 ## Files Created/Modified
 - `app/pages/index.vue` - Main home page structure.
