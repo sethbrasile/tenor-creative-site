@@ -48,7 +48,7 @@
 
     <section>
       <h2 class="text-2xl font-semibold mb-4">7. Analytics and Tracking</h2>
-      <p>We use Google Analytics and self-hosted Umami for performance tracking as described in our <NuxtLink to="/privacy-policy" class="underline font-medium">Privacy Policy</NuxtLink>.</p>
+      <p>We use Google Analytics and self-hosted Umami for performance tracking as described in our <NuxtLink to="/privacy" class="underline font-medium">Privacy Policy</NuxtLink>.</p>
     </section>
 
     <section>
@@ -68,7 +68,7 @@
 
     <section>
       <h2 class="text-2xl font-semibold mb-4">11. Governing Law</h2>
-      <p>These Terms are governed by Delaware law. Disputes will be resolved in Delaware courts.</p>
+      <p>These Terms are governed by Oklahoma law. Disputes will be resolved in Oklahoma courts.</p>
     </section>
 
     <section>
@@ -90,10 +90,10 @@
       <ul class="list-disc pl-8 mt-2 space-y-2">
         <li><strong>Program description:</strong> Upon opting in to the SMS service, you can expect to periodically receive marketing messages from Tenor Creative. These messages are intended to be helpful. They may provide links to products or services. That we believe may be useful to your business.</li>
         <li>You can cancel the SMS service at any time. Simply text back "STOP". Upon sending "STOP," we will confirm your unsubscribe status via SMS. Following this confirmation, you will no longer receive SMS messages from us. To rejoin, sign up as you did initially, and we will resume sending SMS messages to you.</li>
-        <li>If you experience issues with the messaging program, reply with the keyword HELP for more assistance, or reach out directly to support@tenorcreative.freshdesk.com.</li>
+        <li>If you experience issues with the messaging program, reply with the keyword HELP for more assistance, or reach out directly to support@tenorcreative.com.</li>
         <li>Carriers are not liable for delayed or undelivered messages.</li>
         <li>As always, message and data rates may apply for messages sent to you from us and to us from you. Message frequency varies. For questions about your text plan or data plan, contact your wireless provider.</li>
-        <li>For privacy-related inquiries, please refer to <NuxtLink to="/privacy-policy">our privacy policy</NuxtLink>.</li>
+        <li>For privacy-related inquiries, please refer to <NuxtLink to="/privacy">our privacy policy</NuxtLink>.</li>
       </ul>
     </section>
   </div>

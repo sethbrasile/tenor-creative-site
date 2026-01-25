@@ -2,7 +2,7 @@
 const menuitems = [
   {
     title: "Privacy",
-    path: "/privacy-policy",
+    path: "/privacy",
   },
   {
     title: "Terms",
