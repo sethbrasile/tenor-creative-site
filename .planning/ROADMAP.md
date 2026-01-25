@@ -9,6 +9,10 @@ A strategic overhaul of Tenor Creative's digital presence, transitioning from ge
 **Goal:** Essential structure, global elements, and GHL connectivity are established, while ensuring a clean slate by remediating technical debt.
 **Dependencies:** None
 **Requirements:** `SERV-04`, `CORE-04`, `BRAND-02`, `TECH-01`
+**Plans:** 3 plans
+- [ ] 01-01-PLAN.md — Foundation Cleanup & Legal Consolidation
+- [ ] 01-02-PLAN.md — GHL Integration & API
+- [ ] 01-03-PLAN.md — Brand Bridge & Essentials Content
 **Success Criteria:**
 1. User can view the defined "Essentials" packages and pricing structure.
 2. User sees the "Part of Prickly Pear" brand bridge in the global footer.
