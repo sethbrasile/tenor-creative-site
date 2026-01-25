@@ -16,23 +16,29 @@
       />
     </div>
     <div>
-      <h2 class="txt text-sm md:text-md tracking-wide md:tracking-widest text-slate-600 max-w-xl">
-        Double Your Business and outperform your competition
+      <h2 class="txt text-sm md:text-md tracking-wide md:tracking-widest text-slate-600 max-w-xl uppercase font-semibold mb-2">
+        The Essentials for Modern Service Businesses
       </h2>
-      <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold">
-        {{ subtitle }}
+      <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 leading-tight">
+        Your High-Performance <span class="text-slate-700">Digital Storefront.</span>
       </h1>
-      <p class="text-lg mt-4 text-slate-600 max-w-xl">
-        We help service businesses get more customers with automated solutions, AI-powered teams, and proven marketing strategies. All done-for-you so that you can finally step off the hamster wheel.
+      <p class="text-lg mt-6 text-slate-600 max-w-xl leading-relaxed">
+        We build professional websites, dominate local search, and automate your customer follow-up. The Tenor Essentials model is the simple, high-polish engine that powers your growth.
       </p>
-      <div v-if="!og" class="mt-6 flex flex-col sm:flex-row gap-3">
+      <div v-if="!og" class="mt-10 flex flex-col sm:flex-row gap-4">
         <CtaLink
-          styleName="highlight"
-          cta-name="Hero"
+          styleName="primary"
+          cta-name="Hero - Get Started"
           href="/solutions"
-          size="lg"
-          rel="noopener">
-            <strong>Find out more</strong>
+          size="lg">
+            <strong>See the Packages</strong>
+        </CtaLink>
+        <CtaLink
+          styleName="outline"
+          cta-name="Hero - About"
+          href="/about"
+          size="lg">
+            Learn Our Process
         </CtaLink>
       </div>
     </div>
