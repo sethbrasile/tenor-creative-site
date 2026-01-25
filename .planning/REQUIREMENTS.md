@@ -33,6 +33,9 @@ Requirements for initial release. Each maps to roadmap phases.
 - [ ] **BRAND-01**: **"Need More?" Section** — Clear upsell path to Prickly Pear for advanced services (Ads, Video).
 - [ ] **BRAND-02**: **Prickly Pear Footer** — "Part of Prickly Pear Marketing Co." link/badge.
 
+### Technical Foundation
+- [ ] **TECH-01**: **Remediation** — Address existing technical debt and fix known bugs in the codebase.
+
 ## v2 Requirements
 Deferred to future release.
 
@@ -51,12 +54,27 @@ Explicitly excluded.
 | **E-commerce** | Not part of "Essentials" offering. |
 
 ## Traceability
-(To be populated during Roadmap creation)
+(Mapped Sun Jan 25 2026)
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| CORE-01 | - | Pending |
-| ... | - | Pending |
+| CORE-01 | Phase 2 | Pending |
+| CORE-02 | Phase 2 | Pending |
+| CORE-03 | Phase 3 | Pending |
+| CORE-04 | Phase 1 | Pending |
+| SERV-01 | Phase 2 | Pending |
+| SERV-02 | Phase 2 | Pending |
+| SERV-03 | Phase 2 | Pending |
+| SERV-04 | Phase 1 | Pending |
+| SERV-05 | Phase 4 | Pending |
+| GHL-01 | Phase 3 | Pending |
+| GHL-02 | Phase 3 | Pending |
+| GHL-03 | Phase 3 | Pending |
+| TOOL-01 | Phase 3 | Pending |
+| TOOL-02 | Phase 3 | Pending |
+| BRAND-01 | Phase 2 | Pending |
+| BRAND-02 | Phase 1 | Pending |
+| TECH-01 | Phase 1 | Pending |
 
 ---
 *Requirements defined: Sun Jan 25 2026*
