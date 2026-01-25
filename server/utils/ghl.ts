@@ -1,4 +1,6 @@
-export const ghlFetch = $fetch.create({
+import { ofetch } from 'ofetch'
+
+export const ghlFetch = ofetch.create({
   baseURL: 'https://services.cloud.msgndr.com/generic',
   headers: {
     Version: '2021-04-15'

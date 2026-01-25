@@ -129,9 +129,12 @@ export const oneOffPricing: Price[] = [
   },
 ];
 
+export const aiServices: Price[] = [];
+
 export const prices: Price[] = [
   ...standardPricing,
   ...oneOffPricing,
+  ...aiServices,
 ];
 
 export function getStandardPlanByTier(tier: number) {
