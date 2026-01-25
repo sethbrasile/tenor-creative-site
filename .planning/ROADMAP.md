@@ -13,13 +13,13 @@ A strategic overhaul of Tenor Creative's digital presence, transitioning from ge
 - [x] 01-01-PLAN.md — Foundation Cleanup & Legal Consolidation
 - [x] 01-02-PLAN.md — GHL Integration & API
 - [x] 01-03-PLAN.md — Brand Bridge & Essentials Content
-- [ ] 01-04-PLAN.md — Gap Closure: Legal Navigation Wiring
+- [x] 01-04-PLAN.md — Gap Closure: Legal Navigation Wiring (Completed: 2026-01-25)
 
 ## Progress
 
 | Phase | Status | Completion |
 |-------|--------|------------|
-| 1. Foundation & Strategy | **In Progress** | 75% |
+| 1. Foundation & Strategy | **Complete** | 100% |
 | 2. Core Experience | Pending | 0% |
 | 3. Conversion & Tools | Pending | 0% |
 | 4. Polish & Launch | Pending | 0% |
