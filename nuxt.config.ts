@@ -55,6 +55,7 @@ export default defineNuxtConfig({
   //   },
   // },
   runtimeConfig: {
+    ghlApiKey: '',
     public: {
       title,
       description,
