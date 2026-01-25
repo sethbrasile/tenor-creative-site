@@ -53,7 +53,7 @@ useSeoMeta({
         </ul>
       </template>
       <template #cta>
-        <CtaLink href="/solutions" styleName="primary">Explore the Packages</CtaLink>
+        <CtaLink href="/services" styleName="primary">Explore the Packages</CtaLink>
       </template>
       <template #image>
         <NuxtImg 

@@ -11,17 +11,17 @@ const menuitems = [
     path: "/demo",
   },
   {
-    title: "Solutions",
-    path: "/solutions",
+    title: "Services",
+    path: "/services",
   },
   {
     title: "Pricing",
     path: "/pricing",
   },
-  // {
-  //   title: "About",
-  //   path: "/about",
-  // },
+  {
+    title: "About",
+    path: "/about",
+  },
   {
     title: "Contact",
     path: "/contact",
@@ -30,7 +30,7 @@ const menuitems = [
 
 const bananas = solutions.map((solution => {
   return {
-    to: `/solutions/${solution.slug}`,
+    to: `/services/${solution.slug}`,
     title: solution.title,
     icon: solution.icon,
   }
