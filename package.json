@@ -11,7 +11,6 @@
   },
   "devDependencies": {
     "@heroicons/vue": "^2.2.0",
-    "@hubspot/api-client": "^12.1.0",
     "@iconify-json/bx": "^1.2.2",
     "@iconify-json/bxl": "^1.2.2",
     "@iconify-json/bxs": "^1.2.2",
@@ -33,6 +32,7 @@
   "packageManager": "pnpm@8.4.0+sha1.73c608c602d520c436c7b250330315d83ffcc1ee",
   "dependencies": {
     "@nuxtjs/seo": "^3.1.0",
-    "@vercel/speed-insights": "^1.2.0"
+    "@vercel/speed-insights": "^1.2.0",
+    "zod": "^4.3.6"
   }
 }

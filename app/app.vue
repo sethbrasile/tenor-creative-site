@@ -5,11 +5,6 @@ import { SpeedInsights } from '@vercel/speed-insights/nuxt';
   if (isProduction) {
     useHead({
       script: [
-        // {
-        //   src: '//js.hs-scripts.com/47847354.js',
-        //   async: true,
-        //   defer: true,
-        // },
         {
           src: 'https://analytics.tenorcreative.com/script.js',
           defer: true,
