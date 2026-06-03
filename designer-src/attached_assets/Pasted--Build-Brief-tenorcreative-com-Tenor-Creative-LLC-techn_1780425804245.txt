@@ -1,0 +1,318 @@
+# Build Brief: tenorcreative.com — Tenor Creative LLC (technical build studio)
+
+**Read this first:** This document gives you the *goals, requirements, supporting
+facts, and copy direction* for a website. It deliberately says **nothing about visual
+design, layout, color, or components** — those decisions are 100% yours. Make it fast,
+credible, and distinctive.
+
+Two rules about the writing:
+1. **Write the copy yourself.** Below are angles, value props, and raw facts — not
+   finished sentences. Do **not** paste my phrasings verbatim. Follow the Voice Rules (§4).
+2. **Everything factual must come from §6 (The Data).** Don't invent clients, metrics,
+   or credentials. If a fact isn't in §6, leave it out.
+
+> **This is a repositioning, not a recreation.** The current tenorcreative.com sells
+> marketing / customer-acquisition ("Double Your Business," get leads, reviews, sales).
+> That is now the job of the sister agency **PPMC** and must be removed here. Tenor's
+> new identity is the **technical build arm**: custom apps, automation, AI tooling,
+> systems/infra, and technical consulting.
+
+---
+
+## 1. What we're building & why
+
+A B2B site for **Tenor Creative LLC** at **tenorcreative.com**. Tenor is the
+**custom-software, automation, and systems** company. Its founder and principal is
+**Seth Brasile**.
+
+**The ecosystem (build the positioning around this):**
+- **PPMC (pricklypearmarketing.co)** = web, SEO, and marketing.
+- **Tenor Creative** = custom apps, systems, automation, AI tooling, technical
+  consulting. Tenor is the technical subcontractor *behind* PPMC and other agencies.
+- **sethbrasile.com** = the founder's personal portfolio / credibility anchor.
+
+**Primary goal — win technical work, channel-first:**
+
+1. **Primary audience = agencies & partners** who need a **white-label technical
+   subcontractor / build partner.** Tenor already plays this role for PPMC; the site
+   sells that as a repeatable model. Primary CTA: *start a partnership / scope a build.*
+2. **Secondary audience = direct clients** (founders, SMBs, ops leaders) who need
+   custom software or automation that off-the-shelf can't do. Same contact path.
+
+**Cross-links (important for the ecosystem + SEO):**
+- "Need marketing, SEO, or a website instead?" → link out to **PPMC
+  (pricklypearmarketing.co)**.
+- "Who's behind Tenor?" → link to **sethbrasile.com** (founder).
+
+**What success looks like:** an agency owner or founder lands, immediately gets that
+Tenor is senior technical execution they can trust and (for agencies) put their name
+on, sees proof, and books a conversation.
+
+---
+
+## 2. Audiences & their journeys
+
+- **Agency owners / agency PMs (PRIMARY)** — need to deliver custom builds,
+  automation, or infra they can't staff in-house. Care about: senior execution (no
+  offshore juniors), white-label / works under *their* brand, won't poach their
+  clients, NDA-friendly, reliable comms and timelines, fills the technical gap beyond
+  web/marketing. The PPMC relationship is living proof.
+- **Founders / SMB owners / ops leaders (SECONDARY)** — have a problem off-the-shelf
+  software can't solve, or manual work eating their team. Care about: does this person
+  actually understand my business, will it get built and run reliably, what's the proof.
+- **Technical evaluators (CTOs, technical co-founders)** — vetting competence and
+  judgment. Care about: stack, architecture decisions, honesty about tradeoffs.
+
+Make the **agency / white-label partner** path the most prominent, with a clear
+secondary path for direct clients. One shared contact/booking action is fine.
+
+---
+
+## 3. Positioning & key messages (angles — write your own copy)
+
+**Core positioning:** *The senior technical team agencies build on.* Tenor is the
+custom-software, automation, and systems shop that handles the hard technical work
+marketing/creative agencies don't staff for — delivered white-label, by a senior
+engineer, on a modern stack.
+
+Angles to draw on (rephrase freely):
+
+- **Channel/white-label (lead):** Tenor plugs in as your technical team. Works under
+  your brand, scoped to your project, never competes for your client relationship.
+  Already the technical arm behind a full-service agency (PPMC) — this is a proven,
+  repeatable model, not a one-off.
+- **Senior-only execution:** you work directly with the engineer who's built and
+  *operated* production systems for 12+ years — not a sales rep who hands you to a
+  junior. (Seth pulls in vetted collaborators for capacity; he stays the principal.)
+- **Builds, automates, *and* operates:** Tenor doesn't just write code — it ships
+  production-grade systems and has run enterprise IT/security at scale, so reliability,
+  security, and maintainability are baked in, not bolted on.
+- **Off-the-shelf can't do it (direct clients):** when SaaS tools, plugins, and
+  no-code hit their ceiling — custom apps, deep integrations, automation that removes
+  real manual labor, systems that have to be right.
+- **Honesty as a feature:** Tenor tells you what's a quick win vs. a real build, POC
+  vs. production. No overselling.
+
+**Service pillars to feature (in this order):**
+1. **Custom apps & SaaS** — full-stack application and SaaS development on a modern
+   edge stack. (Proof: margin-check, potluck-planner, BetterLife platform.)
+2. **Automation & AI tooling** — business-process / workflow automation, AI agents &
+   integrations, internal tooling, RAG. (Proof: idea-machine, policy-as-code AI
+   governance, BetterLife ML matchmaking.)
+3. **Infrastructure / DevOps & technical consulting** — systems, CI/CD, cloud, security
+   hardening, immutable infra, and fractional-CTO / technical advisory. (Proof:
+   immutable reverse-proxy edge, mTLS RMM platform, enterprise automation at DKB.)
+
+*Also a capability (mention, don't headline): CRM setup, configuration, and systems
+integration / data plumbing between business tools.*
+
+**Engagement models (frame instead of a price list):** project-based builds,
+white-label agency partnership / retainer, and technical advisory. No public fixed
+pricing — conversation/scoping-led. (Do **not** reproduce the current site's Pricing
+page or "free guide / AI sales team" lead magnet.)
+
+---
+
+## 4. Voice & copy rules
+
+Voice = the founder's: **confident, concrete, technically literate, zero fluff.** Use a
+**Tenor brand voice with Seth as the named principal** — first-person ("I") is right in
+the About / founder section; "we" is acceptable when describing capacity/delivery.
+Don't pretend to be a big faceless team.
+
+**Do:** concrete specifics (real tools, scale, team sizes, dollar figures); plain
+strong verbs (built, shipped, designed, led, architected, secured, automated); honest
+scope (POC vs production); lead with outcomes.
+
+**Don't (banned):** no "passionate about," "rockstar," "synergy," "leverage,"
+"spearhead," "results-driven," "detail-oriented," "team player," "responsible for,"
+"helped," or "various/multiple" without a number. No buzzword-salad headers. If a line
+sounds like a generic agency cliché, rewrite it.
+
+Tone: technical buyers (agency principals, founders, CTOs) — you can be more technical
+here than a marketing site, but stay clear and outcome-focused. Trust and reliability
+are the emotional core for the agency audience.
+
+---
+
+## 5. Required content (content requirements — not layout)
+
+You decide structure, pages, and navigation. At minimum, cover:
+
+- **Hero** that lands the §3 core positioning ("the senior technical team agencies
+  build on") and makes the partner/contact CTA obvious.
+- **Services / capabilities** — the three pillars in §3 (plus CRM/integration as a
+  capability), each with plain-language outcomes + the kind of problems it solves.
+- **White-label / agency partner section** — how the subcontracting model works, what
+  agencies get (under-your-brand delivery, senior execution, no client poaching,
+  NDA-friendly), and that Tenor already does this for PPMC.
+- **Proof / selected work** — the projects in §6, framed as Tenor capability with
+  outcome-focused blurbs, stack, and links where they exist.
+- **Founder / about** — Seth as principal: the 12+ year credibility story from §6
+  (engineer who also ran enterprise IT/security; built a startup platform from zero;
+  led teams; business owner). Link to sethbrasile.com for the full portfolio/CV.
+- **How we work / engagement models** — project, white-label partnership/retainer,
+  advisory (§3). No fixed price list.
+- **Contact** — form + direct email (**seth@tenorcreative.com**); clear separate nudge:
+  "Looking for marketing, SEO, or a website? → PPMC" (outbound link).
+
+---
+
+## 6. The Data (facts to draw from — do not invent beyond this)
+
+### Brand & contact
+- Company: **Tenor Creative LLC** (founded Sep 2024). Principal: **Seth Brasile**.
+- Location / base: **Durant, OK** (works remote).
+- Email: **seth@tenorcreative.com**
+- Sister agency (marketing/SEO/web): **https://pricklypearmarketing.co** (PPMC)
+- Founder portfolio / CV: **https://sethbrasile.com**
+- Founder GitHub: https://github.com/sethbrasile
+- Founder blog (tech writing/videos): https://bytemycache.com
+- Founder LinkedIn: https://www.linkedin.com/in/sethbrasile-43a315a0
+
+### Founder credibility (Seth, principal — for the About/founder section)
+- **12+ years** across full-stack development, DevOps, and regulated-industry IT
+  (casinos, healthcare, manufacturing, government). An engineer who also spent the
+  better part of a decade running enterprise IT and security — builds software *and*
+  has been on-call at 2am.
+- **Built BetterLife's entire platform from zero** (frontend, backend, ML, databases,
+  CI/CD) and led the team that ran it — profitable in year one, funding a $500K
+  first-year donation to the Tim Tebow Foundation's anti-trafficking work. *(Confirm
+  before publishing this dollar figure publicly.)*
+- **Hired and led a team of 6 engineers** (frontend, backend, ML, UI/UX) at that startup.
+- **Built security/compliance automation across 2,500–3,200 enterprise endpoints** at
+  an MSP (DKBinnovative); led the **PrintNightmare** response across a regulated client
+  base; **2-year PCI-DSS subject-matter expert** at The Chickasaw Nation.
+- **Ships production-grade SaaS solo today** on a modern edge stack.
+- Co-owns PPMC (marketing agency) and a real-estate partnership — runs businesses with
+  real P&L, so he scopes builds like an owner, not just a coder.
+
+### Selected work / portfolio (frame as Tenor capability; link where URL exists)
+- **margin-check.com** — https://margin-check.com — Solo-built SaaS; ingests Etsy CSV
+  exports, surfaces real per-listing profit margins after all fees. Pre-launch. Stack:
+  Next.js 16, Cloudflare Workers (OpenNext), Neon + Drizzle + Hyperdrive, Better Auth,
+  Stripe, Inngest. *(pillar: custom apps & SaaS)*
+- **potluck-planner.com** — https://potluck-planner.com — Solo-built event-coordination
+  SaaS; passkeys/WebAuthn, OAuth, magic links, payments, email/SMS, 10 background job
+  handlers. Production-ready. Stack: Next.js 15, Better Auth, Neon + Drizzle,
+  Cloudflare Workers, Stripe, Resend, Twilio, Inngest. *(custom apps & SaaS)*
+- **idea-machine** — Team RAG with a dual-database privacy boundary by design — shared
+  topics in Postgres, private topics in local SQLite that never touches shared infra;
+  data classification enforced at the storage layer. Stack: Python, Postgres (Neon),
+  SQLite, trafilatura, yt-dlp, cryptography. *(automation & AI tooling)*
+- **policy-as-code AI governance (ppmc-claude-routines-and-schedules)** — Group-policy-
+  as-code for an agency's AI usage: declarative scheduled agents, version-controlled
+  config set, drift detection, dev-mode guards, pre-push secret scanning. Stack: Bash,
+  YAML, Claude Code, git. *(automation & AI tooling — and proof of the PPMC technical
+  relationship)*
+- **MSP RMM platform (POC)** — Cross-platform agent (Linux/Mac/Windows) + server-side
+  message broker over gRPC + mutual TLS; proof-of-concept replacement for traditional
+  RMM tooling. Stack: Go, gRPC, mTLS. *(infra/DevOps & systems)*
+- **Immutable reverse-proxy edge** — Fedora CoreOS immutable reverse proxy terminating
+  SSL on the LAN side for IDS/IPS inspection; deployed in production at DKB, documented
+  in a 4-part series. Stack: Fedora CoreOS, NGINX, fail2ban, Cloudflare. *(infra/DevOps
+  & security)*
+- **BetterLife platform** — Full v1 build from zero (frontend, backend, ML, DB, CI/CD)
+  + R-based ML matchmaking + full Auth0/Okta auth (SSO, MFA, lifecycle); later led the
+  v2 migration to cloud-native SaaS. Stack: Nuxt, Vercel, FaunaDB, Stripe, PostgreSQL
+  (Neon), InfluxDB, Go, Grafana, Python, R, reticulate, Hetzner, Dokku/Docker. *(custom
+  apps & SaaS; automation/ML)*
+- **EZ Web Audio** — https://github.com/sethbrasile/ez-web-audio — Authored + maintained
+  framework-agnostic Web Audio API wrapper (TypeScript). *(open-source credibility)*
+
+### Capabilities / stack (for a skills/tech section)
+- **Languages:** TypeScript, JavaScript, Go, Python, PHP, R, SQL, PowerShell
+- **Frontend/Web:** Nuxt 3, Vue 3, React, Ember.js, Tailwind CSS, Web Audio API
+- **Backend/Platform:** Node/Express, gRPC + mutual TLS, REST/GraphQL, Better Auth, Stripe
+- **Cloud/DevOps/Infra:** Docker/Compose/Dokku, CI/CD (GitHub Actions), Cloudflare
+  (Workers, Tunnels, DNS), Microsoft Azure, NGINX / reverse-proxy hardening, immutable
+  infrastructure, Neon/Drizzle/Hyperdrive, Inngest
+- **Automation / AI:** workflow automation, AI agents & integrations, RAG, policy-as-code
+- **Enterprise IT / Security:** Active Directory, Group Policy, SCCM/SCSM, Intune, RMM,
+  M365 / Google Workspace admin, Okta/Auth0, PCI-DSS, HIPAA, NIST/CMMC-adjacent,
+  zero-trust ingress, IDS/IPS
+- **Data/ML:** R + Python (production ML), reticulate, Grafana, InfluxDB
+- **Integrations:** Stripe (payments), Resend (email), Twilio (SMS), CRM setup/integration
+
+---
+
+## 7. SEO requirements
+
+This site's SEO job: rank for technical-services and white-label/subcontractor intent,
+own the "Tenor Creative" brand result, and interlink the three properties.
+
+- **Unique `<title>` + meta description per page;** one clear `<h1>`; logical heading
+  hierarchy.
+- **Target topics / intents** (weave in naturally): white-label software development /
+  development subcontractor for agencies; custom software & SaaS development; business
+  process automation; AI tooling / agents & integrations; systems / DevOps / fractional
+  CTO; "off-the-shelf can't do it" custom builds; Durant OK / remote.
+- **Interlink the ecosystem with dofollow links:** Tenor ↔ PPMC
+  (pricklypearmarketing.co) ↔ sethbrasile.com. This authority cluster benefits all
+  three. Link to the founder portfolio and to PPMC from relevant body copy.
+- Clean URLs (e.g. /services, /work, /partners or /agencies, /contact); XML sitemap;
+  robots.txt; canonical tags.
+- **Fast Core Web Vitals** — Tenor sells technical quality; the site must demonstrate
+  it (optimize LCP/CLS/INP, lazy-load below-the-fold, compress images, minimal blocking JS).
+- Descriptive, keyword-aware `alt` text; Open Graph + Twitter Card with a preview image
+  per page.
+- **Privacy-friendly analytics** (Plausible preferred — consistent with byteMyCache).
+
+---
+
+## 8. GEO / structured data (be citable by AI assistants)
+
+- **JSON-LD `Organization`** for Tenor Creative LLC: name, url, logo, `areaServed`,
+  `founder` → a `Person` (Seth Brasile, `sameAs` sethbrasile.com / GitHub / LinkedIn),
+  contact email, and `knowsAbout` from the §6 capabilities.
+- **`Service`** entries for the three pillars (custom apps & SaaS; automation & AI
+  tooling; infra/DevOps & consulting).
+- A few **self-contained factual passages / FAQ** answering: "What does Tenor Creative
+  do?", "Does Tenor work white-label for agencies?", "How is Tenor different from
+  PPMC?" (Tenor = technical builds/automation/systems; PPMC = marketing/SEO/web), and
+  "How do I start a project?" — so AI assistants lift accurate answers + the right next step.
+
+---
+
+## 9. Technical & accessibility requirements
+
+- **Responsive**, excellent on mobile.
+- **WCAG 2.1 AA accessible** — semantic HTML, keyboard-navigable, visible focus,
+  sufficient contrast, labels/alt text, respects reduced-motion. (Accessibility is part
+  of Tenor's technical credibility — make it genuine.)
+- **Performance-first** (see §7).
+- Domain: **tenorcreative.com**. Stack is your call — favor something fast and
+  static-friendly.
+
+---
+
+## 10. Contact handling
+
+- Contact form + direct email both deliver to **seth@tenorcreative.com**.
+- (CRM wiring out of scope for now — a working form that emails Seth, or a reliable form
+  service, is fine; note how submissions are delivered so it can be re-wired to a CRM later.)
+- Provide a distinct agency/partner contact nudge (white-label inquiries) alongside the
+  general/direct-client path.
+- Always include the cross-nudge: "Marketing, SEO, or a website? → PPMC" (outbound link).
+
+---
+
+## 11. Out of scope / do-not
+
+- **Drop the current marketing positioning entirely** — no "Double Your Business," "get
+  leads/reviews/sales," "AI sales team," "free guide" lead magnet, or marketing-services
+  framing. That is PPMC's job now; refer it out.
+- **Do not rebuild or replace PPMC or byteMyCache.** Link to them.
+- **Do not invent clients, testimonials, case studies, or metrics.** Everything factual
+  comes from §6. (If a testimonials/case-study section is built, populate it only with
+  content Seth supplies.)
+- No art-direction constraints from me — design is yours.
+
+---
+
+## 12. Assets Seth will provide (flag as needed)
+- Tenor Creative logo / wordmark.
+- Founder photo (optional — can link to sethbrasile.com instead).
+- A social-preview / OG image (or generate a tasteful text-based one).
+- Any client logos / testimonials / case studies he wants featured (otherwise omit).
+- Confirmation of the contact-form delivery method before launch.

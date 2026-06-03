@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Tenor Creative"
+version = "1.0.0"
+id = "artifacts/tenor-creative"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25836
+
+[services.development]
+run = "pnpm --filter @workspace/tenor-creative run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/tenor-creative", "run", "build" ]
+publicDir = "artifacts/tenor-creative/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25836"
+BASE_PATH = "/"
