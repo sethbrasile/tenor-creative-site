@@ -3,13 +3,11 @@
 Marketing/brochure site for **Tenor Creative LLC** — the custom-software,
 automation, and systems arm of Seth Brasile's two-company ecosystem.
 
-> **Status: PRE-TRANSFORM.** Right now this repo holds only the designer's
-> React source under `designer-src/`. The production site is built by running
-> the **`brochure-site-transform`** skill, which converts that source into a
-> static Astro site on Cloudflare Pages. **After the transform, the sections
-> marked `<!-- FILL ON TRANSFORM -->` below get replaced with the real stack,
-> commands, and structure.** Until then, treat everything outside
-> `designer-src/` as not-yet-existing.
+> **Status: IN TRANSFORM — Phase 3 complete (scaffold builds clean).** The
+> production Astro site now lives at the repo root; `designer-src/` remains the
+> tracked visual reference. Remaining: Phase 4 (GHL contact form/function),
+> Phase 5 (copy review), Phase 6 (tests), 6.5 (recreation review), Phase 7
+> (audits), Phase 8 (deploy). Step-level progress in `.transform-state.json`.
 
 ---
 
@@ -140,17 +138,51 @@ lead magnet. No invented social proof. Privacy-friendly analytics only.
 <!-- brochure-site-transform skill has scaffolded the Astro site.  -->
 <!-- ============================================================= -->
 
-## Stack & commands  <!-- FILL ON TRANSFORM -->
+## Stack & commands
 
-_Populate after Phase 3 scaffold: Astro version, key integrations, `npm run
-dev` / `build` / `preview`, Playwright test command, Cloudflare Pages project
-name (≠ repo name — CF dot→dash, so likely `tenorcreative-com`)._
+- **Astro 6** (static output) + **React 19** islands + **Tailwind v4** + TypeScript.
+- Integrations: `@astrojs/react`, `@astrojs/sitemap`, `astro-icon`
+  (lucide + simple-icons, inlined as SVG — zero JS for icons).
+- **Tailwind v4 via PostCSS** (`postcss.config.mjs` → `@tailwindcss/postcss`),
+  NOT `@tailwindcss/vite` — the Vite plugin breaks on Astro 6's rolldown-vite
+  resolver (`Missing field tsconfigPaths`). Don't switch back.
+- Fonts self-hosted via **Fontsource** (`@fontsource-variable/outfit`,
+  `@fontsource/space-mono`) — imported in `BaseLayout.astro`, same-origin, swap.
+- Commands: `npm run dev` · `npm run build` · `npm run preview` · `npm run check`
+  (astro check / typecheck).
+- Expected **Cloudflare Pages project name: `tenor-creative-site`** (matches repo;
+  no dots to dash-convert) — confirm at deploy (Phase 8).
 
-## Project structure  <!-- FILL ON TRANSFORM -->
+## Project structure
 
-_Populate after scaffold: `src/pages`, `src/components`, `src/layouts`,
-`public/`, `functions/api/contact.ts`, where brand tokens live, etc. Note that
-`designer-src/` remains as the tracked visual reference._
+```
+src/
+  layouts/BaseLayout.astro     head/meta/OG/canonical, JSON-LD (@graph:
+                               Organization+Person+3 Services+FAQPage), skip-nav,
+                               font imports, CF Web Analytics beacon (guarded),
+                               wraps Navbar + <slot/> + Footer
+  components/
+    Navbar.astro               real logo (logo-with-text.svg), anchor nav,
+                               vanilla-JS mobile menu (aria-expanded)
+    Footer.astro               NAP (phone when provided), privacy/terms, socials, PPMC
+    ContactForm.tsx            React island (client:visible) — the ONLY island
+    sections/                  Hero, Services, AgencyPartner, SelectedWork,
+                               About, Contact  ← reusable for future routed pages
+  pages/                       index.astro (one-pager) · privacy.astro · terms.astro
+  data/site.ts                 single source of truth: NAP, links, nav, work, faq, knowsAbout
+  lib/contact-schema.ts        shared zod schema (client island + Phase 4 function)
+  styles/global.css            Tailwind v4 @theme (light-only; dark/sidebar/chart pruned)
+public/                        _headers (CSP), robots.txt, favicon.svg, opengraph.jpg,
+                               img/logo.svg + img/logo-with-text.svg
+postcss.config.mjs · astro.config.mjs · tsconfig.json (@/* → src/*)
+```
+
+- **Brand tokens** live in `src/styles/global.css` (`@theme`). Content/NAP/links in
+  `src/data/site.ts` — edit there, not in components.
+- **Multi-page is coming** (operator): sections are standalone components so routed
+  pages (`/services`, `/work`, `/partners`, `/contact`) compose them without rework;
+  flip `navItems` href from `#anchor` → path at that point.
+- `designer-src/` stays as the tracked visual reference for Phase 6.5.
 
 ## Forms & env  <!-- FILL ON TRANSFORM -->
 
@@ -166,11 +198,26 @@ notes, analytics, handoff._
 
 ## Tech debt
 
-_(none yet — log skipped scale-ups here)_
+- **ContactForm is a React island (~356KB React runtime in `client.js`).** It's
+  the only thing pulling in React + `@astrojs/react`. Loads lazily (`client:visible`,
+  so no LCP impact), but for a site that *sells* technical quality, rewriting the
+  form as a vanilla-JS Astro `<script>` would drop React entirely → true zero-JS.
+  Recommended optimization; decide with Seth. (2026-06-04)
+- **5 moderate npm-audit findings**, all dev-only: `yaml` DoS transitively under
+  `@astrojs/check` (typecheck tool, not in the production bundle). Fix is a breaking
+  downgrade of `@astrojs/check` — not worth it. Re-evaluate when upstream patches.
+  (2026-06-04)
 
 ## Open questions
 
-_(Phase 6.5 recreation review logs accidental-vs-intentional drift questions here)_
+- **Intentional deviation (Phase 6.5):** navbar uses the real graphic wordmark
+  (`logo-with-text.svg`, pulled from live tenorcreative.com per operator) instead
+  of the designer-src `TENOR_` text wordmark. Not drift — expected.
+- **Intentional deviation:** added a real GHL contact form in the `#contact`
+  section; designer-src had mailto-only. Per brief §10 + Variant-B decision.
+- **Intentional deviation:** added a mobile hamburger menu; designer-src hid the
+  nav entirely on mobile (no menu). Strictly better; expected.
+- _(Phase 6.5 recreation review appends accidental-vs-intentional drift here.)_
 
 ## Dismissed
 

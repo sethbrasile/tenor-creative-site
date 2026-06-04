@@ -1,0 +1,156 @@
+---
+import '@fontsource-variable/outfit/index.css';
+import '@fontsource/space-mono/400.css';
+import '@fontsource/space-mono/700.css';
+import '@fontsource/space-mono/400-italic.css';
+import '@/styles/global.css';
+import Navbar from '@/components/Navbar.astro';
+import Footer from '@/components/Footer.astro';
+import { site, links, faq, knowsAbout } from '@/data/site';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** Path for canonical + OG url, e.g. "/" or "/privacy". */
+  path?: string;
+  ogImage?: string;
+  /** geo meta — props with defaults so routed/city pages can override. */
+  geoPlacename?: string;
+  geoRegion?: string;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description = site.description,
+  path = '/',
+  ogImage = '/opengraph.jpg',
+  geoPlacename = site.location,
+  geoRegion = `US-${site.region}`,
+  noindex = false,
+} = Astro.props;
+
+const canonical = new URL(path, site.url).href;
+const ogImageUrl = new URL(ogImage, site.url).href;
+const beaconToken = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
+
+// Structured data (brief §8): Organization + Services + FAQPage in one @graph.
+const orgId = `${site.url}/#organization`;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': orgId,
+      name: site.name,
+      url: site.url,
+      email: site.email,
+      ...(site.phone ? { telephone: site.phone } : {}),
+      logo: new URL('/img/logo.svg', site.url).href,
+      description: site.description,
+      areaServed: 'Worldwide (remote)',
+      knowsAbout: [...knowsAbout],
+      founder: {
+        '@type': 'Person',
+        name: site.principal,
+        sameAs: [links.portfolio, links.github, links.linkedin],
+      },
+      contactPoint: {
+        '@type': 'ContactPoint',
+        email: site.email,
+        ...(site.phone ? { telephone: site.phone } : {}),
+        contactType: 'sales',
+      },
+      sameAs: [links.github, links.linkedin, links.portfolio],
+    },
+    {
+      '@type': 'Service',
+      name: 'Custom Apps & SaaS',
+      serviceType: 'Custom software & SaaS development',
+      provider: { '@id': orgId },
+      areaServed: 'Worldwide (remote)',
+    },
+    {
+      '@type': 'Service',
+      name: 'Automation & AI Tooling',
+      serviceType: 'Business process automation & AI integration',
+      provider: { '@id': orgId },
+      areaServed: 'Worldwide (remote)',
+    },
+    {
+      '@type': 'Service',
+      name: 'Infrastructure, DevOps & Consulting',
+      serviceType: 'Infrastructure, DevOps & technical consulting',
+      provider: { '@id': orgId },
+      areaServed: 'Worldwide (remote)',
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faq.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    },
+  ],
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+    <meta name="geo.placename" content={geoPlacename} />
+    <meta name="geo.region" content={geoRegion} />
+    <meta name="theme-color" content="#202a3c" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.shortName} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImageUrl} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+
+    {
+      beaconToken && (
+        <script
+          is:inline
+          defer
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon={`{"token": "${beaconToken}"}`}
+        />
+      )
+    }
+  </head>
+  <body>
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
+    >
+      Skip to content
+    </a>
+    <Navbar />
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

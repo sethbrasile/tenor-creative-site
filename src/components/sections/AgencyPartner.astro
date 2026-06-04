@@ -1,0 +1,79 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<section id="agency" class="py-24 scroll-mt-16">
+  <div class="container mx-auto px-4 md:px-8 max-w-5xl">
+    <div class="flex flex-col md:flex-row gap-12 items-center">
+      <div class="flex-1">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">The White-Label Model</h2>
+        <div class="space-y-6 text-muted-foreground">
+          <p>
+            We operate as the invisible technical arm for marketing, design, and SEO
+            agencies. You own the client relationship; we execute the complex builds.
+          </p>
+          <ul class="space-y-4">
+            <li class="flex items-start">
+              <Icon
+                name="lucide:shield"
+                class="h-5 w-5 mr-3 text-accent shrink-0 mt-0.5"
+                aria-hidden="true"
+              />
+              <span
+                ><strong class="text-foreground">NDA-friendly &amp; non-compete:</strong> We
+                never poach your clients. We deliver under your brand.</span
+              >
+            </li>
+            <li class="flex items-start">
+              <Icon
+                name="lucide:network"
+                class="h-5 w-5 mr-3 text-accent shrink-0 mt-0.5"
+                aria-hidden="true"
+              />
+              <span
+                ><strong class="text-foreground">Senior execution:</strong> Led by our
+                principal, pulling in vetted collaborators only for capacity. No junior
+                hand-offs.</span
+              >
+            </li>
+            <li class="flex items-start">
+              <Icon
+                name="lucide:terminal"
+                class="h-5 w-5 mr-3 text-accent shrink-0 mt-0.5"
+                aria-hidden="true"
+              />
+              <span
+                ><strong class="text-foreground">Proven partnership:</strong> Already the
+                technical backbone for PPMC and others. A repeatable, reliable process.</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex-1 bg-card border border-border p-8 rounded-lg relative overflow-hidden">
+        <div class="absolute top-0 right-0 p-4 opacity-10" aria-hidden="true">
+          <Icon name="lucide:network" class="h-32 w-32" />
+        </div>
+        <h3 class="font-mono font-bold text-lg mb-4 text-primary">Engagement Modes</h3>
+        <ul class="space-y-4 font-mono text-sm">
+          <li class="border-b border-border pb-4">
+            <div class="font-bold mb-1">01. Project-Based</div>
+            <div class="text-muted-foreground">Scoped builds with clear deliverables.</div>
+          </li>
+          <li class="border-b border-border pb-4">
+            <div class="font-bold mb-1">02. Retainer / Partnership</div>
+            <div class="text-muted-foreground">
+              Ongoing capacity for your agency&apos;s pipeline.
+            </div>
+          </li>
+          <li>
+            <div class="font-bold mb-1">03. Advisory</div>
+            <div class="text-muted-foreground">
+              Fractional CTO and technical architecture.
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

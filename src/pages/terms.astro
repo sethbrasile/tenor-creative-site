@@ -1,0 +1,48 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { site } from '@/data/site';
+---
+
+<BaseLayout
+  title={`Terms of Service | ${site.shortName}`}
+  description="The terms governing use of tenorcreative.com and engagements with Tenor Creative LLC."
+  path="/terms"
+>
+  <section class="py-20 md:py-28">
+    <div class="container mx-auto px-4 md:px-8 max-w-3xl">
+      <p class="font-mono text-sm text-accent mb-3">PLACEHOLDER — pending final copy (Phase 5)</p>
+      <h1 class="text-4xl md:text-5xl font-bold mb-8">Terms of Service</h1>
+
+      <div class="prose prose-neutral max-w-none">
+        <p>
+          These Terms govern your use of tenorcreative.com, operated by {site.name}. By
+          using this site you agree to them.
+        </p>
+
+        <h2>Use of this site</h2>
+        <p>
+          This site is provided for informational purposes. Content is offered as-is
+          without warranty of any kind.
+        </p>
+
+        <h2>Engagements</h2>
+        <p>
+          Any project, retainer, or advisory engagement is governed by a separate written
+          agreement. Nothing on this site constitutes an offer or a binding quote.
+        </p>
+
+        <h2>Intellectual property</h2>
+        <p>
+          Site content, branding, and marks are the property of {site.name} unless
+          otherwise noted.
+        </p>
+
+        <h2>Contact</h2>
+        <p>
+          Questions about these Terms? Email
+          <a href={`mailto:${site.email}`}>{site.email}</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

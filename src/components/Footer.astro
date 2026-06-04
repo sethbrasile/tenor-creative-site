@@ -1,0 +1,74 @@
+---
+import { site, links } from '@/data/site';
+const year = new Date().getFullYear();
+const telHref = site.phone ? `tel:${site.phone.replace(/[^0-9+]/g, '')}` : null;
+---
+
+<footer
+  class="bg-background border-t border-border py-12 text-sm text-muted-foreground font-mono"
+>
+  <div class="container mx-auto px-4 md:px-8">
+    <div class="flex flex-col md:flex-row justify-between gap-8">
+      <div>
+        <p class="text-foreground font-bold not-sr-only">{site.name}</p>
+        <p class="mt-1">Based in {site.location} — Operating Remote</p>
+        <p class="mt-1">
+          <a href={`mailto:${site.email}`} class="hover:text-foreground transition-colors"
+            >{site.email}</a
+          >
+        </p>
+        {
+          telHref && (
+            <p class="mt-1">
+              <a href={telHref} class="hover:text-foreground transition-colors">
+                {site.phone}
+              </a>
+            </p>
+          )
+        }
+      </div>
+
+      <nav class="flex flex-col gap-2" aria-label="Footer">
+        <a href="/privacy" class="hover:text-foreground transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-foreground transition-colors">Terms</a>
+        <a
+          href={links.ppmc}
+          target="_blank"
+          rel="noopener"
+          class="hover:text-foreground transition-colors">Marketing &amp; SEO → PPMC</a
+        >
+      </nav>
+
+      <div class="flex flex-col gap-2">
+        <a
+          href={links.portfolio}
+          target="_blank"
+          rel="noopener"
+          class="hover:text-foreground transition-colors">Portfolio / CV</a
+        >
+        <a
+          href={links.github}
+          target="_blank"
+          rel="noopener"
+          class="hover:text-foreground transition-colors">GitHub</a
+        >
+        <a
+          href={links.blog}
+          target="_blank"
+          rel="noopener"
+          class="hover:text-foreground transition-colors">Blog</a
+        >
+        <a
+          href={links.linkedin}
+          target="_blank"
+          rel="noopener"
+          class="hover:text-foreground transition-colors">LinkedIn</a
+        >
+      </div>
+    </div>
+
+    <p class="mt-8 pt-6 border-t border-border">
+      &copy; {year} {site.name}. All rights reserved.
+    </p>
+  </div>
+</footer>

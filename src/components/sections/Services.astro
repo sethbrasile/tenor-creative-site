@@ -1,0 +1,95 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<section id="services" class="py-24 bg-card border-y border-border scroll-mt-16">
+  <div class="container mx-auto px-4 md:px-8 max-w-5xl">
+    <div class="mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Capabilities</h2>
+      <p class="text-muted-foreground font-mono max-w-2xl">
+        When off-the-shelf tools hit their ceiling, we build the systems that scale with
+        your operations.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="p-8 bg-background border border-border rounded-lg shadow-sm">
+        <Icon name="lucide:code" class="h-8 w-8 text-accent mb-6" aria-hidden="true" />
+        <h3 class="text-xl font-bold mb-3">Custom Apps &amp; SaaS</h3>
+        <p class="text-muted-foreground mb-4">
+          Full-stack application and SaaS development on a modern edge stack. Built for
+          businesses that need software molded to their exact shape.
+        </p>
+        <ul class="space-y-2 text-sm font-mono text-muted-foreground">
+          <li class="flex items-center">
+            <Icon name="lucide:chevron-right" class="h-3 w-3 mr-2 text-accent" aria-hidden="true" />
+            Next.js, React, Nuxt
+          </li>
+          <li class="flex items-center">
+            <Icon name="lucide:chevron-right" class="h-3 w-3 mr-2 text-accent" aria-hidden="true" />
+            PostgreSQL, Neon, Drizzle
+          </li>
+          <li class="flex items-center">
+            <Icon name="lucide:chevron-right" class="h-3 w-3 mr-2 text-accent" aria-hidden="true" />
+            Cloudflare Workers, Edge
+          </li>
+        </ul>
+      </div>
+
+      <div class="p-8 bg-background border border-border rounded-lg shadow-sm">
+        <Icon name="lucide:terminal" class="h-8 w-8 text-accent mb-6" aria-hidden="true" />
+        <h3 class="text-xl font-bold mb-3">Automation &amp; AI Tooling</h3>
+        <p class="text-muted-foreground mb-4">
+          Business-process automation, AI agents, internal tooling, and RAG pipelines.
+          Stop manual work from eating your team&apos;s bandwidth.
+        </p>
+        <ul class="space-y-2 text-sm font-mono text-muted-foreground">
+          <li class="flex items-center">
+            <Icon name="lucide:chevron-right" class="h-3 w-3 mr-2 text-accent" aria-hidden="true" />
+            AI Agents &amp; Integrations
+          </li>
+          <li class="flex items-center">
+            <Icon name="lucide:chevron-right" class="h-3 w-3 mr-2 text-accent" aria-hidden="true" />
+            RAG Pipelines (Python, Postgres)
+          </li>
+          <li class="flex items-center">
+            <Icon name="lucide:chevron-right" class="h-3 w-3 mr-2 text-accent" aria-hidden="true" />
+            Declarative Workflows
+          </li>
+        </ul>
+      </div>
+
+      <div class="p-8 bg-background border border-border rounded-lg shadow-sm md:col-span-2">
+        <Icon name="lucide:server" class="h-8 w-8 text-accent mb-6" aria-hidden="true" />
+        <h3 class="text-xl font-bold mb-3">Infrastructure, DevOps &amp; Consulting</h3>
+        <p class="text-muted-foreground mb-4 max-w-3xl">
+          CI/CD, cloud architecture, security hardening, immutable infra, and
+          fractional-CTO advisory. Solving problems of reliability, scale, and compliance
+          before they become emergencies.
+        </p>
+        <div class="grid sm:grid-cols-2 gap-4 mt-6">
+          <ul class="space-y-2 text-sm font-mono text-muted-foreground">
+            <li class="flex items-center">
+              <Icon name="lucide:chevron-right" class="h-3 w-3 mr-2 text-accent" aria-hidden="true" />
+              Immutable Infrastructure
+            </li>
+            <li class="flex items-center">
+              <Icon name="lucide:chevron-right" class="h-3 w-3 mr-2 text-accent" aria-hidden="true" />
+              Zero-Trust Ingress &amp; Security
+            </li>
+          </ul>
+          <ul class="space-y-2 text-sm font-mono text-muted-foreground">
+            <li class="flex items-center">
+              <Icon name="lucide:chevron-right" class="h-3 w-3 mr-2 text-accent" aria-hidden="true" />
+              CI/CD Pipelines
+            </li>
+            <li class="flex items-center">
+              <Icon name="lucide:chevron-right" class="h-3 w-3 mr-2 text-accent" aria-hidden="true" />
+              CRM Setup &amp; Data Plumbing
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

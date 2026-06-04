@@ -1,0 +1,79 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Self-hosted fonts are imported as JS modules in BaseLayout.astro
+   (@fontsource-variable/outfit + @fontsource/space-mono) — same-origin,
+   font-display: swap. */
+
+/*
+  Tenor Creative theme — ported from designer-src light mode.
+  Dark-mode / sidebar / chart / popover tokens dropped (no toggle = dead code).
+*/
+@theme {
+  --color-background: hsl(210 20% 98%);
+  --color-foreground: hsl(220 30% 10%);
+  --color-border: hsl(214 20% 85%);
+  --color-input: hsl(214 20% 85%);
+  --color-ring: hsl(220 30% 10%);
+
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(220 30% 10%);
+
+  --color-primary: hsl(220 30% 10%);
+  --color-primary-foreground: hsl(0 0% 100%);
+
+  --color-secondary: hsl(214 20% 90%);
+  --color-secondary-foreground: hsl(220 30% 10%);
+
+  --color-muted: hsl(214 20% 92%);
+  --color-muted-foreground: hsl(215 15% 45%);
+
+  --color-accent: hsl(25 95% 55%);
+  --color-accent-foreground: hsl(0 0% 100%);
+
+  --color-destructive: hsl(0 84% 60%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+
+  --font-sans: 'Outfit Variable', 'Outfit', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Space Mono', ui-monospace, SFMono-Regular, monospace;
+
+  --radius-sm: 0.125rem;
+  --radius-md: 0.1875rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.375rem;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hero entrance — replaces framer-motion (crawler-safe, CSP-safe) */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  animation: fade-up 0.5s ease-out both;
+}
+
+/* Accessibility: respect reduced-motion (brief §9) */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,53 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { site, links } from '@/data/site';
+---
+
+<BaseLayout
+  title={`Privacy Policy | ${site.shortName}`}
+  description="How Tenor Creative LLC collects, uses, and protects information submitted through tenorcreative.com."
+  path="/privacy"
+>
+  <section class="py-20 md:py-28">
+    <div class="container mx-auto px-4 md:px-8 max-w-3xl">
+      <p class="font-mono text-sm text-accent mb-3">PLACEHOLDER — pending final copy (Phase 5)</p>
+      <h1 class="text-4xl md:text-5xl font-bold mb-8">Privacy Policy</h1>
+
+      <div class="prose prose-neutral max-w-none">
+        <p>
+          This Privacy Policy explains how {site.name} (&ldquo;Tenor Creative,&rdquo;
+          &ldquo;we,&rdquo; &ldquo;us&rdquo;) handles information you provide through
+          tenorcreative.com.
+        </p>
+
+        <h2>Information we collect</h2>
+        <p>
+          When you submit the contact form, we collect the name, email address, optional
+          company name, and message you provide. We use Cloudflare Turnstile to deter
+          automated abuse and Cloudflare Web Analytics, which is cookieless and does not
+          track individuals across sites.
+        </p>
+
+        <h2>How we use it</h2>
+        <p>
+          Contact submissions are used solely to respond to your inquiry and, where
+          relevant, to manage a prospective engagement. We do not sell your information.
+        </p>
+
+        <h2>Data retention</h2>
+        <p>Contact records are retained only as long as needed to respond and follow up.</p>
+
+        <h2>Contact</h2>
+        <p>
+          Questions about this policy? Email
+          <a href={`mailto:${site.email}`}>{site.email}</a>.
+        </p>
+
+        <p>
+          Looking for marketing or web services? See our sister agency,
+          <a href={links.ppmc} target="_blank" rel="noopener">PPMC</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

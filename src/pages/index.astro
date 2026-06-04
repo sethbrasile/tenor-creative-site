@@ -1,0 +1,37 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from '@/components/sections/Hero.astro';
+import Services from '@/components/sections/Services.astro';
+import AgencyPartner from '@/components/sections/AgencyPartner.astro';
+import SelectedWork from '@/components/sections/SelectedWork.astro';
+import About from '@/components/sections/About.astro';
+import Contact from '@/components/sections/Contact.astro';
+import { faq } from '@/data/site';
+---
+
+<BaseLayout
+  title="Tenor Creative LLC | The senior technical team agencies build on"
+  path="/"
+>
+  <Hero />
+  <Services />
+  <AgencyPartner />
+  <SelectedWork />
+  <About />
+  <Contact />
+
+  {/* Self-contained FAQ for AI assistants (also emitted as FAQPage JSON-LD) */}
+  <div class="sr-only">
+    <h2>Frequently Asked Questions</h2>
+    <dl>
+      {
+        faq.map((item) => (
+          <Fragment>
+            <dt>{item.q}</dt>
+            <dd>{item.a}</dd>
+          </Fragment>
+        ))
+      }
+    </dl>
+  </div>
+</BaseLayout>

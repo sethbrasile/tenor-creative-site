@@ -1,0 +1,47 @@
+---
+import { Icon } from 'astro-icon/components';
+import { work } from '@/data/site';
+---
+
+<section id="work" class="py-24 bg-card border-y border-border scroll-mt-16">
+  <div class="container mx-auto px-4 md:px-8 max-w-5xl">
+    <h2 class="text-3xl md:text-4xl font-bold mb-12">Selected Work</h2>
+
+    <div class="space-y-12">
+      {
+        work.map((project) => (
+          <div class="group border border-border p-6 md:p-8 rounded-lg bg-background transition-colors hover:border-accent/50">
+            <div class="flex flex-col md:flex-row justify-between md:items-start gap-4 mb-4">
+              <div>
+                <h3 class="text-2xl font-bold flex items-center gap-2">
+                  {project.title}
+                  {project.href && (
+                    <a
+                      href={project.href}
+                      target="_blank"
+                      rel="noopener"
+                      class="text-muted-foreground hover:text-accent transition-colors"
+                      aria-label={`Visit ${project.title}`}
+                    >
+                      <Icon name="lucide:external-link" class="h-5 w-5" aria-hidden="true" />
+                    </a>
+                  )}
+                </h3>
+                <p class="text-muted-foreground mt-2 font-mono text-sm max-w-2xl">
+                  {project.blurb}
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2 mt-4 font-mono text-xs">
+              {project.stack.map((tech) => (
+                <span class="px-2 py-1 bg-secondary text-secondary-foreground rounded">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

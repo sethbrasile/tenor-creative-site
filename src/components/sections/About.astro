@@ -1,0 +1,95 @@
+---
+import { Icon } from 'astro-icon/components';
+import { links } from '@/data/site';
+
+const techStack = [
+  { name: 'simple-icons:nextdotjs', title: 'Next.js' },
+  { name: 'simple-icons:react', title: 'React' },
+  { name: 'simple-icons:vuedotjs', title: 'Vue / Nuxt' },
+  { name: 'simple-icons:python', title: 'Python' },
+  { name: 'simple-icons:go', title: 'Go' },
+  { name: 'simple-icons:postgresql', title: 'PostgreSQL' },
+  { name: 'simple-icons:cloudflare', title: 'Cloudflare' },
+  { name: 'simple-icons:docker', title: 'Docker' },
+  { name: 'simple-icons:nginx', title: 'NGINX' },
+  { name: 'lucide:cloud', title: 'Azure' },
+  { name: 'simple-icons:stripe', title: 'Stripe' },
+];
+---
+
+<section id="about" class="py-24 scroll-mt-16">
+  <div class="container mx-auto px-4 md:px-8 max-w-5xl">
+    <div class="grid md:grid-cols-3 gap-12">
+      <div class="md:col-span-2">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Principal</h2>
+        <div class="space-y-6 text-muted-foreground text-lg leading-relaxed">
+          <p>
+            I&apos;m Seth Brasile. I&apos;ve spent 12+ years across full-stack development,
+            DevOps, and regulated-industry IT (casinos, healthcare, manufacturing,
+            government).
+          </p>
+          <p>
+            I built the BetterLife platform from zero and led a 6-engineer team through its
+            v2 cloud-native migration. I&apos;ve automated security and compliance across
+            3,200 enterprise endpoints at an MSP and served as a PCI-DSS subject-matter
+            expert.
+          </p>
+          <p>
+            Today, I ship production-grade SaaS solo on modern edge stacks, and I co-own
+            PPMC and a real-estate partnership. I scope builds like an owner, because I am
+            one. I&apos;m an engineer who&apos;s been on-call at 2am, not just a coder.
+          </p>
+          <div class="pt-4 flex flex-wrap gap-4 font-mono text-sm">
+            <a
+              href={links.portfolio}
+              target="_blank"
+              rel="noopener"
+              class="text-primary hover:text-accent flex items-center transition-colors"
+            >
+              Portfolio
+              <Icon name="lucide:external-link" class="ml-1 h-3 w-3" aria-hidden="true" />
+            </a>
+            <a
+              href={links.github}
+              target="_blank"
+              rel="noopener"
+              class="text-primary hover:text-accent flex items-center transition-colors"
+            >
+              GitHub
+              <Icon name="lucide:external-link" class="ml-1 h-3 w-3" aria-hidden="true" />
+            </a>
+            <a
+              href={links.linkedin}
+              target="_blank"
+              rel="noopener"
+              class="text-primary hover:text-accent flex items-center transition-colors"
+            >
+              LinkedIn
+              <Icon name="lucide:external-link" class="ml-1 h-3 w-3" aria-hidden="true" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-card border border-border p-6 rounded-lg self-start">
+        <h3 class="font-mono font-bold mb-4 border-b border-border pb-2">Tech Stack</h3>
+        <div class="flex flex-wrap gap-4 text-muted-foreground">
+          {
+            techStack.map((t) => (
+              <Icon
+                name={t.name}
+                title={t.title}
+                class="h-6 w-6 hover:text-foreground transition-colors"
+              />
+            ))
+          }
+        </div>
+        <div class="mt-6 font-mono text-xs text-muted-foreground space-y-1">
+          <p>+ CI/CD, Immutable Infra</p>
+          <p>+ gRPC, mTLS, REST</p>
+          <p>+ Active Directory, Okta</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

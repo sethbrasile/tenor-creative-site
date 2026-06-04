@@ -1,0 +1,44 @@
+---
+import { Icon } from 'astro-icon/components';
+import ContactForm from '@/components/ContactForm.tsx';
+import { site, links } from '@/data/site';
+---
+
+<section id="contact" class="py-24 bg-primary text-primary-foreground scroll-mt-16">
+  <div class="container mx-auto px-4 md:px-8 max-w-3xl">
+    <div class="text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Start a Conversation</h2>
+      <p class="text-primary-foreground/80 font-mono mb-10 max-w-2xl mx-auto">
+        Ready to discuss a build, architecture review, or white-label partnership? Send a
+        note below — or email directly.
+      </p>
+    </div>
+
+    <ContactForm client:visible />
+
+    <div class="mt-8 text-center">
+      <a
+        href={`mailto:${site.email}`}
+        class="inline-flex items-center justify-center font-mono text-sm text-primary-foreground/90 hover:text-accent transition-colors"
+      >
+        <Icon name="lucide:mail" class="mr-2 h-4 w-4" aria-hidden="true" />
+        {site.email}
+      </a>
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-primary-foreground/20 text-center">
+      <p class="text-sm font-mono text-primary-foreground/60 mb-2">
+        Looking for marketing, SEO, or a website instead?
+      </p>
+      <a
+        href={links.ppmc}
+        target="_blank"
+        rel="noopener"
+        class="text-accent hover:text-accent/80 font-bold inline-flex items-center justify-center transition-colors"
+      >
+        Visit PPMC
+        <Icon name="lucide:external-link" class="ml-1 h-4 w-4" aria-hidden="true" />
+      </a>
+    </div>
+  </div>
+</section>
