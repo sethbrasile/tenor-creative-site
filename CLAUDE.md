@@ -97,8 +97,11 @@ Keep all of it committed (it's the tracked reference), but build nothing on it.
 ## Brand tokens (from `designer-src/.../src/index.css`)
 
 - Colors (HSL): `--background 210 20% 98%` (near-white), `--foreground` /
-  `--primary 220 30% 10%` (near-black navy), **`--accent 25 95% 55%` (orange)** —
-  the signature accent. `--radius 0.25rem` (sharp/minimal).
+  `--primary 220 30% 10%` (near-black navy), **`--accent` (orange) — the signature
+  accent**. NOTE: designer's `25 95% 55%` (#f97a1f) failed WCAG AA contrast, so the
+  live token is deepened to **`24 90% 36%`** (#ae4b09, burnt-orange) for AA on light
+  surfaces + as a button bg. **`--accent-bright 25 95% 55%`** (the original) is kept
+  for accent text on DARK surfaces only (e.g. the contact section). `--radius 0.25rem`.
 - Fonts: **Outfit** (sans) + **Space Mono** (mono). Currently loaded via Google
   Fonts `<link>` — **self-host as `.woff2` during the transform** (skill gotcha:
   external font origin on the critical path).
@@ -150,7 +153,8 @@ lead magnet. No invented social proof. Privacy-friendly analytics only.
 - Fonts self-hosted via **Fontsource** (`@fontsource-variable/outfit`,
   `@fontsource/space-mono`) — imported in `BaseLayout.astro`, same-origin, swap.
 - Commands: `npm run dev` · `npm run build` · `npm run preview` · `npm run check`
-  (astro check / typecheck).
+  (astro check / typecheck) · `npm test` (Playwright E2E + axe a11y, in `tests/e2e/`;
+  builds + previews on port 4823, desktop + mobile projects).
 - Expected **Cloudflare Pages project name: `tenor-creative-site`** (matches repo;
   no dots to dash-convert) — confirm at deploy (Phase 8).
 
@@ -224,6 +228,11 @@ notes, analytics, handoff._
   "Back to site" button — per operator we deliberately rejected that shortcut; nav
   stays identical across pages. Page recreated static/zero-JS (designer used
   framer-motion + a `dialed` useState; both dropped — the dial CTA is a plain `tel:`).
+- **Intentional deviation (Phase 6 a11y):** brand accent deepened from the
+  designer's `25 95% 55%` (#f97a1f) to `24 90% 36%` (#ae4b09) — the original failed
+  WCAG AA contrast as text-on-light and as a button bg. Original kept as
+  `--accent-bright` for dark-surface accent text. Operator-approved trade-off
+  (slightly deeper orange site-wide) to reach Lighthouse a11y 100.
 - _(Phase 6.5 recreation review appends accidental-vs-intentional drift here.)_
 
 ## Dismissed
