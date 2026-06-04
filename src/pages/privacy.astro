@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { site, links } from '@/data/site';
+
+const lastUpdated = 'June 4, 2026';
 ---
 
 <BaseLayout
@@ -10,37 +12,126 @@ import { site, links } from '@/data/site';
 >
   <section class="py-20 md:py-28">
     <div class="container mx-auto px-4 md:px-8 max-w-3xl">
-      <p class="font-mono text-sm text-accent mb-3">PLACEHOLDER — pending final copy (Phase 5)</p>
-      <h1 class="text-4xl md:text-5xl font-bold mb-8">Privacy Policy</h1>
+      <h1 class="text-4xl md:text-5xl font-bold mb-2">Privacy Policy</h1>
+      <p class="font-mono text-sm text-muted-foreground mb-8">Last updated: {lastUpdated}</p>
 
       <div class="prose prose-neutral max-w-none">
         <p>
           This Privacy Policy explains how {site.name} (&ldquo;Tenor Creative,&rdquo;
-          &ldquo;we,&rdquo; &ldquo;us&rdquo;) handles information you provide through
-          tenorcreative.com.
+          &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) collects, uses, and
+          protects information that identifies, relates to, or could reasonably be linked to
+          you (&ldquo;Personal Information&rdquo;) through tenorcreative.com.
         </p>
 
-        <h2>Information we collect</h2>
+        <h2>1. Information We Collect</h2>
+        <ul>
+          <li>
+            <strong>Contact details:</strong> name, email address, phone number, business
+            name, and any message you send through our contact form or by email.
+          </li>
+          <li>
+            <strong>Technical data:</strong> IP address, browser type, device information,
+            and aggregate usage patterns, collected through privacy-focused, cookieless
+            analytics.
+          </li>
+          <li>
+            <strong>Engagement &amp; billing data:</strong> information needed to scope,
+            deliver, and invoice a project, handled under a separate written agreement. Card
+            payments, where applicable, are processed by a third-party payment processor; we
+            do not store full card details.
+          </li>
+        </ul>
+
+        <h2>2. How We Collect Information</h2>
+        <ul>
+          <li><strong>Directly from you:</strong> via our contact form, email, or other communications.</li>
+          <li>
+            <strong>Automatically:</strong> through Cloudflare Web Analytics, which is
+            cookieless and does not track individuals across sites, and Cloudflare Turnstile,
+            which helps us deter automated abuse of the contact form.
+          </li>
+          <li>
+            <strong>Through service providers:</strong> when you contact us, your submission
+            may be stored in our customer relationship management (CRM) platform so we can
+            respond and manage the prospective engagement.
+          </li>
+        </ul>
+
+        <h2>3. How We Use Your Information</h2>
+        <p>We use Personal Information to:</p>
+        <ul>
+          <li>Respond to inquiries and manage prospective and active engagements;</li>
+          <li>Deliver, support, and invoice contracted technical work;</li>
+          <li>Communicate with you about your project;</li>
+          <li>Understand site engagement through aggregate, privacy-focused analytics;</li>
+          <li>Meet our legal, accounting, and security obligations.</li>
+        </ul>
+        <p>We never sell your Personal Information.</p>
+
+        <h2>4. Sharing Your Information</h2>
+        <p>We only share data with:</p>
+        <ul>
+          <li>
+            <strong>Service providers:</strong> hosting, analytics, anti-abuse, CRM, and
+            payment partners that are bound by confidentiality and process data on our behalf;
+          </li>
+          <li><strong>Legal compliance:</strong> when required by law or to protect our rights;</li>
+          <li><strong>Business transfers:</strong> in connection with a merger, acquisition, or sale of assets.</li>
+        </ul>
+
+        <h2>5. Cookies and Tracking Technologies</h2>
         <p>
-          When you submit the contact form, we collect the name, email address, optional
-          company name, and message you provide. We use Cloudflare Turnstile to deter
-          automated abuse and Cloudflare Web Analytics, which is cookieless and does not
-          track individuals across sites.
+          We keep tracking to a minimum. Cloudflare Web Analytics is cookieless and collects
+          no personally identifying information. Cloudflare Turnstile may set a short-lived
+          token to confirm that form submissions come from a human. We do not use advertising
+          or cross-site tracking cookies. You can manage cookie preferences through your
+          browser settings.
         </p>
 
-        <h2>How we use it</h2>
-        <p>
-          Contact submissions are used solely to respond to your inquiry and, where
-          relevant, to manage a prospective engagement. We do not sell your information.
-        </p>
+        <h2>6. Data Retention &amp; Security</h2>
+        <ul>
+          <li><strong>Retention:</strong> we keep Personal Information only as long as necessary for the purposes above or as required by law.</li>
+          <li><strong>Security:</strong> we apply industry-standard protections, including encryption in transit, to safeguard your information.</li>
+        </ul>
 
-        <h2>Data retention</h2>
-        <p>Contact records are retained only as long as needed to respond and follow up.</p>
-
-        <h2>Contact</h2>
+        <h2>7. Your Rights</h2>
+        <p>You may:</p>
+        <ul>
+          <li>Access, correct, or delete your information;</li>
+          <li>Opt out of non-essential communications;</li>
+          <li>Request data portability.</li>
+        </ul>
         <p>
-          Questions about this policy? Email
+          To exercise these rights, email
           <a href={`mailto:${site.email}`}>{site.email}</a>.
+        </p>
+
+        <h2>8. Third-Party Links</h2>
+        <p>
+          Our site may link to external services that we do not control. Their privacy
+          practices are governed by their own policies, not this one.
+        </p>
+
+        <h2>9. Children&rsquo;s Privacy</h2>
+        <p>Our services are not intended for individuals under 18 years of age.</p>
+
+        <h2>10. Policy Updates</h2>
+        <p>
+          We may update this policy from time to time. Changes will be posted here with a
+          revised &ldquo;Last updated&rdquo; date.
+        </p>
+
+        <h2>11. Contact Us</h2>
+        <p>For questions about this Privacy Policy:</p>
+        <ul>
+          <li><strong>Email:</strong> <a href={`mailto:${site.email}`}>{site.email}</a></li>
+          <li><strong>Address:</strong> {site.name}, {site.location}</li>
+        </ul>
+
+        <p class="text-sm text-muted-foreground">
+          Tenor Creative LLC uses Cloudflare Web Analytics, which is privacy-focused and
+          cookieless. Any payment processing is handled by a third-party processor; we do not
+          store full card details.
         </p>
 
         <p>

@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { site } from '@/data/site';
+import { site, links } from '@/data/site';
+
+const lastUpdated = 'June 4, 2026';
 ---
 
 <BaseLayout
@@ -10,37 +12,116 @@ import { site } from '@/data/site';
 >
   <section class="py-20 md:py-28">
     <div class="container mx-auto px-4 md:px-8 max-w-3xl">
-      <p class="font-mono text-sm text-accent mb-3">PLACEHOLDER — pending final copy (Phase 5)</p>
-      <h1 class="text-4xl md:text-5xl font-bold mb-8">Terms of Service</h1>
+      <h1 class="text-4xl md:text-5xl font-bold mb-2">Terms of Service</h1>
+      <p class="font-mono text-sm text-muted-foreground mb-8">Last updated: {lastUpdated}</p>
 
       <div class="prose prose-neutral max-w-none">
+        <h2>1. Acceptance of Terms</h2>
         <p>
-          These Terms govern your use of tenorcreative.com, operated by {site.name}. By
-          using this site you agree to them.
+          By accessing or using tenorcreative.com or services from {site.name}
+          (&ldquo;Tenor Creative,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;),
+          you agree to be bound by these Terms of Service. If you disagree with any part, you
+          may not use our services.
         </p>
 
-        <h2>Use of this site</h2>
+        <h2>2. Our Services</h2>
         <p>
-          This site is provided for informational purposes. Content is offered as-is
-          without warranty of any kind.
+          Tenor Creative is a technical build arm providing software and systems services,
+          including:
+        </p>
+        <ul>
+          <li>Custom software and SaaS development;</li>
+          <li>Business process automation and AI tooling;</li>
+          <li>Infrastructure, DevOps, and security hardening;</li>
+          <li>Technical consulting;</li>
+          <li>White-label technical subcontracting for agencies.</li>
+        </ul>
+
+        <h2>3. Engagements</h2>
+        <p>
+          This site is provided for informational purposes. Nothing on it constitutes an offer
+          or a binding quote. Any project, retainer, or advisory engagement is governed by a
+          separate written agreement that controls in the event of any conflict with these
+          Terms.
         </p>
 
-        <h2>Engagements</h2>
+        <h2>4. Payments</h2>
         <p>
-          Any project, retainer, or advisory engagement is governed by a separate written
-          agreement. Nothing on this site constitutes an offer or a binding quote.
+          Fees, schedules, and refund terms are defined in your engagement agreement. Where
+          card payments apply, they are processed through a third-party payment processor. You
+          agree to provide current, accurate billing information.
         </p>
 
-        <h2>Intellectual property</h2>
+        <h2>5. Intellectual Property</h2>
         <p>
-          Site content, branding, and marks are the property of {site.name} unless
-          otherwise noted.
+          We retain ownership of our methodologies, internal tooling, and site content. You
+          retain rights to your business data and to the contracted deliverables as defined in
+          your engagement agreement. We may use anonymized, aggregated data to improve our
+          services.
         </p>
 
-        <h2>Contact</h2>
+        <h2>6. Prohibited Activities</h2>
+        <p>You agree not to:</p>
+        <ul>
+          <li>Engage in illegal activities or violate third-party rights;</li>
+          <li>Compromise system security or disrupt services;</li>
+          <li>Send spam or unsolicited communications through our systems;</li>
+          <li>Reverse engineer any proprietary technology.</li>
+        </ul>
+
+        <h2>7. Analytics and Tracking</h2>
         <p>
-          Questions about these Terms? Email
-          <a href={`mailto:${site.email}`}>{site.email}</a>.
+          We use Cloudflare Web Analytics, which is cookieless, for aggregate performance
+          tracking, as described in our <a href="/privacy/">Privacy Policy</a>.
+        </p>
+
+        <h2>8. Disclaimers</h2>
+        <p>
+          Services and site content are provided &ldquo;as is&rdquo; without warranties of any
+          kind. We do not guarantee specific outcomes. Third-party integrations are subject to
+          their own terms.
+        </p>
+
+        <h2>9. Limitation of Liability</h2>
+        <p>
+          To the maximum extent permitted by law, we shall not be liable for indirect,
+          incidental, or consequential damages arising from use of this site or our services.
+        </p>
+
+        <h2>10. Termination</h2>
+        <p>
+          We may suspend or terminate access immediately for violations of these Terms. Upon
+          termination, your right to use the services ceases immediately.
+        </p>
+
+        <h2>11. Governing Law</h2>
+        <p>
+          These Terms are governed by the laws of the State of Delaware. Disputes will be
+          resolved in the courts of Delaware.
+        </p>
+
+        <h2>12. Changes to Terms</h2>
+        <p>
+          We may modify these Terms with 30 days&rsquo; notice. Continued use after changes
+          take effect constitutes acceptance.
+        </p>
+
+        <h2>13. Contact Information</h2>
+        <p>For questions about these Terms:</p>
+        <ul>
+          <li><strong>Email:</strong> <a href={`mailto:${site.email}`}>{site.email}</a></li>
+          <li><strong>Address:</strong> {site.name}, {site.location}</li>
+        </ul>
+
+        <p class="text-sm text-muted-foreground">
+          These Terms constitute the entire agreement between us regarding use of this site. If
+          any provision is unenforceable, the remaining provisions remain valid. Our failure to
+          enforce any right does not constitute a waiver.
+        </p>
+
+        <p>
+          Looking for marketing or web services? See our sister agency,
+          <a href={links.ppmc} target="_blank" rel="noopener">PPMC</a>.
         </p>
       </div>
     </div>
