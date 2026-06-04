@@ -30,7 +30,10 @@ const {
   noindex = false,
 } = Astro.props;
 
-const canonical = new URL(path, site.url).href;
+// Normalize to a trailing slash so canonical + OG url match the directory-format
+// served URL and the sitemap (which emits "/privacy/"). Root "/" stays as-is.
+const canonicalPath = path.endsWith('/') ? path : `${path}/`;
+const canonical = new URL(canonicalPath, site.url).href;
 const ogImageUrl = new URL(ogImage, site.url).href;
 const beaconToken = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
 
