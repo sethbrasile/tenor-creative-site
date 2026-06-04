@@ -163,13 +163,15 @@ src/
                                font imports, CF Web Analytics beacon (guarded),
                                wraps Navbar + <slot/> + Footer
   components/
-    Navbar.astro               real logo (logo-with-text.svg), anchor nav,
-                               vanilla-JS mobile menu (aria-expanded)
+    Navbar.astro               real logo (logo-with-text.svg), root-relative nav
+                               (/#anchor, works cross-page), "AI Demo" accent pill
+                               (navItems cta:true), vanilla-JS mobile menu (aria-expanded)
     Footer.astro               NAP (phone when provided), privacy/terms, socials, PPMC
     ContactForm.astro          vanilla form + inlined <script> (zero-JS, Turnstile)
     sections/                  Hero, Services, AgencyPartner, SelectedWork,
                                About, Contact  ← reusable for future routed pages
-  pages/                       index.astro (one-pager) · privacy.astro · terms.astro
+  pages/                       index.astro (one-pager) · ai-voice-demo.astro ·
+                               privacy.astro · terms.astro
   data/site.ts                 single source of truth: NAP, links, nav, work, faq, knowsAbout
   lib/contact-schema.ts        shared zod schema (client island + Phase 4 function)
   styles/global.css            Tailwind v4 @theme (light-only; dark/sidebar/chart pruned)
@@ -180,9 +182,13 @@ postcss.config.mjs · astro.config.mjs · tsconfig.json (@/* → src/*)
 
 - **Brand tokens** live in `src/styles/global.css` (`@theme`). Content/NAP/links in
   `src/data/site.ts` — edit there, not in components.
-- **Multi-page is coming** (operator): sections are standalone components so routed
-  pages (`/services`, `/work`, `/partners`, `/contact`) compose them without rework;
-  flip `navItems` href from `#anchor` → path at that point.
+- **Multi-page has started.** `/ai-voice-demo` is the first routed page (designer's
+  AI answering-service demo). `navItems` anchors are now root-relative (`/#services`)
+  so the shared nav works from any route. **Shared Navbar + Footer live in BaseLayout,
+  outside page content — they stay identical page-to-page.** Per operator: do NOT copy
+  the designer's per-page nav swap (the demo's "Back to site" header) — every page uses
+  the same site nav. Future routed pages (`/services`, `/work`, etc.) follow this model;
+  sections are standalone components so they compose without rework.
 - `designer-src/` stays as the tracked visual reference for Phase 6.5.
 
 ## Forms & env  <!-- FILL ON TRANSFORM -->
@@ -213,6 +219,11 @@ notes, analytics, handoff._
   section; designer-src had mailto-only. Per brief §10 + Variant-B decision.
 - **Intentional deviation:** added a mobile hamburger menu; designer-src hid the
   nav entirely on mobile (no menu). Strictly better; expected.
+- **Intentional deviation:** `/ai-voice-demo` uses the shared site Navbar + Footer.
+  designer-src's `AiVoiceDemo.tsx` swapped in a stripped per-page header with a
+  "Back to site" button — per operator we deliberately rejected that shortcut; nav
+  stays identical across pages. Page recreated static/zero-JS (designer used
+  framer-motion + a `dialed` useState; both dropped — the dial CTA is a plain `tel:`).
 - _(Phase 6.5 recreation review appends accidental-vs-intentional drift here.)_
 
 ## Dismissed
