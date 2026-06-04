@@ -70,6 +70,9 @@ export default function Home() {
             <a href="#work" className="hover:text-accent transition-colors">Work</a>
             <a href="#about" className="hover:text-accent transition-colors">About</a>
             <a href="#contact" className="hover:text-accent transition-colors">Contact</a>
+            <Link href="/ai-voice-demo" className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-accent/10 text-accent border border-accent/20 hover:bg-accent/20 transition-colors text-xs font-bold uppercase tracking-wide" data-testid="link-demo-nav">
+              AI Demo
+            </Link>
           </div>
         </div>
       </nav>

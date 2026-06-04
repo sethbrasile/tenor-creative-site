@@ -4,6 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
+import AiVoiceDemo from "@/pages/AiVoiceDemo";
 
 const queryClient = new QueryClient();
 
@@ -12,6 +13,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/work" component={Home} />
+      <Route path="/ai-voice-demo" component={AiVoiceDemo} />
       <Route component={NotFound} />
     </Switch>
   );
