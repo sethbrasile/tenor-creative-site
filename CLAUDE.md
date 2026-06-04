@@ -140,9 +140,10 @@ lead magnet. No invented social proof. Privacy-friendly analytics only.
 
 ## Stack & commands
 
-- **Astro 6** (static output) + **React 19** islands + **Tailwind v4** + TypeScript.
-- Integrations: `@astrojs/react`, `@astrojs/sitemap`, `astro-icon`
-  (lucide + simple-icons, inlined as SVG — zero JS for icons).
+- **Astro 6** (static, **zero-JS**) + **Tailwind v4** + TypeScript. No framework
+  island — the contact form + mobile menu are small vanilla `<script>`s (inlined).
+- Integrations: `@astrojs/sitemap`, `astro-icon` (lucide + simple-icons, inlined
+  as SVG — zero JS for icons). No `@astrojs/react` (removed; site ships no React).
 - **Tailwind v4 via PostCSS** (`postcss.config.mjs` → `@tailwindcss/postcss`),
   NOT `@tailwindcss/vite` — the Vite plugin breaks on Astro 6's rolldown-vite
   resolver (`Missing field tsconfigPaths`). Don't switch back.
@@ -165,7 +166,7 @@ src/
     Navbar.astro               real logo (logo-with-text.svg), anchor nav,
                                vanilla-JS mobile menu (aria-expanded)
     Footer.astro               NAP (phone when provided), privacy/terms, socials, PPMC
-    ContactForm.tsx            React island (client:visible) — the ONLY island
+    ContactForm.astro          vanilla form + inlined <script> (zero-JS, Turnstile)
     sections/                  Hero, Services, AgencyPartner, SelectedWork,
                                About, Contact  ← reusable for future routed pages
   pages/                       index.astro (one-pager) · privacy.astro · terms.astro
@@ -198,11 +199,6 @@ notes, analytics, handoff._
 
 ## Tech debt
 
-- **ContactForm is a React island (~356KB React runtime in `client.js`).** It's
-  the only thing pulling in React + `@astrojs/react`. Loads lazily (`client:visible`,
-  so no LCP impact), but for a site that *sells* technical quality, rewriting the
-  form as a vanilla-JS Astro `<script>` would drop React entirely → true zero-JS.
-  Recommended optimization; decide with Seth. (2026-06-04)
 - **5 moderate npm-audit findings**, all dev-only: `yaml` DoS transitively under
   `@astrojs/check` (typecheck tool, not in the production bundle). Fix is a breaking
   downgrade of `@astrojs/check` — not worth it. Re-evaluate when upstream patches.

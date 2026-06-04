@@ -1,6 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
-import ContactForm from '@/components/ContactForm.tsx';
+import ContactForm from '@/components/ContactForm.astro';
 import { site, links } from '@/data/site';
 ---
 
@@ -14,7 +14,7 @@ import { site, links } from '@/data/site';
       </p>
     </div>
 
-    <ContactForm client:visible />
+    <ContactForm />
 
     <div class="mt-8 text-center">
       <a

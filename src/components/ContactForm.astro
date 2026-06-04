@@ -1,0 +1,221 @@
+---
+import { site } from '@/data/site';
+
+// Public Turnstile SITE key — build-time inlined (PUBLIC_*); real key baked into
+// source at deploy (skill 8.1c). Default = Cloudflare always-pass TEST key.
+const SITE_KEY = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '1x00000000000000000000AA';
+
+const inputClass =
+  'w-full rounded-md border border-input bg-background px-4 py-2.5 text-foreground placeholder:text-muted-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring';
+---
+
+<form
+  id="contact-form"
+  novalidate
+  class="rounded-lg border border-border bg-card p-6 md:p-8 text-left"
+>
+  {/* Honeypot — bots fill it, humans never see it. Server rejects if set. */}
+  <div aria-hidden="true" class="absolute left-[-9999px] h-0 w-0 overflow-hidden">
+    <label>
+      Website
+      <input type="text" name="website" tabindex="-1" autocomplete="off" />
+    </label>
+  </div>
+
+  <div class="grid gap-5">
+    <div class="grid gap-2">
+      <label for="cf-name" class="font-mono text-sm text-foreground">Name</label>
+      <input
+        id="cf-name"
+        name="name"
+        type="text"
+        required
+        autocomplete="name"
+        class={inputClass}
+        aria-describedby="cf-name-err"
+      />
+      <p id="cf-name-err" class="hidden text-sm text-destructive font-mono" data-err-for="name">
+      </p>
+    </div>
+
+    <div class="grid gap-2">
+      <label for="cf-email" class="font-mono text-sm text-foreground">Email</label>
+      <input
+        id="cf-email"
+        name="email"
+        type="email"
+        required
+        autocomplete="email"
+        class={inputClass}
+        aria-describedby="cf-email-err"
+      />
+      <p id="cf-email-err" class="hidden text-sm text-destructive font-mono" data-err-for="email">
+      </p>
+    </div>
+
+    <div class="grid gap-2">
+      <label for="cf-company" class="font-mono text-sm text-foreground">
+        Company / Agency <span class="text-muted-foreground">(optional)</span>
+      </label>
+      <input
+        id="cf-company"
+        name="company"
+        type="text"
+        autocomplete="organization"
+        class={inputClass}
+      />
+    </div>
+
+    <div class="grid gap-2">
+      <label for="cf-message" class="font-mono text-sm text-foreground">
+        What are you building?
+      </label>
+      <textarea
+        id="cf-message"
+        name="message"
+        required
+        rows="5"
+        maxlength="2000"
+        class={inputClass}
+        aria-describedby="cf-message-err"></textarea>
+      <p
+        id="cf-message-err"
+        class="hidden text-sm text-destructive font-mono"
+        data-err-for="message"
+      >
+      </p>
+    </div>
+
+    <div class="cf-turnstile" data-sitekey={SITE_KEY}></div>
+
+    <p id="cf-form-error" role="alert" class="hidden text-sm text-destructive font-mono"></p>
+
+    <button
+      id="cf-submit"
+      type="submit"
+      class="inline-flex items-center justify-center rounded-md bg-accent px-6 py-3 font-medium text-accent-foreground transition-colors hover:bg-accent/90 disabled:opacity-60"
+    >
+      Send message
+    </button>
+  </div>
+</form>
+
+<div
+  id="contact-success"
+  hidden
+  role="status"
+  class="rounded-lg border border-border bg-card p-8 text-center text-foreground"
+>
+  <p class="font-bold text-lg">Message sent.</p>
+  <p class="mt-2 text-muted-foreground font-mono text-sm">
+    Thanks — I&apos;ll get back to you shortly. For anything urgent, email
+    <a class="text-accent hover:underline" href={`mailto:${site.email}`}>{site.email}</a>.
+  </p>
+</div>
+
+{/* Cloudflare Turnstile auto-renders the .cf-turnstile widget above */}
+<script
+  is:inline
+  async
+  defer
+  src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
+
+<script>
+  // Vanilla contact handler — no framework. Client checks mirror
+  // src/lib/contact-schema.ts (server is authoritative, Phase 4).
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const successEl = document.getElementById('contact-success');
+  const submitBtn = document.getElementById('cf-submit') as HTMLButtonElement | null;
+  const formError = document.getElementById('cf-form-error');
+
+  function clearErrors() {
+    formError?.classList.add('hidden');
+    if (formError) formError.textContent = '';
+    document.querySelectorAll<HTMLElement>('[data-err-for]').forEach((el) => {
+      el.classList.add('hidden');
+      el.textContent = '';
+    });
+  }
+
+  function showFieldError(name: string, msg: string) {
+    const el = document.querySelector<HTMLElement>(`[data-err-for="${name}"]`);
+    const input = form?.elements.namedItem(name) as HTMLElement | null;
+    if (el) {
+      el.textContent = msg;
+      el.classList.remove('hidden');
+    }
+    input?.setAttribute('aria-invalid', 'true');
+  }
+
+  function validate(data: Record<string, string>) {
+    const errors: Record<string, string> = {};
+    const name = (data.name ?? '').trim();
+    if (!name) errors.name = 'Name is required.';
+    else if (name.length > 100) errors.name = 'Name is too long.';
+
+    const email = (data.email ?? '').trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
+      errors.email = 'Enter a valid email address.';
+
+    const message = (data.message ?? '').trim();
+    if (message.length < 10) errors.message = 'Tell me a bit more — 10 characters or more.';
+    else if (message.length > 2000) errors.message = 'Message is too long (2000 max).';
+
+    return errors;
+  }
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    clearErrors();
+    form.querySelectorAll('[aria-invalid]').forEach((el) => el.removeAttribute('aria-invalid'));
+
+    const fd = new FormData(form);
+    const data = Object.fromEntries(fd.entries()) as Record<string, string>;
+
+    const errors = validate(data);
+    if (Object.keys(errors).length) {
+      for (const [field, msg] of Object.entries(errors)) showFieldError(field, msg);
+      return;
+    }
+
+    if (!fd.get('cf-turnstile-response')) {
+      if (formError) {
+        formError.textContent = 'Please complete the anti-bot check and try again.';
+        formError.classList.remove('hidden');
+      }
+      return;
+    }
+
+    const original = submitBtn?.textContent ?? 'Send message';
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+    }
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) {
+        const body = (await res.json().catch(() => ({}))) as { message?: string };
+        throw new Error(body.message ?? 'Submission failed. Please email me directly.');
+      }
+      form.hidden = true;
+      if (successEl) successEl.hidden = false;
+    } catch (err) {
+      if (formError) {
+        formError.textContent =
+          err instanceof Error ? err.message : 'Something went wrong. Please email me directly.';
+        formError.classList.remove('hidden');
+      }
+      (window as unknown as { turnstile?: { reset?: () => void } }).turnstile?.reset?.();
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = original;
+      }
+    }
+  });
+</script>
