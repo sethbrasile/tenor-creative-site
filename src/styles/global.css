@@ -26,10 +26,18 @@
   --color-secondary-foreground: hsl(220 30% 10%);
 
   --color-muted: hsl(214 20% 92%);
-  --color-muted-foreground: hsl(215 15% 45%);
+  /* Deepened from 215 15% 45% so secondary text clears AA (4.5:1) on the card
+     and accent-tinted backgrounds too, not just pure white (Phase 6 a11y). */
+  --color-muted-foreground: hsl(215 16% 40%);
 
-  --color-accent: hsl(25 95% 55%);
+  /* Deepened from designer's 25 95% 55% (#f97a1f) to meet WCAG AA contrast:
+     accent-on-light and white-on-accent both clear 4.5:1 (operator decision,
+     Phase 6). Still the brand burnt-orange, a shade deeper. */
+  --color-accent: hsl(24 90% 36%);
   --color-accent-foreground: hsl(0 0% 100%);
+  /* Original bright orange — AA only on DARK surfaces (e.g. the contact
+     section). Use `text-accent-bright` for accent text on dark backgrounds. */
+  --color-accent-bright: hsl(25 95% 55%);
 
   --color-destructive: hsl(0 84% 60%);
   --color-destructive-foreground: hsl(0 0% 100%);
