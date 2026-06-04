@@ -1,0 +1,21 @@
+# Transform working artifact — never commit
+.transform-state.json
+
+# Secrets / env
+.env
+.env.*
+!.env.example
+
+# Cloudflare
+.wrangler/
+
+# Dependencies / build
+node_modules/
+dist/
+.astro/
+
+# OS / editor
+.DS_Store
+*.log
+
+# NOTE: designer-src/ is intentionally TRACKED (visual reference). Do not ignore it.
