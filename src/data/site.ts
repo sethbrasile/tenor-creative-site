@@ -9,8 +9,7 @@ export const site = {
   shortName: 'Tenor Creative',
   url: 'https://tenorcreative.com',
   email: 'seth@tenorcreative.com',
-  // PENDING: Seth to provide. Empty string => omitted from footer NAP + schema.
-  phone: '' as string,
+  phone: '580-745-0069' as string,
   principal: 'Seth Brasile',
   location: 'Durant, OK',
   locality: 'Durant',
