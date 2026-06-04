@@ -29,14 +29,20 @@ export const links = {
   linkedin: 'https://www.linkedin.com/in/sethbrasile-43a315a0',
 } as const;
 
-/** In-page nav. When routed pages land, swap `href` to real paths. */
-export const navItems = [
-  { label: 'Services', href: '#services' },
-  { label: 'White-Label', href: '#agency' },
-  { label: 'Work', href: '#work' },
-  { label: 'About', href: '#about' },
-  { label: 'Contact', href: '#contact' },
-] as const;
+/**
+ * Site nav, shared across every page (lives in Navbar, outside page layouts).
+ * Anchors are root-relative (`/#id`) so they work from routed pages too, not
+ * just the home one-pager. `cta` items render as the accent pill.
+ */
+export type NavItem = { label: string; href: string; cta?: boolean };
+export const navItems: readonly NavItem[] = [
+  { label: 'Services', href: '/#services' },
+  { label: 'White-Label', href: '/#agency' },
+  { label: 'Work', href: '/#work' },
+  { label: 'About', href: '/#about' },
+  { label: 'Contact', href: '/#contact' },
+  { label: 'AI Demo', href: '/ai-voice-demo', cta: true },
+];
 
 /** Selected work — framed as Tenor capability (brief §6). */
 export const work = [
