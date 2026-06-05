@@ -1,9 +1,10 @@
 ---
 import { site } from '@/data/site';
 
-// Public Turnstile SITE key — build-time inlined (PUBLIC_*); real key baked into
-// source at deploy (skill 8.1c). Default = Cloudflare always-pass TEST key.
-const SITE_KEY = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '1x00000000000000000000AA';
+// Public Turnstile SITE key — build-time inlined (PUBLIC_*). Site keys are public
+// (safe to commit); the matching SECRET is a Pages secret. Real key baked in at
+// deploy (skill 8.1c); env override kept for local/preview.
+const SITE_KEY = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '0x4AAAAAADfeExWKCCAI7QGP';
 
 const inputClass =
   'w-full rounded-md border border-input bg-background px-4 py-2.5 text-foreground placeholder:text-muted-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring';

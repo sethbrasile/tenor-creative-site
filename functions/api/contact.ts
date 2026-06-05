@@ -24,12 +24,16 @@ interface Ctx {
   waitUntil: (p: Promise<unknown>) => void;
 }
 
-const ALLOWED_ORIGINS = ['https://tenorcreative.com', 'https://www.tenorcreative.com'];
+const ALLOWED_ORIGINS = [
+  'https://tenorcreative.com',
+  'https://www.tenorcreative.com',
+  'https://tenor-creative-site.pages.dev', // canonical Pages alias (staging + fallback)
+];
 
 function originAllowed(origin: string | null): boolean {
   if (!origin) return false;
   if (ALLOWED_ORIGINS.includes(origin)) return true;
-  // Cloudflare Pages preview deployments.
+  // Cloudflare Pages preview/branch deployments (hash.tenor-creative-site.pages.dev).
   if (/^https:\/\/[\w-]+\.tenor-creative-site\.pages\.dev$/.test(origin)) return true;
   // Local dev (wrangler pages dev / astro preview).
   if (/^http:\/\/localhost(:\d+)?$/.test(origin)) return true;
