@@ -86,12 +86,17 @@ test.describe('contact form validation', () => {
     await expect(page.locator('[data-err-for="name"]')).toBeHidden();
   });
 
-  test('happy path shows success (function + turnstile mocked)', async ({ page }) => {
-    // Block the real Turnstile widget; stub a token; mock the Pages Function.
-    await page.route('https://challenges.cloudflare.com/**', (r) => r.abort());
-    await page.route('**/api/contact', (r) =>
-      r.fulfill({ status: 200, contentType: 'application/json', body: '{"ok":true}' })
-    );
+  test('field errors are exposed as alerts', async ({ page }) => {
+    await page.goto('/#contact');
+    await page.locator('#cf-submit').click();
+    // role="alert" is what makes the error announce on submit (deep-review M1/H1).
+    await expect(page.locator('[data-err-for="name"]')).toHaveAttribute('role', 'alert');
+    await expect(page.locator('[data-err-for="email"]')).toHaveAttribute('role', 'alert');
+    await expect(page.locator('[data-err-for="message"]')).toHaveAttribute('role', 'alert');
+  });
+
+  // Stub Turnstile + inject a token so the handler reaches the fetch.
+  async function fillValidWithToken(page: import('@playwright/test').Page) {
     await page.goto('/#contact');
     await page.fill('#cf-name', 'Test Person');
     await page.fill('#cf-email', 'test@example.com');
@@ -104,8 +109,39 @@ test.describe('contact form validation', () => {
       input.value = 'test-token';
       form.appendChild(input);
     });
+  }
+
+  test('happy path shows success and moves focus to it (function + turnstile mocked)', async ({
+    page,
+  }) => {
+    await page.route('https://challenges.cloudflare.com/**', (r) => r.abort());
+    await page.route('**/api/contact', (r) =>
+      r.fulfill({ status: 200, contentType: 'application/json', body: '{"success":true}' })
+    );
+    await fillValidWithToken(page);
     await page.locator('#cf-submit').click();
     await expect(page.locator('#contact-success')).toBeVisible();
     await expect(page.locator('#contact-form')).toBeHidden();
+    // Focus moves to the confirmation so screen readers announce it (deep-review M2).
+    await expect(page.locator('#contact-success')).toBeFocused();
+  });
+
+  test('server error keeps the form, shows the message, re-enables submit', async ({ page }) => {
+    await page.route('https://challenges.cloudflare.com/**', (r) => r.abort());
+    await page.route('**/api/contact', (r) =>
+      r.fulfill({
+        status: 500,
+        contentType: 'application/json',
+        body: '{"error":"Server misconfiguration. Our team has been notified."}',
+      })
+    );
+    await fillValidWithToken(page);
+    await page.locator('#cf-submit').click();
+    const formError = page.locator('#cf-form-error');
+    await expect(formError).toBeVisible();
+    await expect(formError).toContainText('Server misconfiguration');
+    // Form stays so the visitor can retry; submit re-enables (deep-review M11).
+    await expect(page.locator('#contact-form')).toBeVisible();
+    await expect(page.locator('#cf-submit')).toBeEnabled();
   });
 });
