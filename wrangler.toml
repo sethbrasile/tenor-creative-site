@@ -1,0 +1,17 @@
+# Cloudflare Pages config. Enables `wrangler pages dev dist` (local Functions)
+# and `wrangler pages deploy dist`. Astro build is unaffected — it just writes
+# to dist/, which this points at.
+name = "tenor-creative-site"
+compatibility_date = "2025-04-03"
+pages_build_output_dir = "dist"
+
+# Non-secret runtime config for the contact Function lives here. SECRETS
+# (TURNSTILE_SECRET_KEY, GHL_API_KEY, N8N_WEBHOOK_SECRET) and the GHL
+# location/pipeline/stage IDs are set per-environment at deploy via
+# `wrangler pages secret put <KEY> --project-name tenor-creative-site`
+# (Phase 8.1b) — never committed.
+[vars]
+# n8n fallback webhook (zero-loss lead recovery if GHL is down). Non-secret URL;
+# set the real path at deploy. Leave unset and the Function still works via GHL —
+# it just has no fallback. HMAC secret (N8N_WEBHOOK_SECRET) is a Pages secret.
+# N8N_FALLBACK_URL = "https://<ppmc-n8n-host>/webhook/tenor-ghl-fallback"

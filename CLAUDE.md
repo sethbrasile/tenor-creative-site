@@ -3,11 +3,14 @@
 Marketing/brochure site for **Tenor Creative LLC** — the custom-software,
 automation, and systems arm of Seth Brasile's two-company ecosystem.
 
-> **Status: IN TRANSFORM — Phase 3 complete (scaffold builds clean).** The
-> production Astro site now lives at the repo root; `designer-src/` remains the
-> tracked visual reference. Remaining: Phase 4 (GHL contact form/function),
-> Phase 5 (copy review), Phase 6 (tests), 6.5 (recreation review), Phase 7
-> (audits), Phase 8 (deploy). Step-level progress in `.transform-state.json`.
+> **Status: IN TRANSFORM — Phases 3–7 complete; only Phase 8 (deploy) remains.**
+> The production Astro site lives at the repo root; `designer-src/` remains the
+> tracked visual reference. Done: scaffold/harden (3), GHL contact Function (4),
+> legal copy (5), tests (6, 26 Playwright+axe), recreation review (6.5), audits
+> (7, Lighthouse all ≥95). **Remaining: Phase 8 deploy** — blocked only on the
+> deferred GHL **PIT/location/pipeline IDs** (code is env-driven; deploy-time
+> `secret put` + manual form submit, no code change). Step-level progress in
+> `.transform-state.json`.
 
 ---
 
@@ -177,11 +180,15 @@ src/
   pages/                       index.astro (one-pager) · ai-voice-demo.astro ·
                                privacy.astro · terms.astro
   data/site.ts                 single source of truth: NAP, links, nav, work, faq, knowsAbout
-  lib/contact-schema.ts        shared zod schema (client island + Phase 4 function)
+  lib/contact-schema.ts        shared zod schema (client form + contact Function)
   styles/global.css            Tailwind v4 @theme (light-only; dark/sidebar/chart pruned)
+functions/                     Cloudflare Pages Functions (Phase 4)
+  api/contact.ts               POST /api/contact — Origin/Turnstile/delivery fail-secure,
+                               honeypot, rate-limit, shared-zod validation
+  _lib/ghl.ts                  GHL client + optimistic response + n8n HMAC fallback
 public/                        _headers (CSP), robots.txt, favicon.svg, opengraph.jpg,
                                img/logo.svg + img/logo-with-text.svg
-postcss.config.mjs · astro.config.mjs · tsconfig.json (@/* → src/*)
+postcss.config.mjs · astro.config.mjs · wrangler.toml (Pages) · tsconfig.json (@/* → src/*)
 ```
 
 - **Brand tokens** live in `src/styles/global.css` (`@theme`). Content/NAP/links in
@@ -195,10 +202,54 @@ postcss.config.mjs · astro.config.mjs · tsconfig.json (@/* → src/*)
   sections are standalone components so they compose without rework.
 - `designer-src/` stays as the tracked visual reference for Phase 6.5.
 
-## Forms & env  <!-- FILL ON TRANSFORM -->
+## Forms & env
 
-_Populate after Phase 4: GHL contact worker wiring, Turnstile, n8n fallback,
-required env vars / Pages secrets, and the deferred GHL PIT once supplied._
+Contact form (Phase 4, **Variant B — GHL + n8n fallback**). The designer-src had
+mailto-only; we wired a real form. Architecture is the `ghl-contact-worker` skill
+**adapted to a Cloudflare Pages Function** (not a standalone Worker) on the zero-JS
+Astro site:
+
+- **`functions/api/contact.ts`** — `onRequestPost` route. Hardening (brochure Phase 4
+  overrides the sub-skill's "skip if unset"): **Origin fail-closed** (missing OR
+  unexpected Origin → 403), **fail-secure Turnstile** (missing `TURNSTILE_SECRET_KEY`
+  → 500, never skipped), **fail-secure delivery** (no GHL *and* no n8n → 500), honeypot
+  (`website` field → silent 200), in-memory rate-limit 5/60s/IP with 10k size cap,
+  `onRequestGet` → 405. Validation reuses the shared **`src/lib/contact-schema.ts`**
+  zod schema (client + server never drift).
+- **`functions/_lib/ghl.ts`** — GHL client + optimistic response + n8n HMAC fallback.
+  Contact is **email-keyed** (form has no phone → no A2P/SMS consent flow). Free-text
+  message stored as a GHL **note** (works without the account's custom-field key) +
+  best-effort opportunity when `GHL_PIPELINE_ID`/`GHL_STAGE_NEW_LEAD` are set. Optimistic:
+  visitor always gets success ≤8s; GHL failure relays the lead to n8n (HMAC-SHA256 via
+  Web Crypto, `X-Webhook-Signature`) in `waitUntil`. **Zero leads lost.**
+- **Form is vanilla** (`ContactForm.astro` inline `<script>`) — posts JSON to
+  `/api/contact`, reads `{error}` for messages. Turnstile token field is
+  `cf-turnstile-response`. Site key is build-time `PUBLIC_TURNSTILE_SITE_KEY` (default =
+  CF always-pass TEST key) baked into source at deploy (8.1c).
+- **`wrangler.toml`** — Pages config (`pages_build_output_dir = "dist"`), non-secret
+  `[vars]` (n8n URL). Astro build is unaffected.
+
+**Verified locally** (`wrangler pages dev`, no real creds): no-Origin→403,
+missing-Turnstile→500, bad/missing token→400, delivery-gate→500, zod errors→400,
+honeypot→200, GHL-401→**200 optimistic** with bg fallback firing, evil Origin→403.
+Satisfies audit items **7.13 / 7.14** now; **7.17** (GHL opt-in) is N/A (no SMS).
+
+**Env (set at deploy — Phase 8.1b, `wrangler pages secret put --project-name tenor-creative-site`):**
+
+| Key | Kind | Required | Notes |
+|-----|------|----------|-------|
+| `TURNSTILE_SECRET_KEY` | secret | **yes** | Function is fail-secure without it |
+| `GHL_API_KEY` | secret | for GHL | the deferred **PIT** |
+| `GHL_LOCATION_ID` | secret/var | for GHL | enables delivery |
+| `GHL_PIPELINE_ID` | secret/var | optional | enables opportunity |
+| `GHL_STAGE_NEW_LEAD` | secret/var | optional | new-lead stage |
+| `N8N_WEBHOOK_SECRET` | secret | optional | HMAC key, matches n8n verify node |
+| `N8N_FALLBACK_URL` | var | optional | omit → no fallback |
+
+**Still blocked on operator:** GHL **PIT / location / pipeline+stage IDs** — the code is
+fully env-driven, so this is a deploy-time `secret put` + the manual browser submit (8.1d),
+no code change. n8n fallback workflow (HMAC verify → Resend) still to import (skill 4.6) if
+fallback is wanted.
 
 ## Deploy  <!-- FILL ON TRANSFORM -->
 

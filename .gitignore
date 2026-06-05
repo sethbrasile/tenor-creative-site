@@ -23,3 +23,6 @@ playwright-report/
 *.log
 
 # NOTE: designer-src/ is intentionally TRACKED (visual reference). Do not ignore it.
+
+# wrangler local secrets
+.dev.vars
