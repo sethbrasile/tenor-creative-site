@@ -1,6 +1,6 @@
 {
   "name": "Tenor Creative - GHL Fallback",
-  "_doc": "Reproducible export of the n8n zero-loss fallback for the tenorcreative.com contact form (brochure-site-transform Phase 4.6 / Variant B). The contact Pages Function (functions/_lib/ghl.ts notifyFallback) POSTs an HMAC-SHA256-signed {type,lead,error,timestamp} payload here when the GHL write fails; n8n verifies the signature and emails the lead via the shared 'Resend PPMC notify.' credential so no lead is lost. SECRETS REDACTED — set the HMAC Verify SECRET to the same value as the Cloudflare Pages secret N8N_WEBHOOK_SECRET before activating. Live workflow id (PPMC n8n): WPDpWIaxJbxgVJYH; webhook path /webhook/tenor-ghl-fallback.",
+  "_doc": "Reproducible export of the n8n zero-loss fallback for the tenorcreative.com contact form (brochure-site-transform Phase 4.6 / Variant B). The contact Pages Function (functions/_lib/ghl.ts notifyFallback) POSTs an HMAC-SHA256-signed {type,lead,error,timestamp} payload here when the GHL write fails; n8n verifies the signature and emails the lead via the shared 'Resend PPMC notify.' credential so no lead is lost. SECRETS REDACTED — set the HMAC Verify SECRET to the same value as the Cloudflare Pages secret N8N_WEBHOOK_SECRET before activating. Live workflow id (PPMC n8n): <workflow-id>; webhook path /webhook/tenor-ghl-fallback.",
   "nodes": [
     {
       "id": "tenor-node-0001",
@@ -13,7 +13,7 @@
         "path": "tenor-ghl-fallback",
         "options": { "rawBody": true }
       },
-      "webhookId": "791dd06b-1c69-4f15-b4a0-f7abfe87be9d"
+      "webhookId": "REGENERATED_ON_IMPORT"
     },
     {
       "id": "tenor-node-0002",

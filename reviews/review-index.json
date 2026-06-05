@@ -1,0 +1,30 @@
+{
+  "reviews": [
+    {
+      "date": "2026-06-05",
+      "type": "deep-review",
+      "mode": "pre-delivery",
+      "scope": "full codebase post-deploy audit",
+      "file": "2026-06-05-deep-review.md",
+      "counts": {
+        "critical": 0,
+        "high": 3,
+        "medium": 12,
+        "low": 20
+      },
+      "structuralPatterns": [
+        "axe-clean-not-aa-clean"
+      ]
+    }
+  ],
+  "patterns": {
+    "axe-clean-not-aa-clean": {
+      "name": "axe-clean != AA-clean on interactive states",
+      "firstSeen": "2026-06-05",
+      "reviews": [
+        "2026-06-05-deep-review.md"
+      ],
+      "status": "open"
+    }
+  }
+}
