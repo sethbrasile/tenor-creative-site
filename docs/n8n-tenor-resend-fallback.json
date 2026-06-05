@@ -1,0 +1,106 @@
+{
+  "name": "Tenor Creative - GHL Fallback",
+  "_doc": "Reproducible export of the n8n zero-loss fallback for the tenorcreative.com contact form (brochure-site-transform Phase 4.6 / Variant B). The contact Pages Function (functions/_lib/ghl.ts notifyFallback) POSTs an HMAC-SHA256-signed {type,lead,error,timestamp} payload here when the GHL write fails; n8n verifies the signature and emails the lead via the shared 'Resend PPMC notify.' credential so no lead is lost. SECRETS REDACTED — set the HMAC Verify SECRET to the same value as the Cloudflare Pages secret N8N_WEBHOOK_SECRET before activating. Live workflow id (PPMC n8n): WPDpWIaxJbxgVJYH; webhook path /webhook/tenor-ghl-fallback.",
+  "nodes": [
+    {
+      "id": "tenor-node-0001",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [-656, 112],
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "tenor-ghl-fallback",
+        "options": { "rawBody": true }
+      },
+      "webhookId": "791dd06b-1c69-4f15-b4a0-f7abfe87be9d"
+    },
+    {
+      "id": "tenor-node-0002",
+      "name": "HMAC Verify",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [-448, 112],
+      "parameters": {
+        "jsCode": "// HMAC-SHA256 verify of X-Webhook-Signature header against raw body.\n// REDACTED: set SECRET to the same value as the Cloudflare Pages secret N8N_WEBHOOK_SECRET.\nconst crypto = require('crypto');\nconst SECRET = 'REPLACE_WITH_N8N_WEBHOOK_SECRET';\n\nconst headers = $input.first().json.headers || {};\nconst signature = headers['x-webhook-signature'] || headers['X-Webhook-Signature'] || '';\nconst rawBody = $input.first().json.body;\nconst bodyString = typeof rawBody === 'string' ? rawBody : JSON.stringify(rawBody);\n\nif (!SECRET) {\n  return [{ json: { ...JSON.parse(bodyString), _hmacSkipped: true } }];\n}\n\nif (!signature) {\n  throw new Error('Missing X-Webhook-Signature header');\n}\n\nconst expected = crypto.createHmac('sha256', SECRET).update(bodyString).digest('hex');\nconst valid = crypto.timingSafeEqual(\n  Buffer.from(signature, 'hex'),\n  Buffer.from(expected, 'hex')\n);\n\nif (!valid) {\n  throw new Error('Invalid HMAC signature');\n}\n\nreturn [{ json: JSON.parse(bodyString) }];"
+      }
+    },
+    {
+      "id": "tenor-node-0003",
+      "name": "Error Type?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [-224, 112],
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "strict", "version": 1 },
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "is-server-error",
+              "leftValue": "={{ $json.type }}",
+              "rightValue": "server-error",
+              "operator": { "type": "string", "operation": "equals" }
+            }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "tenor-node-0004",
+      "name": "Server Error Email (Resend)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [0, 0],
+      "credentials": {
+        "httpHeaderAuth": { "id": "REPLACE_WITH_RESEND_CREDENTIAL_ID", "name": "Resend PPMC notify." }
+      },
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.resend.com/emails",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": { "parameters": [ { "name": "Content-Type", "value": "application/json" } ] },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"from\": \"Tenor Creative Alerts <noreply@notify.pricklypearmarketingco.com>\",\n  \"to\": [\"seth@tenorcreative.com\"],\n  \"cc\": [\"seth@pricklypearmarketingco.com\"],\n  \"subject\": \"⚠️ SERVER ERROR — {{ $json.lead.firstName }} {{ $json.lead.lastName }} — tenorcreative.com form\",\n  \"html\": \"<h2>⚠️ Server error — tenorcreative.com form</h2><p>A visitor submitted the Tenor Creative contact form but the server hit a configuration error. <strong>The visitor saw an error and may retry.</strong></p><p><strong>Name:</strong> {{ $json.lead.firstName }} {{ $json.lead.lastName }}<br><strong>Email:</strong> {{ $json.lead.email }}<br><strong>Company:</strong> {{ $json.lead.company }}<br><strong>Message:</strong> {{ $json.lead.message }}</p><p style=\\\"color:#888\\\"><strong>Error:</strong> {{ $json.error }} · {{ $json.timestamp }}</p><p><strong>Action:</strong> Check CF Pages env vars / secrets for tenor-creative-site.</p>\"\n}",
+        "options": {}
+      }
+    },
+    {
+      "id": "tenor-node-0005",
+      "name": "Lead Recovery Email (Resend)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [0, 224],
+      "credentials": {
+        "httpHeaderAuth": { "id": "REPLACE_WITH_RESEND_CREDENTIAL_ID", "name": "Resend PPMC notify." }
+      },
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.resend.com/emails",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": { "parameters": [ { "name": "Content-Type", "value": "application/json" } ] },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"from\": \"Tenor Creative Alerts <noreply@notify.pricklypearmarketingco.com>\",\n  \"to\": [\"seth@tenorcreative.com\"],\n  \"cc\": [\"seth@pricklypearmarketingco.com\"],\n  \"reply_to\": \"{{ $json.lead.email }}\",\n  \"subject\": \"🔔 LEAD RECOVERY — {{ $json.lead.firstName }} {{ $json.lead.lastName }} — tenorcreative.com form\",\n  \"html\": \"<h2>🔔 Lead recovery required — tenorcreative.com</h2><p>The contact form accepted a lead but the GHL CRM write failed. <strong>The visitor saw success and expects follow-up — add to GHL manually (Sales Pipeline 1 → Lead).</strong></p><p><strong>Name:</strong> {{ $json.lead.firstName }} {{ $json.lead.lastName }}<br><strong>Email:</strong> {{ $json.lead.email }}<br><strong>Company:</strong> {{ $json.lead.company }}<br><strong>Message:</strong> {{ $json.lead.message }}</p><p style=\\\"color:#888\\\"><strong>GHL error:</strong> {{ $json.error }} · {{ $json.timestamp }}</p>\"\n}",
+        "options": {}
+      }
+    }
+  ],
+  "connections": {
+    "Webhook": { "main": [ [ { "node": "HMAC Verify", "type": "main", "index": 0 } ] ] },
+    "HMAC Verify": { "main": [ [ { "node": "Error Type?", "type": "main", "index": 0 } ] ] },
+    "Error Type?": {
+      "main": [
+        [ { "node": "Server Error Email (Resend)", "type": "main", "index": 0 } ],
+        [ { "node": "Lead Recovery Email (Resend)", "type": "main", "index": 0 } ]
+      ]
+    }
+  },
+  "settings": { "executionOrder": "v1" }
+}
