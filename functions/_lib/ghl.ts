@@ -130,7 +130,7 @@ export async function withOptimisticResponse(
   env: Env,
   waitUntil: WaitUntil,
   ghlWork: () => Promise<void>,
-  fallbackPayload: Record<string, unknown>,
+  lead: Lead,
 ): Promise<Response> {
   const CLIENT_TIMEOUT_MS = 8_000;
   const BACKGROUND_SAFETY_MS = 25_000;
@@ -146,7 +146,7 @@ export async function withOptimisticResponse(
     .catch((err: unknown) => {
       const msg = err instanceof Error ? err.message : 'Unknown error';
       console.error('[GHL] fast failure:', msg);
-      waitUntil(notifyFallback(env, fallbackPayload, msg));
+      waitUntil(notifyFallback(env, lead, msg));
       return responded ? null : respond({ success: true, pending: true });
     });
 
@@ -159,14 +159,14 @@ export async function withOptimisticResponse(
           ghlPromise.catch((err: unknown) =>
             notifyFallback(
               env,
-              fallbackPayload,
+              lead,
               err instanceof Error ? err.message : 'Background failure',
             ),
           ),
           new Promise<void>((_, reject) =>
             setTimeout(() => reject(new Error('Background safety timeout')), BACKGROUND_SAFETY_MS),
           ),
-        ]).catch(() => notifyFallback(env, fallbackPayload, 'Background safety timeout exceeded')),
+        ]).catch(() => notifyFallback(env, lead, 'Background safety timeout exceeded')),
       );
       resolve(json({ success: true, pending: true }));
     }, CLIENT_TIMEOUT_MS),
@@ -208,16 +208,23 @@ function sanitize(payload: Record<string, unknown>): Record<string, unknown> {
 
 export async function notifyFallback(
   env: Env,
-  payload: Record<string, unknown>,
+  lead: Lead,
   error: string,
   errorType: ErrorType = 'ghl-failure',
   timestamp = new Date().toISOString(),
 ): Promise<void> {
   if (!env.N8N_FALLBACK_URL) {
-    console.error('[Fallback] N8N_FALLBACK_URL not set — lead only in logs:', JSON.stringify(payload));
+    console.error('[Fallback] N8N_FALLBACK_URL not set — lead only in logs:', JSON.stringify(lead));
     return;
   }
-  const body = JSON.stringify({ ...sanitize(payload), error: escapeHtml(error), errorType, timestamp });
+  // Shape matches the shared PPMC n8n GHL-fallback contract: { type, lead, error, timestamp }.
+  const body = JSON.stringify({
+    type: errorType,
+    source: 'contact-form',
+    lead: sanitize(lead as unknown as Record<string, unknown>),
+    error: escapeHtml(error),
+    timestamp,
+  });
   const headers: Record<string, string> = { 'Content-Type': 'application/json' };
   if (env.N8N_WEBHOOK_SECRET) {
     headers['X-Webhook-Signature'] = await computeHmac(env.N8N_WEBHOOK_SECRET, body);

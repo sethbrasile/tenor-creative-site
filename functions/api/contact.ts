@@ -144,7 +144,6 @@ export const onRequestPost = async ({ request, env, waitUntil }: Ctx): Promise<R
   const lastName = space === -1 ? '' : trimmed.slice(space + 1).trim();
 
   const lead: Lead = { firstName, lastName, email, company: company ?? '', message };
-  const fallbackPayload: Record<string, unknown> = { source: 'contact-form', ...lead };
 
   // 7. Delivery gate (fail-secure): refuse if NOTHING is configured to receive
   // the lead, rather than silently accepting a submission that goes nowhere.
@@ -155,11 +154,11 @@ export const onRequestPost = async ({ request, env, waitUntil }: Ctx): Promise<R
 
   // 8a. GHL configured → optimistic response with n8n fallback on failure.
   if (ghlConfigured(env)) {
-    return withOptimisticResponse(env, waitUntil, () => createLead(env, lead), fallbackPayload);
+    return withOptimisticResponse(env, waitUntil, () => createLead(env, lead), lead);
   }
 
   // 8b. Only n8n configured → relay straight to the fallback, respond success.
-  waitUntil(notifyFallback(env, fallbackPayload, 'GHL not configured — direct n8n delivery', 'server-error'));
+  waitUntil(notifyFallback(env, lead, 'GHL not configured — direct n8n delivery', 'server-error'));
   return new Response(JSON.stringify({ success: true, pending: true }), {
     status: 200,
     headers: { 'Content-Type': 'application/json' },
