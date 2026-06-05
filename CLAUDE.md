@@ -288,10 +288,13 @@ Business" marketing site 2026-06-05). Hosting facts:
   `main` auto-builds. Canonical alias `tenor-creative-site.pages.dev`.
 - **Custom domain:** apex `tenorcreative.com` added as a Pages Custom Domain. Apex DNS is a
   **proxied CNAME → `tenor-creative-site.pages.dev`** (CF flattens at apex). Google-CA edge cert.
-- **www → apex:** proxied CNAME `www → tenorcreative.com` + a **CF zone Redirect Rule** (301,
-  `http.host eq "www.tenorcreative.com"` → `concat("https://tenorcreative.com", uri.path)`,
-  preserve query). Per global rule: www is NOT a second Custom Domain. ⚠️ The MCP CF token
-  lacks Rulesets scope — the Redirect Rule is created in the dashboard (Rules → Redirect Rules).
+- **www → apex (WORKING):** `www` is a **proxied A → `192.0.2.1`** (RFC-5737 dummy) + a CF zone
+  **Redirect Rule** (the "WWW to Root" wildcard template: `https://www.*` → `https://${1}`, 301).
+  www is NOT a second Custom Domain (per global rule). **Gotcha that cost us time:** a proxied
+  CNAME `www → apex` (apex itself a proxied CNAME→Pages) does NOT reliably proxy — CF warns
+  "may not be proxying www" and www 522s. Fix = proxied **dummy-A** so www is unambiguously
+  orange-clouded; the redirect rule 301s before the 192.0.2.1 origin is ever contacted. (The MCP
+  CF token lacks Rulesets scope, so the Redirect Rule itself is dashboard-created; DNS was API'd.)
 - **Legacy 301s:** `public/_redirects` — Bucket A (`/about,/services,/contact` → home anchors;
   `/privacy-policy,/terms-of-use` → `/privacy/,/terms/`); Bucket B (~21 retired marketing URLs,
   incl. `/solutions/*`, `/the-4-rs/*`, `/pricing`, `/booking*`) → `pricklypearmarketing.co`
