@@ -1,0 +1,37 @@
+# Cloudflare Pages redirects — legacy tenorcreative.com (old "Double Your Business"
+# marketing site on Vercel) → new technical-arm Astro site. Added Phase 8.2 at domain
+# cutover. Pages checks static files first, then this file; first match wins, so the
+# specific Bucket-A paths sit above the Bucket-B splats.
+#
+# www → apex is NOT here (Pages _redirects is path-based) — it's a CF zone Redirect Rule.
+# /privacy and /terms (no suffix) resolve to the new /privacy/ and /terms/ pages directly.
+
+# --- Bucket A: old paths with a real equivalent on the new site ---
+/about            /#about       301
+/services         /#services    301
+/contact          /#contact     301
+/privacy-policy   /privacy/     301
+/terms-of-use     /terms/       301
+
+# --- Bucket B: retired marketing/sales URLs → PPMC (positioning moved to the sister agency) ---
+/pricing                      https://pricklypearmarketing.co/   301
+/solutions                    https://pricklypearmarketing.co/   301
+/solutions/*                  https://pricklypearmarketing.co/   301
+/new-sales-team               https://pricklypearmarketing.co/   301
+/the-4-rs/*                   https://pricklypearmarketing.co/   301
+/lever                        https://pricklypearmarketing.co/   301
+/reach                        https://pricklypearmarketing.co/   301
+/systems                      https://pricklypearmarketing.co/   301
+/locations                    https://pricklypearmarketing.co/   301
+/frequently-asked-questions   https://pricklypearmarketing.co/   301
+/booking                      https://pricklypearmarketing.co/   301
+/booking-activation           https://pricklypearmarketing.co/   301
+/booking-audit                https://pricklypearmarketing.co/   301
+/booking-personal             https://pricklypearmarketing.co/   301
+/booking-strategy             https://pricklypearmarketing.co/   301
+/audit-survey                 https://pricklypearmarketing.co/   301
+/onboarding-survey            https://pricklypearmarketing.co/   301
+/thank-you                    https://pricklypearmarketing.co/   301
+/sample-sites                 https://pricklypearmarketing.co/   301
+/coming-soon                  https://pricklypearmarketing.co/   301
+/demo                         https://pricklypearmarketing.co/   301

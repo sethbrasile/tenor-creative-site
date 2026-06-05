@@ -1,0 +1,71 @@
+;; tenorcreative.com — full zone backup before Phase 8.2 domain cutover (CF zone c876310c50f4173ff7a13397751c613b, account setherd14 fd15b6bd9ab1cec50b0832c91d7cf53a)
+;; Exported via CF API /zones/{id}/dns_records/export on 2026-06-05.
+;; Cutover touches ONLY: apex A (76.76.21.21 Vercel, id ab49500641ed0b0b60720038eae96053) + www CNAME (cname.vercel-dns.com, id 8b3b719c99f468f9fba650b911df6e7e). Everything else stays.
+;;
+;; SOA Record
+tenorcreative.com	3600	IN	SOA	eva.ns.cloudflare.com. dns.cloudflare.com. 2053235753 10000 2400 604800 3600
+
+;; NS Records
+tenorcreative.com.	86400	IN	NS	eva.ns.cloudflare.com.
+tenorcreative.com.	86400	IN	NS	kip.ns.cloudflare.com.
+
+;; A Records
+analytics.tenorcreative.com.	1	IN	A	5.161.230.82 ; umami server at hetzner cf_tags=cf-proxied:true
+n8n.tenorcreative.com.	1	IN	A	5.161.230.82 ; n8n at hetzner cf_tags=cf-proxied:true
+tenorcreative.com.	1	IN	A	76.76.21.21 ; vercel cf_tags=cf-proxied:false
+
+;; CNAME Records
+app.tenorcreative.com.	3600	IN	CNAME	whitelabel.ludicrous.cloud. ; cf_tags=cf-proxied:false
+email.lca.tenorcreative.com.	3600	IN	CNAME	mailgun.org. ; cf_tags=cf-proxied:false
+email.lc.tenorcreative.com.	3600	IN	CNAME	mailgun.org. ; cf_tags=cf-proxied:false
+email.notifya.tenorcreative.com.	3600	IN	CNAME	mailgun.org. ; ghl cf_tags=cf-proxied:false
+hlapi.tenorcreative.com.	3600	IN	CNAME	brand.ludicrous.cloud. ; cf_tags=cf-proxied:false
+link.tenorcreative.com.	1	IN	CNAME	brand.ludicrous.cloud. ; GHL tenor branded domain cf_tags=cf-proxied:false
+nuxt-decap-blog-demo1.tenorcreative.com.	1	IN	CNAME	nuxt-decap-blog-demo.pages.dev. ; cf_tags=cf-proxied:true
+portal.tenorcreative.com.	3600	IN	CNAME	clientportal.ludicrous.cloud. ; cf_tags=cf-proxied:false
+protonmail2._domainkey.tenorcreative.com.	1	IN	CNAME	protonmail2.domainkey.dnnalsxbiipor4wnw2sl5slzm7bgh2zbwwcbdeh64lrpmoskddfaa.domains.proton.ch. ; protonmail cf_tags=cf-proxied:false
+protonmail3._domainkey.tenorcreative.com.	1	IN	CNAME	protonmail3.domainkey.dnnalsxbiipor4wnw2sl5slzm7bgh2zbwwcbdeh64lrpmoskddfaa.domains.proton.ch. ; protonmail cf_tags=cf-proxied:false
+protonmail._domainkey.tenorcreative.com.	1	IN	CNAME	protonmail.domainkey.dnnalsxbiipor4wnw2sl5slzm7bgh2zbwwcbdeh64lrpmoskddfaa.domains.proton.ch. ; protonmail cf_tags=cf-proxied:false
+staging.tenorcreative.com.	3600	IN	CNAME	sites.ludicrous.cloud. ; cf_tags=cf-proxied:false
+static-blog-example-1.tenorcreative.com.	1	IN	CNAME	static-blog-demo.pages.dev. ; cf_tags=cf-proxied:true
+static-landing-example-1.tenorcreative.com.	1	IN	CNAME	nuxt-demo-1wc.pages.dev. ; cf_tags=cf-proxied:true
+static-landing-example-2.tenorcreative.com.	1	IN	CNAME	nuxt-demo-2-e1y.pages.dev. ; cf_tags=cf-proxied:true
+static-landing-example-3.tenorcreative.com.	1	IN	CNAME	nuxt-demo-3.pages.dev. ; cf_tags=cf-proxied:true
+static-landing-example-4.tenorcreative.com.	1	IN	CNAME	nuxt-demo-4.pages.dev. ; cf_tags=cf-proxied:true
+www.tenorcreative.com.	1	IN	CNAME	cname.vercel-dns.com. ; vercel cf_tags=cf-proxied:false
+
+;; MX Records
+lca.tenorcreative.com.	600	IN	MX	20 mxb.mailgun.org.
+lca.tenorcreative.com.	600	IN	MX	10 mxa.mailgun.org.
+lc.tenorcreative.com.	600	IN	MX	20 mxb.mailgun.org.
+lc.tenorcreative.com.	600	IN	MX	10 mxa.mailgun.org.
+notifya.tenorcreative.com.	1	IN	MX	10 mxb.mailgun.org. ; ghl
+notifya.tenorcreative.com.	1	IN	MX	10 mxa.mailgun.org. ; ghl
+tenorcreative.com.	3600	IN	MX	10 alt4.aspmx.l.google.com.
+tenorcreative.com.	3600	IN	MX	5 alt1.aspmx.l.google.com.
+tenorcreative.com.	3600	IN	MX	10 alt3.aspmx.l.google.com.
+tenorcreative.com.	3600	IN	MX	5 alt2.aspmx.l.google.com.
+tenorcreative.com.	3600	IN	MX	1 aspmx.l.google.com.
+
+;; NS Records
+send.tenorcreative.com.	1	IN	NS	ns4.klaviyo.com. ; klaviyo
+send.tenorcreative.com.	1	IN	NS	ns3.klaviyo.com. ; klaviyo
+send.tenorcreative.com.	1	IN	NS	ns2.klaviyo.com. ; klaviyo
+send.tenorcreative.com.	1	IN	NS	ns1.klaviyo.com. ; klaviyo
+
+;; TXT Records
+_dmarc.lca.tenorcreative.com.	600	IN	TXT	"v=DMARC1;p=none;"
+_dmarc.lc.tenorcreative.com.	600	IN	TXT	"v=DMARC1;p=none;"
+_dmarc.notifya.tenorcreative.com.	1	IN	TXT	"v=DMARC1;p=none;" ; ghl
+_dmarc.tenorcreative.com.	1	IN	TXT	"v=DMARC1; p=quarantine" ; protonmail
+k1._domainkey.lc.tenorcreative.com.	600	IN	TXT	"k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCnd1HXVQt/bgoPxB7wyH+COBEvEWoPGqKPRN9D4QUv1dLDK08+y13okWWGLGsyLyP4eQBE/dLv7riBn1ZuSs8/8ywwPS4Ek+x/mZkGiBaorbeHRO1xR1I3Ej00Sl/to6g7q1uUgImE0Gz+PlQ6KsU1ohHNWcGJKlG7N32WhxLArQIDAQAB"
+lca.tenorcreative.com.	3600	IN	TXT	"v=spf1 include:mailgun.org include:spf.leadconnectorhq.com ~all"
+lc.tenorcreative.com.	3600	IN	TXT	"v=spf1 include:mailgun.org include:spf.leadconnectorhq.com ~all"
+mailo._domainkey.lca.tenorcreative.com.	600	IN	TXT	"k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDB6+9dfJHQIy1jrSmd/boc7kjGhDH1cEgKl2X6avNFc3Hu2SnuvubwdUzFstyFrAFBs8J0Yot1+OMDt13vj3zH74JGYoWPJtaCB0g3tZnMOIEuIklbzlsV2/iGaZNwtLEAZm3FC+ERAxbedlsTqFaWBTSLqpp17yfohUK2lJLdEQIDAQAB"
+notifya.tenorcreative.com.	1	IN	TXT	"v=spf1 include:spf.leadconnectorhq.com include:mailgun.org ~all" ; ghl
+smtp._domainkey.notifya.tenorcreative.com.	1	IN	TXT	"k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDHdSqrF2LreK3Yc3aM7UtMNtCNPBFfQPI5m3IMBo2BeWddWGdY2ST7bBa3NQTsm9h+zZ2FpHk8JYqZS6tA+Suwa7ENHwqMz5YC4i2S2FlJUvImyxmFE4yo/Ee1QmbjHoJ3Vtl1bhBLwxbqCRKc8F315QrAh/osFJ0EtnFOyDR2nQIDAQAB" ; ghl
+tenorcreative.com.	3600	IN	TXT	"google-site-verification=jjcgwYuftVIp0W0G1cx6ig5x9cPOIx5xDSSrkQhuWSs"
+tenorcreative.com.	3600	IN	TXT	"v=spf1 include:_spf.protonmail.ch include:_spf.google.com ~all"
+tenorcreative.com.	3600	IN	TXT	"google-site-verification=h3hOIBe-bQJ-thlsyQBQx1pZPpFdeTZC4Us_NejKBn0"
+tenorcreative.com.	1	IN	TXT	"klaviyo-site-verification=RaZPqy" ; klaviyo
+tenorcreative.com.	1	IN	TXT	"protonmail-verification=7510e5361f314e2723ce47661e3756b73065a561" ; protonmail
