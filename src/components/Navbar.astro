@@ -18,6 +18,7 @@ import { navItems, site } from '@/data/site';
         height="45"
         class="h-9 w-auto"
         loading="eager"
+        fetchpriority="high"
       />
     </a>
 
@@ -32,7 +33,10 @@ import { navItems, site } from '@/data/site';
               {item.label}
             </a>
           ) : (
-            <a href={item.href} class="hover:text-accent transition-colors">
+            <a
+              href={item.href}
+              class="rounded-sm hover:text-accent transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+            >
               {item.label}
             </a>
           )
@@ -64,7 +68,10 @@ import { navItems, site } from '@/data/site';
               {item.label}
             </a>
           ) : (
-            <a href={item.href} class="hover:text-accent transition-colors">
+            <a
+              href={item.href}
+              class="rounded-sm hover:text-accent transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+            >
               {item.label}
             </a>
           )
@@ -78,9 +85,11 @@ import { navItems, site } from '@/data/site';
   const btn = document.getElementById('menu-toggle');
   const menu = document.getElementById('mobile-menu');
   if (btn && menu) {
-    const close = () => {
+    const close = (returnFocus = false) => {
       menu.hidden = true;
       btn.setAttribute('aria-expanded', 'false');
+      // Return focus to the toggle (disclosure pattern) when closed via keyboard.
+      if (returnFocus) btn.focus();
     };
     btn.addEventListener('click', () => {
       const open = btn.getAttribute('aria-expanded') === 'true';
@@ -91,9 +100,9 @@ import { navItems, site } from '@/data/site';
         btn.setAttribute('aria-expanded', 'true');
       }
     });
-    menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', close));
+    menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => close()));
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') close();
+      if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') close(true);
     });
   }
 </script>

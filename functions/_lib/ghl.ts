@@ -166,7 +166,10 @@ export async function withOptimisticResponse(
           new Promise<void>((_, reject) =>
             setTimeout(() => reject(new Error('Background safety timeout')), BACKGROUND_SAFETY_MS),
           ),
-        ]).catch(() => notifyFallback(env, lead, 'Background safety timeout exceeded')),
+        ]).catch(() => notifyFallback(env, lead, 'Background safety timeout exceeded'))
+          // Sentinel: guarantee the waitUntil chain never surfaces an unhandled
+          // rejection in the isolate, even if notifyFallback itself were to throw.
+          .catch(() => {}),
       );
       resolve(json({ success: true, pending: true }));
     }, CLIENT_TIMEOUT_MS),
@@ -200,6 +203,13 @@ async function computeHmac(secret: string, body: string): Promise<string> {
     .join('');
 }
 
+// DELIBERATE: HTML-escape lead strings before they go into the n8n payload.
+// Normally you would NOT escape JSON sent to a webhook (it yields &amp; artifacts),
+// but the n8n "Lead Recovery Email" node interpolates these fields straight into an
+// HTML email body WITHOUT escaping — so escaping here is the injection defense for
+// the notification inbox. The cosmetic &amp; on a literal "&" is the accepted
+// trade-off. (Deep-review L5 — keep, with this rationale. If n8n is ever changed to
+// escape in-template, drop this and send raw.)
 function sanitize(payload: Record<string, unknown>): Record<string, unknown> {
   const out: Record<string, unknown> = {};
   for (const [k, v] of Object.entries(payload)) out[k] = typeof v === 'string' ? escapeHtml(v) : v;

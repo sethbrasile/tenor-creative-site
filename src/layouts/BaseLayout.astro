@@ -2,8 +2,11 @@
 import '@fontsource-variable/outfit/index.css';
 import '@fontsource/space-mono/400.css';
 import '@fontsource/space-mono/700.css';
-import '@fontsource/space-mono/400-italic.css';
 import '@/styles/global.css';
+// Hashed build URL of the LCP font (Outfit Variable, latin) for <link rel=preload>.
+// Vite resolves ?url to the same bundled file Fontsource's CSS references (deduped),
+// so the preload matches the actual request. Deep-review H3, 2026-06-05.
+import outfitWoff2 from '@fontsource-variable/outfit/files/outfit-latin-wght-normal.woff2?url';
 import Navbar from '@/components/Navbar.astro';
 import Footer from '@/components/Footer.astro';
 import { site, links, faq, knowsAbout } from '@/data/site';
@@ -55,6 +58,7 @@ const jsonLd = {
       knowsAbout: [...knowsAbout],
       founder: {
         '@type': 'Person',
+        '@id': `${site.url}/#person`,
         name: site.principal,
         sameAs: [links.portfolio, links.github, links.linkedin],
       },
@@ -64,10 +68,13 @@ const jsonLd = {
         ...(site.phone ? { telephone: site.phone } : {}),
         contactType: 'sales',
       },
-      sameAs: [links.github, links.linkedin, links.portfolio],
+      // Org's own ecosystem link only; the founder's personal profiles live on
+      // the Person node (above) to avoid entity ambiguity. Deep-review M9.
+      sameAs: [links.portfolio],
     },
     {
       '@type': 'Service',
+      '@id': `${site.url}/#service-apps`,
       name: 'Custom Apps & SaaS',
       serviceType: 'Custom software & SaaS development',
       provider: { '@id': orgId },
@@ -75,6 +82,7 @@ const jsonLd = {
     },
     {
       '@type': 'Service',
+      '@id': `${site.url}/#service-automation`,
       name: 'Automation & AI Tooling',
       serviceType: 'Business process automation & AI integration',
       provider: { '@id': orgId },
@@ -82,6 +90,7 @@ const jsonLd = {
     },
     {
       '@type': 'Service',
+      '@id': `${site.url}/#service-infra`,
       name: 'Infrastructure, DevOps & Consulting',
       serviceType: 'Infrastructure, DevOps & technical consulting',
       provider: { '@id': orgId },
@@ -104,6 +113,7 @@ const jsonLd = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preload" href={outfitWoff2} as="font" type="font/woff2" crossorigin />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="any" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -121,17 +131,22 @@ const jsonLd = {
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content={site.shortName} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={`${site.shortName} — ${title}`} />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageUrl} />
+    <meta name="twitter:image:alt" content={`${site.shortName} — ${title}`} />
 
     <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
 

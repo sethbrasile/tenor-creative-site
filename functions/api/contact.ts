@@ -90,7 +90,9 @@ export const onRequestPost = async ({ request, env, waitUntil }: Ctx): Promise<R
     return jsonError('Forbidden.', 403);
   }
 
-  // 2. Rate limit.
+  // 2. Rate limit. In production CF always sets CF-Connecting-IP; the 'unknown'
+  // fallback only hits in local `wrangler pages dev`, where all requests share one
+  // bucket (a dev submitting repeatedly can 429 themselves — expected locally).
   const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
   if (rateLimited(ip)) {
     return new Response(JSON.stringify({ error: 'Too many requests. Please try again shortly.' }), {

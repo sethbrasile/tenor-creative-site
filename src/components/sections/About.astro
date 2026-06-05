@@ -43,7 +43,7 @@ const techStack = [
             <a
               href={links.portfolio}
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               class="text-primary hover:text-accent flex items-center transition-colors"
             >
               Portfolio
@@ -52,7 +52,7 @@ const techStack = [
             <a
               href={links.github}
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               class="text-primary hover:text-accent flex items-center transition-colors"
             >
               GitHub
@@ -61,7 +61,7 @@ const techStack = [
             <a
               href={links.linkedin}
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               class="text-primary hover:text-accent flex items-center transition-colors"
             >
               LinkedIn
@@ -79,6 +79,7 @@ const techStack = [
               <Icon
                 name={t.name}
                 title={t.title}
+                role="img"
                 class="h-6 w-6 hover:text-foreground transition-colors"
               />
             ))

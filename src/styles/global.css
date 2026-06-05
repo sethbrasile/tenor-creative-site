@@ -39,7 +39,10 @@
      section). Use `text-accent-bright` for accent text on dark backgrounds. */
   --color-accent-bright: hsl(25 95% 55%);
 
-  --color-destructive: hsl(0 84% 60%);
+  /* Deepened from designer's 0 84% 60% (#ef4444 ≈ 3.8:1 on the white form card —
+     failed WCAG AA for error text) to 0 72% 42% (#b52a2a ≈ 5:1 on white; white
+     foreground still clears AA on it). Deep-review H1, 2026-06-05. */
+  --color-destructive: hsl(0 72% 42%);
   --color-destructive-foreground: hsl(0 0% 100%);
 
   --font-sans: 'Outfit Variable', 'Outfit', ui-sans-serif, system-ui, sans-serif;
@@ -67,10 +70,14 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Hero entrance — replaces framer-motion (crawler-safe, CSP-safe) */
+/* Hero entrance — replaces framer-motion (crawler-safe, CSP-safe).
+   Slide-only (no opacity fade): the wrapper holds the <h1> LCP element, and
+   animating opacity from 0 hides the largest paint until the animation fires,
+   inflating LCP. translateY keeps the text fully painted from frame 0.
+   Deep-review H2, 2026-06-05. */
 @keyframes fade-up {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from { transform: translateY(20px); }
+  to   { transform: translateY(0); }
 }
 .animate-fade-up {
   animation: fade-up 0.5s ease-out both;

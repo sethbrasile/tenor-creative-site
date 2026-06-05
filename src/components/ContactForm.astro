@@ -35,7 +35,7 @@ const inputClass =
         class={inputClass}
         aria-describedby="cf-name-err"
       />
-      <p id="cf-name-err" class="hidden text-sm text-destructive font-mono" data-err-for="name">
+      <p id="cf-name-err" role="alert" class="hidden text-sm text-destructive font-mono" data-err-for="name">
       </p>
     </div>
 
@@ -50,7 +50,7 @@ const inputClass =
         class={inputClass}
         aria-describedby="cf-email-err"
       />
-      <p id="cf-email-err" class="hidden text-sm text-destructive font-mono" data-err-for="email">
+      <p id="cf-email-err" role="alert" class="hidden text-sm text-destructive font-mono" data-err-for="email">
       </p>
     </div>
 
@@ -81,13 +81,21 @@ const inputClass =
         aria-describedby="cf-message-err"></textarea>
       <p
         id="cf-message-err"
+        role="alert"
         class="hidden text-sm text-destructive font-mono"
         data-err-for="message"
       >
       </p>
     </div>
 
-    <div class="cf-turnstile" data-sitekey={SITE_KEY}></div>
+    <p id="cf-turnstile-label" class="sr-only">Anti-bot security check (required)</p>
+    <div
+      class="cf-turnstile"
+      data-sitekey={SITE_KEY}
+      role="group"
+      aria-labelledby="cf-turnstile-label"
+    >
+    </div>
 
     <p id="cf-form-error" role="alert" class="hidden text-sm text-destructive font-mono"></p>
 
@@ -98,6 +106,8 @@ const inputClass =
     >
       Send message
     </button>
+    {/* Visually-hidden live region: announces the in-flight state to screen readers. */}
+    <p id="cf-status" class="sr-only" aria-live="polite" aria-atomic="true"></p>
   </div>
 </form>
 
@@ -105,7 +115,8 @@ const inputClass =
   id="contact-success"
   hidden
   role="status"
-  class="rounded-lg border border-border bg-card p-8 text-center text-foreground"
+  tabindex="-1"
+  class="rounded-lg border border-border bg-card p-8 text-center text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
 >
   <p class="font-bold text-lg">Message sent.</p>
   <p class="mt-2 text-muted-foreground font-mono text-sm">
@@ -128,6 +139,7 @@ const inputClass =
   const successEl = document.getElementById('contact-success');
   const submitBtn = document.getElementById('cf-submit') as HTMLButtonElement | null;
   const formError = document.getElementById('cf-form-error');
+  const statusEl = document.getElementById('cf-status');
 
   function clearErrors() {
     formError?.classList.add('hidden');
@@ -142,8 +154,10 @@ const inputClass =
     const el = document.querySelector<HTMLElement>(`[data-err-for="${name}"]`);
     const input = form?.elements.namedItem(name) as HTMLElement | null;
     if (el) {
-      el.textContent = msg;
+      // Un-hide first, then set text, so the role="alert" live region announces
+      // the mutation while it's in the accessibility tree.
       el.classList.remove('hidden');
+      el.textContent = msg;
     }
     input?.setAttribute('aria-invalid', 'true');
   }
@@ -192,6 +206,7 @@ const inputClass =
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending…';
     }
+    if (statusEl) statusEl.textContent = 'Sending your message…';
 
     try {
       const res = await fetch('/api/contact', {
@@ -206,7 +221,12 @@ const inputClass =
         );
       }
       form.hidden = true;
-      if (successEl) successEl.hidden = false;
+      if (successEl) {
+        successEl.hidden = false;
+        // Move focus to the confirmation so screen readers land on + announce it
+        // (revealing a static role="status" via [hidden] alone doesn't announce).
+        (successEl as HTMLElement).focus();
+      }
     } catch (err) {
       if (formError) {
         formError.textContent =
@@ -215,6 +235,7 @@ const inputClass =
       }
       (window as unknown as { turnstile?: { reset?: () => void } }).turnstile?.reset?.();
     } finally {
+      if (statusEl) statusEl.textContent = '';
       if (submitBtn) {
         submitBtn.disabled = false;
         submitBtn.textContent = original;

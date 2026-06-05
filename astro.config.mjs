@@ -13,5 +13,12 @@ import icon from 'astro-icon';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://tenorcreative.com',
-  integrations: [sitemap(), icon()],
+  integrations: [
+    // Keep noindex legal pages out of the sitemap so GSC doesn't flag
+    // "submitted URL marked noindex" (deep-review L11).
+    sitemap({
+      filter: (page) => !/\/(privacy|terms)\/?$/.test(page),
+    }),
+    icon(),
+  ],
 });
