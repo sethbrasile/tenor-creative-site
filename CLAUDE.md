@@ -277,10 +277,36 @@ fully env-driven, so this is a deploy-time `secret put` + the manual browser sub
 no code change. n8n fallback workflow (HMAC verify → Resend) still to import (skill 4.6) if
 fallback is wanted.
 
-## Deploy  <!-- FILL ON TRANSFORM -->
+## Deploy
 
-_Populate after Phase 8: Cloudflare Pages project, custom domain setup, DNS
-notes, analytics, handoff._
+**Live at https://tenorcreative.com** (cut over from the old Vercel "Double Your
+Business" marketing site 2026-06-05). Hosting facts:
+
+- **CF account:** `setherd14` (`fd15b6bd9ab1cec50b0832c91d7cf53a`) — the domain + zone
+  live here, NOT the `seth@tenorcreative.com` account. Zone `c876310c50f4173ff7a13397751c613b`.
+- **Pages project:** `tenor-creative-site`, git-connected (branch `main`); every push to
+  `main` auto-builds. Canonical alias `tenor-creative-site.pages.dev`.
+- **Custom domain:** apex `tenorcreative.com` added as a Pages Custom Domain. Apex DNS is a
+  **proxied CNAME → `tenor-creative-site.pages.dev`** (CF flattens at apex). Google-CA edge cert.
+- **www → apex:** proxied CNAME `www → tenorcreative.com` + a **CF zone Redirect Rule** (301,
+  `http.host eq "www.tenorcreative.com"` → `concat("https://tenorcreative.com", uri.path)`,
+  preserve query). Per global rule: www is NOT a second Custom Domain. ⚠️ The MCP CF token
+  lacks Rulesets scope — the Redirect Rule is created in the dashboard (Rules → Redirect Rules).
+- **Legacy 301s:** `public/_redirects` — Bucket A (`/about,/services,/contact` → home anchors;
+  `/privacy-policy,/terms-of-use` → `/privacy/,/terms/`); Bucket B (~21 retired marketing URLs,
+  incl. `/solutions/*`, `/the-4-rs/*`, `/pricing`, `/booking*`) → `pricklypearmarketing.co`
+  (positioning moved to the sister agency). Old Vercel deploy is now orphaned (no DNS) — safe
+  to delete that Vercel project anytime.
+- **DNS backup before cutover:** `docs/dns-backup-2026-06-05.txt` (full zone). Only the apex A
+  (76.76.21.21 Vercel) + www CNAME (vercel-dns) were removed; the other 49 records (Google MX,
+  Mailgun, Proton, GHL/ludicrous.cloud, n8n + analytics on Hetzner, Klaviyo, SPF/DKIM/DMARC)
+  were untouched.
+- **Form UAT:** PASS 2026-06-05 (`uat-reports/2026-06-05.md`) — GHL happy path + n8n fallback
+  both verified end-to-end. Redacted n8n workflow in `docs/n8n-tenor-resend-fallback.json`.
+
+**Still pending (operator):** (1) create the www→apex Redirect Rule in the CF dashboard
+(www is 522 until then); (2) CF Web Analytics — create the site + provide `PUBLIC_CF_BEACON_TOKEN`
+(bake into source like the Turnstile site key, the `BaseLayout` beacon is guarded). Then Phase 9.
 
 ---
 
