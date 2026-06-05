@@ -3,44 +3,18 @@
 Marketing/brochure site for **Tenor Creative LLC** — the custom-software,
 automation, and systems arm of Seth Brasile's two-company ecosystem.
 
-> **Status: IN TRANSFORM — Phases 3–7 complete; only Phase 8 (deploy) remains.**
-> The production Astro site lives at the repo root; `designer-src/` remains the
-> tracked visual reference. Done: scaffold/harden (3), GHL contact Function (4),
-> legal copy (5), tests (6, 26 Playwright+axe), recreation review (6.5), audits
-> (7, Lighthouse all ≥95). **Remaining: Phase 8 deploy** — blocked only on the
-> deferred GHL **PIT/location/pipeline IDs** (code is env-driven; deploy-time
-> `secret put` + manual form submit, no code change). Step-level progress in
-> `.transform-state.json`.
+> **Status: LIVE — transform complete (2026-06-05).** Production Astro site at
+> **tenorcreative.com** (CF Pages on the `setherd14` account). All phases done:
+> scaffold/harden (3), GHL+n8n contact Function (4), legal (5), tests (6 — now 36
+> Playwright+axe), recreation review (6.5), audits (7), deploy + domain cutover +
+> legacy 301s (8), form UAT PASS (8.5), deep-review SHIP IT / 0 blocking with all
+> fixes applied (9). `designer-src/` stays as the tracked visual reference. Hosting
+> facts in **## Deploy**; the audit is in `reviews/`. Only optional follow-up: the
+> CF Web Analytics token (8.3).
 
 ---
 
-## ⚠️ Mid-`brochure-site-transform` — resume protocol (read FIRST; remove at Phase 9)
-
-This transform is governed by the **`brochure-site-transform` skill**. The skill is
-the PLAN; `.transform-state.json` + this file are only the CURSOR (where we are) — they
-are NOT a substitute for the skill's steps. **Known failure mode:** late in a long
-session the skill body ages out of context and work continues off these artifacts, which
-silently drop skill steps (this bit us once — Phase 8.5's `static-site-form-uat` UAT was
-skipped in favor of a manual hand-off). Prevent recurrence:
-
-1. **Each session continuing the transform:** re-invoke `/brochure-site-transform` (loads
-   the full skill).
-2. **Before executing ANY phase:** open that phase in
-   `~/.claude/skills/brochure-site-transform/SKILL.md` and convert its steps into a
-   Task/todo checklist — **including sub-skill dispatches**. Never run a phase from memory
-   or from this file alone.
-3. **Sub-skill dispatches the cursor tends to drop** (re-check at each phase):
-   Phase 3 → `frontend-design` (consult) · Phase 4 → `ghl-contact-worker` ·
-   Phase 6.5 → `designer-recreation-review` · **Phase 8.5 → `static-site-form-uat`**
-   (GHL/n8n stacks) · Phase 9 → `deep-review`.
-4. **`.transform-state.json` `nextAction` MUST cite skill step numbers + any sub-skill**,
-   so a fast resume still surfaces them.
-5. Systemic fixes land in the skill's **Phase 9**, not just this repo — propose skill edits
-   there so every future transform inherits them.
-
----
-
-## The transform (what we're doing here)
+## The transform (what was done here)
 
 Driving skill: **`brochure-site-transform`** (multi-session pipeline). Target
 stack it produces:
@@ -344,3 +318,8 @@ Business" marketing site 2026-06-05). Hosting facts:
 ## Dismissed
 
 _(log one-liners + date when a suggestion is declined, so it's not re-asked)_
+
+- 2026-06-05 — Deep-review L17 (visible "opens in new tab" cue on external links):
+  deferred. Advisory at WCAG AA; every external link already has descriptive text +
+  `rel="noopener noreferrer"`, and injecting the phrase into prose links reads poorly.
+  Revisit only if a manual audit requires it.
