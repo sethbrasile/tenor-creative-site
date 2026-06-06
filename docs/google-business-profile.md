@@ -46,10 +46,32 @@ truncates the preview.
 
 ---
 
+## Service → category map
+
+Each custom service belongs to exactly one category. In GBP you add services under
+a category, so enter them in these groups:
+
+| Category | Services |
+|----------|----------|
+| **Software company** (primary) | Custom software development · SaaS development · API development & integration · Database design & architecture · Payment integration (Stripe) · Authentication systems |
+| **Website designer** | Full-stack web application development |
+| **Computer consultant** | Business process automation · Workflow automation · AI agent development · RAG pipeline development · Internal tooling development · CRM setup & data integration |
+| **Computer support and services** | DevOps consulting · CI/CD pipeline setup · Cloud architecture (edge / Cloudflare) |
+| **Computer security service** | Security hardening · Immutable infrastructure & zero-trust ingress |
+| **Business management consultant** | Fractional CTO advisory · Technical consulting & discovery |
+| **Business to business service** | White-label technical subcontracting |
+
+> 21 services, every category populated. Descriptions for each are below
+> (grouped by the site's capability buckets — the category each maps to is in
+> the table above).
+
+---
+
 ## Services (custom entries — type these in)
 
 Service **names** are kept plain/searchable (how buyers actually search), not
-branded. Each has a ≤300-char description below it.
+branded. Each has a ≤300-char description below it. For the category each maps to,
+see the **Service → category map** table above.
 
 ### Custom Apps & SaaS
 
