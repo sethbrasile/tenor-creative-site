@@ -76,19 +76,19 @@ see the **Service → category map** table above.
 ### Custom Apps & SaaS
 
 **Custom software development**
-> Custom software built around how your business actually works — not forced into a tool that almost fits. When spreadsheets and off-the-shelf apps hit their limits, we design, build, and maintain software tailored to your operations.
+> Custom software built around how your business actually works — not forced into a tool that almost fits. When spreadsheets and off-the-shelf apps hit their limits, we design and build software tailored to your operations on a modern, proven stack (Next.js, Cloudflare).
 
 **SaaS development**
-> Turn your idea into a working, revenue-ready software product. End-to-end SaaS development — user accounts, billing, dashboards, and the systems behind them — built and launched for founders and businesses bringing a product to market.
+> Turn your idea into a working, revenue-ready software product. End-to-end SaaS development — user accounts, billing, dashboards, and the systems behind them — built on a modern edge stack (Next.js, Cloudflare, Postgres) for founders bringing a product to market.
 
 **Full-stack web application development**
-> Web-based applications your team and customers log in to and use every day. Custom portals, dashboards, and online tools — fast, secure, and built to scale as your business grows.
+> Web-based applications your team and customers log in to and use every day. Custom portals, dashboards, and online tools built on a fast, modern stack (Next.js, React) — secure and ready to scale as your business grows.
 
 **API development & integration**
 > Connect the apps and systems your business already runs on. Custom integrations and APIs that sync data automatically between your tools, eliminate double entry, and make your software work as one connected system.
 
 **Database design & architecture**
-> Organize and structure your business data so it's accurate, secure, and ready to grow. Database design that replaces scattered spreadsheets and disconnected tools with one reliable source you can build on.
+> Organize and structure your business data so it's accurate, secure, and ready to grow. Database design on proven systems (PostgreSQL, Neon) that replaces scattered spreadsheets and disconnected tools with one reliable source you can build on.
 
 **Payment integration (Stripe)**
 > Accept payments, subscriptions, and recurring billing inside your software or website. Secure checkout, automated invoicing, and renewal handling built in — so collecting revenue runs reliably without manual follow-up.
