@@ -20,6 +20,15 @@ characters (GBP's per-service limit). Voice pulled from the live site
 
 ---
 
+## Business description (≤750 chars — paste as-is)
+
+Front-loads the keywords; first sentence carries the positioning in case Google
+truncates the preview.
+
+> Tenor Creative is the senior technical build arm that agencies and founders rely on when off-the-shelf tools hit their ceiling. We design, build, and maintain custom software and SaaS on a modern edge stack — Next.js, Cloudflare, PostgreSQL — plus business-process automation, AI agents, and RAG pipelines. On the infrastructure side: CI/CD, cloud architecture, security hardening, and immutable, zero-trust systems built for reliability and scale. Tenor also works white-label for marketing and design agencies, delivering complex builds under your brand without competing for the client relationship. Founded 2024 in Durant, OK; works remote. Principal engineer: Seth Brasile. Start with a technical discovery conversation.
+
+---
+
 ## Categories (pick from Google's fixed list)
 
 **Primary:**
