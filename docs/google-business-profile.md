@@ -76,70 +76,70 @@ see the **Service → category map** table above.
 ### Custom Apps & SaaS
 
 **Custom software development**
-> Software built to your exact operations when off-the-shelf tools hit their ceiling. Full-stack development on a modern edge stack, designed and built by a senior engineer — not handed off to juniors. Maintained, not dumped.
+> Custom software built around how your business actually works — not forced into a tool that almost fits. When spreadsheets and off-the-shelf apps hit their limits, we design, build, and maintain software tailored to your operations.
 
 **SaaS development**
-> End-to-end SaaS product development — from data model and auth to payments and background jobs. Production examples include profit-margin analytics and event-coordination platforms shipped solo on Next.js, Cloudflare, and Postgres.
+> Turn your idea into a working, revenue-ready software product. End-to-end SaaS development — user accounts, billing, dashboards, and the systems behind them — built and launched for founders and businesses bringing a product to market.
 
 **Full-stack web application development**
-> Full-stack web apps on a modern edge stack: Next.js, React, and Nuxt on the front; PostgreSQL, Neon, and Drizzle behind. Built for businesses that need software molded to their exact shape, not forced into a template.
+> Web-based applications your team and customers log in to and use every day. Custom portals, dashboards, and online tools — fast, secure, and built to scale as your business grows.
 
 **API development & integration**
-> Custom APIs and third-party integrations that connect your tools and data cleanly. Typed endpoints, webhook handling, and reliable data exchange between systems that were never built to talk to each other.
+> Connect the apps and systems your business already runs on. Custom integrations and APIs that sync data automatically between your tools, eliminate double entry, and make your software work as one connected system.
 
 **Database design & architecture**
-> Relational schema design and data architecture in PostgreSQL, Neon, and Drizzle. Includes privacy-boundary design — separating shared and private data at the storage layer so classification is enforced, not hoped for.
+> Organize and structure your business data so it's accurate, secure, and ready to grow. Database design that replaces scattered spreadsheets and disconnected tools with one reliable source you can build on.
 
 **Payment integration (Stripe)**
-> Stripe payment integration for subscriptions, one-time charges, and usage billing. Secure checkout, webhook-driven fulfillment, and reconciliation built into production SaaS — not bolted on afterward.
+> Accept payments, subscriptions, and recurring billing inside your software or website. Secure checkout, automated invoicing, and renewal handling built in — so collecting revenue runs reliably without manual follow-up.
 
 **Authentication systems (passkeys, OAuth, SSO)**
-> Modern authentication: passkeys/WebAuthn, OAuth, SSO, and magic links. Secure session handling and account flows built into production apps — login that's both safe and frictionless.
+> Secure, modern login for your app or platform. Passwordless sign-in, single sign-on (SSO), and social login that protect customer accounts and cut password headaches — without slowing users down.
 
 ### Automation & AI Tooling
 
 **Business process automation**
-> Automate the manual work eating your team's bandwidth. Custom automation for repetitive operational tasks, data entry, and handoffs between systems — so people stop doing what software should be doing.
+> Stop paying your team to do repetitive manual work. Automate data entry, approvals, reporting, and routine tasks so your people focus on higher-value work and your operations run faster with fewer errors.
 
 **Workflow automation**
-> Declarative, reliable workflows for multi-step business processes. Background jobs, scheduled tasks, and event-driven pipelines that run without babysitting and recover cleanly when a step fails.
+> Connect your apps and automate multi-step processes end to end. Orders, onboarding, notifications, and handoffs that run automatically and reliably — without anyone remembering to push the next button.
 
 **AI agent development**
-> Custom AI agents and integrations wired into your real tools and data. Practical automation that does useful work inside your stack — production systems, not demos.
+> Put AI to work on real tasks inside your business. Custom AI assistants and agents that handle support, research, and routine decisions — wired into the tools you already use, not generic chatbots.
 
 **RAG pipeline development**
-> Retrieval-augmented generation pipelines in Python and Postgres. Includes data-classification boundaries — private content kept off shared infrastructure — so AI answers from your knowledge without leaking it.
+> Let AI answer questions from your own documents and data. Custom AI knowledge systems that search your company's information and give accurate, sourced answers — so staff and customers find what they need instantly.
 
 **Internal tooling development**
-> Internal tools and dashboards built for how your team actually works. Replace spreadsheets and manual processes with software tailored to your operations.
+> Replace messy spreadsheets and manual processes with tools built for your team. Custom internal apps and dashboards that match your workflow, centralize your information, and make daily operations faster.
 
 **CRM setup & data integration**
-> CRM configuration and the data plumbing that keeps it accurate. Lead capture, pipeline wiring, and integrations that move data between your CRM and the rest of your stack without manual re-entry.
+> Get your CRM working the way your business actually sells. Setup, customization, and integrations that capture leads automatically, keep records accurate, and connect your CRM to the rest of your tools.
 
 ### Infrastructure, DevOps & Consulting
 
 **DevOps consulting**
-> DevOps practices for teams that have outgrown manual deploys. CI/CD, infrastructure-as-code, and reliable release processes that ship faster with fewer surprises.
+> Ship software faster and break things less. DevOps practices and automation that streamline how your team builds, tests, and releases — fewer outages, quicker fixes, and more dependable software.
 
 **CI/CD pipeline setup**
-> Automated build, test, and deploy pipelines. Push-to-deploy workflows with checks that catch problems before production — so releases stop being events to dread.
+> Automate testing and deployment so updates ship safely and on demand. Build pipelines that catch problems before customers do and let your team release improvements without manual, error-prone steps.
 
 **Cloud architecture (edge / Cloudflare)**
-> Cloud and edge architecture on Cloudflare Workers and modern serverless. Designed for reliability, scale, and cost — solving capacity and performance problems before they become emergencies.
+> Run your software on cloud infrastructure that's fast, reliable, and cost-efficient. Cloud and hosting architecture designed to handle growth and traffic spikes without overspending or downtime.
 
 **Security hardening**
-> Security hardening for applications and infrastructure: secure headers, secrets handling, hashed credentials, rate limiting, and fail-secure design. Production auth that actually holds up.
+> Protect your software, data, and customer accounts from attack. Security reviews and hardening that close common vulnerabilities, secure logins and data, and help you meet compliance requirements.
 
 **Immutable infrastructure & zero-trust ingress**
-> Immutable infrastructure and zero-trust ingress. Production example: a Fedora CoreOS reverse proxy terminating SSL on the LAN side for IDS/IPS inspection, hardened with fail2ban.
+> Lock down how traffic reaches your systems. Hardened, tamper-resistant infrastructure and zero-trust access controls that shrink your attack surface and keep your production environment secure and stable.
 
 ### Advisory (Business management consultant)
 
 **Fractional CTO advisory**
-> Fractional-CTO advisory for founders and agencies without a senior technical lead. Architecture decisions, technology choices, and a steady hand on reliability, scale, and compliance.
+> Senior technical leadership without a full-time executive hire. On-demand CTO guidance on technology decisions, vendor choices, team direction, and roadmap — so you build the right thing and avoid expensive mistakes.
 
 **Technical consulting & discovery**
-> Technical discovery and consulting to scope hard problems before code is written. Honest assessment of what to build, what to buy, and what not to build at all.
+> Get clear, honest answers before you spend on development. Technical consulting that scopes your problem, weighs build-vs-buy, and gives you a realistic plan, timeline, and budget — no guesswork.
 
 **White-label technical subcontracting**
-> White-label technical delivery for marketing and design agencies. Complex builds shipped under your brand, on time, without competing for your client relationship. Tenor stays invisible; you stay the agency of record.
+> Senior development capacity for agencies, delivered under your brand. Take on complex software, automation, and infrastructure projects without hiring — we build behind the scenes and never touch your client relationship.
