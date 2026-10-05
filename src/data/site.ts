@@ -46,7 +46,6 @@ export const navItems: readonly NavItem[] = [
   { label: 'Work', href: '/#work' },
   { label: 'About', href: '/#about' },
   { label: 'Contact', href: '/#contact' },
-  { label: 'AI Demo', href: '/ai-voice-demo', cta: true },
 ];
 
 /** Selected work — framed as Tenor capability (brief §6). */

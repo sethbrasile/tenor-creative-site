@@ -20,12 +20,9 @@ test.describe('/ai-voice-demo', () => {
   });
 
   test('uses the SHARED site nav — no per-page "Back to site" swap', async ({ page }) => {
-    // Shared navbar: real logo link home + the AI Demo pill, same as every page.
-    // (AI Demo renders in both the desktop bar and the mobile-menu markup → count 2.)
     const header = page.locator('header');
     await expect(header.locator('img[alt="Tenor Creative LLC"]')).toBeVisible();
-    expect(await header.locator('a', { hasText: 'AI Demo' }).count()).toBeGreaterThan(0);
-    // The designer's shortcut must NOT be present.
+    await expect(header.locator('a', { hasText: 'AI Demo' })).toHaveCount(0);
     await expect(page.getByText('Back to site')).toHaveCount(0);
   });
 

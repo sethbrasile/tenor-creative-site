@@ -28,10 +28,8 @@ test.describe('home page', () => {
     }
   });
 
-  test('AI Demo nav link points to the demo route', async ({ page }) => {
-    // present in desktop bar and (hidden) mobile menu; scope to header.
-    const pill = page.locator('header a', { hasText: 'AI Demo' }).first();
-    await expect(pill).toHaveAttribute('href', '/ai-voice-demo');
+  test('AI Demo is not linked from the nav', async ({ page }) => {
+    await expect(page.locator('header a', { hasText: 'AI Demo' })).toHaveCount(0);
   });
 });
 
@@ -42,7 +40,7 @@ test.describe('desktop nav', () => {
     const nav = page.getByRole('navigation', { name: 'Primary' });
     await expect(nav.getByRole('link', { name: 'Services' })).toBeVisible();
     await expect(nav.getByRole('link', { name: 'Services' })).toHaveAttribute('href', '/#services');
-    await expect(nav.locator('a', { hasText: 'AI Demo' })).toBeVisible();
+    await expect(nav.locator('a', { hasText: 'AI Demo' })).toHaveCount(0);
   });
 });
 
@@ -59,7 +57,8 @@ test.describe('mobile menu', () => {
     await toggle.click();
     await expect(toggle).toHaveAttribute('aria-expanded', 'true');
     await expect(menu).toBeVisible();
-    await expect(menu.locator('a', { hasText: 'AI Demo' })).toBeVisible();
+    await expect(menu.getByRole('link', { name: 'Contact' })).toBeVisible();
+    await expect(menu.locator('a', { hasText: 'AI Demo' })).toHaveCount(0);
 
     await page.keyboard.press('Escape');
     await expect(toggle).toHaveAttribute('aria-expanded', 'false');
