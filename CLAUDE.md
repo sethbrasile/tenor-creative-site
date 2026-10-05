@@ -33,17 +33,16 @@ Phase/step progress lives in `.transform-state.json` (created in Phase 2,
 
 | Decision | Value | Source |
 |----------|-------|--------|
-| Form routing | **Variant B — GHL CRM** (primary) + n8n fallback | Operator instruction |
-| GHL PIT / location ID / pipeline | **Deferred** — ask near end, once transform is done | Operator instruction |
+| Form routing | **PPMC CRM** primary + Resend fallback. GHL retired 2026-10-05. | Operator instruction |
+| GHL PIT / location ID / pipeline | **Retired 2026-10-05** — do not wire GHL back in | Operator instruction |
 | `designer-src/` in git | **Tracked. Never gitignore it.** No binary >50MB → **no Git LFS needed** | Skill Phase 1/2.2 + repo audit |
 | Recreate designer visuals? | **Yes — match `designer-src` faithfully.** The designer had full art-direction freedom; their output is the approved design. Phase 6.5 recreation review SHOULD run. | Build brief §9, §11 |
 | Analytics | Client brief prefers **Plausible** (consistent w/ byteMyCache). Skill default is Cloudflare Web Analytics. Confirm at Phase 1.12. | Build brief §7 |
 | Domain | **tenorcreative.com** | Build brief §6/§9 |
 
-> Note on Variant B vs. the brief: build brief §10 says "CRM wiring out of scope
-> for now, a form that emails Seth is fine." The operator has since chosen
-> **Variant B (GHL)**. Operator instruction wins — build for GHL, defer the
-> credentials (PIT) until the transform is otherwise complete.
+> Note on the form: the 2026 transform shipped Variant B (GHL + n8n). On
+> 2026-10-05 the operator retired GHL. Delivery is the PPMC CRM ingest plus a
+> direct Resend fallback. Do not reintroduce GHL.
 
 ---
 
@@ -185,7 +184,8 @@ src/
 functions/                     Cloudflare Pages Functions (Phase 4)
   api/contact.ts               POST /api/contact — Origin/Turnstile/delivery fail-secure,
                                honeypot, rate-limit, shared-zod validation
-  _lib/ghl.ts                  GHL client + optimistic response + n8n HMAC fallback
+  api/_lib/crm.ts              signed PPMC CRM ingest
+  api/_lib/resend-fallback.ts  direct Resend when CRM ingest fails
 public/                        _headers (CSP), robots.txt, favicon.svg, opengraph.jpg,
                                img/logo.svg + img/logo-with-text.svg
 postcss.config.mjs · astro.config.mjs · wrangler.toml (Pages) · tsconfig.json (@/* → src/*)
@@ -204,52 +204,24 @@ postcss.config.mjs · astro.config.mjs · wrangler.toml (Pages) · tsconfig.json
 
 ## Forms & env
 
-Contact form (Phase 4, **Variant B — GHL + n8n fallback**). The designer-src had
-mailto-only; we wired a real form. Architecture is the `ghl-contact-worker` skill
-**adapted to a Cloudflare Pages Function** (not a standalone Worker) on the zero-JS
-Astro site:
+Contact form delivers to the **PPMC CRM**, with a direct Resend email if that
+write fails. GoHighLevel was removed 2026-10-05. The form itself is still the
+vanilla `ContactForm.astro` (no React). Fields: name, email, optional company,
+message. No phone field, so no SMS consent.
 
-- **`functions/api/contact.ts`** — `onRequestPost` route. Hardening (brochure Phase 4
-  overrides the sub-skill's "skip if unset"): **Origin fail-closed** (missing OR
-  unexpected Origin → 403), **fail-secure Turnstile** (missing `TURNSTILE_SECRET_KEY`
-  → 500, never skipped), **fail-secure delivery** (no GHL *and* no n8n → 500), honeypot
-  (`website` field → silent 200), in-memory rate-limit 5/60s/IP with 10k size cap,
-  `onRequestGet` → 405. Validation reuses the shared **`src/lib/contact-schema.ts`**
-  zod schema (client + server never drift).
-- **`functions/_lib/ghl.ts`** — GHL client + optimistic response + n8n HMAC fallback.
-  Contact is **email-keyed** (form has no phone → no A2P/SMS consent flow). Free-text
-  message stored as a GHL **note** (works without the account's custom-field key) +
-  best-effort opportunity when `GHL_PIPELINE_ID`/`GHL_STAGE_NEW_LEAD` are set. Optimistic:
-  visitor always gets success ≤8s; GHL failure relays the lead to n8n (HMAC-SHA256 via
-  Web Crypto, `X-Webhook-Signature`) in `waitUntil`. **Zero leads lost.**
-- **Form is vanilla** (`ContactForm.astro` inline `<script>`) — posts JSON to
-  `/api/contact`, reads `{error}` for messages. Turnstile token field is
-  `cf-turnstile-response`. Site key is build-time `PUBLIC_TURNSTILE_SITE_KEY` (default =
-  CF always-pass TEST key) baked into source at deploy (8.1c).
-- **`wrangler.toml`** — Pages config (`pages_build_output_dir = "dist"`), non-secret
-  `[vars]` (n8n URL). Astro build is unaffected.
-
-**Verified locally** (`wrangler pages dev`, no real creds): no-Origin→403,
-missing-Turnstile→500, bad/missing token→400, delivery-gate→500, zod errors→400,
-honeypot→200, GHL-401→**200 optimistic** with bg fallback firing, evil Origin→403.
-Satisfies audit items **7.13 / 7.14** now; **7.17** (GHL opt-in) is N/A (no SMS).
-
-**Env (set at deploy — Phase 8.1b, `wrangler pages secret put --project-name tenor-creative-site`):**
-
-| Key | Kind | Required | Notes |
-|-----|------|----------|-------|
-| `TURNSTILE_SECRET_KEY` | secret | **yes** | Function is fail-secure without it |
-| `GHL_API_KEY` | secret | for GHL | the deferred **PIT** |
-| `GHL_LOCATION_ID` | secret/var | for GHL | enables delivery |
-| `GHL_PIPELINE_ID` | secret/var | optional | enables opportunity |
-| `GHL_STAGE_NEW_LEAD` | secret/var | optional | new-lead stage |
-| `N8N_WEBHOOK_SECRET` | secret | optional | HMAC key, matches n8n verify node |
-| `N8N_FALLBACK_URL` | var | optional | omit → no fallback |
-
-**Still blocked on operator:** GHL **PIT / location / pipeline+stage IDs** — the code is
-fully env-driven, so this is a deploy-time `secret put` + the manual browser submit (8.1d),
-no code change. n8n fallback workflow (HMAC verify → Resend) still to import (skill 4.6) if
-fallback is wanted.
+- **`functions/api/contact.ts`** — Origin fail-closed, Turnstile fail-secure,
+  honeypot, rate-limit, shared zod schema, optimistic CRM response (8s) with
+  one Resend fallback.
+- **`functions/api/_lib/crm.ts`** — HMAC-signed POST to `/api/leads/ingest`.
+- **`functions/api/_lib/resend-fallback.ts`** — recovery email to
+  `seth@pricklypearmarketingco.com`.
+- **`wrangler.toml` `[vars]`** — `CRM_INGEST_URL`, `CRM_ACCOUNT_KEY`,
+  `RESEND_FROM`, `LEAD_FALLBACK_TO`. A git build overwrites dashboard plain vars,
+  so these four must stay in the file.
+- **Secrets** (not in git): `TURNSTILE_SECRET_KEY`, `CRM_CLIENT_SECRET`,
+  `RESEND_API_KEY`. Put the CRM secret on with
+  `pnpm -F @ppmc-crm/web db:provision-secret --slug tenor-creative` from the
+  `ppmc-crm` repo. Do not hand-copy a derived secret.
 
 ## Deploy
 
@@ -299,8 +271,7 @@ Business" marketing site 2026-06-05). Hosting facts:
 - **Intentional deviation (Phase 6.5):** navbar uses the real graphic wordmark
   (`logo-with-text.svg`, pulled from live tenorcreative.com per operator) instead
   of the designer-src `TENOR_` text wordmark. Not drift — expected.
-- **Intentional deviation:** added a real GHL contact form in the `#contact`
-  section; designer-src had mailto-only. Per brief §10 + Variant-B decision.
+- **Intentional deviation:** contact form delivers to the PPMC CRM (Resend fallback). Designer-src was mailto-only; GHL was the 2026-06 path and was removed 2026-10-05.
 - **Intentional deviation:** added a mobile hamburger menu; designer-src hid the
   nav entirely on mobile (no menu). Strictly better; expected.
 - **Intentional deviation:** `/ai-voice-demo` uses the shared site Navbar + Footer.

@@ -13,7 +13,7 @@ test.describe('home page', () => {
     const footer = page.locator('footer');
     await expect(footer).toContainText('Tenor Creative LLC');
     await expect(footer).toContainText('seth@tenorcreative.com');
-    await expect(footer.locator('a[href="tel:5807450069"]')).toBeVisible();
+    await expect(footer.locator('a[href^="tel:"]')).toHaveCount(0);
   });
 
   test('selected work lists all four projects', async ({ page }) => {

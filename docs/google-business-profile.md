@@ -12,7 +12,9 @@ characters (GBP's per-service limit). Voice pulled from the live site
 - **Business type:** Service-Area Business (SAB). Durant, OK + remote — **hide the
   street address**, list service areas instead.
 - **Name:** Tenor Creative LLC
-- **Phone:** 580-745-0069
+- **Phone:** none. Leave the listing without a number until the cancelled Tenor
+  line is recovered. Do not use (580) 634-9375 — that number is on the PPMC
+  Twilio account and may belong to a client.
 - **Email:** seth@tenorcreative.com
 - **Website:** https://tenorcreative.com
 - **Keep marketing/SEO categories OFF** — those belong to PPMC's profile. Category

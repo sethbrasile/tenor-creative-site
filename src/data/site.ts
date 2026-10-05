@@ -8,8 +8,13 @@ export const site = {
   name: 'Tenor Creative LLC',
   shortName: 'Tenor Creative',
   url: 'https://tenorcreative.com',
+  // Branded address. Cloudflare Email Routing forwards seth@ and the catch-all
+  // to seth@pricklypearmarketingco.com. Keep this address on the site.
   email: 'seth@tenorcreative.com',
-  phone: '580-745-0069' as string,
+  // No public number. The previous line was cancelled. Do not publish a number
+  // from the PPMC Twilio account — those belong to clients. Leave this blank
+  // until the Tenor line is recovered.
+  phone: '' as string,
   principal: 'Seth Brasile',
   location: 'Durant, OK',
   locality: 'Durant',

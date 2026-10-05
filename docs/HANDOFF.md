@@ -34,31 +34,36 @@ Workflow: edit → `npm run dev` to preview → `npm run build` + `npm test` (Pl
 - **Pages project:** `tenor-creative-site`. Alias `tenor-creative-site.pages.dev`.
 - **Custom domain:** apex `tenorcreative.com` (proxied CNAME → the Pages project, CF-managed cert).
 - **www:** proxied A → `192.0.2.1` (dummy) + a "WWW to Root" Redirect Rule → 301s to apex.
-- **DNS:** Cloudflare. Full pre-cutover backup at `docs/dns-backup-2026-06-05.txt`. Email
-  (Google MX + Mailgun + Proton), GHL subdomains, n8n/analytics (Hetzner), Klaviyo — all
-  unchanged by the site cutover.
+- **DNS:** Cloudflare. Full pre-cutover backup at `docs/dns-backup-2026-06-05.txt`.
+  Mailgun (`lc`, `lca`, `notifya`), GHL subdomains, n8n/analytics (Hetzner), and Klaviyo
+  are unchanged. Apex mail is not Google anymore — see Email below.
 - **Old site:** the previous "Double Your Business" marketing site on Vercel is now orphaned
   (no DNS points to it). Safe to delete that Vercel project anytime.
 
-## Contact form → CRM
+## Contact form → PPMC CRM
 
 - Form posts to `/api/contact` (Pages Function). Hardened: Origin fail-closed, Turnstile
   (fail-secure), honeypot, rate-limit, shared-zod validation.
-- **Primary:** creates a GHL contact + opportunity in **Sales Pipeline 1 → Lead** stage.
-- **Fallback (zero lead loss):** if GHL fails, the lead is relayed (HMAC-signed) to an n8n
-  workflow ("Tenor Creative - GHL Fallback") that emails it to seth@tenorcreative.com
-  (cc seth@pricklypearmarketingco.com) via Resend. The visitor always sees success.
-- Verified end-to-end 2026-06-05 — see `uat-reports/2026-06-05.md`. Redacted workflow:
-  `docs/n8n-tenor-resend-fallback.json`.
-- **Secrets** (Cloudflare Pages → Settings → Variables and Secrets): `TURNSTILE_SECRET_KEY`,
-  `GHL_API_KEY`, `GHL_LOCATION_ID`, `GHL_PIPELINE_ID`, `GHL_STAGE_NEW_LEAD`,
-  `N8N_WEBHOOK_SECRET`, `N8N_FALLBACK_URL`. The Turnstile **site** key is public + baked into
-  source (`ContactForm.astro`).
+- **Primary (2026-10-05):** signed ingest to the PPMC CRM
+  (`https://crm.pricklypearmarketing.co/api/leads/ingest`). GoHighLevel is no longer
+  the destination. Account manifest: `ppmc-crm/apps/web/clients/tenor-creative.yaml`.
+- **Fallback:** if the CRM write fails, Resend emails the lead to
+  `seth@pricklypearmarketingco.com` from `noreply@notify.pricklypearmarketingco.com`.
+  The visitor still sees success.
+- **Inbound mail (2026-10-05):** Google Workspace is gone. Apex MX is Cloudflare Email
+  Routing. `seth@tenorcreative.com` and the catch-all forward to
+  `seth@pricklypearmarketingco.com`. Mailgun MX on `lc` / `lca` / `notifya` was left alone.
+- **Plain vars** live in `wrangler.toml` `[vars]` (a git build wipes dashboard plain vars):
+  `CRM_INGEST_URL`, `CRM_ACCOUNT_KEY`, `RESEND_FROM`, `LEAD_FALLBACK_TO`.
+- **Secrets** (`wrangler pages secret put --project-name tenor-creative-site`):
+  `TURNSTILE_SECRET_KEY` (already set), `CRM_CLIENT_SECRET` (only via
+  `pnpm -F @ppmc-crm/web db:provision-secret --slug tenor-creative`), `RESEND_API_KEY`.
+  The Turnstile site key is public and baked into `ContactForm.astro`.
 
 ### "I stopped getting leads" — first move
-Run the form UAT: `static-site-form-uat` skill (or re-read `uat-reports/2026-06-05.md`).
-Most common causes: GHL API key (PIT) expired, n8n workflow turned inactive, or a GHL
-pipeline/stage ID changed. Don't debug the Worker code first — run the UAT, read the report.
+Check that `wrangler.toml` `[vars]` still has the four CRM values (a build wipes dashboard
+copies). Then confirm `CRM_CLIENT_SECRET` matches the current derived secret — a wrong
+value 401s every lead while the form still shows success and falls through to Resend.
 
 ## Analytics
 
